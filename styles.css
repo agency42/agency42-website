@@ -45,6 +45,7 @@ p {
     margin-bottom: 1.5rem;
     line-height: 1.5;
     font-weight: 300;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 .btn {
@@ -64,19 +65,22 @@ p {
 }
 
 .corner-link {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1rem;
-    text-decoration: none;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+    font-weight: 400;
+    font-size: 1.2rem;
+    padding: 10px 15px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1000;
     transition: all 0.3s ease;
-    text-transform: lowercase;
-    font-weight: 300;
-    padding: 15px;  /* Increase touch target size */
+    text-decoration: none;  /* Remove underline */
 }
 
 .corner-link:hover {
     text-shadow: 0 0 15px rgba(255, 255, 255, 1);
+    color: rgba(255, 255, 255, 0.9);  /* Slightly brighter on hover */
 }
 
 .screen-overlay, .crt-effect {
@@ -120,4 +124,19 @@ p {
 /* Specific styles for about.html */
 .about-container {
     text-align: left;
+}
+
+/* New styles for embedded links */
+p a {
+    color: #ad93f5; /* Cyan color for better visibility */
+    text-decoration: none; /* Remove underline by default */
+    border-bottom: 1px solid rgba(0, 255, 255, 0.3); /* Subtle underline */
+    transition: all 0.3s ease;
+    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* Glow effect */
+}
+
+p a:hover {
+    color: #ffffff; /* White on hover */
+    border-bottom-color: rgba(255, 255, 255, 0.7); /* More visible underline on hover */
+    text-shadow: 0 0 12px rgba(0, 255, 255, 0.8); /* Enhanced glow on hover */
 }
