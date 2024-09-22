@@ -72,6 +72,7 @@ p {
     transition: all 0.3s ease;
     text-transform: lowercase;
     font-weight: 300;
+    padding: 15px;  /* Increase touch target size */
 }
 
 .corner-link:hover {
