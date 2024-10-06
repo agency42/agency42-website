@@ -1,147 +1,137 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+:root {
+    /* Colors */
+    --color-background: #ede7c5;
+    --color-text: #000000;
+    --color-accent: #b03060;
+    --color-accent-secondary: #6a6a6a;
+    /* Fonts */
+    --font-primary: 'JetBrains Mono', monospace;
+    --font-size-base: 16px;
+    --font-size-h1: 2.5rem;
+    --font-size-h2: 2rem;
+    --font-size-nav: 0.8rem;
 
-body, html {
-    margin: 0;
-    padding: 0;
-    min-height: 100%;
-    background-color: black;
-    color: white;
-    font-family: 'Fira Code', monospace;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
+    /* Spacing */
+    --spacing-sm: 20px;
+    --spacing-md: 40px;
+    --spacing-lg: 60px;
+
+    /* Layout */
+    --nav-width: 150px;
+    --text-column-width: 50%;
+    --image-column-width: 50%;
 }
 
-.container {
-    max-width: 800px;
-    padding: 2rem;
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    display: flex;
+}
+
+.side-nav {
+    width: var(--nav-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: var(--spacing-sm);
+    box-sizing: border-box;
+    border-right: 1px solid black;
+}
+
+.side-nav a {
+    display: block;
+    color: var(--color-text);
+    text-decoration: none;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-nav);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.main-content {
+    display: flex;
+    margin-left: var(--nav-width);
+    width: calc(100% - var(--nav-width));
+    height: 100vh;
+    overflow: hidden;
+}
+
+.text-column {
+    position: relative;
+    overflow-y: auto;
+    width: var(--text-column-width);
+    height: 100vh;
+    padding: var(--spacing-md);
+    box-sizing: border-box;
+    border-right: 1px solid black;
+    background-image: 
+        radial-gradient(rgba(0, 0, 0, 0.5) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.15), transparent);
+    background-size: 5px 5px, 100% 100%;
+    background-blend-mode: overlay;
+    background-color: var(--color-background);
+}
+
+.text-column-content {
     position: relative;
     z-index: 1;
 }
 
-h1, h2, p, .corner-link, .btn {
-    color: white;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+.text-column::-webkit-scrollbar {
+    display: none;
 }
 
-h1, h2 {
-    margin-bottom: 1rem;
-    text-transform: lowercase;
+.image-column {
+    flex-grow: 1;
+    background-image: url('content/images/hero.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: -1;
+}
+
+.link {
+    color: var(--font-primary);
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
 
 h1 {
-    font-size: 3rem;
-    font-weight: 600;
+    font-size: var(--font-size-h1);
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-md);
 }
 
 h2 {
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: var(--font-size-h2);
+    margin-top: var(--spacing-lg);
+}
+
+h3 {
+    font-size: var(--font-size-h3);
+    margin-top: var(--spacing-lg);
+    color: var(--color-accent-secondary);
 }
 
 p {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
-    font-weight: 300;
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+    margin-bottom: var(--spacing-sm);
 }
 
-.btn {
-    background-color: transparent;
+.cta-button {
+    display: inline-block;
     padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: white;
     text-decoration: none;
-    font-size: 1rem;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    font-weight: 400;
+    border-radius: var(--spacing-sm);
 }
 
-.btn:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-}
-
-.corner-link {
-    color: rgba(255, 255, 255, 0.7); /* Reduced opacity for less brightness */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5); /* Reduced glow effect */
-    font-weight: 300; /* Lighter font weight */
-    font-size: 1rem; /* Slightly smaller font size */
-    padding: 10px 15px;
-    position: fixed;
-    top: 20px; /* Moved down slightly */
-    left: 20px; /* Moved right slightly */
-    z-index: 1000;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
-
-.corner-link:hover {
-    color: rgba(255, 255, 255, 0.9); /* Brighter on hover, but not full white */
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.7); /* Increased glow on hover */
-}
-
-.screen-overlay, .crt-effect {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 10;
-}
-
-.screen-overlay {
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.15),
-        rgba(0, 0, 0, 0.15) 1px,
-        transparent 1px,
-        transparent 2px
-    );
-}
-
-.crt-effect {
-    background: radial-gradient(
-        ellipse at center,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.75) 100%
-    );
-    opacity: 0.5;
-}
-
-/* Specific styles for index.html */
-.index-container {
-    text-align: center;
-}
-
-.index-container p {
-    font-size: 1.2rem;
-}
-
-/* Specific styles for about.html */
-.about-container {
-    text-align: left;
-    padding-top: 20px; /* Additional top padding for the about page */
-}
-
-/* New styles for embedded links */
-p a {
-    color: #ad93f5; /* Cyan color for better visibility */
-    text-decoration: none; /* Remove underline by default */
-    border-bottom: 1px solid rgba(0, 255, 255, 0.3); /* Subtle underline */
-    transition: all 0.3s ease;
-    text-shadow: 0 0 8px rgba(0, 255, 255, 0.5); /* Glow effect */
-}
-
-p a:hover {
-    color: #ffffff; /* White on hover */
-    border-bottom-color: rgba(255, 255, 255, 0.7); /* More visible underline on hover */
-    text-shadow: 0 0 12px rgba(0, 255, 255, 0.8); /* Enhanced glow on hover */
-}
-
-.content-wrapper {
-    margin-top: 60px; /* Adjust this value as needed */
-}

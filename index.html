@@ -3,17 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agency[42]</title>
+    <title>AI development and automation consultancy</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="screen-overlay"></div>
-    <div class="crt-effect"></div>
-    <a href="about.html" class="corner-link">about</a>
-    <div class="container index-container">
-        <h1>agency[42]</h1>
-        <p>building ai systems that work for humans.</p>
-        <a href="mailto:ken@agency42.co" class="btn">GET IN TOUCH</a>
+    <nav class="side-nav">
+        <a href="#who">who we are</a>
+        <a href="#thesis">thesis</a>
+        <a href="#services">services</a>
+        <a href="#work">our work</a>
+        <a href="#hire-us">hire us</a>
+    </nav>
+    <div class="main-content">
+        <div class="text-column">
+            <div class="text-column-background"></div>
+            <div class="text-column-content">
+                <section id="who">
+                    <h3>agency[42]</h3>
+                    <h1>Generative AI consultancy for visionary teams</h1>
+                    <p>We build AI systems that work for humans. We help teams develop products and automate the most painful parts of their business.</p>
+                </section>
+
+                <section id="thesis">
+                    <h2>The sociotechnical approach to AI strategy</h2>
+                    <p>AI has made it possible for businesses to scale process automation like never before.</p>
+                    <p>Bringing your organization up to speed requires a hands on approach.</p>
+                    <p>Hyperautomation of the organization is a sociotechnical process that requires ensuring humans and technology are working together in harmony.</p>
+                    <p>Not only is it necessary for organizations to leverage AI tools, but their people need be prepared to help steer them for the organization's success.</p>
+                </section>
+
+                <section id="services">
+                    <h2>Our Services</h2>
+                    <p>We offer a range of services tailored for visionary teams:</p>
+                    <ul>
+                        <li>AI Strategy Consulting</li>
+                        <li>Chatbot Development</li>
+                        <li>RAG System Development</li>
+                        <li>AI Agents</li>
+                        <li>Voice and Vision Systems</li>
+                    </ul>
+                    <p>We require a minimum engagment of 2 months starting at $5,000/month.</p>
+                </section>
+
+                <section id="work">
+                    <h2>Our work</h2>
+                    <p>We're proud to work with organizations that are pushing the boundaries of what's possible:</p>
+                    <ul>
+                        <li><a href="https://wisex.ai"></a>WiseRx</a>: AI voice assistants for medical devices</li>
+                        <li><a class="link" href="https://noometic.com">Noometic AI</a>: natural language search engine for creative talent sourcing</li>
+                    </ul>
+                </section>
+
+                <section id="hire-us">
+                    <h2>Ready to Build the Future?</h2>
+                    <p>If you're part of a team working on ambitious projects to create a better world, we'd love to hear from you. Let's collaborate to amplify your impact and bring your vision to life.</p>
+                    <a href="mailto:ken@agency42.co" class="cta-button">Get in Touch</a>
+                </section>
+            </div>
+        </div>
+        <div class="image-column">
+            <!-- This div is empty, it's just for the background image -->
+        </div>
     </div>
+    <div class="background-image"></div>
+    <script>
+      window.onbeforeunload = function () {
+        window.scrollTo(0, 0);
+      }
+      document.addEventListener("DOMContentLoaded", function() {
+          const textColumn = document.querySelector('.text-column');
+          const beforeElement = window.getComputedStyle(textColumn, '::before');
+          const contentHeight = textColumn.scrollHeight;
+          textColumn.style.setProperty('--before-height', `${contentHeight}px`);
+      });
+    </script>
 </body>
 </html>
