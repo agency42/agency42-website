@@ -3,120 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agency[42] | AI consulting</title>
+    <title>agency42 | AI consulting</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bona+Nova+SC&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <nav class="side-nav">
-        <a href="#about">about</a>
-        <a href="#thesis">thesis</a>
-        <a href="#services">services</a>
-        <a href="#work">our work</a>
-        <a href="#contact">get in touch</a>
+    <nav class="menu-icon">
+        <i class="fas fa-bars"></i>
+        <div class="menu-dropdown">
+            <a href="/thesis.html">Thesis</a>
+            <a href="/about.html">About</a>
+            <a href="https://github.com/agency42/cookbook">Cookbook</a>
+            <a href="mailto:ken@agency42.co">Contact</a>
+        </div>
     </nav>
-    <div class="main-content">
-        <div class="text-column">
-            <div class="text-column-background"></div>
-            <div class="text-column-content">
-                <section id="about">
-                    <h3 class="agency-name">agency[42]</h3>
-                    <h1><span class="normal-text">The AI consultancy for</span><span class="highlight"> hyperautomating</span><span class="normal-text"> your business</span></h1>
-                    <p>We don't just build products. We help you transition into the new world of work.</p>
-                </section>
+    <div class="menu-overlay"></div>
 
-                <section id="thesis">
-                    <h2>Our thesis</h2>
-                    <p>A new era of hyperautomation has unlocked unprecedented potential for businesses. To leverage it, we must redesign products and organizations from the ground up.</p>
-                    <p>We're not your typical consultancy.</p>
-                    <p>Our hands on approach is centered around sociotechnical design. We don't just build products, we help teams rethink how the work gets done.</p>
-                    <p>We believe that the winning technologies over the next decade won't replace humans, but augment our work. The technologies we design account for this.</p>
-                    <p>Our blend of experience in industrial psychology, data science, and AI engineering allows us to bring a unique perspective to the table that few can match.</p>
-                </section>
-
-                <!-- founder card section -->
-                <section id="founder-card">
-                    <div class="founder-card-content">
-                        <div class="founder-image">
-                            <img src="content/images/founder.jpg" alt="Founder">
-                        </div>
-                        <div class="founder-info">
-                            <h3><a href="https://kenneth.computer" target="_blank" rel="noopener noreferrer">Ken Cavanagh</a></h3>
-                            <p>Founder & Principal</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="services">
-                    <h2>Core services</h2>
-                    <p>We scope, design, build, and integrate generative AI solutions for businesses. Because each client's needs are unique, we consider a range of solutions.</p>
-                    <div class="services-container">
-                        <div class="service-column">
-                            <h3>Strategic consulting</h3>
-                            <ul>
-                                <li>1:1 AI strategy sessions</li>
-                                <li>Hands-on AI consulting</li>
-                                <li>Team trainings and workshops</li>
-                            </ul>
-                        </div>
-                        <div class="service-column">
-                            <h3>AI development</h3>
-                            <ul>
-                                <li>Chatbots and agents</li>
-                                <li>Business process automations</li>
-                                <li>RAG and vector databases</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <p>A typical engagement lasts a few months and starts at $3,000/month. As needed rates are based on the length and complexity of the session or workshop. We can do rapid prototyping and MVP development for a fixed rate.</p>
-                </section>
-
-                <section id="work">
-                    <h2>Our work</h2>
-                    <p>We're proud to work with organizations that are pushing the boundaries of what's possible:</p>
-                    <div class="company-grid">
-                        <div class="company-card">
-                            <h3><a href="https://wiserx.com" target="_blank" rel="noopener noreferrer">WiseRx</a></h3>
-                            <p>AI voice assistants for medical devices</p>
-                        </div>
-                        <div class="company-card">
-                            <h3><a href="https://noometic.com" target="_blank" rel="noopener noreferrer">Noometic AI</a></h3>
-                            <p>Natural language search engine for creative talent sourcing</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="contact">
-                    <h2>Ready to Build the Future?</h2>
-                    <p>Book a free discovery call with us to learn more about how we can help you.</p>
-                    <!-- <p>If you're part of a team working on ambitious projects to create a better world, we'd love to hear from you. Let's collaborate to amplify your impact and bring your vision to life.</p> -->
-                    <a href="mailto:ken@agency42.co" class="cta-button">Get in Touch</a>
-                </section>
+    <main class="main-content">
+        <div class="content-wrapper">
+            <div class="text-section">
+                <h1 class="headline">
+                    Generative AI<br>
+                    consulting and<br>
+                    development studio
+                </h1>
+                <div class="button-grid">
+                    <a href="/thesis.html" class="nav-button">Our Thesis</a>
+                    <a href="/about.html" class="nav-button">About Us</a>
+                    <a href="https://github.com/agency42/cookbook" class="nav-button">Developer Cookbook</a>
+                    <a href="mailto:ken@agency42.co" class="nav-button">Get in Touch</a>
+                </div>
+            </div>
+            <div class="logo-section">
+                <img src="content/images/Agency42LogoT.png" alt="agency42">
             </div>
         </div>
-        <div class="image-column" style="background-image: url('content/images/hero.png');"></div>
-    </div>
-    <div class="background-image"></div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            window.scrollTo(0, 0);
-            const textColumn = document.querySelector('.text-column');
-            const contentHeight = textColumn.scrollHeight;
-            textColumn.style.setProperty('--before-height', `${contentHeight}px`);
+    </main>
 
-            // Debug image loading
-            const img = new Image();
-            img.onload = function() {
-                console.log('Image loaded successfully');
-            };
-            img.onerror = function() {
-                console.error('Error loading image');
-            };
-            img.src = 'content/images/hero.png';
+    <footer>
+        <div class="footer-content">
+            <p>© 2024 agency42 LLC</p>
+            <div class="footer-links">
+                <!-- <a href="/privacy.html">Privacy</a>
+                <a href="/terms.html">Terms</a> -->
+                <a href="https://x.com/agency42co">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuIcon = document.querySelector('.menu-icon');
+        const menuDropdown = document.querySelector('.menu-dropdown');
+        const menuOverlay = document.querySelector('.menu-overlay');
+        let isMenuOpen = false;
+
+        function toggleMenu() {
+            isMenuOpen = !isMenuOpen;
+            menuDropdown.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            
+            // Optional: Change icon when menu is open
+            const icon = menuIcon.querySelector('i');
+            icon.className = isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
+        }
+
+        // Toggle menu when clicking hamburger
+        menuIcon.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMenu();
         });
+
+        // Close menu when clicking overlay
+        menuOverlay.addEventListener('click', toggleMenu);
+
+        // Close menu when pressing Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    });
     </script>
 </body>
 </html>
