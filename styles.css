@@ -83,6 +83,7 @@ nav {
     padding: 0 var(--spacing-unit);
     margin: 0;
     gap: 2rem;
+    margin-top: -2rem;
 }
 
 .hero-section {
@@ -128,6 +129,7 @@ footer {
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
+    margin-top: auto;
 }
 
 /* Mobile Styles */
@@ -155,11 +157,17 @@ footer {
 
 /* Content Pages Shared Styles (Thesis, About, etc.) */
 .content-page {
+    flex: 1;
     max-width: 800px;
     margin: 0 auto;
     padding: var(--spacing-unit);
     font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
+}
+
+/* Add this new style for thesis page specific spacing */
+.content-page--thesis {
+    margin-top: 3rem; /* Adjust this value to get the desired spacing */
 }
 
 .content-page h1 {
@@ -205,8 +213,41 @@ footer {
     background-color: rgba(0, 0, 0, 0.03);
 }
 
+.callout a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.2s ease;
+}
+
+.callout a:hover {
+    opacity: 0.7;
+}
+
+/* Optional: add some spacing after the link text */
+.callout a + span {
+    margin-left: 0.5rem;
+}
+
 /* Optional hover effect */
 .callout:hover {
     background-color: rgba(0, 0, 0, 0.05);
     transition: background-color 0.2s ease;
+}
+
+/* Add this after the content-page--thesis class (around line 168) */
+.content-page--about {
+    margin-top: 3rem; /* Same spacing as thesis page */
+}
+
+/* Footer link styling */
+footer a {
+    color: var(--color-text);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+    transition: opacity 0.2s ease;
+}
+
+footer a:hover {
+    opacity: 0.7;
 }
