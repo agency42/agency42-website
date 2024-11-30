@@ -5,13 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>agency42</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
-        <div class="logo">AGENCY42</div>
-        <div class="nav-links">
+        <div class="nav-menu">
             <a href="https://augmented.beehiiv.com/">Blog</a>
             <a href="https://separate-syzygy-b3d.notion.site/Who-we-are-14a36dcfe45f817b80acd5fed530e7b6?pvs=73">About</a>
             <a href="mailto:ken@agency42.co">Get in touch</a>
@@ -106,47 +104,19 @@
         </div>
     </main>
 
-    <footer style="background-color: #111111; color: #F5F5F4; padding: 2rem 0;">
-        <div class="footer-links" style="margin-bottom: 1rem;">
-            <a href="https://separate-syzygy-b3d.notion.site/Who-we-are-14a36dcfe45f817b80acd5fed530e7b6?pvs=73" style="color: #F5F5F4; margin-right: 1rem;">About</a>
-            <a href="mailto:hello@agency42.co" style="color: #F5F5F4;">Contact</a>
-        </div>
-        <div>
-            <p class="location" style="margin: 0;">Los Angeles, CA</p>
-            <p class="copyright" style="margin: 0;">© 2024 Agency42. All rights reserved.</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="https://separate-syzygy-b3d.notion.site/Who-we-are-14a36dcfe45f817b80acd5fed530e7b6?pvs=73">About</a>
+                <a href="mailto:hello@agency42.co">Contact</a>
+            </div>
+            <div class="footer-info">
+                <p class="location">Los Angeles, CA</p>
+                <p class="copyright">© 2024 Agency42. All rights reserved.</p>
+            </div>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const readMoreBtn = document.querySelector('.read-more-btn');
-            const readLessBtn = document.querySelector('.read-less-btn');
-            const thesisPreview = document.querySelector('.thesis-preview');
-            const thesisFull = document.querySelector('.thesis-full');
-
-            readMoreBtn?.addEventListener('click', () => {
-                thesisPreview.style.display = 'none';
-                thesisFull.style.display = 'block';
-                readMoreBtn.style.display = 'none';
-                readLessBtn.style.display = 'inline-block';
-            });
-
-            readLessBtn?.addEventListener('click', () => {
-                thesisFull.style.display = 'none';
-                thesisPreview.style.display = 'block';
-                readLessBtn.style.display = 'none';
-                readMoreBtn.style.display = 'inline-block';
-            });
-
-            // Initialize button visibility
-            readLessBtn.style.display = 'none';
-        });
-    </script>
-
-    <style>
-        .button:hover {
-            transform: scale(1.05);
-        }
-    </style>
+    <script src="nav.js"></script>
 </body>
 </html>
