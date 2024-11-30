@@ -25,6 +25,8 @@ body {
     box-sizing: border-box;
     max-width: 100%;
     overflow-x: hidden;
+    font-size: 1rem;
+    line-height: 1.6;
 }
 
 :root {
@@ -93,15 +95,15 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     font-weight: bold;
     max-width: 600px;
     line-height: 1.2;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     line-height: 1.6;
     color: var(--subtle-text-color);
     max-width: 600px;
@@ -123,12 +125,14 @@ nav {
     border-radius: 8px;
     transition: all 0.2s ease;
     text-align: center;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
 .service-card:hover {
     background: #ffffff;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(-5px);
 }
 
 .service-card h3 {
@@ -204,8 +208,8 @@ nav {
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
-    background: var(--light-purple);
-    border-radius: 16px;
+    background: #f9f9f9;
+    border-radius: 8px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     margin-top: 4rem;
     margin-bottom: 4rem;
@@ -336,8 +340,8 @@ footer {
 }
 
 .read-more-btn {
-    background: #333;
-    color: #fff;
+    background: #333333;
+    color: #FFFFFF;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     text-decoration: none;
