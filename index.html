@@ -3,72 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>agency42 | AI consulting</title>
+    <title>agency42</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="main-content">
-        <nav>
-            <ul class="nav-links">
-                <li><a href="/about.html">About</a></li>
-                <li><a href="/thesis.html">Thesis</a></li>
-                <li><a href="https://shoshin.blog/archive">Blog</a></li>
-                <li><a href="mailto:ken@agency42.co">Get in touch</a></li>
-            </ul>
-        </nav>
-
-        <div class="logo-section">
-            <img src="content/images/Agency42LogoT.png" alt="Agency 42 Logo">
+    <nav>
+        <div class="logo">AGENCY42</div>
+        <div class="nav-links">
+            <a href="https://augmented.beehiiv.com/">Blog</a>
+            <a href="https://separate-syzygy-b3d.notion.site/Who-we-are-14a36dcfe45f817b80acd5fed530e7b6?pvs=73">About</a>
+            <a href="mailto:ken@agency42.co">Get in touch</a>
         </div>
-        
-        <section class="hero-section">
-            <h1 class="hero-title">Generative AI consulting<br>& development studio</h1>
-            <div class="button-group">
-                <a href="mailto:ken@agency42.co" class="button">Get in touch</a>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-image">
+                    <img src="content/images/42-logo-t.svg" alt="Agency42 Logo" style="max-width: 300px;">
+                </div>
+                <div class="hero-text">
+                    <h1>We help build AI-first businesses</h1>
+                    <p>We are a network of operators and engineers who believe in the power of open source, community, and talent. Our mission is to leverage our talent network to help startups and small businesses integrate AI into their products and operations.</p>
+                    <a href="mailto:hello@agency42.co" class="button button-dark">Work with us</a>
+                </div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Strategic Consulting</h3>
+                    <p>Navigate the evolving landscape of generative AI with our expert network of AI engineers, researchers, product managers, and designers. We help you design a comprehensive strategy and roadmap for integrating AI into your business.</p>
+                </div>
+                <div class="service-card">
+                    <h3>AI Software Development</h3>
+                    <p>Rapidly prototype and develop AI applications with experience in LLMs, RAG, Agents, and more. Our team can build custom AI solutions tailored to your specific needs, with no workflow we can't automate.</p>
+                </div>
             </div>
         </section>
+
+        <section class="thesis-section">
+            <div class="thesis-content">
+                <div class="thesis-text">
+                    <h2 class="section-title">Thesis</h2>
+                    <div class="thesis-preview">
+                        <p class="thesis-statement">
+                            We're standing at the beginning of a fundamental shift in how businesses operate and create value. The companies that will thrive in this new era won't just be the ones with the best technology—they'll be the ones that best understand how to integrate AI into their human systems...
+                        </p>
+                    </div>
+                    <button class="button-toggle read-more-btn">Read More</button>
+                    <div class="thesis-full" style="display: none;">
+                        <p class="thesis-statement">
+                            We're standing at the beginning of a fundamental shift in how businesses operate and create value. The companies that will thrive in this new era won't just be the ones with the best technology—they'll be the ones that best understand how to integrate AI into human systems.
+                        </p>
+                        <p class="thesis-statement">
+                            This integration demands more than just technical expertise. It requires a deep understanding of organizational dynamics, a network of exceptional talent, and a proven approach to implementation. We combine rapid prototyping with rigorous testing, offering flexible pathways for businesses to either build internal capabilities or leverage our continued support.
+                        </p>
+                        <p class="thesis-statement">
+                            Agency42 exists to guide this transformation, bringing together the right talent, tools, and expertise to help businesses not just keep pace with change, but lead it.
+                        </p>
+                        <button class="button-toggle read-less-btn">Show Less</button>
+                    </div>
+                </div>
+                <div class="author-card">
+                    <a href="https://www.linkedin.com/in/k3nneth/" target="_blank">
+                        <img src="content/images/KCHEADSHOT.png" alt="Kenneth F. Cavanagh" class="author-image">
+                    </a>
+                    <div class="author-info">
+                        <h3>Kenneth F. Cavanagh</h3>
+                        <span class="author-title">Founder & Principal</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="content-grid">
+                <a href="https://www.youtube.com/watch?v=XVD2B965Nz8" class="content-card">
+                    <div class="video-thumbnail">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/XVD2B965Nz8" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                    <h3>OpenAI's Experimental Agent...</h3>
+                    <p>Explore the engineering paradigms aimed at augmenting GPT-4's intelligence.</p>
+                </a>
+                <a href="https://shoshin.blog/on-taking-gpt4-out-of-the-box.html" class="content-card">
+                    <img src="content/images/on-taking-gpt4-out-of-the-box.png" alt="GPT-4 Thumbnail">
+                    <h3>On Taking GPT-4 Out of the Box</h3>
+                    <p>Explore the engineering paradigms aimed at augmenting GPT-4's intelligence.</p>
+                </a>
+                <a href="https://shoshin.blog/bm25-is-all-you-need.html" class="content-card">
+                    <img src="content/images/bm25-is-all-you-need.png" alt="BM25 Thumbnail">
+                    <h3>BM25 Is All You Need</h3>
+                    <p>Discover the power of BM25 in building efficient search engines.</p>
+                </a>
+            </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="https://augmented.beehiiv.com/subscribe" class="button">Subscribe to Newsletter</a>
+        </div>
     </main>
 
     <footer>
-        <div>© 2024 agency42 LLC</div>
-        <div><a href="https://x.com/agency42co" target="_blank">x dot com</a></div>
+        <div class="footer-links">
+            <a href="https://separate-syzygy-b3d.notion.site/Who-we-are-14a36dcfe45f817b80acd5fed530e7b6?pvs=73">About</a>
+            <a href="mailto:hello@agency42.co">Contact</a>
+        </div>
+        <div>
+            <p class="location">Los Angeles, CA</p>
+            <p class="copyright">© 2024 Agency42. All rights reserved.</p>
+        </div>
     </footer>
 
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const menuIcon = document.querySelector('.menu-icon');
-        const menuDropdown = document.querySelector('.menu-dropdown');
-        const menuOverlay = document.querySelector('.menu-overlay');
-        let isMenuOpen = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            const readMoreBtn = document.querySelector('.read-more-btn');
+            const readLessBtn = document.querySelector('.read-less-btn');
+            const thesisPreview = document.querySelector('.thesis-preview');
+            const thesisFull = document.querySelector('.thesis-full');
 
-        function toggleMenu() {
-            isMenuOpen = !isMenuOpen;
-            menuDropdown.classList.toggle('active');
-            menuOverlay.classList.toggle('active');
-            
-            // Optional: Change icon when menu is open
-            const icon = menuIcon.querySelector('i');
-            icon.className = isMenuOpen ? 'fas fa-times' : 'fas fa-bars';
-        }
+            readMoreBtn?.addEventListener('click', () => {
+                thesisPreview.style.display = 'none';
+                thesisFull.style.display = 'block';
+                readMoreBtn.style.display = 'none';
+                readLessBtn.style.display = 'inline-block';
+            });
 
-        // Toggle menu when clicking hamburger
-        menuIcon.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggleMenu();
+            readLessBtn?.addEventListener('click', () => {
+                thesisFull.style.display = 'none';
+                thesisPreview.style.display = 'block';
+                readLessBtn.style.display = 'none';
+                readMoreBtn.style.display = 'inline-block';
+            });
+
+            // Initialize button visibility
+            readLessBtn.style.display = 'none';
         });
-
-        // Close menu when clicking overlay
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // Close menu when pressing Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape' && isMenuOpen) {
-                toggleMenu();
-            }
-        });
-    });
     </script>
 </body>
 </html>
