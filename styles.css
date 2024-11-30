@@ -92,9 +92,9 @@ main {
 
 /* Hero Section */
 .hero {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 6rem 2rem 5rem;
+    padding: 4rem 2rem 3rem;
 }
 
 .hero-content {
@@ -114,19 +114,19 @@ main {
 }
 
 .hero-text h1 {
-    font-size: 3.5rem;
+    font-size: 3.85rem;
     font-weight: bold;
-    max-width: 600px;
+    max-width: 660px;
     line-height: 1.2;
     margin-bottom: 1.5rem;
     animation: floatIn 1.5s ease-out;
 }
 
 .hero-text p {
-    font-size: 1.2rem;
+    font-size: 1.32rem;
     line-height: 1.6;
     color: var(--subtle-text-color);
-    max-width: 600px;
+    max-width: 660px;
     margin-bottom: 2rem;
 }
 
@@ -134,9 +134,9 @@ main {
 .services-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    margin-top: 3rem;
-    margin-bottom: 8rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
 }
 
 .service-card {
@@ -168,13 +168,14 @@ main {
 /* Thesis Section */
 .thesis-section {
     position: relative;
+    width: calc(100% - 2rem);
     max-width: 1000px;
-    margin: 4rem auto;
+    margin: 2rem auto;
     padding: 2rem;
-    background: var(--background-color);
-    border-radius: var(--border-radius);
-    box-shadow: var(--box-shadow);
-    border: 1px solid var(--button-color);
+    background: var(--light-purple);
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--deep-purple);
 }
 
 .thesis-content {
@@ -418,14 +419,14 @@ footer {
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
+        font-size: 2.75rem;
         margin-bottom: 1.25rem;
         max-width: 100%;
         letter-spacing: -0.02em;
     }
 
     .hero-text p {
-        font-size: 1rem;
+        font-size: 1.1rem;
         line-height: 1.5;
         color: var(--subtle-text-color);
         margin-left: auto;
@@ -442,8 +443,18 @@ footer {
     }
 
     .thesis-section {
-        margin: 2rem 1rem;
+        width: auto;
+        margin: 1rem 1rem;
         padding: 1.5rem;
+    }
+
+    .thesis-content {
+        padding: 0;
+    }
+
+    .thesis-statement {
+        width: 100%;
+        padding-right: 0;
     }
 
     .content-grid {
@@ -468,5 +479,23 @@ footer {
 
     .nav-menu a {
         font-size: 0.8125rem;
+    }
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Update mobile media query */
+@media (max-width: 768px) {
+    .hero, 
+    .thesis-section,
+    .content-section {
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
