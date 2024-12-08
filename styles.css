@@ -499,3 +499,43 @@ html, body {
         padding-right: 1rem;
     }
 }
+
+.privacy-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.privacy-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-content h2 {
+    font-size: 1.5rem;
+    margin: 2rem 0 1rem;
+}
+
+.privacy-content p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.privacy-content ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.privacy-content li {
+    margin-bottom: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .privacy-content {
+        padding: 1.5rem;
+    }
+    
+    .privacy-content h1 {
+        font-size: 2rem;
+    }
+}
