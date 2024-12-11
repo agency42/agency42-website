@@ -256,16 +256,14 @@ main {
 
 /* Content Section */
 .content-section {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 2rem;
-    display: flex;
-    justify-content: center;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(3, 300px);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
     gap: 2rem;
     justify-content: center;
 }
@@ -273,7 +271,6 @@ main {
 .content-card {
     display: flex;
     flex-direction: column;
-    width: 300px;
     background-color: var(--card-background);
     padding: 1.5rem;
     border-radius: var(--border-radius);
@@ -281,15 +278,13 @@ main {
     text-decoration: none;
     color: inherit;
     transition: transform var(--transition-speed);
-    height: 100%;
 }
 
 .content-card:hover {
     transform: translateY(-5px);
 }
 
-.content-card img, 
-.video-thumbnail iframe {
+.content-card img {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
@@ -466,6 +461,15 @@ footer {
     .content-card {
         width: 100%;
     }
+
+    .hero, 
+    .thesis-section,
+    .content-section {
+        width: 100%;
+        overflow-x: hidden;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 
 @media (max-width: 480px) {
@@ -486,18 +490,6 @@ html, body {
     max-width: 100%;
     overflow-x: hidden;
     position: relative;
-}
-
-/* Update mobile media query */
-@media (max-width: 768px) {
-    .hero, 
-    .thesis-section,
-    .content-section {
-        width: 100%;
-        overflow-x: hidden;
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
 }
 
 .privacy-content {
@@ -537,5 +529,19 @@ html, body {
     
     .privacy-content h1 {
         font-size: 2rem;
+    }
+}
+
+/* Media Queries for Content Section */
+@media (max-width: 768px) {
+    .content-section {
+        padding: 1rem;
+        width: 100%;
+        overflow-x: hidden;
+    }
+    
+    .content-grid {
+        gap: 1.5rem;
+        padding: 0;
     }
 }
