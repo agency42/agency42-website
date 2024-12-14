@@ -256,16 +256,17 @@ main {
 
 /* Content Section */
 .content-section {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
 .content-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 400px));
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+    gap: 1.5rem;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .content-card {
@@ -278,13 +279,11 @@ main {
     text-decoration: none;
     color: inherit;
     transition: transform var(--transition-speed);
+    min-height: 350px;
 }
 
-.content-card:hover {
-    transform: translateY(-5px);
-}
-
-.content-card img {
+.content-card img,
+.video-thumbnail {
     width: 100%;
     aspect-ratio: 16/9;
     object-fit: cover;
@@ -293,15 +292,48 @@ main {
 }
 
 .content-card h3 {
-    font-size: 1.25rem;
-    font-weight: 500;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    line-height: 1.4;
+    margin-bottom: 0.75rem;
 }
 
 .content-card p {
-    font-size: 0.9rem;
-    color: var(--text-color);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+}
+
+/* For the YouTube video card specifically */
+.video-thumbnail {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
     margin-bottom: 1rem;
+    cursor: pointer;
+}
+
+.play-button-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-button-overlay::after {
+    content: '';
+    border-style: solid;
+    border-width: 12px 0 12px 20px;
+    border-color: transparent transparent transparent white;
 }
 
 /* Buttons */
@@ -377,7 +409,9 @@ footer {
 /* Media Queries */
 @media (max-width: 1200px) {
     .content-grid {
-        grid-template-columns: repeat(2, 300px);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        padding: 0 2rem;
     }
 }
 
@@ -541,7 +575,8 @@ html, body {
     }
     
     .content-grid {
+        grid-template-columns: 1fr;
         gap: 1.5rem;
-        padding: 0;
+        padding: 0 1rem;
     }
 }
