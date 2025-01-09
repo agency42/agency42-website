@@ -4,6 +4,13 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Careers - Agency42',
   description: 'Join the premier AI innovation studio in Los Angeles',
+  openGraph: {
+    images: ['/content/images/42-logo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/content/images/42-logo.png'],
+  }
 }
 
 export default function Careers() {

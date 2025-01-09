@@ -4,7 +4,14 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'About - Agency42',
-  description: 'Meet the Agency42 team - AI innovators and technology experts',
+  description: 'We build AI agents that understand your brand.',
+  openGraph: {
+    images: ['/content/images/42-logo.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/content/images/42-logo.png'],
+  }
 }
 
 const teamMembers = [
