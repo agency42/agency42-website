@@ -26,7 +26,7 @@ const teamMembers = [
     }
   },
   {
-    name: 'St. Louis Reynolds',
+    name: 'Saint',
     role: 'Research & Content',
     image: '/content/images/St_HEADSHOT.jpeg',
     bio: 'AI developer pioneering character development and social agents. Creator of the Boo Kingdom, a groundbreaking AI-powered RPG with a thriving community.',
