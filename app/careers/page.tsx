@@ -33,7 +33,7 @@ export default function Careers() {
 
               <div className="space-y-4">
                 <p className="text-lg font-light leading-relaxed">
-                  We're looking for scrappy developers who can get started quickly. This role will help with everything from internal DevOps to building out AI Agents for clients. You should be comfortable with Python, TypeScript/Node.js, and using LLMs to augment your development workflow. You should have working knowledge of popular AI frameworks (including comfortability building from the base AI APIs like OpenAI, Anthropic or possibly even Hugging Face), rapid prototyping, and full-stack software development. Previous experience with scraping operations and building social agents is a big plus.
+                  We're looking for scrappy AI engineers who can rapidly prototype agent systems and own full-stack development for clients. You should have working knowledge of popular AI frameworks, including comfortability building from the base APIs like OpenAI and Anthropic. Previous experience shipping AI products to users, scaling scraping operations, or building social agents are a big plus.
                 </p>
                 
                 <p className="text-lg font-light leading-relaxed">
