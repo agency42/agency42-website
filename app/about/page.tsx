@@ -12,7 +12,7 @@ const teamMembers = [
     name: 'Kenneth F. Cavanagh',
     role: 'Founder & Principal',
     image: '/content/images/HEADSHOT1.png',
-    bio: 'Former SpaceX data and automation lead combining industrial psychology with AI engineering. Built enterprise data and automation systems before founding Agency42.',
+    bio: 'Industrial Psychologist and former SpaceX analytics leader applying psychology and first principles engineering to AI systems. A near decade of experience building and teaching about enterprise data and automation systems before founding Agency42.',
     social: {
       url: 'https://www.linkedin.com/in/k3nneth/',
       label: 'LinkedIn →'
