@@ -6,6 +6,14 @@ import Navigation from './components/Navigation'
 export const metadata: Metadata = {
   title: 'Agency42',
   description: 'AI innovation studio',
+  icons: {
+    icon: [
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      }
+    ]
+  },
 }
 
 interface RootLayoutProps {
