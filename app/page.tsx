@@ -27,12 +27,12 @@ export default function Home() {
     {
       title: "Digital Mind Design",
       image: "/content/images/digital-mind-design.png",
-      link: "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co"
+      link: "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/?trackingId=p6ON9FVMTGKMm%2BhaffSlKQ%3D%3D"
     },
     {
       title: "AI & The Future of Work",
       image: "/content/images/dontpanic1.png",
-      link: "https://www.linkedin.com/pulse/dont-panic-42-questions-ai-future-work-agency42co"
+      link: "https://www.linkedin.com/pulse/dont-panic-42-questions-ai-future-work-agency42co-g4mzc/?trackingId=RtDD6HqXTC3vzvFTWm%2BO9Q%3D%3D"
     },
     {
       title: "Rick & Morty Digital Twins",
