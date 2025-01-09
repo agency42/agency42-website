@@ -45,7 +45,7 @@ export default function Home() {
               />
             </div>
             <div className="text-center space-y-8">
-              <h1 className="text-[32px] sm:text-[42px] font-light leading-[1.1]">
+              <h1 className="text-[42px] sm:text-[42px] font-light leading-[1.1]">
                 We help build
                 <br />
                 <span className="font-normal">AI-first ventures</span>

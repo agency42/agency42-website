@@ -12,7 +12,7 @@ export default function Thesis() {
       <div className="container mx-auto max-w-6xl px-4">
         <div className="thesis-content">
           <div className="thesis-text">
-            <h2 className="font-mono text-[11px] tracking-wider mb-8">Thesis</h2>
+            <h2 className="font-mono text-[11px] tracking-wider mb-8">THESIS</h2>
             
             {!isExpanded ? (
               <div className="space-y-6">
