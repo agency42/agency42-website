@@ -21,12 +21,12 @@ export default function Careers() {
 
               <div>
                 <p className="font-mono text-sm tracking-wider text-neutral-500 mb-4">CURRENT OPENINGS_</p>
-                <h2 className="text-2xl font-light mb-8">Technical Staff (Contract)</h2>
+                <h2 className="text-2xl font-light mb-8">AI Engineer (Contract)</h2>
               </div>
 
               <div className="space-y-4">
                 <p className="text-lg font-light leading-relaxed">
-                  We're looking for scrapping developers who can get started quickly. This role will help with everything from internal DevOps to building out AI Agents for clients. You should be comfortable with rapid prototyping and owning full-stack applications.
+                  We're looking for scrappy developers who can get started quickly. This role will help with everything from internal DevOps to building out AI Agents for clients. You should be comfortable with Python, modern AI frameworks (including building from the base AI APIs like OpenAI, Anthropic or possibly even Hugging Face), rapid prototyping, and full-stack software development. Previous experience with scraping operations and building social agents is a big plus.
                 </p>
                 
                 <p className="text-lg font-light leading-relaxed">
