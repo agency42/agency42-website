@@ -4,6 +4,9 @@ import { Resend } from 'resend';
 // Initialize Resend with API key
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// Log whether the API key is available
+console.log('API Key available:', !!process.env.RESEND_API_KEY);
+
 // Keep recipient email server-side
 const AGENCY_EMAIL = 'hello@agency42.co';
 
@@ -84,10 +87,18 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Error processing inquiry' },
-      { status: 500 }
-    );
+    if (error instanceof Error) {
+      console.error('Detailed error:', error);
+      return NextResponse.json(
+        { error: error.message },
+        { status: 500 }
+      );
+    } else {
+      console.error('Unknown error:', error);
+      return NextResponse.json(
+        { error: 'An unknown error occurred' },
+        { status: 500 }
+      );
+    }
   }
 } 
