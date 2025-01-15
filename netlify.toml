@@ -2,5 +2,8 @@
   command = "npm run build"
   publish = ".next"
 
+[build.environment]
+  RESEND_API_KEY = "${RESEND_API_KEY}"
+
 [[plugins]]
   package = "@netlify/plugin-nextjs"

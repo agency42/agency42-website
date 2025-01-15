@@ -33,7 +33,7 @@ export default function Careers() {
 
               <div className="space-y-4">
                 <p className="text-lg font-light leading-relaxed">
-                  We're looking for scrappy AI engineers who can rapidly prototype agent systems and own full-stack development for clients. You should have working knowledge of popular AI frameworks, including comfortability building from the base APIs like OpenAI and Anthropic. Previous experience shipping AI products to users, scaling scraping operations, or building social agents are a big plus.
+                  We're looking for scrappy AI engineers who can rapidly prototype agent systems and own full-stack development for clients. You should have working knowledge of popular AI frameworks, including comfortability building from the base APIs like OpenAI and Anthropic. Previous experience shipping AI products to users, scaling scraping operations, working with crypto protocols,or building social agents are a big plus.
                 </p>
                 
                 <p className="text-lg font-light leading-relaxed">
