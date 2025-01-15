@@ -12,14 +12,30 @@ const AGENCY_EMAIL = 'hello@agency42.co';
 
 export async function POST(request: Request) {
   try {
-    // Parse the request body
-    const { email, task } = await request.json();
-
-    // Validate inputs
+    // Log when the API route is hit and if the API key is present
+    console.log('API Route hit, API Key present:', !!process.env.RESEND_API_KEY);
+    
+    // Parse the request body and log the result
+    const body = await request.json();
+    console.log('Request body parsed:', !!body);
+    
+    const { email, task } = body;
+    
+    // Validate inputs and log their presence
     if (!email || !task) {
+      console.log('Validation failed:', { email: !!email, task: !!task });
       return NextResponse.json(
-        { error: 'Missing required fields' },
+        { error: 'Missing required fields', email: !!email, task: !!task },
         { status: 400 }
+      );
+    }
+
+    // Check if the API key is configured
+    if (!process.env.RESEND_API_KEY) {
+      console.log('API key missing in environment variables');
+      return NextResponse.json(
+        { error: 'Missing API key configuration' },
+        { status: 500 }
       );
     }
 
@@ -87,18 +103,20 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    if (error instanceof Error) {
-      console.error('Detailed error:', error);
-      return NextResponse.json(
-        { error: error.message },
-        { status: 500 }
-      );
-    } else {
-      console.error('Unknown error:', error);
-      return NextResponse.json(
-        { error: 'An unknown error occurred' },
-        { status: 500 }
-      );
-    }
+    // Log detailed error information
+    console.error('Detailed error:', {
+      message: error instanceof Error ? error.message : 'Unknown error',
+      stack: error instanceof Error ? error.stack : 'No stack available',
+      apiKeyExists: !!process.env.RESEND_API_KEY
+    });
+    
+    return NextResponse.json(
+      { 
+        error: 'Error processing inquiry',
+        details: error instanceof Error ? error.message : 'Unknown error',
+        type: error instanceof Error ? error.constructor.name : 'Unknown'
+      },
+      { status: 500 }
+    );
   }
 } 
