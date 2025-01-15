@@ -1,23 +1,16 @@
-import React from 'react'
+'use client'
+
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import Thesis from './components/Thesis'
 import ContentCarousel from './components/ContentCarousel'
-import type { Metadata } from 'next'
+import { WorkWithUsModal } from './components/WorkWithUsModal'
 
-export const metadata: Metadata = {
-  title: 'Agency42 - AI Innovation Studio',
-  description: 'We help build AI-first ventures. An AI innovation studio that believes in the power of open source, community, and talent.',
-  openGraph: {
-    images: ['/content/images/42-logo.png'],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: ['/content/images/42-logo.png'],
-  }
-}
-
+// Main home page component
 export default function Home() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const contentItems = [
     {
       title: "AI Class Every Wednesday at 9am PST",
@@ -67,12 +60,12 @@ export default function Home() {
                 We are an AI innovation studio that believes in the power of open source,
                 community, and talent.
               </p>
-              <Link 
-                href="mailto:hello@agency42.co"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block bg-black text-white font-mono text-[11px] tracking-wider px-6 py-3 hover:bg-orange-500 transition-colors"
               >
                 WORK WITH US →
-              </Link>
+              </button>
             </div>
           </div>
 
@@ -88,12 +81,12 @@ export default function Home() {
                 We are an AI innovation studio that believes in the power of open source,
                 community, and talent.
               </p>
-              <Link 
-                href="mailto:hello@agency42.co"
+              <button
+                onClick={() => setIsModalOpen(true)}
                 className="inline-block bg-black text-white font-mono text-[11px] tracking-wider px-6 py-3 hover:bg-orange-500 transition-colors"
               >
                 WORK WITH US →
-              </Link>
+              </button>
             </div>
             <div className="relative w-full aspect-square">
               <Image
@@ -174,6 +167,12 @@ export default function Home() {
           </div>
         </div>
       </footer>
+
+      {/* The Modal */}
+      <WorkWithUsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   )
 }
