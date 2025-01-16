@@ -1,49 +1,42 @@
-import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
-
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-// Log whether the API key is available
-console.log('API Key available:', !!process.env.RESEND_API_KEY);
-
-// Keep recipient email server-side
-const AGENCY_EMAIL = 'hello@agency42.co';
+import { NextResponse } from "next/server";
+import { Resend } from "resend";
 
 export async function POST(request: Request) {
   try {
-    // Log when the API route is hit and if the API key is present
-    console.log('API Route hit, API Key present:', !!process.env.RESEND_API_KEY);
-    
+    // Initialize Resend with API key
+    const resend = new Resend(process.env.RESEND_API_KEY);
+
+    // Keep recipient email server-side
+    const AGENCY_EMAIL = "hello@agency42.co";
+
     // Parse the request body and log the result
     const body = await request.json();
-    console.log('Request body parsed:', !!body);
-    
+
     const { email, task } = body;
-    
+
     // Validate inputs and log their presence
     if (!email || !task) {
-      console.log('Validation failed:', { email: !!email, task: !!task });
+      console.log("Validation failed:", { email: !!email, task: !!task });
       return NextResponse.json(
-        { error: 'Missing required fields', email: !!email, task: !!task },
+        { error: "Missing required fields", email: !!email, task: !!task },
         { status: 400 }
       );
     }
 
     // Check if the API key is configured
     if (!process.env.RESEND_API_KEY) {
-      console.log('API key missing in environment variables');
+      console.log("API key missing in environment variables");
       return NextResponse.json(
-        { error: 'Missing API key configuration' },
+        { error: "Missing API key configuration" },
         { status: 500 }
       );
     }
 
     // Send notification email to Agency 42
     await resend.emails.send({
-      from: 'Agency 42 <onboarding@resend.dev>',
+      from: "Agency 42 <onboarding@resend.dev>",
       to: [AGENCY_EMAIL],
-      subject: '[ NEW CLIENT INQUIRY ] Agency 42',
+      subject: "[ NEW CLIENT INQUIRY ] Agency 42",
       html: `
         <div style="font-family: monospace; padding: 20px; border: 2px solid black;">
           <h1 style="border-bottom: 2px solid black; padding-bottom: 10px;">NEW CLIENT INQUIRY</h1>
@@ -68,9 +61,9 @@ export async function POST(request: Request) {
 
     // Send confirmation email to the client
     await resend.emails.send({
-      from: 'Agency 42 <onboarding@resend.dev>',
+      from: "Agency 42 <onboarding@resend.dev>",
       to: [email],
-      subject: 'We received your inquiry - Agency 42',
+      subject: "We received your inquiry - Agency 42",
       html: `
         <div style="font-family: monospace; padding: 20px; border: 2px solid black;">
           <h1 style="border-bottom: 2px solid black; padding-bottom: 10px;">Thank You for Reaching Out</h1>
@@ -103,20 +96,14 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    // Log detailed error information
-    console.error('Detailed error:', {
-      message: error instanceof Error ? error.message : 'Unknown error',
-      stack: error instanceof Error ? error.stack : 'No stack available',
-      apiKeyExists: !!process.env.RESEND_API_KEY
-    });
-    
+    console.error("Error:", error);
     return NextResponse.json(
-      { 
-        error: 'Error processing inquiry',
-        details: error instanceof Error ? error.message : 'Unknown error',
-        type: error instanceof Error ? error.constructor.name : 'Unknown'
+      {
+        error: "Error processing inquiry",
+        details: error instanceof Error ? error.message : "Unknown error",
+        type: error instanceof Error ? error.constructor.name : "Unknown",
       },
       { status: 500 }
     );
   }
-} 
+}
