@@ -104,7 +104,7 @@ export default function Home() {
       {/* Services */}
       <section className="py-20 bg-neutral-50">
         <div className="container mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 bg-white border border-neutral-200">
               <h3 className="font-mono text-[11px] tracking-wider mb-4">01 / STRATEGIC CONSULTING</h3>
               <p className="font-light text-[13px] leading-relaxed">
@@ -113,11 +113,17 @@ export default function Home() {
               </p>
             </div>
             <div className="p-8 bg-white border border-neutral-200">
-              <h3 className="font-mono text-[11px] tracking-wider mb-4">02 / AI DEVELOPMENT</h3>
+              <h3 className="font-mono text-[11px] tracking-wider mb-4">02 / AI AGENT INTEGRATION</h3>
               <p className="font-light text-[13px] leading-relaxed">
-                Rapidly prototype and develop AI applications with experience in LLMs,
-                RAG, Agents, and more. Our team can build custom AI solutions tailored
-                to your specific needs.
+                Deploy sophisticated agents using our evolving infrastructure. Create 
+                intelligent digital personalities that embody your company's mission and culture.
+              </p>
+            </div>
+            <div className="p-8 bg-white border border-neutral-200">
+              <h3 className="font-mono text-[11px] tracking-wider mb-4">03 / CUSTOM AI DEVELOPMENT</h3>
+              <p className="font-light text-[13px] leading-relaxed">
+                Build specialized AI solutions tailored to your specific requirements. 
+                Full-service development for unique use cases and custom implementations.
               </p>
             </div>
           </div>
