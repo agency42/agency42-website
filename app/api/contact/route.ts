@@ -5,21 +5,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Keep recipient email server-side
-const AGENCY_EMAIL = 'hello@agency42.co';
-
-// Helper function to handle CORS
-function corsResponse(response: NextResponse) {
-  // Add CORS headers
-  response.headers.set('Access-Control-Allow-Origin', '*');
-  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
-  return response;
-}
-
-// Handle OPTIONS request for CORS preflight
-export async function OPTIONS() {
-  return corsResponse(new NextResponse(null, { status: 200 }));
-}
+const AGENCY_EMAIL = 'kingbootoshi@gmail.com';
 
 export async function POST(request: Request) {
   try {
@@ -28,22 +14,9 @@ export async function POST(request: Request) {
 
     // Validate inputs
     if (!email || !task) {
-      return corsResponse(
-        NextResponse.json(
-          { error: 'Missing required fields' },
-          { status: 400 }
-        )
-      );
-    }
-
-    // Validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      return corsResponse(
-        NextResponse.json(
-          { error: 'Invalid email format' },
-          { status: 400 }
-        )
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
       );
     }
 
@@ -109,14 +82,12 @@ export async function POST(request: Request) {
       `,
     });
 
-    return corsResponse(NextResponse.json({ success: true }));
+    return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error sending email:', error);
-    return corsResponse(
-      NextResponse.json(
-        { error: 'Error processing inquiry' },
-        { status: 500 }
-      )
+    return NextResponse.json(
+      { error: 'Error processing inquiry' },
+      { status: 500 }
     );
   }
 } 
