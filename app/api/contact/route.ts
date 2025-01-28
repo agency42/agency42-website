@@ -5,35 +5,33 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // Keep recipient email server-side
-const AGENCY_EMAIL = 'kingbootoshi@gmail.com';
+const AGENCY_EMAIL = 'hello@agency42.co';
 
 export async function POST(request: Request) {
   try {
-    // Validate API key exists
-    if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY is not configured');
-      return NextResponse.json(
-        { error: 'Email service not configured' },
-        { status: 500 }
-      );
-    }
-
     // Parse the request body
     const { email, task } = await request.json();
 
     // Validate inputs
     if (!email || !task) {
-      console.error('Missing required fields:', { email: !!email, task: !!task });
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       );
     }
 
-    // Send notification email to Agency 42
+    // Track success/failure of operations
+    const results = {
+      emailSent: false,
+      webhookSent: false,
+      errors: [] as string[]
+    };
+
+    // Send emails via Resend
     try {
+      // Send notification email to Agency 42
       await resend.emails.send({
-        from: 'Agency 42 <onboarding@resend.dev>',
+        from: 'Agency 42 <secretary@agency42.co>',
         to: [AGENCY_EMAIL],
         subject: '[ NEW CLIENT INQUIRY ] Agency 42',
         html: `
@@ -57,15 +55,10 @@ export async function POST(request: Request) {
           </div>
         `,
       });
-    } catch (emailError) {
-      console.error('Error sending notification email:', emailError);
-      throw emailError;
-    }
 
-    // Send confirmation email to the client
-    try {
+      // Send confirmation email to the client
       await resend.emails.send({
-        from: 'Agency 42 <onboarding@resend.dev>',
+        from: 'Agency 42 <secretary@agency42.co>',
         to: [email],
         subject: 'We received your inquiry - Agency 42',
         html: `
@@ -97,16 +90,78 @@ export async function POST(request: Request) {
           </div>
         `,
       });
-    } catch (emailError) {
-      console.error('Error sending confirmation email:', emailError);
-      throw emailError;
+
+      results.emailSent = true;
+    } catch (error) {
+      console.error('Error sending email:', error);
+      results.errors.push('Failed to send emails');
+    }
+
+    // Send Discord webhook notification independently
+    try {
+      // Single-line comment: This will limit the message to 1000 characters for the Discord webhook
+      const truncatedTask = task.length > 1000 ? task.slice(0, 1000) : task; 
+      const webhookUrl = process.env.DISCORD_WEBHOOK;
+      if (webhookUrl) {
+        await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            embeds: [{
+              title: 'New Client Inquiry',
+              color: 0x000000,
+              thumbnail: {
+                url: 'https://cdn.discordapp.com/attachments/1316276833888768051/1333888149184577556/image.png'
+              },
+              fields: [
+                {
+                  name: '📧 Client Email',
+                  value: email,
+                  inline: false
+                },
+                {
+                  name: '📝 Project Description',
+                  // Single-line comment: Truncated to avoid sending more than 1000 characters
+                  value: truncatedTask,
+                  inline: false
+                },
+                {
+                  name: '📫 Email Status',
+                  value: results.emailSent ? '✅ Sent successfully' : '❌ Failed to send',
+                  inline: false
+                }
+              ],
+              footer: {
+                text: 'Agency 42 | Artificial Intelligence Solutions | Sent from bootosh.ai',
+              },
+              timestamp: new Date().toISOString()
+            }]
+          })
+        });
+        results.webhookSent = true;
+      }
+    } catch (error) {
+      console.error('Error sending webhook:', error);
+      results.errors.push('Failed to send Discord notification');
+    }
+
+    // Return appropriate response based on results
+    if (results.errors.length > 0) {
+      return NextResponse.json({
+        success: false,
+        emailSent: results.emailSent,
+        webhookSent: results.webhookSent,
+        errors: results.errors
+      }, { status: 207 }); // 207 Multi-Status
     }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error('Error processing request:', error);
     return NextResponse.json(
-      { error: error instanceof Error ? error.message : 'Error processing inquiry' },
+      { error: 'Error processing inquiry' },
       { status: 500 }
     );
   }
