@@ -134,7 +134,7 @@ export async function POST(request: Request) {
                 }
               ],
               footer: {
-                text: 'Agency 42 | Artificial Intelligence Solutions | Sent from bootosh.ai',
+                text: 'Agency 42 | Artificial Intelligence Solutions | Sent from agency42.co',
               },
               timestamp: new Date().toISOString()
             }]
