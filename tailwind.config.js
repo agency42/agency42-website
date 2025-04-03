@@ -9,7 +9,8 @@ module.exports = {
       extend: {
         fontFamily: {
           mono: ['var(--font-mono)'],
-          sans: ['var(--font-sans)'],
+          sans: ['Inter', 'system-ui', 'sans-serif'],
+          heading: ['Inter', 'system-ui', 'sans-serif'],
         },
       },
     },
