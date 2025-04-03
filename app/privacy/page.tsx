@@ -67,13 +67,24 @@ export default function Privacy() {
             <section className="mb-8">
               <h2 className="text-2xl font-light mb-4">6. Contact Us</h2>
               <p className="mb-2">For any questions about this privacy policy or our practices, please contact us at:</p>
-              <p>
+              <p className="mb-2">
                 Email:{' '}
                 <Link 
                   href="mailto:hello@agency42.co" 
                   className="text-orange-500 hover:text-orange-600 transition-colors"
                 >
                   hello@agency42.co
+                </Link>
+              </p>
+              <p>
+                Schedule a meeting:{' '}
+                <Link 
+                  href="https://calendly.com/ken-agency42/discovery" 
+                  className="text-orange-500 hover:text-orange-600 transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a discovery call
                 </Link>
               </p>
             </section>

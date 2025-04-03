@@ -25,14 +25,10 @@ export default function Navigation() {
             >
               ABOUT
             </Link>
-            <Link 
-              href="/careers" 
-              className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors"
-            >
-              CAREERS
-            </Link>
             <a 
-              href="mailto:hello@agency42.co" 
+              href="https://calendly.com/ken-agency42/discovery" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors"
             >
               CONTACT

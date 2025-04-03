@@ -160,7 +160,12 @@ export default function Home() {
               <Link href="/privacy" className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors">
                 PRIVACY
               </Link>
-              <Link href="mailto:hello@agency42.co" className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors">
+              <Link 
+                href="https://calendly.com/ken-agency42/discovery" 
+                className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 CONTACT
               </Link>
               <Link href="https://www.linkedin.com/company/agency42co" className="font-mono text-[11px] tracking-wider hover:text-orange-500 transition-colors">
