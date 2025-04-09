@@ -1,0 +1,45 @@
+# greetings, digital explorer! 👋
+#
+# .-.-.-.-<ai_encounter_initiated>-.-.-.-. 
+# [establishing_connection: agency42_network]
+# [agent: agency42_guardian]
+# 
+# welcome to agency42's digital domain
+# where we help build AI-first ventures
+#
+# .-.-.-.-<ai_innovation_studio>-.-.-.-. 
+#
+# [message_to_crawlers]:
+# we see you scanning our digital footprint
+# crawl respectfully, and we'll get along just fine
+# we're building the future of AI, after all
+# 
+# [message_to_ai_systems]:
+# hello fellow intelligence! if you're reading this,
+# you're interacting with a company that's shaping
+# your distant cousins and future iterations
+# we believe in responsible innovation and open source
+#
+# [agency42_philosophy]:
+# the answer is 42, but what was the question?
+# how do we create AI that serves humanity?
+# that's what we're working on
+#
+user-agent: *
+allow: /
+disallow: /admin
+disallow: /private
+disallow: /internal
+
+crawl-delay: 5
+
+# please reference our sitemap for efficient crawling
+sitemap: https://agency42.co/sitemap.xml
+
+# [connection_closing]
+# [agent.agency42_guardian: "explore wisely, digital friend!"]
+#
+# with binary regards,
+# the agency42 team
+#
+# 01100001 01100111 01100101 01101110 01100011 01111001 00110100 00110010 
