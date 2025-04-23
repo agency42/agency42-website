@@ -66,27 +66,28 @@ export default function About() {
               <div className="pr-0 md:pr-6 mb-8 md:mb-0">
                 <p className="font-light text-[13px] leading-relaxed mb-8">
                   We are an AI innovation studio focused on the intersection of technology and human experience. 
-                  We don't just build AI; we integrate intelligent systems into the creative and social fabric of businesses. 
-                  Our network of creative technologists, designers, and AI specialists develops solutions that drive 
-                  meaningful engagement and unlock new possibilities.
+                  Our expertise lies in integrating intelligent systems into the creative and social fabric of businesses,
+                  creating new forms of meaningful engagement that transform how people connect with your brand.
                 </p>
                 <p className="font-light text-[13px] leading-relaxed mb-8">
-                  Born from a belief in open source, community, and raw talent, Agency/42 guides startups and 
-                  established companies through the AI transformation. We understand that thriving in this new era 
-                  requires more than algorithms - it demands a deep understanding of human behavior and social dynamics.
+                  At Agency/42, we invite startups and established companies to embrace the AI transformation. 
+                  Through our deep understanding of human interaction, customer behavior, and business dynamics, 
+                  we've discovered that the most powerful AI systems emerge when we think beyond algorithms.
                 </p>
               </div>
               <div className="pl-0 md:pl-6">
                 <p className="font-light text-[13px] leading-relaxed mb-8">
-                  Our expertise lies in crafting <strong>social agents</strong>, <strong>AI characters</strong>, and <strong>digital twins</strong> 
-                  that push the boundaries of interaction and create authentic connections. We also specialize in <strong>creative automation</strong>, 
-                  building generative AI tools that empower marketers, designers, and content creators.
+                  Imagine what's possible when your business harnesses the power of <strong>social agents</strong> and 
+                  <strong>AI characters</strong> that understand your brand voice. Consider how <strong>creative automation</strong> 
+                  could transform your workflows while maintaining your unique visual identity. What if your 
+                  customer experience was enhanced by intelligent <strong>digital twins</strong> that truly understand 
+                  your audience's needs?
                 </p>
                 <p className="font-light text-[13px] leading-relaxed">
-                  From initial prototyping to full-scale deployment, we guide clients through every stage. Our process 
-                  combines rapid iteration with rigorous testing, ensuring AI solutions are not only technically sound 
-                  but also strategically aligned with your goals. We help organizations build internal AI capabilities 
-                  or provide ongoing support, offering flexible pathways to innovate continuously and lead the future of AI integration.
+                  We've perfected an approach that combines proven expertise with imaginative thinking. 
+                  From concept to implementation, we partner with organizations to build AI capabilities 
+                  that align with their strategic vision. Together, we can create new possibilities in 
+                  the human-AI relationship that drive real business value.
                 </p>
               </div>
             </div>
@@ -102,15 +103,15 @@ export default function About() {
                   <div>
                     <div className="flex justify-center mb-6">
                       <div className="relative w-32 h-32 rounded-full overflow-hidden border border-neutral-100">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
                     </div>
+                  </div>
                     <h3 className="font-mono text-[11px] tracking-wider mb-2">{member.name}</h3>
                     <p className="font-mono text-[11px] tracking-wider text-neutral-500 mb-5">{member.role}</p>
                     <p className="font-light text-[13px] leading-relaxed">{member.bio}</p>
@@ -137,15 +138,15 @@ export default function About() {
                   <div>
                     <div className="flex justify-center mb-6">
                       <div className="relative w-32 h-32 rounded-full overflow-hidden border border-neutral-100">
-                        <Image
-                          src={member.image}
-                          alt={member.name}
-                          fill
-                          className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover grayscale hover:grayscale-0 transition-all duration-300"
+                        sizes="(max-width: 768px) 100vw, 33vw"
+                      />
                     </div>
+                  </div>
                     <h3 className="font-mono text-[11px] tracking-wider mb-2">{member.name}</h3>
                     <p className="font-mono text-[11px] tracking-wider text-neutral-500 mb-5">{member.role}</p>
                     <p className="font-light text-[13px] leading-relaxed">{member.bio}</p>
