@@ -7,10 +7,17 @@ module.exports = {
     ],
     theme: {
       extend: {
+        colors: {
+          'base-light': '#FFFFFF',
+          'base-dark': '#0C0C0C',
+          'accent-start': '#FF6B00', // Neon Magma start
+          'accent-end': '#FF005C',   // Neon Magma end
+        },
         fontFamily: {
-          mono: ['var(--font-mono)'],
+          // Reverted to Inter temporarily until Satoshi/Founders Grotesk are sourced
           sans: ['Inter', 'system-ui', 'sans-serif'],
           heading: ['Inter', 'system-ui', 'sans-serif'],
+          mono: ['var(--font-mono)'], 
         },
       },
     },
