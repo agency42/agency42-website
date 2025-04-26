@@ -11,12 +11,12 @@ interface HomePageClientProps {
 }
 
 export default function HomePageClient({ featuredVideoId }: HomePageClientProps) {
-  // TODO: Replace placeholders with actual data/props
+  // Replace placeholder logos with actual files
   const clientLogos = [
-    { src: '/logos/placeholder-logo.svg', alt: 'Client Logo 1' },
-    { src: '/logos/placeholder-logo.svg', alt: 'Client Logo 2' },
-    { src: '/logos/placeholder-logo.svg', alt: 'Client Logo 3' },
-    { src: '/logos/placeholder-logo.svg', alt: 'Client Logo 4' },
+    { src: '/logos/gameoverlogo.png', alt: 'GameOver Logo' },
+    { src: '/logos/prerichlogo.png', alt: 'Prerich Logo' },
+    { src: '/logos/wiserxlogo-t.png', alt: 'WiserX Logo' },
+    // Add more if needed, or remove this comment
   ]
 
   const testimonials = [
@@ -67,12 +67,18 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
               <p className="font-mono text-xs uppercase tracking-wider">Views</p>
             </div>
             {/* Client Logos Section */}
-            <div className="md:col-span-2 flex flex-wrap justify-center items-center gap-x-6 gap-y-4 md:justify-end">
+            <div className="md:col-span-2 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:justify-end">
               <span className="w-full md:w-auto text-center md:text-right font-mono text-xs uppercase tracking-wider text-neutral-400 mb-2 md:mb-0">Trusted By:</span>
               {clientLogos.map((logo, index) => (
-                <div key={index} className="relative h-6 w-20 opacity-60 filter brightness-0 invert hover:opacity-100 transition-opacity">
-                  {/* Use Next/Image if logos are local, standard img otherwise */}
-                  <Image src={logo.src} alt={logo.alt} layout="fill" objectFit="contain" />
+                <div key={index} className="relative h-16 w-48 opacity-70 filter brightness-0 invert hover:opacity-100 transition-opacity">
+                  {/* Use modern Next/Image props */}
+                  <Image 
+                    src={logo.src} 
+                    alt={logo.alt} 
+                    fill
+                    className="object-contain"
+                    unoptimized
+                  />
                 </div>
               ))}
             </div>
@@ -135,10 +141,10 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         </div>
       </section>
 
-      {/* 6. Bootoshi Video (Using featuredVideoId prop) */}
+      {/* 6. Featured Video Section (Renamed from Bootoshi Video) */}
       <section className="py-20 px-4 bg-foreground text-background">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-heading font-medium mb-8">Meet Bootoshi</h2>
+          <h2 className="text-3xl md:text-4xl font-heading font-medium mb-8">Featured Video</h2>
           <div className="aspect-video bg-neutral-800 border border-neutral-700 mb-6 relative overflow-hidden">
             {featuredVideoId ? (
               <iframe 

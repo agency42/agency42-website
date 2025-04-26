@@ -17,7 +17,7 @@
     "imageOverride": "/content/images/rick-1.png", 
     "link": "https://www.youtube.com/live/ulVeaMW6WyY",
     "date": "2024-07-15", 
-    "isFeaturedVideo": true 
+    "isFeaturedVideo": false 
   },
   {
     "id": 3,
@@ -58,5 +58,15 @@
     "link": "https://improbable.beehiiv.com/p/grey-zone",
     "date": "2025-04-23",
     "isFeaturedVideo": false
+  },
+  {
+    "id": 7,
+    "tag": "video",
+    "title": "Vibe Coding Workshop",
+    "description": "A workshop on how to code with AI from beginner to advanced.",
+    "imageOverride": "/content/images/placeholder-video.png", 
+    "link": "https://www.youtube.com/watch?v=5wKatfTklCY",
+    "date": "2025-04-04", 
+    "isFeaturedVideo": true 
   }
 ] 

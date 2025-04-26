@@ -21,7 +21,7 @@ const teamMembers = [
   {
     name: 'Ken Cavanagh',
     role: 'Human Factors',
-    image: '/team/ken-headshot.png', // TODO: Verify path and add image
+    image: '/team/ken-headshot.png', // Stays .png
     bio: 'Industrial psychologist and developer building AI for social applications. Previously ops engineering and people science at SpaceX.',
     social: {
       url: 'https://www.linkedin.com/in/k3nneth/',
@@ -31,7 +31,7 @@ const teamMembers = [
   {
     name: 'Rob Renn',
     role: 'System Engineering',
-    image: '/team/rob-headshot.png', // TODO: Verify path and add image
+    image: '/team/rob-headshot.jpeg', // Changed to .jpeg
     bio: 'Industrial designer and engineer with a decade of building startups. Previously AI R&D at Stanford and Skunkworks.',
     social: {
       url: 'https://www.linkedin.com/in/future-rob/',
@@ -41,7 +41,7 @@ const teamMembers = [
   {
     name: 'Bootoshi (Saint Louis)',
     role: 'Memetics Engineering',
-    image: '/team/bootoshi-headshot.png', // TODO: Verify path and add image
+    image: '/team/bootoshi-headshot.jpeg', // Changed to .jpeg
     bio: 'AI developer, content creator, hackathon winner, pioneer in building autonomous agent communities.',
     social: {
       url: 'https://www.bootosh.ai/',

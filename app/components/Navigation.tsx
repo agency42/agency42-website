@@ -48,9 +48,9 @@ export default function Navigation() {
               COMPANY
             </Link>
             
-            <div
-              className="relative"
-              onMouseEnter={() => setIsProductsOpen(true)}
+            <div 
+              className="relative" 
+              onMouseEnter={() => setIsProductsOpen(true)} 
               onMouseLeave={() => setIsProductsOpen(false)}
             >
               <button
@@ -59,6 +59,7 @@ export default function Navigation() {
                 PRODUCTS
                 <svg className="w-3 h-3 ml-1 fill-current" viewBox="0 0 20 20"><path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clipRule="evenodd" fillRule="evenodd"></path></svg>
               </button>
+              
               {isProductsOpen && (
                 <div className="absolute right-0 mt-2 w-48 bg-background border border-neutral-200 shadow-lg py-1 z-10 rounded-md">
                   <Link
