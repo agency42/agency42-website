@@ -1,7 +1,16 @@
 import React from 'react'
 import type { Metadata } from 'next'
+import { Inter } from '@next/font/google'
 import './globals.css'
 import Navigation from './components/Navigation'
+import { PostHogProvider } from './providers/PostHogProvider'
+
+// Instantiate the font
+const inter = Inter({ 
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-inter', // Optional: define a CSS variable
+})
 
 export const metadata: Metadata = {
   title: 'Agency42',
@@ -53,15 +62,22 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en">
+    <html lang="en" className={`${inter.variable} font-sans`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+        {/* Plausible Analytics */}
+        {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
+          <script 
+            defer 
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} 
+            src="https://plausible.io/js/script.js"
+          ></script>
+        )}
       </head>
       <body>
-        <Navigation />
-        {children}
+        <PostHogProvider>
+          <Navigation />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   )

@@ -77,14 +77,15 @@
         Specificity over fluff
 
         5. Visual & UI System
+        <!-- NOTE: Using semantic naming (e.g., bg-background, text-foreground, text-accent, font-heading) in Tailwind config for easier iteration. -->
         Element
         Spec
         Colour
-        Base #FFFFFF / #0C0C0C. Accent gradient “Neon Magma” (#FF6B00 → #FF005C) to echo vibe coding energy.
+        Base #FFFFFF / #0C0C0C. Accent gradient "Neon Magma" (#FF6B00 → #FF005C) to echo vibe coding energy.
         Typography
         Satoshi for body; Founders Grotesk for display (mirrors tech-luxury vibe).
         Imagery
-        Generative renders of “energy flows” + real workshop photos (even phone-quality) for authenticity.
+        Generative renders of "energy flows" + real workshop photos (even phone-quality) for authenticity.
         Motion
         Sub-200 ms micro-interactions; hero background subtle animated flow line (SVG).
         Accessibility
@@ -151,12 +152,12 @@
         9. Risks & Mitigations
         Risk
         Mitigation
-        “10×” claim challenged
-        Phrase as “up to 10× efficiency documented in client workflows” and footnote methodology.
+        "10×" claim challenged
+        Phrase as "up to 10× efficiency documented in client workflows" and footnote methodology.
         Single-person brand dependency
         Prominently feature Ken & Rob expertise blocks; rotate them in blog authorship.
         No hard case-study numbers at launch
-        Start with “prototype projects” metrics (your builds) + collect client baselines early for v2 update.
+        Start with "prototype projects" metrics (your builds) + collect client baselines early for v2 update.
         Tool sprawl / SaaS fatigue
         Quarterly stack review; keep spend under $200 / mo.
 
@@ -204,7 +205,7 @@
         Ken
         PR #2
         8
-        Publish 1st flagship blog “Stop Doing AI Like It's 2023”
+        Publish 1st flagship blog "Stop Doing AI Like It's 2023"
         Bootoshi
         /blog/stop-2023-ai
         9
@@ -236,5 +237,5 @@
 
         Strong Opinion in One Sentence
         Blend Bootoshi's creator fire-hose with radical pricing transparency and a qualification wall—anything else is friction that costs you five-figure retainers.
-        Execute the plan above exactly; the site will generate leads while you sleep, and you'll never waste another hour on “tyre-kicker” calls.
+        Execute the plan above exactly; the site will generate leads while you sleep, and you'll never waste another hour on "tyre-kicker" calls.
 

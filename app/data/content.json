@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "tag": "community", 
+    "title": "Vibe Coding Class (Community Discord)",
+    "description": "Join our weekly live coding sessions and discussions on AI development.",
+    "imageOverride": "/content/images/AIclass1.jpeg", 
+    "link": "https://discord.com/invite/amR4AEjqh4",
+    "date": "2024-01-01",
+    "isFeaturedVideo": false
+  },
+  {
+    "id": 2,
+    "tag": "video",
+    "title": "Rick & Morty Digital Twins (Livestream)",
+    "description": "Watch the creation process of AI digital twins based on popular characters.",
+    "imageOverride": "/content/images/rick-1.png", 
+    "link": "https://www.youtube.com/live/ulVeaMW6WyY",
+    "date": "2024-07-15", 
+    "isFeaturedVideo": true 
+  },
+  {
+    "id": 3,
+    "tag": "article",
+    "title": "Digital Mind Design: From Tool AIs to Agents",
+    "description": "Exploring the evolution of AI from simple tools to complex autonomous agents.",
+    "imageOverride": "/content/images/digital-mind-design.png", 
+    "link": "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
+    "date": "2024-06-10",
+    "isFeaturedVideo": false
+  },
+  {
+    "id": 4,
+    "tag": "article",
+    "title": "Don't Panic: 42 Questions on AI & The Future of Work",
+    "description": "Key questions to consider as AI continues to reshape industries and roles.",
+    "imageOverride": "/content/images/dontpanic1.png", 
+    "link": "https://www.linkedin.com/pulse/dont-panic-42-questions-ai-future-work-agency42co-g4mzc/",
+    "date": "2024-05-20", 
+    "isFeaturedVideo": false
+  },
+  {
+    "id": 5,
+    "tag": "article", 
+    "title": "Year of the Dragon",
+    "description": "Improbable Automata #1: Genesis, this year in AI, predictions for 2025.",
+    "imageOverride": "/content/images/year-of-dragon-placeholder.png",
+    "link": "https://improbable.beehiiv.com/p/year-of-the-dragon",
+    "date": "2025-01-02",
+    "isFeaturedVideo": false
+  },
+  {
+    "id": 6,
+    "tag": "article", 
+    "title": "Grey Zone",
+    "description": "Improbable Automata #2: 100 days into the intelligence explosion.",
+    "imageOverride": "/content/images/grey-zone-placeholder.png",
+    "link": "https://improbable.beehiiv.com/p/grey-zone",
+    "date": "2025-04-23",
+    "isFeaturedVideo": false
+  }
+] 

@@ -20,16 +20,17 @@
 
 ## Phase 3: Content & Supporting Pages
 
-*   [ ] **Build Content Page (`app/content/page.tsx`):** Design layout for aggregating blog posts, videos, newsletter links, etc. Set up MDX processing for blog posts if applicable.
-*   [ ] **Build Research Page (`app/research/page.tsx`):** Design layout. Create dynamic routes (`app/research/[slug]/page.tsx`) for individual case studies/reports. Structure for MDX content sourcing. Hide link in main navigation initially.
-*   [ ] **Build Company Page (`app/company/page.tsx`):** Implement layout and content for About section. Include `hello@agency42.co` contact email.
-*   [ ] **Build Products Structure:** Create `app/products/` layout or components to handle the dropdown linking to Daybloom (external link?) and Vibe-Check (placeholder/coming soon).
-*   [ ] **Build Legal Pages:** Create `app/legal/privacy/page.tsx` and `app/legal/terms/page.tsx`. Populate with Termly-generated content (or placeholders).
+*   [✓] **Build Content Page (`app/content/page.tsx`)**: Design layout for aggregating blog posts, videos, newsletter links, etc. Set up dynamic data loading from JSON.
+*   [✓] **Build Research Page (`app/research/page.tsx`)**: Design layout. Added initial links. (Dynamic routes/MDX deferred).
+*   [✓] **Build Company Page (`app/company/page.tsx`)**: Implement layout and content for About section. Include `hello@agency42.co` contact email.
+*   [ ] **Build Products Structure:** Create `app/products/` layout or components OR simply refine dropdown links in `Navigation.tsx`.
+*   [ ] **Build Legal Pages:** Create `app/legal/privacy/page.tsx` and `app/legal/terms/page.tsx`. Populate with content. **(Deferred)**
 *   [ ] **Plan Product Subdomain:** Document the technical steps required to set up `product.agency42.co` and migrate/deploy the Daybloom app there.
 
 ## Phase 4: Visual Polish & Brand Identity
 
 *   [ ] **Apply Visual Refresh:** Systematically review all pages and components, ensuring alignment with the PRD's visual specifications (colors, fonts, spacing, imagery styles).
+    *   [ ] **Refactor Components:** Update existing components to use semantic Tailwind classes (e.g., `bg-background`, `text-foreground`, `text-accent`, `font-heading`).
 *   [ ] **Implement Motion:** Add subtle micro-interactions and the specified hero background animation (e.g., using Framer Motion or CSS). Ensure `prefers-reduced-motion` is respected.
 *   [ ] **Add Client Logos & Testimonials:** Integrate approved assets into their placeholder locations.
 *   [ ] **Accessibility Audit & Fixes:** Perform checks using browser tools and linters. Ensure WCAG 2.1 AA compliance.
