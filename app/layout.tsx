@@ -4,6 +4,7 @@ import { Inter, IBM_Plex_Mono, DotGothic16 } from "next/font/google"
 import './globals.css'
 import Navigation from './components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
+import { Footer } from '@/components/Footer'
 
 // Instantiate the fonts
 const inter = Inter({ 
@@ -76,7 +77,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans dark`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
@@ -87,10 +88,13 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           ></script>
         )}
       </head>
-      <body>
+      <body className="bg-background text-foreground">
         <PostHogProvider>
           <Navigation />
-          {children}
+          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            {children}
+          </main>
+          <Footer />
         </PostHogProvider>
       </body>
     </html>

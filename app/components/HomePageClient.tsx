@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+import useSWR from 'swr'
 
 // Define props interface
 interface HomePageClientProps {
@@ -10,7 +11,18 @@ interface HomePageClientProps {
   // Add other props if needed (e.g., clientLogos, testimonials)
 }
 
+// Fetcher function for SWR
+const fetcher = (url: string) => fetch(url).then(res => res.json())
+
 export default function HomePageClient({ featuredVideoId }: HomePageClientProps) {
+  // Fetch GitHub lines of code data
+  const { data: locData, error: locError } = useSWR('/api/oss-loc', fetcher)
+  
+  // Format number with commas
+  const formatNumber = (num: number | undefined): string => {
+    return num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : "...";
+  }
+  
   // Replace placeholder logos with actual files
   const clientLogos = [
     { src: '/logos/gameoverlogo.png', alt: 'GameOver Logo' },
@@ -51,37 +63,47 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         </div>
       </section>
 
-      {/* 2. Proof Bar */}
+      {/* 2. Client Logos Section - MOVED UP */}
       <section className="py-16 bg-background text-foreground border-b border-neutral-800">
-        <div className="container mx-auto max-w-6xl px-4">
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center text-center">
+        <div className="container mx-auto max-w-5xl px-4 text-center">
+          <h2 className="font-mono text-sm uppercase tracking-wider text-neutral-400 mb-10">
+            Trusted by leading teams
+          </h2>
+          {/* Changed to grid layout */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 justify-items-center">
+            {clientLogos.map((logo, index) => (
+              /* Adjusted logo container size */
+              <div key={index} className="relative h-14 w-40 md:h-16 md:w-48 opacity-70 hover:opacity-100 transition-opacity">
+                <Image 
+                  src={logo.src} 
+                  alt={logo.alt} 
+                  fill
+                  className="object-contain"
+                  unoptimized
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2.1 Proof Bar (Stats Only) - MOVED DOWN */}
+      <section className="py-16 bg-background text-foreground"> {/* Border removed here */}
+        <div className="container mx-auto max-w-4xl px-4">
+          <div className="grid grid-cols-3 gap-8 items-start text-center">
             <div>
-              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">3,000+</p>
-              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">Professionals Trained</p>
+              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">300+</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">Vibe Coders Trained</p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">25k+</p>
-              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">YouTube Subscribers</p>
+              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">10+</p>
+              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">Agents Deployed</p>
             </div>
             <div>
-              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">1.8M+</p>
-              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">Views</p>
-            </div>
-            {/* Client Logos Section */}
-            <div className="md:col-span-2 flex flex-wrap justify-center items-center gap-x-8 gap-y-4 md:justify-end">
-              <span className="w-full md:w-auto text-center md:text-right font-mono text-xs uppercase tracking-wider text-neutral-400 mb-2 md:mb-0">Trusted By:</span>
-              {clientLogos.map((logo, index) => (
-                <div key={index} className="relative h-16 w-48 opacity-70 hover:opacity-100 transition-opacity">
-                  {/* Use modern Next/Image props */}
-                  <Image 
-                    src={logo.src} 
-                    alt={logo.alt} 
-                    fill
-                    className="object-contain"
-                    unoptimized
-                  />
-                </div>
-              ))}
+              <p className="text-2xl md:text-3xl font-heading font-semibold text-foreground">
+                {locData ? formatNumber(locData.lines) : "..."}
+              </p>
+              <p className="font-mono text-xs uppercase tracking-wider text-neutral-400">Lines of Code Open-sourced</p>
             </div>
           </div>
         </div>
@@ -99,34 +121,40 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         </div>
       </section>
 
-      {/* 4. Solution Trio */}
-      <section className="py-24 md:py-32 px-4 border-b border-neutral-800">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-center font-heading text-3xl md:text-4xl font-medium mb-16">How We Help You Win</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {/* AI Opportunity Audit */}
-            <div className="p-8 bg-background border border-neutral-800">
-              <h3 className="font-mono text-[11px] tracking-wider mb-4 text-neutral-400">01 / AI OPPORTUNITY AUDIT</h3>
-              <p className="font-sans text-[13px] leading-relaxed mb-4 text-neutral-400">
-                A rapid, intensive analysis of your business to identify the top 1-3 highest ROI AI applications tailored to your specific goals and resources. We deliver a concrete action plan.
+      {/* 4. Our Strategy */}
+      <section id="strategy" className="py-24">
+        <div className="container">
+          <h2 className="text-center font-heading text-3xl md:text-4xl font-medium mb-12">Our Strategy</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Identify */}
+            <div className="p-8 bg-background border border-neutral-800 rounded-md flex flex-col">
+              <h3 className="font-heading text-xl mb-4">Identify</h3>
+              <p className="text-neutral-400 mb-6">
+                Through our AI Opportunity Audit, we deeply analyze your workflows, systems, and data to pinpoint the highest-impact AI initiatives tailored to your business.
               </p>
-              <Link href="/services#audit" className="font-mono text-[11px] tracking-wider text-foreground hover:text-neutral-400 transition-colors">Learn More →</Link>
+              <Link href="/services#audit" className="mt-auto inline-block text-foreground font-mono text-[11px] tracking-wider border border-foreground px-4 py-2 hover:bg-foreground hover:text-background transition">
+                Learn More
+              </Link>
             </div>
-            {/* Hands-on Workshop */}
-            <div className="p-8 bg-background border border-neutral-800">
-              <h3 className="font-mono text-[11px] tracking-wider mb-4 text-neutral-400">02 / HANDS-ON WORKSHOP</h3>
-              <p className="font-sans text-[13px] leading-relaxed mb-4 text-neutral-400">
-                Targeted training for your team on the specific AI tools and workflows identified in the audit. Go from zero to productive implementation in days, not months.
+            {/* Educate */}
+            <div className="p-8 bg-background border border-neutral-800 rounded-md flex flex-col">
+              <h3 className="font-heading text-xl mb-4">Educate</h3>
+              <p className="text-neutral-400 mb-6">
+                Our hands-on workshops equip your team with practical skills and real-world exercises to effectively implement the AI strategies identified.
               </p>
-              <Link href="/services#workshop" className="font-mono text-[11px] tracking-wider text-foreground hover:text-neutral-400 transition-colors">Learn More →</Link>
+              <Link href="/services#workshop" className="mt-auto inline-block text-foreground font-mono text-[11px] tracking-wider border border-foreground px-4 py-2 hover:bg-foreground hover:text-background transition">
+                Learn More
+              </Link>
             </div>
-            {/* Fractional AI CTO Retainer */}
-            <div className="p-8 bg-background border border-neutral-800">
-              <h3 className="font-mono text-[11px] tracking-wider mb-4 text-neutral-400">03 / FRACTIONAL AI CTO RETAINER</h3>
-              <p className="font-sans text-[13px] leading-relaxed mb-4 text-neutral-400">
-                Ongoing strategic guidance, implementation support, and team upskilling. We act as your dedicated AI leadership to ensure continuous adaptation and value generation.
+            {/* Develop */}
+            <div className="p-8 bg-background border border-neutral-800 rounded-md flex flex-col">
+              <h3 className="font-heading text-xl mb-4">Develop</h3>
+              <p className="text-neutral-400 mb-6">
+                Engage with our fractional AI CTO service or dedicated development services to build and scale your AI solutions with expert leadership and support.
               </p>
-              <Link href="/services#retainer" className="font-mono text-[11px] tracking-wider text-foreground hover:text-neutral-400 transition-colors">Learn More →</Link>
+              <Link href="/services#retainer" className="mt-auto inline-block text-foreground font-mono text-[11px] tracking-wider border border-foreground px-4 py-2 hover:bg-foreground hover:text-background transition">
+                Learn More
+              </Link>
             </div>
           </div>
         </div>

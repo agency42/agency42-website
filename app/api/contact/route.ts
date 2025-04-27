@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
       budget,
       projectDescription
     } = body;
-    
+
     // Basic validation
     if (!name || !email || !projectDescription) {
       console.log("Validation failed:", { name, email, projectDescription });
@@ -38,9 +38,9 @@ export async function POST(request: NextRequest) {
         { status: 400 }
       );
     }
-    
+
     // Send email to client (confirmation receipt)
-    await resend.emails.send({
+      await resend.emails.send({
       from: 'Agency42 <contact@agency42.com>',
       to: email,
       subject: 'We received your message',
@@ -55,9 +55,9 @@ Company Name: ${companyName || 'Not specified'}
 Company Size: ${companySize || 'Not specified'}
 Budget Range: ${budget || 'Not specified'}
     `.trim();
-    
+
     // Send email to team (notification of submission)
-    await resend.emails.send({
+      await resend.emails.send({
       from: 'Agency42 Contact Form <contact@agency42.com>',
       to: TEAM_EMAIL,
       subject: `New Submission from ${name}`,
@@ -108,10 +108,10 @@ Budget Range: ${budget || 'Not specified'}
           } catch {}
         } else {
           console.log("Discord notification sent successfully.");
-        }
+      }
       } catch (discordError) {
         console.error("Error sending Discord notification:", discordError);
-      }
+    }
     } else {
       console.log("DISCORD_WEBHOOK_URL not set, skipping notification.");
     }
