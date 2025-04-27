@@ -4,6 +4,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import useSWR from 'swr'
+import { TestimonialCarousel } from './TestimonialCarousel'
 
 // Define props interface
 interface HomePageClientProps {
@@ -60,30 +61,6 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
           >
             GET YOUR AI AUDIT →
           </Link>
-        </div>
-      </section>
-
-      {/* 2. Client Logos Section - MOVED UP */}
-      <section className="py-16 bg-background text-foreground border-b border-neutral-800">
-        <div className="container mx-auto max-w-5xl px-4 text-center">
-          <h2 className="font-mono text-sm uppercase tracking-wider text-neutral-400 mb-10">
-            Trusted by leading teams
-          </h2>
-          {/* Changed to grid layout */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-x-10 gap-y-8 justify-items-center">
-            {clientLogos.map((logo, index) => (
-              /* Adjusted logo container size */
-              <div key={index} className="relative h-14 w-40 md:h-16 md:w-48 opacity-70 hover:opacity-100 transition-opacity">
-                <Image 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  fill
-                  className="object-contain"
-                  unoptimized
-                />
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -193,25 +170,12 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         </div>
       </section>
 
-      {/* 7. Case Snippets / Testimonials */}
-      <section className="py-24 md:py-32 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-center font-heading text-3xl md:text-4xl font-medium mb-16">Real Results</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="p-6 bg-background border border-neutral-800">
-                <blockquote className="italic text-neutral-400 mb-4 font-sans">
-                  "{testimonial.quote}" 
-                </blockquote>
-                <p className="font-mono text-xs tracking-wider text-neutral-400">- {testimonial.attribution}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-16">
-             <Link href="/research" className="inline-block font-mono text-[11px] tracking-wider text-foreground hover:text-neutral-400 transition-colors">Explore Case Studies →</Link>
-          </div>
-        </div>
-      </section>
+      {/* NEW Testimonial Carousel Section */}
+      <TestimonialCarousel 
+        testimonials={testimonials}
+        clientLogos={clientLogos}
+      />
+
     </div>
   )
 } 
