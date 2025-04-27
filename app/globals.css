@@ -16,7 +16,7 @@
   }
 
   body {
-    @apply antialiased bg-white;
+    @apply antialiased bg-background text-foreground;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -34,10 +34,25 @@
   h3 {
     @apply text-2xl md:text-3xl;
   }
+
+  /* Pixel font utility */
+  .font-heading-pixel {
+    font-family: var(--font-pixel), sans-serif;
+  }
 }
 
 @layer components {
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+}
+
+/* Pixel dot text effect */
+.pixel-heading {
+  /* Use transparent text with background clipped to text */
+  color: transparent;
+  background-image: radial-gradient(#ffffff 1px, transparent 1px);
+  background-size: 6px 6px;
+  -webkit-background-clip: text;
+  background-clip: text;
 }

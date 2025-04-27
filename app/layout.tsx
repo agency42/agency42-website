@@ -1,6 +1,6 @@
 import React from 'react'
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono } from "next/font/google"
+import { Inter, IBM_Plex_Mono, DotGothic16 } from "next/font/google"
 import './globals.css'
 import Navigation from './components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
@@ -17,6 +17,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   weight: ['400'],
   display: 'swap',
   variable: '--font-ibm-plex-mono',
+})
+
+const pixelFont = DotGothic16({
+  subsets: ['latin'],
+  weight: '400',
+  display: 'swap',
+  variable: '--font-pixel',
 })
 
 export const metadata: Metadata = {
@@ -69,7 +76,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} font-sans`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (

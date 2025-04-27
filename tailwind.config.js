@@ -8,13 +8,12 @@ module.exports = {
     theme: {
       extend: {
         colors: {
-          // Define semantic colors based on PRD + common use cases
-          background: '#FFFFFF', // Main background
-          foreground: '#0C0C0C', // Main text color
-          primary: '#0C0C0C',    // Primary buttons, actions (can adjust later)
-          secondary: '#525252',  // Muted text, secondary elements (example: neutral-600)
-          accent: '#FF6B00',     // Primary accent (Neon Magma start)
-          'accent-secondary': '#FF005C', // Secondary accent (Neon Magma end)
+          // Swap background/foreground for dark theme
+          background: '#0C0C0C', // Main background (dark)
+          foreground: '#FFFFFF', // Main text color (light)
+          primary: '#FFFFFF',    // Primary elements (light)
+          secondary: '#A3A3A3',  // Muted text (neutral-400)
+          // Removed accent colors
           neutral: {
             50: '#FAFAFA',
             100: '#F5F5F5',
@@ -27,11 +26,10 @@ module.exports = {
             800: '#262626',
             900: '#171717',
           },
-          // Keep original names for now, but prefer semantic usage
+          // Adjust base names for clarity
           'base-light': '#FFFFFF',
           'base-dark': '#0C0C0C',
-          'accent-start': '#FF6B00',
-          'accent-end': '#FF005C',
+          // Removed accent colors
         },
         fontFamily: {
           // Define semantic font families
