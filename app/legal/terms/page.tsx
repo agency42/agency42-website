@@ -27,8 +27,14 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-light mb-4">2. Use of Services</h2>
             <p className="mb-4">
-              You agree to use the Site and Services only for lawful purposes and in accordance with these Terms. 
-              {/* TODO: Add specific usage restrictions if necessary */}
+              You agree to use the Site and Services only for lawful purposes and in accordance with these Terms. In connection with your use of the Site and Services, you will not:
+              <ul className="list-disc list-inside my-4">
+                <li>Copy, modify, or distribute any part of the Site or Services without prior written consent;</li>
+                <li>Attempt to reverse engineer, decompile, or disassemble any software or systems provided by Agency/42;</li>
+                <li>Use the Site or Services to violate any applicable laws or regulations;</li>
+                <li>Introduce malicious software or interfere with the security or integrity of the Site or Services;</li>
+                <li>Harvest or collect personally identifiable information without authorization.</li>
+              </ul>
             </p>
           </section>
 
@@ -59,8 +65,8 @@ export default function TermsPage() {
           <section className="mb-8">
             <h2 className="text-2xl font-light mb-4">6. Governing Law</h2>
             <p className="mb-4">
-              These Terms shall be governed and construed in accordance with the laws of the State of [Your State], 
-              without regard to its conflict of law provisions. {/* TODO: Specify governing state */}
+              These Terms shall be governed and construed in accordance with the laws of the State of California, 
+              without regard to its conflict of law provisions.
             </p>
           </section>
 

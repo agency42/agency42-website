@@ -13,15 +13,17 @@ export const metadata: Metadata = {
 const researchItems = [
   {
     title: "Don't Panic: 42 Questions on AI & The Future of Work",
-    description: "Exploring the critical questions businesses and individuals should ask as AI transforms the workplace.",
+    description: "Key questions to consider as AI continues to reshape industries and roles.",
+    image: "/content/images/dontpanic1.png", // Path verified
     link: "https://www.linkedin.com/pulse/dont-panic-42-questions-ai-future-work-agency42co-g4mzc/",
-    image: "/content/images/dontpanic1.png" // TODO: Verify path and add image
+    date: "2024-05-20"
   },
   {
     title: "Digital Mind Design: From Tool AIs to Agents",
-    description: "Discussing the evolution from basic AI tools to sophisticated autonomous agents and their implications.",
+    description: "Exploring the evolution of AI from simple tools to complex autonomous agents.",
+    image: "/content/images/digital-mind-design.png", // Path verified
     link: "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
-    image: "/content/images/digital-mind-design.png" // TODO: Verify path and add image
+    date: "2024-06-10"
   },
   // Add more research items here
 ]

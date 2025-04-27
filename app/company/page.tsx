@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description: 'Learn about Agency/42, our mission, our team, and our approach to building human-centric AI solutions.',
   keywords: ['AI innovation studio', 'AI agency', 'AI team', 'AI mission', 'human-centric AI', 'AI consulting', 'Kenneth Cavanagh', 'Rob Renn', 'Bootoshi'],
   openGraph: {
-    images: ['/logos/placeholder-logo.svg'], // TODO: Replace with actual company logo/image
+    images: ['/content/images/42-logo-wide.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/logos/placeholder-logo.svg'], // TODO: Replace with actual company logo/image
+    images: ['/content/images/42-logo-wide.png'],
   }
 }
 

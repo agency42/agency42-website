@@ -179,8 +179,7 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
             ))}
           </div>
           <div className="text-center mt-12">
-             {/* TODO: Link to /research page when ready */}
-             <Link href="/research" className="inline-block font-mono text-[11px] tracking-wider text-accent hover:text-accent-secondary transition-colors">Explore Case Studies (Coming Soon) →</Link>
+             <Link href="/research" className="inline-block font-mono text-[11px] tracking-wider text-accent hover:text-accent-secondary transition-colors">Explore Case Studies →</Link>
           </div>
         </div>
       </section>
