@@ -78,32 +78,32 @@ export default function ServicesPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
-              <h3 className="text-3xl md:text-4xl font-heading font-light mb-4">Accelerate Business, <br /> Beyond Automation</h3>
+              <h3 className="text-3xl md:text-4xl font-heading font-light mb-4">Creative Engineering, <br /> Beyond Automation</h3>
               <p className="mb-8 font-sans text-gray-600">
-                Our sociotechnical philosophy guides every engagement: optimize people and technology, move fast without breaking trust, and turn learning into lasting advantage.
+                We blend imaginative engineering with deep research to help teams move fast, build trust, and turn learning into lasting advantage.
               </p>
             </div>
             <div>
               <ol className="list-none space-y-6 font-sans text-gray-600">
                 <li>
                   <span className="font-mono text-[11px] tracking-wider uppercase text-black">Map</span>
-                  <p className="mt-2">We immerse ourselves in your culture, workflows, and data flows—charting the social and technical landscape so we know where AI can create real leverage.</p>
+                  <p className="mt-2">We immerse ourselves in your culture, workflows, and data—mapping both the human and technical landscape to reveal where inventive AI can unlock real leverage.</p>
                 </li>
                 <li>
                   <span className="font-mono text-[11px] tracking-wider uppercase text-black">Discover</span>
-                  <p className="mt-2">Using systems thinking and complexity diagnostics, we surface the bottlenecks, quick wins, and moon-shot possibilities that matter most to your teams.</p>
+                  <p className="mt-2">Through systems thinking and diagnostic tools, we surface bottlenecks, quick wins, and bold opportunities that matter most to your people and your mission.</p>
                 </li>
                 <li>
                   <span className="font-mono text-[11px] tracking-wider uppercase text-black">Design</span>
-                  <p className="mt-2">In collaborative workshops we re-architect roles, processes, and interfaces—spinning up low-risk prototypes that let people see, touch, and shape the future.</p>
+                  <p className="mt-2">In hands-on workshops, we co-create new tools, processes, and capabilities—rapidly prototyping ideas so teams can see, shape, and own the future.</p>
                 </li>
                 <li>
                   <span className="font-mono text-[11px] tracking-wider uppercase text-black">Scale</span>
-                  <p className="mt-2">Proven patterns become new norms through documentation and peer-led knowledge sharing, while continuous improvement sprints ensure your AI edge sharpens over time.</p>
+                  <p className="mt-2">Once new systems are in place, we help you scale them—ensuring your solutions grow seamlessly with your business and deliver impact at every level.</p>
                 </li>
                 <li>
                   <span className="font-mono text-[11px] tracking-wider uppercase text-black">Evolve</span>
-                  <p className="mt-2">We continuously refine and adapt your AI solutions as your business grows, ensuring they remain effective and aligned with your evolving goals and challenges.</p>
+                  <p className="mt-2">As your business grows, we continuously adapt your AI solutions—ensuring they stay effective, relevant, and aligned with your evolving goals.</p>
                 </li>
               </ol>
             </div>

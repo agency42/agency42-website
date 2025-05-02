@@ -103,7 +103,7 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
             Versatile AI consulting ✦
           </h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-800 font-light">
-            We partner with teams to map, prototype, and deploy high-impact AI workflows.
+            We partner with teams to map, prototype, and scale AI innovation.
           </p>
           <Link
             href="/services#contact"
