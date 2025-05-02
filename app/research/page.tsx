@@ -6,7 +6,8 @@ import Link from 'next/link'
 export const metadata: Metadata = {
   title: 'Research | Agency/42',
   description: 'Explore insights, articles, and case studies from Agency/42 on AI, human factors, and creative automation.',
-  keywords: ['AI research', 'AI articles', 'AI case studies', 'generative AI insights', 'creative automation research', 'AI future of work', 'digital mind design'],
+  keywords: ['AI research', 'AI articles', 'AI case studies', 'generative AI insights', 'creative automation research', 'AI future of work', 'digital mind design', 'human-centric AI'],
+  robots: 'noindex, nofollow',
 }
 
 // Placeholder for research items - could eventually come from a CMS or MDX files
@@ -35,7 +36,7 @@ export default function ResearchPage() {
       <main className="container mx-auto max-w-4xl px-4 py-16">
         {/* Use heading font, secondary color for subtitle */}
         <h1 className="text-4xl md:text-6xl font-heading font-medium mb-4 text-center">Research & Insights</h1>
-        <p className="text-lg text-secondary mb-16 text-center font-sans">Exploring the frontier of applied AI.</p>
+        <p className="text-lg text-gray-700 mb-16 text-center font-sans">Exploring the frontier of applied AI.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {researchItems.map((item, index) => (
@@ -51,7 +52,7 @@ export default function ResearchPage() {
               {/* Use heading font, accent on hover */}
               <h2 className="font-heading text-xl mb-2 group-hover:text-accent transition-colors">{item.title}</h2>
               {/* Use sans font, secondary color */}
-              <p className="font-sans text-sm text-secondary mb-4">{item.description}</p>
+              <p className="font-sans text-sm text-gray-700 mb-4">{item.description}</p>
               {/* Use accent color for link */}
               <span className="font-mono text-[11px] tracking-wider text-accent group-hover:underline">
                 Read Article →
@@ -62,7 +63,7 @@ export default function ResearchPage() {
 
         {/* Use secondary color */}
         <div className="text-center mt-16">
-          <p className="text-secondary font-sans">More research coming soon.</p>
+          <p className="text-gray-700 font-sans">More research coming soon.</p>
         </div>
 
       </main>

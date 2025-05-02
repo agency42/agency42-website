@@ -1,9 +1,5 @@
 'use client'
 import { useEffect, useRef, useState } from 'react'
-import { Button } from '@/components/ui/button'
-import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover'
-import { Slider } from '@/components/ui/slider'
-import { RefreshCcw, Pause, Play } from 'lucide-react'
 
 interface EntropyProps {
   className?: string
@@ -12,6 +8,9 @@ interface EntropyProps {
   specialColor?: string
   cellColor?: string
   bgColor?: string
+  initialDensity?: number
+  specialCellProbability?: number
+  preWarmSteps?: number
 }
 
 export function Entropy({ 
@@ -20,13 +19,16 @@ export function Entropy({
   speed = 0.5, 
   specialColor = "#ff3a5c", 
   cellColor = "#f0f0f0", 
-  bgColor = "#000000" 
+  bgColor = "#000000",
+  initialDensity = 0.3,
+  specialCellProbability = 0.1,
+  preWarmSteps = 3
 }: EntropyProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const animationRef = useRef<number | null>(null)
-  const [isPaused, setIsPaused] = useState(false)
-  const [animationSpeed, setAnimationSpeed] = useState(speed)
+  const animationSpeed = speed
   const lastUpdateTimeRef = useRef(0)
+  const specialCellsRef = useRef(new Set<string>())
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -48,71 +50,20 @@ export function Entropy({
     const rows = Math.floor(size / cellSize)
     const cols = Math.floor(size / cellSize)
     
-    // Game state
+    // Initial Game state using initialDensity prop
     let grid = Array(rows).fill(null).map(() => 
-      Array(cols).fill(null).map(() => Math.random() < 0.3)
+      Array(cols).fill(null).map(() => Math.random() < initialDensity)
     )
     
-    // Create a pattern of the number 42 in the middle
-    function create42Pattern() {
-      // Position for the "42" pattern
-      const startRow = Math.floor(rows / 2) - 5
-      const startCol = Math.floor(cols / 2) - 5
-      
-      // Define "42" pattern - 1 for alive cells
-      const pattern = [
-        [0,1,1,0,0,1,1,1,0],
-        [1,0,0,1,0,0,0,1,0],
-        [0,0,0,1,0,0,1,0,0],
-        [0,0,1,0,0,1,0,0,0],
-        [0,1,1,1,0,1,1,1,0]
-      ]
-      
-      // Place the pattern in the grid
-      pattern.forEach((row, i) => {
-        row.forEach((cell, j) => {
-          if (startRow + i >= 0 && startRow + i < rows && 
-              startCol + j >= 0 && startCol + j < cols) {
-            grid[startRow + i][startCol + j] = cell === 1
-          }
-        })
-      })
+    // Identify initial special cells based on specialCellProbability
+    specialCellsRef.current.clear()
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        if (grid[i][j] && Math.random() < specialCellProbability) {
+          specialCellsRef.current.add(`${i},${j}`)
+        }
+      }
     }
-    
-    create42Pattern()
-    
-    // Track cells that were part of the 42 pattern
-    const pattern42Cells = new Set<string>()
-    
-    function identifyPatternCells() {
-      pattern42Cells.clear()
-      
-      // Position for the "42" pattern
-      const startRow = Math.floor(rows / 2) - 5
-      const startCol = Math.floor(cols / 2) - 5
-      
-      // Define "42" pattern
-      const pattern = [
-        [0,1,1,0,0,1,1,1,0],
-        [1,0,0,1,0,0,0,1,0],
-        [0,0,0,1,0,0,1,0,0],
-        [0,0,1,0,0,1,0,0,0],
-        [0,1,1,1,0,1,1,1,0]
-      ]
-      
-      // Mark cells in the 42 pattern
-      pattern.forEach((row, i) => {
-        row.forEach((cell, j) => {
-          if (cell === 1 && 
-              startRow + i >= 0 && startRow + i < rows && 
-              startCol + j >= 0 && startCol + j < cols) {
-            pattern42Cells.add(`${startRow + i},${startCol + j}`)
-          }
-        })
-      })
-    }
-    
-    identifyPatternCells()
     
     // Count live neighbors using Conway's Game of Life rules
     function countNeighbors(grid: boolean[][], x: number, y: number): number {
@@ -138,25 +89,13 @@ export function Entropy({
         for (let j = 0; j < cols; j++) {
           const neighbors = countNeighbors(grid, i, j)
           
-          // Conway's Game of Life rules
           if (grid[i][j]) {
-            // Live cell
             newGrid[i][j] = neighbors === 2 || neighbors === 3
           } else {
-            // Dead cell
             newGrid[i][j] = neighbors === 3
-          }
-          
-          // Add a special probabilistic rule for cells near the boundary
-          if (Math.abs(i - rows/2) < rows/4 && Math.abs(j - cols/2) < cols/4) {
-            // Cells near the center have a small chance to be influenced by "42"
-            if (Math.random() < 0.002) {
-              newGrid[i][j] = !newGrid[i][j]
-            }
           }
         }
       }
-      
       grid = newGrid
     }
     
@@ -170,10 +109,10 @@ export function Entropy({
       for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
           if (grid[i][j]) {
-            // Determine if this was part of the 42 pattern
-            const isPatternCell = pattern42Cells.has(`${i},${j}`)
+            // Check if this cell is marked as special
+            const isSpecialCell = specialCellsRef.current.has(`${i},${j}`)
             
-            ctx.fillStyle = isPatternCell ? specialColor : cellColor
+            ctx.fillStyle = isSpecialCell ? specialColor : cellColor
             ctx.fillRect(
               j * cellSize, 
               i * cellSize, 
@@ -185,25 +124,24 @@ export function Entropy({
       }
     }
     
+    // Run a few simulation steps before the first draw to avoid initial flash
+    const initialSteps = preWarmSteps;
+    for (let i = 0; i < initialSteps; i++) {
+      updateGrid();
+    }
+    
     // Animation loop
-    let frameCount = 0
     function animate(timestamp: number) {
-      if (!ctx || isPaused) return
+      if (!ctx) return
       
       // Control animation speed
       const elapsed = timestamp - lastUpdateTimeRef.current
-      const updateInterval = 1000 / (10 * animationSpeed) // Slower speed value = longer interval
+      const updateInterval = 1000 / (10 * animationSpeed)
       
       if (elapsed > updateInterval) {
         lastUpdateTimeRef.current = timestamp
         
-        frameCount++
         drawGrid()
-        
-        // Every 100 frames, reintroduce the 42 pattern
-        if (frameCount % 100 === 0) {
-          create42Pattern()
-        }
         
         // Update grid based on Conway's Game of Life rules
         updateGrid()
@@ -212,36 +150,18 @@ export function Entropy({
       animationRef.current = requestAnimationFrame(animate)
     }
     
-    if (!isPaused) {
-      animationRef.current = requestAnimationFrame(animate)
-    }
+    // Draw the pre-stepped grid once immediately before starting the animation loop
+    drawGrid(); 
+    lastUpdateTimeRef.current = performance.now(); // Set initial time for speed control
+
+    animationRef.current = requestAnimationFrame(animate); // Start animation loop
     
     return () => {
       if (animationRef.current) {
         cancelAnimationFrame(animationRef.current)
       }
     }
-  }, [size, isPaused, animationSpeed, specialColor, cellColor, bgColor])
-
-  const togglePause = () => {
-    setIsPaused(!isPaused)
-  }
-
-  const resetAnimation = () => {
-    if (animationRef.current) {
-      cancelAnimationFrame(animationRef.current)
-    }
-    
-    // Reset internal state to force re-initialization via useEffect
-    lastUpdateTimeRef.current = 0
-    // Trigger re-render which restarts useEffect
-    setIsPaused(false) // Ensure it's not paused
-    // Force a re-mount could be an option, but might be overkill
-    // For simplicity, we might need to manually reset grid state here or rely on useEffect rerun
-    
-    // Re-initialize directly might be cleaner than relying purely on useEffect restart
-    // Let's keep it simple for now and rely on useEffect rerun triggered by state change
-  }
+  }, [size, animationSpeed, specialColor, cellColor, bgColor, initialDensity, specialCellProbability, preWarmSteps])
 
   return (
     <div className={`relative bg-black ${className}`} style={{ width: size, height: size }}>
@@ -249,53 +169,6 @@ export function Entropy({
         ref={canvasRef}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
-      
-      <div className="absolute bottom-4 right-4 flex gap-2">
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="bg-black/50 backdrop-blur-sm hover:bg-black/70 border-neutral-800"
-          onClick={togglePause}
-        >
-          {isPaused ? <Play size={16} /> : <Pause size={16} />}
-        </Button>
-        
-        <Button 
-          variant="outline" 
-          size="icon" 
-          className="bg-black/50 backdrop-blur-sm hover:bg-black/70 border-neutral-800"
-          onClick={resetAnimation}
-        >
-          <RefreshCcw size={16} />
-        </Button>
-        
-        <Popover>
-          <PopoverTrigger asChild>
-            <Button 
-              variant="outline" 
-              size="sm" 
-              className="bg-black/50 backdrop-blur-sm hover:bg-black/70 border-neutral-800"
-            >
-              Speed: {animationSpeed.toFixed(1)}
-            </Button>
-          </PopoverTrigger>
-          <PopoverContent className="w-80">
-            <div className="space-y-2">
-              <h4 className="font-medium leading-none">Animation Speed</h4>
-              <p className="text-sm text-muted-foreground">
-                Adjust the speed of the cellular automaton
-              </p>
-              <Slider
-                defaultValue={[animationSpeed]}
-                max={1}
-                min={0.1}
-                step={0.1}
-                onValueChange={(value: number[]) => setAnimationSpeed(value[0])}
-              />
-            </div>
-          </PopoverContent>
-        </Popover>
-      </div>
     </div>
   )
 }

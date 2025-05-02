@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+## how to think about documentation
+
+prd.md is the latest document with our plans for the codebase
+
+tasks.md is our latest activity, status, and progress
+
+the rest of our docs can be found in docs/
+
+keep all docs updated, especially tasks.md. prd.md should really only change if i decide to change the plans on you.
+
+## how to document code
+keep documentation clean and consistent
+
+at the top of each file denote its purpose
+
+each function should include a definition which objectives it helps meet
+
+any commented out code we stumble across should be questioned unless it is documentation

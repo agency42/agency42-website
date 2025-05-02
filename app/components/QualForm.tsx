@@ -3,6 +3,16 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 import posthog from 'posthog-js'
+import { ChevronDown } from 'lucide-react'
+import { Label } from '@/components/ui/label'
+import { Input } from '@/components/ui/input'
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+} from '@/components/ui/select'
 
 interface FormState {
   companyName: string
@@ -33,6 +43,10 @@ export default function QualForm({ className = '' }: QualFormProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
+    setFormState(prev => ({ ...prev, [name]: value }))
+  }
+
+  const handleSelectChange = (name: keyof FormState, value: string) => {
     setFormState(prev => ({ ...prev, [name]: value }))
   }
 
@@ -84,13 +98,13 @@ export default function QualForm({ className = '' }: QualFormProps) {
 
   if (submitSuccess) {
     return (
-      <div className={`p-8 bg-neutral-50 border border-neutral-200 rounded-md ${className}`}>
+      <div className={`p-8 bg-card border border-border rounded-md ${className}`}>
         <div className="text-center text-foreground">
           <h3 className="text-2xl font-heading font-medium mb-4">Thank You For Your Interest</h3>
           <p className="mb-6 font-sans">
             We've received your submission and will review it shortly. If your needs align with our expertise, we'll reach out to schedule a discovery call.
           </p>
-          <p className="font-mono text-[11px] tracking-wider text-secondary">
+          <p className="font-mono text-[11px] tracking-wider text-muted-foreground">
             Check your email for a confirmation message.
           </p>
         </div>
@@ -101,88 +115,82 @@ export default function QualForm({ className = '' }: QualFormProps) {
   return (
     <form 
       onSubmit={handleSubmit} 
-      className={`p-8 bg-neutral-50 border border-neutral-200 rounded-md ${className}`}
+      className={`p-8 bg-card border border-border rounded-lg ${className}`}
     >
       <div className="grid grid-cols-1 gap-6 mb-6">
         <div>
-          <label htmlFor="companyName" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">COMPANY NAME</label>
-          <input
+          <Label htmlFor="companyName">COMPANY NAME</Label>
+          <Input
             id="companyName"
             name="companyName"
-            type="text"
-            required
             value={formState.companyName}
             onChange={handleChange}
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors"
+            required
           />
         </div>
         
         <div>
-          <label htmlFor="name" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">YOUR NAME</label>
-          <input
+          <Label htmlFor="name">YOUR NAME</Label>
+          <Input
             id="name"
             name="name"
-            type="text"
-            required
             value={formState.name}
             onChange={handleChange}
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors"
+            required
           />
         </div>
         
         <div>
-          <label htmlFor="email" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">EMAIL ADDRESS</label>
-          <input
+          <Label htmlFor="email">EMAIL ADDRESS</Label>
+          <Input
             id="email"
             name="email"
-            type="email"
-            required
             value={formState.email}
             onChange={handleChange}
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors"
+            required
           />
         </div>
         
         <div>
-          <label htmlFor="companySize" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">COMPANY SIZE</label>
-          <select
-            id="companySize"
-            name="companySize"
-            required
+          <Label htmlFor="companySize">COMPANY SIZE</Label>
+          <Select
             value={formState.companySize}
-            onChange={handleChange}
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors appearance-none"
+            onValueChange={(value: string) => handleSelectChange('companySize', value)}
           >
-            <option value="">Select an option</option>
-            <option value="1-10">1-10 employees</option>
-            <option value="11-50">11-50 employees</option>
-            <option value="51-200">51-200 employees</option>
-            <option value="201-500">201-500 employees</option>
-            <option value="501+">501+ employees</option>
-          </select>
+            <SelectTrigger id="companySize">
+              <SelectValue placeholder="Select an option" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="1-10">1-10 employees</SelectItem>
+              <SelectItem value="11-50">11-50 employees</SelectItem>
+              <SelectItem value="51-200">51-200 employees</SelectItem>
+              <SelectItem value="201-500">201-500 employees</SelectItem>
+              <SelectItem value="501+">501+ employees</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         
         <div>
-          <label htmlFor="budget" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">BUDGET RANGE</label>
-          <select
-            id="budget"
-            name="budget"
-            required
+          <Label htmlFor="budget">BUDGET RANGE</Label>
+          <Select
             value={formState.budget}
-            onChange={handleChange}
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors appearance-none"
+            onValueChange={(value: string) => handleSelectChange('budget', value)}
           >
-            <option value="">Select an option</option>
-            <option value="$4k-$10k">$4k-$10k</option>
-            <option value="$10k-$25k">$10k-$25k</option>
-            <option value="$25k-$50k">$25k-$50k</option>
-            <option value="$50k+">$50k+</option>
-            <option value="Not sure">Not sure yet</option>
-          </select>
+            <SelectTrigger id="budget">
+              <SelectValue placeholder="Select an option" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="$4k-$10k">$4k-$10k</SelectItem>
+              <SelectItem value="$10k-$25k">$10k-$25k</SelectItem>
+              <SelectItem value="$25k-$50k">$25k-$50k</SelectItem>
+              <SelectItem value="$50k+">$50k+</SelectItem>
+              <SelectItem value="Not sure">Not sure yet</SelectItem>
+            </SelectContent>
+          </Select>
         </div>
         
         <div>
-          <label htmlFor="projectDescription" className="block font-mono text-[11px] tracking-wider mb-2 text-foreground">PROJECT DESCRIPTION</label>
+          <Label htmlFor="projectDescription">PROJECT DESCRIPTION</Label>
           <textarea
             id="projectDescription"
             name="projectDescription"
@@ -190,7 +198,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
             value={formState.projectDescription}
             onChange={handleChange}
             placeholder="Please describe your AI challenges or opportunities. What are you hoping to achieve?"
-            className="w-full p-3 font-sans border border-neutral-300 bg-background focus:border-accent focus:ring-1 focus:ring-accent focus:outline-none transition-colors h-32"
+            className="w-full p-3 font-sans bg-card text-foreground border border-neutral-700 rounded-lg shadow focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition h-32"
           />
         </div>
       </div>
@@ -204,13 +212,13 @@ export default function QualForm({ className = '' }: QualFormProps) {
       <button 
         type="submit"
         disabled={isSubmitting}
-        className="w-full bg-primary text-background font-mono text-[11px] tracking-wider py-4 hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        className="w-full rounded-lg bg-primary text-background font-mono text-[11px] tracking-wider py-4 hover:bg-accent transition-colors disabled:opacity-50 disabled:cursor-not-allowed shadow"
       >
         {isSubmitting ? 'SUBMITTING...' : 'SUBMIT INQUIRY'}
       </button>
       
-      <p className="mt-4 text-xs text-secondary text-center font-sans">
-        By submitting this form, you agree to our <Link href="/legal/privacy" className="underline hover:text-accent">Privacy Policy</Link>.
+      <p className="mt-4 text-xs text-muted-foreground text-center font-sans">
+        By submitting this form, you agree to our <Link href="/legal/privacy" className="underline hover:text-accent text-muted-foreground">Privacy Policy</Link>.
       </p>
     </form>
   )

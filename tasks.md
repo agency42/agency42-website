@@ -1,45 +1,23 @@
-# Agency 42 v2 Refactor Tasks
+# Website Refinement Tasks
 
-## Phase 1: Setup, Foundation & Analysis
+This document tracks the final refinement tasks for the Agency 42 website.
 
-*   [ ] **Analyze Existing Code:** Review current `app/`, `public/`, components, styles (`tailwind.config.js`, global CSS if any), and `next.config.js`. Identify reusable elements, dependencies to update/remove, and areas needing complete overhaul based on the PRD. Document findings briefly. *(Completed)*
-*   [ ] **Setup Martech (Core):** Provision/configure Plausible, PostHog. Document integration points/keys securely (e.g., env vars). *(Resend/Calendly integration handled in form/flow implementation)*
-*   [ ] **Configure Stack:** Verify/update Next.js (to 14 App Router if needed), Tailwind CSS, and set up MDX for content processing. Ensure `tsconfig.json` and `next.config.js` align with goals.
-*   [ ] **Define Project Structure:** Establish the directory structure within `app/` for new pages (`content/`, `research/`, `services/`, `company/`, `products/`), components (server/client), layouts, lib/utils, etc. Follow Next.js App Router conventions.
-*   [ ] **Implement Base Layout & Navigation:** Create the root layout (`app/layout.tsx`) and the main `Navigation.tsx` component reflecting the final structure (Content, Research [hidden], Services, Company, Products dropdown).
-*   [ ] **Visual System Base:** Update `tailwind.config.js` with PRD colors (base, accent gradient), fonts (Satoshi, Founders Grotesk), and define any necessary base styles or Tailwind plugins.
+## Pending Tasks
 
-## Phase 2: Core Pages & Conversion Flow
+- [✓] **Accessibility Check:** Perform accessibility checks (WCAG 2.1 AA) across the site and implement necessary fixes. Code review completed for key components, focus styles added, contrast improved. User confirmed manual keyboard testing successful. Automated/screen reader tests pending if further issues arise.
+- [✓] **Home Page Image Alignment:** Completed. Adjusted `object-position` for hero image bar to `object-[center_8%]`.
+- [ ] **Newsletter Signup:** Connect the newsletter signup form (likely on the home page footer) to the appropriate service (e.g., Beehiiv via API/Zapier/form action).
+- [ ] **Testimonials:** Finalize testimonial content and integrate approved quotes/attributions (likely replacing placeholders).
+- [ ] **Partners Section:** Decide whether to temporarily hide the Partners/Client Logo section on the home page until logo usage is approved. Implement the decision (hide or keep).
+- [ ] **Services Page UI Effects:** Review UI effects/animations on the Services page accordion (or other elements) and adjust timing/speed for a smoother feel.
 
-*   [ ] **Build Home Page (`app/page.tsx`):** Implement PRD sections: Hero, Proof bar (logo placeholders), Problem block, Solution trio, Pricing teaser, Bootoshi video, Case snippets (testimonial placeholders). Use semantic HTML and Tailwind.
-*   [ ] **Build Services Page (`app/services/page.tsx`):** Consolidate content for Audit, Workshop, Retainer offerings, and Pricing info. Include primary CTA linking to the QualForm.
-*   [ ] **Implement Qualification Form:** Create a dedicated component using Resend for the form fields (including qualifying questions). Style consistently.
-*   [ ] **Setup Form Submission Handling:** Configure Resend endpoint/logic to receive form data (manual review planned initially before sending Calendly link).
-*   [ ] **Integrate Analytics:** Add Plausible tracking script to the root layout.
-*   [ ] **Integrate Feature Flags/Events:** Set up PostHog provider and implement event tracking for key actions (e.g., CTA clicks, form submissions) and potentially feature flags for A/B testing copy.
+## Completed Tasks Summary (Previous Phase)
 
-## Phase 3: Content & Supporting Pages
-
-*   [✓] **Build Content Page (`app/content/page.tsx`)**: Design layout for aggregating blog posts, videos, newsletter links, etc. Set up dynamic data loading from JSON.
-*   [✓] **Build Research Page (`app/research/page.tsx`)**: Design layout. Added initial links. (Dynamic routes/MDX deferred).
-*   [✓] **Build Company Page (`app/company/page.tsx`)**: Implement layout and content for About section. Include `hello@agency42.co` contact email.
-*   [ ] **Build Products Structure:** Create `app/products/` layout or components OR simply refine dropdown links in `Navigation.tsx`.
-*   [ ] **Build Legal Pages:** Create `app/legal/privacy/page.tsx` and `app/legal/terms/page.tsx`. Populate with content. **(Deferred)**
-*   [ ] **Plan Product Subdomain:** Document the technical steps required to set up `product.agency42.co` and migrate/deploy the Daybloom app there.
-
-## Phase 4: Visual Polish & Brand Identity
-
-*   [ ] **Apply Visual Refresh:** Systematically review all pages and components, ensuring alignment with the PRD's visual specifications (colors, fonts, spacing, imagery styles).
-    *   [ ] **Refactor Components:** Update existing components to use semantic Tailwind classes (e.g., `bg-background`, `text-foreground`, `text-accent`, `font-heading`).
-*   [ ] **Implement Motion:** Add subtle micro-interactions and the specified hero background animation (e.g., using Framer Motion or CSS). Ensure `prefers-reduced-motion` is respected.
-*   [ ] **Add Client Logos & Testimonials:** Integrate approved assets into their placeholder locations.
-*   [ ] **Accessibility Audit & Fixes:** Perform checks using browser tools and linters. Ensure WCAG 2.1 AA compliance.
-
-## Phase 5: Testing, Optimization & Launch Prep
-
-*   [ ] **End-to-End Testing:** Manually test all user flows, focusing on the conversion funnel (Landing -> QualForm -> Manual Review -> Calendly) and navigation. Write automated tests if feasible/desired.
-*   [ ] **Performance Optimization:** Analyze build outputs, optimize images (Next/Image), use dynamic imports, and target INP < 200ms using Lighthouse/real user monitoring.
-*   [ ] **SEO Technical Pass:** Implement necessary schema markup, generate `sitemap.xml` and `robots.txt`.
-*   [ ] **Cross-Browser/Device Testing:** Test on major browsers and various screen sizes.
-*   [ ] **Code Review & Cleanup:** Final pass for code quality, consistency, removing dead code, and ensuring environment variables are handled correctly.
-*   [ ] **Deployment Configuration:** Set up Vercel project settings.
+- [✓] Initial Next.js setup and migration.
+- [✓] Core page creation & navigation.
+- [✓] Component implementation & refinement.
+- [✓] Image path consolidation & optimization.
+- [✓] Link testing and fixing.
+- [✓] SEO metadata setup (base & page-specific).
+- [✓] Font loading optimization.
+- [✓] Deployment pipeline setup.

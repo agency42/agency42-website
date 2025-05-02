@@ -4,9 +4,27 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Company | Agency/42',
-  description: 'Learn about Agency/42, our mission, our team, and our approach to building human-centric AI solutions.',
-  keywords: ['AI innovation studio', 'AI agency', 'AI team', 'AI mission', 'human-centric AI', 'AI consulting', 'Kenneth Cavanagh', 'Rob Renn', 'Bootoshi'],
+  title: 'Company | Agency/42 - Pioneers in AI, Experts in Humanity',
+  description: 'Meet Agency/42: An AI innovation studio blending industrial psychology, systems design, and community building to craft human-centric AI solutions.',
+  keywords: [
+    // Core
+    'AI innovation studio',
+    'human-centric AI',
+    'AI consulting',
+    'applied AI',
+    'AI agency',
+    'creative technology',
+    // Expertise
+    'AI human factors',
+    'AI systems design',
+    'AI community building',
+    'autonomous agents',
+    'bespoke AI solutions',
+    'generative AI strategy',
+    // Optional/Niche
+    'industrial psychology AI',
+    'memetics engineering',
+  ],
   openGraph: {
     images: ['/content/images/42-logo-wide.png'],
   },
@@ -16,103 +34,119 @@ export const metadata: Metadata = {
   }
 }
 
-// Team data (can be moved to a separate file/CMS later)
+// Updated Team Data
 const teamMembers = [
   {
     name: 'Ken Cavanagh',
     role: 'Human Factors',
-    image: '/team/ken-headshot.png', // Stays .png
-    bio: 'Industrial psychologist and developer building AI for social applications. Previously ops engineering and people science at SpaceX.',
+    image: '/content/images/ken.png',
+    ghibliImage: '/content/images/ken-ghibli.png',
+    bio: 'Industrial psychologist & developer engineering human experience into AI. Built people analytics @ SpaceX, researched community health & AI agents @ talentDAO.',
     social: {
       url: 'https://www.linkedin.com/in/k3nneth/',
-      label: 'LinkedIn →'
+      label: 'LinkedIn' // Simpler label
     }
   },
   {
     name: 'Rob Renn',
-    role: 'System Engineering',
-    image: '/team/rob-headshot.jpeg', // Changed to .jpeg
-    bio: 'Industrial designer and engineer with a decade of building startups. Previously AI R&D at Stanford and Skunkworks.',
+    role: 'Systems Engineering',
+    image: '/content/images/rob.jpeg',
+    ghibliImage: '/content/images/rob-ghibli.png',
+    bio: 'Industrial designer & systems engineer with a decade building production-grade ML & crypto platforms within innovation labs like Stanford & Skunkworks.',
     social: {
       url: 'https://www.linkedin.com/in/future-rob/',
-      label: 'LinkedIn →'
+      label: 'LinkedIn'
     }
   },
   {
     name: 'Bootoshi (Saint Louis)',
     role: 'Memetics Engineering',
-    image: '/team/bootoshi-headshot.jpeg', // Changed to .jpeg
-    bio: 'AI developer, content creator, hackathon winner, pioneer in building autonomous agent communities.',
+    image: '/content/images/saint.jpeg',
+    ghibliImage: '/content/images/saint-ghibli.png',
+    bio: 'Entrepreneur & AI community builder. Pioneer in Bitcoin NFTs, launched viral AI agent projects, hackathon winner. Ask him about the Ghost of Satoshi.',
     social: {
       url: 'https://www.bootosh.ai/',
-      label: 'Web →'
+      label: 'Web'
     }
   },
 ]
 
 export default function CompanyPage() {
   return (
-    <div className="min-h-screen bg-background text-foreground pt-24">
+    <div className="min-h-screen bg-white text-black pt-24">
       <main className="container mx-auto max-w-6xl px-4 py-16">
         {/* About Section */}
         <section className="mb-24">
-          <h2 className="font-mono text-[11px] tracking-wider mb-6 uppercase text-secondary">Our Company</h2>
           <h1 className="text-4xl md:text-6xl font-heading font-medium mb-8">
-            Building the Future of <span className="text-accent">Human-AI Interaction</span>
+            Pioneers in AI, Experts in Humanity
           </h1>
-          
-          <div className="md:grid md:grid-cols-2 gap-12 text-lg font-sans">
-            <div className="space-y-6 mb-8 md:mb-0">
-              <p>
-                Agency/42 is an AI innovation studio focused on the intersection of technology and human experience. 
-                Our expertise lies in integrating intelligent systems into the creative and social fabric of businesses.
-              </p>
-              <p>
-                We believe the most powerful AI systems emerge when we think beyond algorithms, focusing on 
-                human interaction, customer behavior, and real business dynamics.
-              </p>
-            </div>
-            <div className="space-y-6">
-              <p>
-                We partner with organizations to build AI capabilities that align with their strategic vision, 
-                creating new possibilities in the human-AI relationship that drive tangible value.
-              </p>
-              <p>
-                Need help navigating the AI landscape? 
-                Contact us at <Link href="mailto:hello@agency42.co" className="text-accent hover:underline">hello@agency42.co</Link>.
-              </p>
-            </div>
+          {/* Refined Intro */}
+          <div className="max-w-2xl mb-8 text-lg font-sans text-gray-900">
+            <p>
+              Agency/42 isn't your standard AI consultancy. We're a dynamic fusion of deep tech expertise and a profound understanding of human behavior. We don't just build AI that functions - we craft AI that connects, resonates, and truly serves people.
+            </p>
           </div>
+          <Link
+            href="/services#contact"
+            className="inline-block border-2 border-black text-black font-mono text-sm tracking-wider px-10 py-4 hover:bg-black hover:text-white transition-colors duration-300"
+          >
+            Work With Us →
+          </Link>
         </section>
 
-        {/* Team Section */}
+        {/* Rewritten Why Us Section */}
+        <section className="mb-16">
+          <h3 className="text-2xl font-heading mb-4 text-black">Why Agency/42?</h3>
+          <p className="text-md text-gray-800 max-w-3xl">
+            Because AI thrives at the intersection of people, culture, and technology. Our unique strength lies in blending rigorous academic methodology with creative, boundary-pushing engineering. We unite perspectives from industrial psychology, high-stakes systems design, and the emergent culture of autonomous agent communities. This allows us to move beyond generic models and deliver bespoke AI solutions with real-world impact.
+          </p>
+        </section>
+
+        {/* Team Section - No structural changes needed, just uses updated bios */}
         <section>
-          <h2 className="text-center font-heading text-3xl md:text-4xl font-medium mb-12">Meet the Team</h2>
+          <h2 className="text-center font-heading text-3xl md:text-4xl font-medium mb-12 text-black">Meet the Team</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {teamMembers.map((member) => (
-              <div key={member.name} className="p-8 bg-neutral-50 border border-neutral-200 flex flex-col text-center rounded-md">
-                <div className="mx-auto mb-6 relative w-32 h-32 rounded-full overflow-hidden border-2 border-neutral-200">
+              <div key={member.name} className="p-8 bg-white border border-black flex flex-col text-center rounded-md">
+                {/* Image Link and Hover Effect */}
+                <Link
+                  href={member.social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group mx-auto mb-6 relative w-32 h-32 rounded-full overflow-hidden border-2 border-black block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
+                  aria-label={`Link to ${member.name}'s profile`}
+                >
+                  {/* Ghibli Image */}
+                  <Image
+                    src={member.ghibliImage}
+                    alt={`Ghibli-style headshot of ${member.name}`}
+                    fill
+                    className={`object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 ${
+                      member.name === 'Ken Cavanagh' ? 'object-top' :
+                      member.name === 'Rob Renn' ? 'object-[center_20%]' :
+                      member.name === 'Bootoshi (Saint Louis)' ? 'object-[center_25%]' :
+                      'object-center'
+                    }`}
+                    sizes="128px"
+                    priority
+                  />
+                  {/* Real Headshot */}
                   <Image
                     src={member.image}
                     alt={`Headshot of ${member.name}`}
                     fill
-                    className="object-cover grayscale"
+                    className={`object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 ${
+                      member.name === 'Ken Cavanagh' ? 'object-top' :
+                      member.name === 'Bootoshi (Saint Louis)' ? 'object-center' : 'object-center'
+                    }`}
                     sizes="128px"
                   />
-                </div>
-                <h3 className="font-heading text-xl mb-1">{member.name}</h3>
-                <p className="font-mono text-[11px] tracking-wider text-secondary mb-4 uppercase">{member.role}</p>
-                <p className="font-sans text-sm leading-relaxed flex-grow mb-6">{member.bio}</p>
-                {member.social && (
-                  <Link
-                    href={member.social.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-auto inline-block font-mono text-[11px] tracking-wider text-accent hover:text-accent-secondary transition-colors"
-                  >
-                    {member.social.label}
-                  </Link>
-                )}
+                </Link>
+                {/* Text Content */}
+                <h3 className="font-heading text-xl mb-1 text-black">{member.name}</h3>
+                <p className="font-mono text-[11px] tracking-wider text-gray-700 mb-4 uppercase">{member.role}</p>
+                {/* Updated Bio Rendered Here */} 
+                <p className="font-sans text-sm leading-relaxed flex-grow mb-6 text-gray-900">{member.bio}</p>
               </div>
             ))}
           </div>

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "tag": "community", 
-    "title": "Vibe Coding Class (Community Discord)",
+    "title": "Vibe Coding Community",
     "description": "Join our weekly live coding sessions and discussions on AI development.",
     "imageOverride": "/content/images/AIclass1.jpeg", 
     "link": "https://discord.com/invite/amR4AEjqh4",
@@ -11,8 +11,8 @@
   },
   {
     "id": 2,
-    "tag": "video",
-    "title": "Rick & Morty Digital Twins (Livestream)",
+    "tag": "workshop",
+    "title": "Rick & Morty Digital Twins",
     "description": "Watch the creation process of AI digital twins based on popular characters.",
     "imageOverride": "/content/images/rick-1.png", 
     "link": "https://www.youtube.com/live/ulVeaMW6WyY",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "tag": "article", 
+    "tag": "newsletter",
     "title": "Year of the Dragon",
     "description": "Improbable Automata #1: Genesis, this year in AI, predictions for 2025.",
     "imageOverride": "/content/images/alfie.png",
@@ -51,7 +51,7 @@
   },
   {
     "id": 6,
-    "tag": "article", 
+    "tag": "newsletter",
     "title": "Grey Zone",
     "description": "Improbable Automata #2: 100 days into the intelligence explosion.",
     "imageOverride": "/content/images/greyzone.png",
@@ -61,8 +61,8 @@
   },
   {
     "id": 7,
-    "tag": "video",
-    "title": "Vibe Coding Workshop",
+    "tag": "workshop",
+    "title": "Vibe Coding 101",
     "description": "A workshop on how to code with AI from beginner to advanced.",
     "imageOverride": "/content/images/vibecodeworkshop.jpeg", 
     "link": "https://www.youtube.com/watch?v=5wKatfTklCY",

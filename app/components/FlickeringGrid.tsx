@@ -67,13 +67,19 @@ export function FlickeringGrid({
   }, [grid.length, probability, speed])
 
   return (
-    <div ref={gridRef} className={cn('h-full w-full overflow-hidden', className)}>
+    <div 
+      ref={gridRef} 
+      className={cn('overflow-hidden', className)}
+      style={{ height: 'calc(100% - 1px)', width: 'calc(100% - 1px)' }}
+    >
       <div
-        className="grid h-full w-full"
+        className="grid w-full h-full"
         style={{
           gridTemplateRows: `repeat(${rows}, 1fr)`,
           gridTemplateColumns: `repeat(${columns}, 1fr)`,
-          gap: '1px'
+          gap: '1px',
+          paddingTop: '1px',
+          paddingLeft: '1px'
         }}
       >
         {grid.map((row, i) => 
@@ -91,4 +97,4 @@ export function FlickeringGrid({
       </div>
     </div>
   )
-} 
+}

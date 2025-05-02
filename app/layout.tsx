@@ -27,31 +27,42 @@ const pixelFont = DotGothic16({
   variable: '--font-pixel',
 })
 
+const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; // Define your base URL
+
 export const metadata: Metadata = {
-  title: 'Agency42',
-  description: 'AI innovation studio',
+  metadataBase: new URL(BASE_URL), // Important for absolute URLs in OG/Twitter images
+  title: {
+    default: 'Agency 42 | Human Efficiency Through AI', // Default title
+    template: '%s | Agency 42', // Template for page-specific titles
+  },
+  description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows, turning unknown-unknowns into 10x outcomes.', // More descriptive default
   icons: {
     icon: [
       {
         url: '/favicon/favicon.ico',
         sizes: 'any',
+        rel: 'icon', // Ensure rel: 'icon' is present
       },
       {
         url: '/favicon/favicon-16x16.png',
         sizes: '16x16',
         type: 'image/png',
+        rel: 'icon',
       },
       {
         url: '/favicon/favicon-32x32.png',
         sizes: '32x32',
         type: 'image/png',
+        rel: 'icon',
       }
     ],
-    apple: {
-      url: '/favicon/apple-touch-icon.png',
-      sizes: '180x180',
-      type: 'image/png',
-    },
+    apple: [ // Ensure apple is an array
+        {
+            url: '/favicon/apple-touch-icon.png',
+            sizes: '180x180',
+            type: 'image/png',
+        }
+    ],
     other: [
       {
         rel: 'manifest',
@@ -69,6 +80,47 @@ export const metadata: Metadata = {
       }
     ],
   },
+  // Add Open Graph and Twitter metadata defaults
+  openGraph: {
+    title: 'Agency 42 | Human Efficiency Through AI',
+    description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows.',
+    url: BASE_URL,
+    siteName: 'Agency 42',
+    // Add a default image for sharing
+    images: [
+      {
+        url: '/content/images/og-default.png', // Replace with your actual default OG image path
+        width: 1200,
+        height: 630,
+        alt: 'Agency 42 Logo and tagline',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Agency 42 | Human Efficiency Through AI',
+    description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows.',
+    // Add the same default image or a Twitter-specific one
+    images: ['/content/images/og-default.png'], // Replace with your actual default Twitter image path
+    // Optional: Add Twitter site handle if you have one
+    // site: '@agency42co',
+    // Optional: Add Twitter creator handle if relevant
+    // creator: '@bootoshi',
+  },
+  // Optional: Add robots meta tag configuration if needed
+  // robots: {
+  //   index: true,
+  //   follow: true,
+  //   googleBot: {
+  //     index: true,
+  //     follow: true,
+  //     'max-video-preview': -1,
+  //     'max-image-preview': 'large',
+  //     'max-snippet': -1,
+  //   },
+  // },
 }
 
 interface RootLayoutProps {
@@ -77,7 +129,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans dark`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-mono`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
@@ -88,10 +140,10 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           ></script>
         )}
       </head>
-      <body className="bg-background text-foreground">
+      <body className="bg-white text-black">
         <PostHogProvider>
           <Navigation />
-          <main className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <main className="w-full">
             {children}
           </main>
           <Footer />

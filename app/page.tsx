@@ -3,11 +3,14 @@ import HomePageClient from './components/HomePageClient'
 import fs from 'fs/promises' // Import fs
 import path from 'path' // Import path
 
-// Updated metadata based on PRD v2 focus
+// Updated metadata based on PRD v2 focus and homepage content analysis
 export const metadata: Metadata = {
-  title: 'Agency/42 | AI Consulting & Implementation',
-  description: 'Agency/42: Stop Guessing. Start Operating at AI Speed. We turn Unknown-Unknowns into 10× Outcomes through AI audits, workshops, and retainers.',
-  keywords: ['AI consulting', 'AI strategy', 'AI implementation', 'AI audit', 'AI workshop', 'fractional AI CTO', 'generative AI', 'AI automation', 'human efficiency'],
+  // Updated title to reflect hero and actions
+  title: 'Agency/42 | Versatile AI Consulting: Map, Prototype, Deploy',
+  // Updated description to use hero paragraph language
+  description: 'Agency/42 partners with teams to map, prototype, and deploy high-impact AI workflows. We offer versatile AI consulting focused on strategy, diagnostics, and design.',
+  // Updated keywords to include homepage terms
+  keywords: ['AI consulting', 'AI strategy', 'AI implementation', 'AI workflows', 'AI prototyping', 'AI deployment', 'AI audit', 'AI workshop', 'systems thinking', 'AI diagnostics', 'generative AI', 'AI automation'], 
 }
 
 // Updated interface
