@@ -18,20 +18,20 @@ export default function ServicesAccordion() {
         <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
             <div>
-              <h3 className="font-heading text-2xl text-black text-left">AI Opportunity Audit</h3>
+              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">AI Opportunity Audit</h3>
             </div>
-            <span className="hidden sm:block font-mono text-xs tracking-wider uppercase border border-black px-3 py-1 mt-2 sm:mt-0">
+            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
               Learn More
             </span>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <p className="mb-4 font-sans text-gray-700">
+              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
                 A 4-6-week diagnostic that reveals where AI delivers the highest return for your organization.
               </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-8 mb-4 uppercase text-black">You'll typically see</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">You'll typically see</h4>
               <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">✓</span>
@@ -71,20 +71,20 @@ export default function ServicesAccordion() {
         <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
             <div>
-              <h3 className="font-heading text-2xl text-black text-left">Hands-on Workshops</h3>
+              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Hands-on Workshops</h3>
             </div>
-            <span className="hidden sm:block font-mono text-xs tracking-wider uppercase border border-black px-3 py-1 mt-2 sm:mt-0">
+            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
               Learn More
             </span>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div className="order-2 md:order-1">
-              <p className="mb-4 font-sans text-gray-700">
+              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
                 Live, practical sessions that turn audit insights into real capability.
               </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-8 mb-4 uppercase text-black">Common elements</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Common elements</h4>
               <ul className="space-y-3 mb-8 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">✓</span>
@@ -128,20 +128,20 @@ export default function ServicesAccordion() {
         <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
             <div>
-              <h3 className="font-heading text-2xl text-black text-left">Fractional AI Leadership</h3>
+              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Fractional AI Leadership</h3>
             </div>
-            <span className="hidden sm:block font-mono text-xs tracking-wider uppercase border border-black px-3 py-1 mt-2 sm:mt-0">
+            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
               Learn More
             </span>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <p className="mb-4 font-sans text-gray-700">
+              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
                 Ongoing strategic and technical guidance without the full-time hire.
               </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-8 mb-4 uppercase text-black">Typical support</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Typical support</h4>
               <ul className="space-y-3 mb-8 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">✓</span>
@@ -185,20 +185,20 @@ export default function ServicesAccordion() {
         <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
           <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
             <div>
-              <h3 className="font-heading text-2xl text-black text-left">Research & Development</h3>
+              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Research & Development</h3>
             </div>
-            <span className="hidden sm:block font-mono text-xs tracking-wider uppercase border border-black px-3 py-1 mt-2 sm:mt-0">
+            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
               Learn More
             </span>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div className="order-2 md:order-1">
-              <p className="mb-4 font-sans text-gray-700">
+              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
                 Bespoke R&D sprints for teams pushing the frontier of AI, media, and digital culture.
               </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-8 mb-4 uppercase text-black">Sample capabilities</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Sample capabilities</h4>
               <ul className="space-y-3 mb-8 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">✓</span>

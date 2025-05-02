@@ -113,7 +113,7 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
           </Link>
         </div>
         
-        {/* Hero image bar - moved directly below the hero text */}
+        {/* --- HERO IMAGE BAR: Top slice, just below hero text --- */}
         <div 
           className="w-full h-64 relative overflow-hidden" 
           aria-hidden="true"
@@ -122,7 +122,7 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
             src="/content/hero.png" 
             alt="Stylized view between buildings looking at moon and stars"
             fill
-            className="object-cover object-[center_8%]"
+            className="object-cover object-top md:object-[center_8%] scale-[1.0] md:scale-100"
             priority // Preload hero image
           />
         </div>
@@ -152,15 +152,15 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         </div>
       </section>
 
-      {/* First Image Section */}
+      {/* --- MIDDLE SLICE: After Impact section --- */}
       <section className="border-t border-black">
         <div className="w-full h-96 relative overflow-hidden" aria-hidden="true">
           <Image 
             src="/content/hero.png" 
             alt="" 
             fill 
-            className="object-cover object-center" 
-            quality={90} 
+            className="object-cover object-[center_40%] md:object-center scale-[2.0] md:scale-100" 
+            quality={100} 
           />
         </div>
       </section>
@@ -174,19 +174,9 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
             <div className="p-8 border border-black flex flex-col">
               <h3 className="font-heading text-xl mb-4">Map</h3>
               <p className="text-gray-700 mb-6">
-                We map your operational landscape, analyzing workstreams, capabilities, and culture to pinpoint the highest-impact AI initiatives tailored to your business.
+                We map your operational landscape—analyzing workflows, capabilities, culture, and brand to reveal where AI can unlock real leverage for your business.
               </p>
               <Link href="/services#audit" className="mt-auto inline-block border border-black px-4 py-2 font-mono text-[11px] tracking-wider hover:bg-black hover:text-white transition">
-                Learn More
-              </Link>
-            </div>
-            {/* Discover */}
-            <div className="p-8 border border-black flex flex-col">
-              <h3 className="font-heading text-xl mb-4">Discover</h3>
-              <p className="text-gray-700 mb-6">
-                Using systems thinking and org diagnostics, we uncover high-impact opportunities, bottlenecks, and quick wins tailored to your unique challenges.
-              </p>
-              <Link href="/services#workshop" className="mt-auto inline-block border border-black px-4 py-2 font-mono text-[11px] tracking-wider hover:bg-black hover:text-white transition">
                 Learn More
               </Link>
             </div>
@@ -194,7 +184,17 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
             <div className="p-8 border border-black flex flex-col">
               <h3 className="font-heading text-xl mb-4">Design</h3>
               <p className="text-gray-700 mb-6">
-                In collaborative sessions, we architect solutions, processes, and interfaces, creating low-risk prototypes to visualize and refine the path forward.
+                Through hands-on collaboration, we co-create tools, processes, and prototypes—rapidly shaping solutions your team can see, test, and own.
+              </p>
+              <Link href="/services#workshop" className="mt-auto inline-block border border-black px-4 py-2 font-mono text-[11px] tracking-wider hover:bg-black hover:text-white transition">
+                Learn More
+              </Link>
+            </div>
+            {/* Scale */}
+            <div className="p-8 border border-black flex flex-col">
+              <h3 className="font-heading text-xl mb-4">Scale</h3>
+              <p className="text-gray-700 mb-6">
+                We help your AI systems scale and evolve—learning from real-world use, adapting to new challenges, and compounding value as your business grows.
               </p>
               <Link href="/services#retainer" className="mt-auto inline-block border border-black px-4 py-2 font-mono text-[11px] tracking-wider hover:bg-black hover:text-white transition">
                 Learn More
@@ -212,15 +212,15 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
         <ClientLogoBar logos={filteredLogos} />
       </section>
 
-      {/* Second Image Section - Added before Testimonials */}
+      {/* --- BOTTOM SLICE: After Partners section --- */}
       <section className="border-t border-black">
         <div className="w-full h-96 relative overflow-hidden" aria-hidden="true">
           <Image 
             src="/content/hero.png" 
             alt="" 
             fill 
-            className="object-cover object-bottom" 
-            quality={90} 
+            className="object-cover object-bottom origin-bottom scale-[1.0] md:scale-100 md:origin-center md:object-bottom"
+            quality={100} 
           />
         </div>
       </section>
