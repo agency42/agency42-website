@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import { Inter, IBM_Plex_Mono, DotGothic16 } from "next/font/google"
 import './globals.css'
@@ -141,13 +141,15 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         )}
       </head>
       <body className="bg-white text-black">
-        <PostHogProvider>
-          <Navigation />
-          <main className="w-full">
-            {children}
-          </main>
-          <Footer />
-        </PostHogProvider>
+        <Suspense fallback={null}>
+          <PostHogProvider>
+            <Navigation />
+            <main className="w-full">
+              {children}
+            </main>
+            <Footer />
+          </PostHogProvider>
+        </Suspense>
       </body>
     </html>
   )
