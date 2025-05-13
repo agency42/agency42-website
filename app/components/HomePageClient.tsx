@@ -45,12 +45,20 @@ export default function HomePageClient({ featuredVideoId }: HomePageClientProps)
 
   const testimonials = [
     {
-      quote: "@Bootoshi and the crew led a virtual 3 hour \"vibe-coding 101\" workshop and had a group of 100+ devs engaged the entire time. It was a great mix of people from our existing community and the audience that Agency42 attracts from their network. A+ all around!",
+      quote: "The crew led a virtual 3 hour vibe-coding 101 workshop and had a group of 100+ devs engaged the entire time. It was a great mix of people from our existing community and the audience that Agency42 attracts from their network. A+ all around!",
       attribution: "Nick, Story Protocol"
     },
     {
       quote: "Excited to share that I've just learned how to use LinkedIn-MCP from the amazing @Kenneth. What's most incredible is that I was able to set this up with minimal coding skills!",
-      attribution: "Camille, Camille Landau Consulting"
+      attribution: "Camille, Landau Consulting"
+    },
+    {
+      quote: "You broke things down in a way that actually made sense. Our calls cleared up a lot for us and probably saved the team 2 weeks of R&D",
+      attribution: "Nash, What Works Global"
+    },
+    {
+      quote: "Managed to take my HTML from 2500 lines down to 600 and tidy things up to the point where a proper coder took a look at it and didn't believe I was vibe coding.",
+      attribution: "Meme Records"
     }
   ]
 
