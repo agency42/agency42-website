@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { cn } from '@/lib/utils';
-import { InfiniteSlider } from './InfiniteSlider';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { cn } from "@/lib/utils";
+import { InfiniteSlider } from "./InfiniteSlider";
 
 interface ClientLogo {
   src: string;
@@ -17,27 +17,31 @@ interface ClientLogoBarProps extends React.HTMLAttributes<HTMLDivElement> {
   logos: ClientLogo[];
 }
 
-export function ClientLogoBar({ logos, className, ...props }: ClientLogoBarProps) {
+export function ClientLogoBar({
+  logos,
+  className,
+  ...props
+}: ClientLogoBarProps) {
   return (
-    <div className={cn("w-full overflow-hidden py-4", className)} {...props}>
-      <InfiniteSlider gap={48} duration={400} className="h-80 w-full">
+    <div className={cn("w-full overflow-hidden", className)} {...props}>
+      <InfiniteSlider gap={10} duration={100} className="h-56 w-full">
         {logos.map((logo, index) => (
-          <Link 
+          <Link
             key={`logo-${index}`}
-            href={logo.url || '#'}
+            href={logo.url || "#"}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-80 w-auto items-center justify-center px-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
+            className="flex h-56 w-auto items-center justify-center px-16 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm group"
             aria-label={`Visit ${logo.alt} website`}
           >
             <Image
               src={logo.src}
               alt={logo.alt}
-              width={800}
-              height={400}
+              width={400}
+              height={200}
               className={cn(
-                "h-80 w-auto object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-200 filter grayscale contrast-125",
-                logo.invert && "invert brightness-75"
+                "h-40 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0",
+                logo.invert && "invert"
               )}
             />
           </Link>
@@ -45,4 +49,4 @@ export function ClientLogoBar({ logos, className, ...props }: ClientLogoBarProps
       </InfiniteSlider>
     </div>
   );
-} 
+}

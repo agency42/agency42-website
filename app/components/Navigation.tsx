@@ -1,91 +1,132 @@
-'use client'
+"use client";
 
-import React from 'react'
-import Link from 'next/link'
-import { Popover, PopoverTrigger, PopoverContent } from '@/components/ui/popover'
+import React, { useState } from "react";
+import Link from "next/link";
 
 // Set to true to show the Research link
 const showResearchLink = false;
 
 export default function Navigation() {
+  const [isOpen, setIsOpen] = useState(false);
+
   const navLinks = [
     { href: "/", label: "HOME" },
     { href: "/services", label: "SERVICES" },
     { href: "/content", label: "STORIES" },
     ...(showResearchLink ? [{ href: "/research", label: "RESEARCH" }] : []),
     { href: "/company", label: "COMPANY" },
-    // { href: "/projects", label: "PROJECTS" },
     { href: "https://daybloom.ai", label: "DAYBLOOM" },
     { href: "https://improbable.beehiiv.com/", label: "NEWSLETTER" },
-    { href: "https://github.com/agency42", label: "GITHUB" }
-  ]
+    { href: "https://github.com/agency42", label: "GITHUB" },
+    { href: "/services#contact", label: "CONTACT" },
+  ];
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent text-foreground">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-center h-16">
-            <Link 
-              href="/" 
-              className="font-mono text-xl tracking-wider text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-sm"
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div className="container mx-auto px-6">
+          {/* Top Bar - Always Visible */}
+          <div className="flex justify-between items-center h-20">
+            <Link
+              href="/"
+              className="font-mono text-xl tracking-wider text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-sm"
             >
-              <span className="text-black !text-black font-bold flex items-baseline">
-                <span className="text-3xl leading-none mr-[2px] relative -top-[2px]">△</span>
+              <span className="text-black font-bold flex items-baseline">
+                <span className="text-3xl leading-none mr-[2px] relative -top-[2px]">
+                  △
+                </span>
               </span>
             </Link>
-            
-            {/* Popover-based Menu */}
-            <Popover>
-              <PopoverTrigger asChild>
-                <button
-                  className="group h-7 w-7 flex items-center justify-center text-black hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-sm"
-                  aria-label="Toggle Menu"
-                >
-                  <svg
-                    className="pointer-events-none"
-                    width={24}
-                    height={24}
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    xmlns="http://www.w3.org/2000/svg"
+
+            {/* Menu Toggle */}
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="group h-8 w-8 flex items-center justify-center text-black hover:text-gray-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500 rounded-sm transition-colors"
+              aria-label="Toggle Menu"
+              aria-expanded={isOpen}
+            >
+              <svg
+                className="pointer-events-none"
+                width={20}
+                height={20}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M4 12H20"
+                  className={`origin-center transition-all duration-300 ease-out ${
+                    isOpen ? "rotate-45 translate-y-0" : "-translate-y-[7px]"
+                  }`}
+                />
+                <path
+                  d="M4 12H20"
+                  className={`origin-center transition-all duration-300 ease-out ${
+                    isOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <path
+                  d="M4 12H20"
+                  className={`origin-center transition-all duration-300 ease-out ${
+                    isOpen ? "-rotate-45 translate-y-0" : "translate-y-[7px]"
+                  }`}
+                />
+              </svg>
+            </button>
+          </div>
+
+          {/* Expanded Menu */}
+          <div
+            className={`overflow-hidden transition-all duration-500 ease-out ${
+              isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+            }`}
+          >
+            <div className="pb-8 pt-4">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 justify-items-center">
+                {navLinks.map((link, index) => (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setIsOpen(false)}
+                    className={`group block font-mono text-sm tracking-widest text-gray-600 hover:text-black transition-all duration-300 py-3 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm transform hover:translate-y-[-1px] ${
+                      isOpen ? "animate-fade-in-up" : ""
+                    }`}
+                    style={{
+                      animationDelay: `${index * 50}ms`,
+                      animationFillMode: "both",
+                    }}
                   >
-                    <path
-                      d="M4 12H20"
-                      className="origin-center -translate-y-[7px] transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[315deg]"
-                    />
-                    <path
-                      d="M4 12H20"
-                      className="origin-center transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.8)] group-aria-expanded:rotate-45"
-                    />
-                    <path
-                      d="M4 12H20"
-                      className="origin-center translate-y-[7px] transition-all duration-300 [transition-timing-function:cubic-bezier(.5,.85,.25,1.1)] group-aria-expanded:translate-y-0 group-aria-expanded:rotate-[135deg]"
-                    />
-                  </svg>
-                </button>
-              </PopoverTrigger>
-              <PopoverContent side="bottom" align="end" className="bg-card border border-border p-6 rounded-md shadow-lg w-64">
-                <ul className="space-y-4">
-                  {navLinks.map((link) => (
-                    <li key={link.href}>
-                      <Link
-                        href={link.href}
-                        className="block font-mono text-sm tracking-wider text-muted-foreground hover:text-foreground transition-colors py-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-sm"
-                      >
-                        {link.label}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </PopoverContent>
-            </Popover>
+                    <span className="border-b border-transparent group-hover:border-black transition-all duration-300">
+                      {link.label}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </nav>
+
+      <style jsx>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
+      `}</style>
     </>
-  )
-} 
+  );
+}
