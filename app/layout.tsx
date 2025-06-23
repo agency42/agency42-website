@@ -1,6 +1,5 @@
 import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono } from "next/font/google"
 import localFont from 'next/font/local'
 import './globals.css'
 import Navigation from './components/Navigation'
@@ -8,22 +7,20 @@ import { PostHogProvider } from './providers/PostHogProvider'
 import { Footer } from '@/components/Footer'
 
 // Instantiate the fonts
-const inter = Inter({ 
-  subsets: ['latin'],
+const inter = localFont({
+  src: './fonts/Inter-Variable.woff2',
   display: 'swap',
   variable: '--font-inter',
 })
 
-const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
-  weight: ['400'],
+const ibmPlexMono = localFont({
+  src: './fonts/IBMPlexMono-Regular.woff2',
   display: 'swap',
   variable: '--font-ibm-plex-mono',
 })
 
-// Use self-hosted DotGothic16 to avoid Google Fonts timeout issues
 const pixelFont = localFont({
-  src: '../public/fonts/DotGothic16-Regular.ttf',
+  src: './fonts/DotGothic16-Regular.ttf',
   display: 'swap',
   variable: '--font-pixel',
 })
@@ -130,7 +127,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans dark`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-mono`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (

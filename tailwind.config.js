@@ -64,26 +64,22 @@ module.exports = {
     				'5': 'hsl(var(--chart-5))'
     			}
     		},
-    					fontFamily: {
-				sans: [
-					'var(--font-inter)',
-					'system-ui',
-					'sans-serif'
-				],
-				heading: [
-					'var(--font-inter)',
-					'system-ui',
-					'sans-serif'
-				],
-				mono: [
-					'var(--font-ibm-plex-mono)',
-					'monospace'
-				],
-				pixel: [
-					'var(--font-pixel)',
-					'monospace'
-				]
-			},
+    		fontFamily: {
+    			sans: [
+    				'var(--font-inter)',
+    				'system-ui',
+    				'sans-serif'
+    			],
+    			heading: [
+    				'var(--font-inter)',
+    				'system-ui',
+    				'sans-serif'
+    			],
+    			mono: [
+    				'var(--font-ibm-plex-mono)',
+    				'monospace'
+    			]
+    		},
     		borderRadius: {
     			lg: 'var(--radius)',
     			md: 'calc(var(--radius) - 2px)',
