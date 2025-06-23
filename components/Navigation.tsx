@@ -18,7 +18,6 @@ export default function Navigation() {
     { href: "/company", label: "COMPANY" },
     { href: "https://daybloom.ai", label: "DAYBLOOM" },
     { href: "https://improbable.beehiiv.com/", label: "NEWSLETTER" },
-    { href: "https://github.com/agency42", label: "GITHUB" },
     { href: "/services#contact", label: "CONTACT" },
   ];
 
