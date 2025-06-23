@@ -1,8 +1,17 @@
 "use client";
 
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import useSWR from "swr";
+import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { CenterUnderline } from "./ui/underline-animation";
+import { ClientCarousel } from "./ClientCarousel";
+import YouTube from "react-youtube";
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { ClientLogoBar } from "./ClientLogoBar";
 import { HeroSection } from "./HeroSection";
@@ -14,15 +23,9 @@ interface HomePageClientProps {
   // Add other props if needed (e.g., clientLogos, testimonials)
 }
 
-// Fetcher function for SWR
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
-
 export default function HomePageClient({
   featuredVideoId,
 }: HomePageClientProps) {
-  // Fetch GitHub lines of code data
-  const { data: locData, error: locError } = useSWR("/api/oss-loc", fetcher);
-
   // State for newsletter form
   const [email, setEmail] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -87,7 +90,7 @@ export default function HomePageClient({
   ];
 
   // Handle newsletter subscription
-  const handleSubscribe = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubscribe = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsLoading(true);
     setMessage("");
