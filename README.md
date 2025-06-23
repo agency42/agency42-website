@@ -19,6 +19,7 @@ Our strategic vision, messaging, and technical marketing plans are detailed in o
 -   **Psychology-Driven Copy:** Messaging designed to build trust and articulate value by focusing on client problems and our proven solutions.
 -   **Generative Engine Optimized (GEO):** Content and site structure are optimized for visibility in conversational AI search engines (ChatGPT, Perplexity, etc.).
 -   **Integrated Contact & Qualification:** A multi-step form that qualifies leads and notifies the team via email and Discord.
+-   **Our Work / Case Studies:** A showcase of client projects with detailed write-ups, featuring a modern grid layout and filterable categories.
 
 ## Local Development
 
