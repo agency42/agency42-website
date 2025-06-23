@@ -8,6 +8,55 @@ module.exports = {
     ],
     theme: {
     	extend: {
+    		typography: (theme) => ({
+    			DEFAULT: {
+    				css: {
+    					'--tw-prose-body': theme('colors.neutral[700]'),
+    					'--tw-prose-headings': theme('colors.neutral[900]'),
+    					'--tw-prose-lead': theme('colors.neutral[600]'),
+    					'--tw-prose-links': theme('colors.neutral[900]'),
+    					'--tw-prose-bold': theme('colors.neutral[900]'),
+    					'--tw-prose-counters': theme('colors.neutral[500]'),
+    					'--tw-prose-bullets': theme('colors.neutral[300]'),
+    					'--tw-prose-hr': theme('colors.neutral[200]'),
+    					'--tw-prose-quotes': theme('colors.neutral[900]'),
+    					'--tw-prose-quote-borders': theme('colors.neutral[200]'),
+    					'--tw-prose-captions': theme('colors.neutral[500]'),
+    					'--tw-prose-code': theme('colors.neutral[900]'),
+    					'--tw-prose-pre-code': theme('colors.neutral[200]'),
+    					'--tw-prose-pre-bg': theme('colors.neutral[800]'),
+    					'--tw-prose-th-borders': theme('colors.neutral[300]'),
+    					'--tw-prose-td-borders': theme('colors.neutral[200]'),
+
+    					// Base body text
+    					p: {
+    						fontFamily: theme('fontFamily.sans').join(', '),
+    						fontWeight: '400',
+    					},
+
+    					// Headings
+    					'h2, h3, h4, h5, h6': {
+    						fontFamily: theme('fontFamily.heading').join(', '),
+    						fontWeight: '800', // extrabold
+    					},
+    					
+    					// Links
+    					a: {
+    						fontWeight: '500',
+    						textDecoration: 'underline',
+    						transition: 'color 0.2s ease-in-out',
+    						'&:hover': {
+    							color: theme('colors.neutral[700]'),
+    						},
+    					},
+
+    					// Bold
+    					strong: {
+    						fontWeight: '700', // bold
+    					},
+    				},
+    			},
+    		}),
     		colors: {
     			background: 'hsl(var(--background))',
     			foreground: 'hsl(var(--foreground))',
@@ -109,7 +158,10 @@ module.exports = {
     		}
     	}
     },
-    plugins: [require("tailwindcss-animate")],
+    plugins: [
+      require("tailwindcss-animate"),
+      require('@tailwindcss/typography')
+    ],
   }
   
   

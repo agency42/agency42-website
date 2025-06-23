@@ -3,10 +3,38 @@ import path from 'path'
 import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
+import * as cheerio from 'cheerio'
+import slugify from 'slugify'
 
 const caseStudiesDirectory = path.join(process.cwd(), 'content/case-studies')
 
-export function getSortedCaseStudiesData() {
+interface Heading {
+  level: number;
+  text: string;
+  slug: string;
+}
+
+interface CaseStudyData {
+  id: string;
+  contentHtml: string;
+  headings: Heading[];
+  title: string;
+  date: string;
+  description?: string;
+  summary?: string;
+  hero?: string;
+  diagrams?: string[];
+  client?: {
+    name: string;
+    industry: string;
+    location: string;
+  };
+  services?: string[];
+  tags?: string[];
+  stats?: any; // Keeping this flexible for different stat types
+}
+
+export function getSortedCaseStudiesData(): Omit<CaseStudyData, 'contentHtml' | 'headings'>[] {
   // Get file names under /content/case-studies
   const fileNames = fs.readdirSync(caseStudiesDirectory)
   const allCaseStudiesData = fileNames.map(fileName => {
@@ -23,8 +51,8 @@ export function getSortedCaseStudiesData() {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { date: string; title: string; description: string })
-    }
+      ...matterResult.data,
+    } as Omit<CaseStudyData, 'contentHtml' | 'headings'>
   })
   // Sort case studies by date
   return allCaseStudiesData.sort((a, b) => {
@@ -36,7 +64,7 @@ export function getSortedCaseStudiesData() {
   })
 }
 
-export async function getCaseStudyData(id: string) {
+export async function getCaseStudyData(id: string): Promise<CaseStudyData> {
   const fullPath = path.join(caseStudiesDirectory, `${id}.md`)
   const fileContents = fs.readFileSync(fullPath, 'utf8')
 
@@ -45,14 +73,30 @@ export async function getCaseStudyData(id: string) {
 
   // Use remark to convert markdown into HTML string
   const processedContent = await remark()
-    .use(html)
+    .use(html, { sanitize: false })
     .process(matterResult.content)
-  const contentHtml = processedContent.toString()
+  const contentHtmlWithIds = processedContent.toString()
+  const $ = cheerio.load(contentHtmlWithIds)
+  const headings: Heading[] = []
+
+  $('h2, h3').each((_, el) => {
+    if (el.type === 'tag') {
+      const element = $(el)
+      const text = element.text()
+      const level = parseInt(el.tagName.substring(1), 10)
+      const slug = slugify(text, { lower: true, strict: true })
+      
+      element.attr('id', slug)
+      
+      headings.push({ level, text, slug })
+    }
+  });
 
   // Combine the data with the id and contentHtml
   return {
     id,
-    contentHtml,
-    ...(matterResult.data as { date: string; title: string; description: string })
-  }
+    contentHtml: $.html(),
+    headings,
+    ...matterResult.data,
+  } as CaseStudyData
 } 
