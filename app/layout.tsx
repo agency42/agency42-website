@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono, DotGothic16 } from "next/font/google"
+import { Inter, IBM_Plex_Mono } from "next/font/google"
+import localFont from 'next/font/local'
 import './globals.css'
 import Navigation from './components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
@@ -20,9 +21,9 @@ const ibmPlexMono = IBM_Plex_Mono({
   variable: '--font-ibm-plex-mono',
 })
 
-const pixelFont = DotGothic16({
-  subsets: ['latin'],
-  weight: '400',
+// Use self-hosted DotGothic16 to avoid Google Fonts timeout issues
+const pixelFont = localFont({
+  src: '../public/fonts/DotGothic16-Regular.ttf',
   display: 'swap',
   variable: '--font-pixel',
 })
@@ -129,7 +130,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-mono`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-sans dark`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (

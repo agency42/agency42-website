@@ -28,88 +28,59 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="bg-white text-black pt-16 md:pt-24">
-      {/* Hero section with improved mobile layout */}
-      <section className="pt-8 md:pt-14 pb-20 md:pb-28 px-4 border-b border-black relative overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-start md:items-center">
-            <div className="w-full aspect-video md:h-96 flex items-center justify-center bg-black order-first">
-              <ConwaySim 
-                speed={0.033} 
-                initialDensity={0.3} 
-                preWarmSteps={50}
-              />
-            </div>
-            <div className="w-full">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium mb-6">
-                Operate at the speed of AI
-              </h1>
-              <p className="text-base md:text-lg mb-8 font-sans text-gray-600 max-w-xl">
-                We take a systematic approach to designing intelligent systems, automating workflows, and exploring frontier AI use cases—bridging strategy and execution at every step.
-              </p>
-              <Link
-                href="#contact"
-                className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-6 md:px-8 py-3 hover:bg-black hover:text-white transition-colors"
-              >
-                GET STARTED →
-              </Link>
-            </div>
-          </div>
+      {/* Simplified Hero section */}
+      <section className="pt-8 md:pt-14 pb-16 md:pb-20 px-4 border-b border-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-normal mb-6 text-black tracking-tight leading-[1.05]">
+            We identify the AI automation opportunities you can't see.
+          </h1>
+          <p className="text-base md:text-lg mb-8 font-sans text-gray-600 max-w-2xl mx-auto">
+            Our AI implementation approach analyzes both team workflows and technology systems to find hidden automation opportunities. We focus on implementations that teams actually adopt.
+          </p>
+          <Link
+            href="#contact"
+            className="inline-block bg-black text-white font-mono text-[11px] tracking-wider uppercase px-8 py-3 hover:bg-gray-900 transition-colors duration-200"
+          >
+            GET YOUR AI OPPORTUNITY AUDIT →
+          </Link>
         </div>
       </section>
 
-      {/* Process Section - improved mobile layout */}
+      {/* Services Section - Now the main focus */}
+      <section id="services" className="py-16 md:py-24 px-4 border-b border-black">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
+            How We Help
+          </h2>
+          <ServicesAccordion />
+        </div>
+      </section>
+
+      {/* Enhanced Process Section with REVEAL → RESOLVE → REALIZE */}
       <section id="process" className="py-16 md:py-24 border-b border-black px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="mb-8 md:mb-12">
-            <div 
-              className="w-full overflow-hidden border border-black"
-              style={{ 
-                height: 'min(64vh, 255px)',
-                maxHeight: '255px',
-                aspectRatio: '16/9'
-              }}
-            >
-              <FlickeringGrid 
-                rows={40}
-                columns={40}
-                speed={6000}
-                probability={0.033}
-                activeColor="#000000"
-                inactiveColor="rgba(0,0,0,0.1)"
-                className="h-full w-full"
-              />
-            </div>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
             <div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-light mb-4">
-                Creative Engineering, <br className="hidden md:block" /> Beyond Automation
+              <h3 className="text-2xl md:text-3xl font-heading font-light mb-4">
+                Our Methodology
               </h3>
               <p className="mb-8 font-sans text-gray-600 text-base md:text-lg">
-                We blend imaginative engineering with deep research to help teams move fast, build trust, and turn learning into lasting advantage.
+                We use a proven three-phase methodology developed from aerospace operations and industrial psychology research. Our approach identifies where AI agents and automation tools create the most operational leverage.
               </p>
             </div>
             <div>
-              <ol className="list-none space-y-6 md:space-y-8 font-sans text-gray-600">
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Map</span>
-                  <p className="mt-2 text-base md:text-lg">We immerse ourselves in your culture, workflows, and data—mapping both the human and technical landscape to reveal where inventive AI can unlock real leverage.</p>
+              <ol className="list-none space-y-6 font-sans text-gray-600">
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Operations Mapping:</strong> Document current workflows using aerospace-grade process analysis</span>
                 </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Discover</span>
-                  <p className="mt-2 text-base md:text-lg">Through systems thinking and diagnostic tools, we surface bottlenecks, quick wins, and bold opportunities that matter most to your people and your mission.</p>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Automation Architecture:</strong> Design AI agent systems that integrate with existing team dynamics</span>
                 </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Design</span>
-                  <p className="mt-2 text-base md:text-lg">In hands-on workshops, we co-create new tools, processes, and capabilities—rapidly prototyping ideas so teams can see, shape, and own the future.</p>
-                </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Scale</span>
-                  <p className="mt-2 text-base md:text-lg">Once new systems are in place, we help you scale them—ensuring your solutions grow seamlessly with your business and deliver impact at every level.</p>
-                </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Evolve</span>
-                  <p className="mt-2 text-base md:text-lg">As your business grows, we continuously adapt your AI solutions—ensuring they stay effective, relevant, and aligned with your evolving goals.</p>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Adoption Engineering:</strong> Implement solutions using proven change management from industrial psychology</span>
                 </li>
               </ol>
             </div>
@@ -117,13 +88,20 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Section with Accordion */}
-      <section id="services" className="py-16 md:py-24 px-4 border-b border-black">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
-            Our Services
+      {/* Risk Reversal Section */}
+      <section className="py-16 md:py-24 px-4 bg-gray-50 border-b border-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-medium mb-6">
+            Our Commitment
           </h2>
-          <ServicesAccordion />
+          <div className="bg-white border-2 border-black rounded-lg p-8 shadow-lg" style={{ boxShadow: '8px 8px 0px 0px rgba(0,0,0,1)' }}>
+            <p className="text-lg md:text-xl font-sans text-gray-800 mb-4">
+              We'll identify at least <strong>300 hours of time-saving opportunities</strong> in your operations, or the assessment is free.
+            </p>
+            <p className="text-base text-gray-600 font-sans">
+              Our systematic AI audit process consistently reveals workflow automation opportunities that teams have accepted as normal manual work.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -131,13 +109,85 @@ export default function ServicesPage() {
       <section id="contact" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-3xl text-center">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-4 md:mb-6">
-            Ready to Start Your AI Journey?
+            Ready to discover your hidden operational value?
           </h2>
-          <p className="text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto font-sans text-gray-600">
-            Fill out the form below, and we'll schedule a discovery call to discuss your needs and how we can help.
+          <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-gray-600">
+            Complete the form below so we can analyze your specific situation and identify potential AI opportunities.
           </p>
           
           <QualForm className="text-left" />
+
+          {/* What Happens Next Box - moved after form */}
+          <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mt-8 max-w-2xl mx-auto text-left">
+            <h4 className="font-mono text-[11px] tracking-wider uppercase text-black mb-4">What happens next</h4>
+            <ol className="space-y-2 text-sm text-gray-700">
+              <li className="flex items-start">
+                <span className="font-medium mr-2">1.</span>
+                <span>You complete our qualification form (2 minutes).</span>
+              </li>
+              <li className="flex items-start">
+                <span className="font-medium mr-2">2.</span>
+                <span>We review your business profile within 24 hours.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="font-medium mr-2">3.</span>
+                <span>If there's a strong fit, we'll reach out to schedule a strategy call.</span>
+              </li>
+              <li className="flex items-start">
+                <span className="font-medium mr-2">4.</span>
+                <span>No fit? We'll send you relevant resources instead.</span>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      {/* Additional Information Section */}
+      <section className="py-16 md:py-24 px-4">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
+            Additional Information
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+            <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8">
+              <h3 className="text-xl font-semibold text-gray-900 mb-4">Professional AI Automation Assessment</h3>
+              <ul className="space-y-3 text-gray-700">
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Workflow Analysis:</strong> Systematic documentation of current operations and bottlenecks</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>AI Agent Specifications:</strong> Technical blueprints for automation solutions tailored to your processes</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Implementation Roadmap:</strong> Phased deployment plan with adoption milestones</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Team Integration Strategy:</strong> Change management approach based on industrial psychology principles</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Technical Architecture:</strong> System requirements and integration specifications</span>
+                </li>
+              </ul>
+              
+              <p className="text-sm text-gray-600 mb-6 mt-6">
+                <strong>Delivery:</strong> Comprehensive documentation, stakeholder workshops, and technical specifications. Our methodology combines aerospace operations expertise with proven automation frameworks.
+              </p>
+            </div>
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-6 mb-8">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Why our approach works</h3>
+              <p className="text-gray-700 mb-4">
+                Most AI implementations fail because they ignore the human systems. Our methodology, developed from SpaceX operations analysis and industrial psychology research, designs automation that teams actually use.
+              </p>
+              <p className="text-gray-700">
+                We've seen this pattern repeatedly: technical solutions that don't account for workflow psychology get abandoned. Our systematic approach ensures sustainable adoption.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </div>

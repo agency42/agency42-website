@@ -12,97 +12,42 @@ import {
 
 export default function ServicesAccordion() {
   return (
-    <Accordion type="single" collapsible className="space-y-6">
-      {/* AI Opportunity Audit */}
-      <AccordionItem value="audit" className="border border-black p-0 rounded-none">
-        <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-          <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
-            <div>
-              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">AI Opportunity Audit</h3>
-            </div>
-            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
-              Learn More
-            </span>
+    <Accordion type="single" collapsible className="w-full">
+      {/* Workshops & Coaching */}
+      <AccordionItem value="workshops" className="border border-black mb-4">
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
+          <div className="flex flex-col items-start">
+            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
+              Workshops & Coaching
+            </h3>
+            <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
+              Hands-on training for teams and individuals to use AI effectively in their work
+            </p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
-                A 4-6-week diagnostic that reveals where AI delivers the highest return for your organization.
-              </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">You'll typically see</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">What we teach</h4>
               <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Maps of technology use and information flows through the org</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Creative professionals:</strong> AI tools for design, content creation, and client work</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Ranked list of high-impact AI use-cases (scored on tech fit × human fit)</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Software engineers:</strong> AI integration in production environments</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Compact action roadmap with quick-win options and next-step recommendations</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Business teams:</strong> Workflow automation and process optimization</span>
                 </li>
               </ul>
-              <Link
-                href="#contact"
-                className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-8 py-3 hover:bg-black hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
-              >
-                SCHEDULE AN AUDIT →
-              </Link>
-            </div>
-            <div className="w-full aspect-video border border-black overflow-hidden">
-              <Image 
-                src="/content/observe.png" 
-                alt="AI Opportunity Audit" 
-                width={800} 
-                height={450} 
-                className="w-full h-full object-cover"
-              />
-            </div>
-          </div>
-        </AccordionContent>
-      </AccordionItem>
-
-      {/* Hands-on Workshop */}
-      <AccordionItem value="workshop" className="border border-black p-0 rounded-none">
-        <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-          <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
-            <div>
-              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Hands-on Workshops</h3>
-            </div>
-            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
-              Learn More
-            </span>
-          </div>
-        </AccordionTrigger>
-        <AccordionContent className="p-8 pt-6 bg-white">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
-            <div className="order-2 md:order-1">
-              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
-                Live, practical sessions that turn audit insights into real capability.
+              
+              <p className="text-sm text-gray-600 mb-6">
+                <strong>Format:</strong> Interactive workshops, 1-on-1 coaching sessions, and ongoing team support to maximize adoption through proven AI implementation methods.
               </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Common elements</h4>
-              <ul className="space-y-3 mb-8 font-sans text-gray-700">
-                <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Custom curriculum built from your top opportunities</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Guided exercises on prompt design, workflow automation, or agent basics</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Take-home cheatsheets & recordings for repeat learning</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Follow-up Q&A window to lock in adoption</span>
-                </li>
-              </ul>
+              
               <Link
                 href="#contact"
                 className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-8 py-3 hover:bg-black hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
@@ -110,12 +55,12 @@ export default function ServicesAccordion() {
                 INQUIRE ABOUT WORKSHOPS →
               </Link>
             </div>
-            <div className="w-full aspect-video border border-black overflow-hidden order-1 md:order-2">
+            <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
                 src="/content/deltaspacewide.png" 
-                alt="Hands-on Workshop" 
-                width={800} 
-                height={450} 
+                alt="Workshops & Coaching"
+                width={800}
+                height={450}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -124,55 +69,66 @@ export default function ServicesAccordion() {
       </AccordionItem>
 
       {/* Fractional AI Leadership */}
-      <AccordionItem value="retainer" className="border border-black p-0 rounded-none">
-        <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-          <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
-            <div>
-              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Fractional AI Leadership</h3>
-            </div>
-            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
-              Learn More
-            </span>
+      <AccordionItem value="fractional" className="border border-black mb-4">
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
+          <div className="flex flex-col items-start">
+            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
+              Fractional AI Leadership
+            </h3>
+            <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
+              Ongoing strategic partnership to transform your operations with AI
+            </p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
-                Ongoing strategic and technical guidance without the full-time hire.
-              </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Typical support</h4>
-              <ul className="space-y-3 mb-8 font-sans text-gray-700">
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">What's included</h4>
+              <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Monthly/weekly strategy huddles & roadmap refresh</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>AI Audits:</strong> Analyze team workflows and technology systems to find workflow automation opportunities</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Oversight on builds, vendors, and data strategy</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Strategic roadmapping:</strong> Clear implementation timeline with ROI projections</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Lightweight coaching & upskilling for internal champions</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Stakeholder interviews:</strong> Understand team needs and resistance points</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Continuous scanning for new AI plays that fit your context</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Data analysis:</strong> Identify patterns and optimization opportunities</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Ongoing support:</strong> Monthly strategy sessions and team coaching</span>
                 </li>
               </ul>
+              
+              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+                <p className="font-mono text-[11px] tracking-wider uppercase text-black mb-2">Real Example: Marketing Agency</p>
+                <p className="text-sm text-gray-700">300+ hours of time-saving opportunities identified through systematic workflow analysis and process mapping.</p>
+              </div>
+              
+              <p className="text-sm text-gray-600 mb-6">
+                <strong>Commitment:</strong> Monthly retainer based on your needs and company size. Minimum 3-month engagement.
+              </p>
+              
               <Link
                 href="#contact"
                 className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-8 py-3 hover:bg-black hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
               >
-                DISCUSS A RETAINER →
+                CHECK YOUR FIT →
               </Link>
             </div>
             <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
-                src="/content/delta-long.png" 
-                alt="Fractional AI Leadership Services" 
-                width={800} 
-                height={450} 
+                src="/content/observe.png" 
+                alt="Fractional AI Leadership"
+                width={800}
+                height={450}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -181,38 +137,44 @@ export default function ServicesAccordion() {
       </AccordionItem>
 
       {/* Research & Development */}
-      <AccordionItem value="randd" className="border border-black p-0 rounded-none">
-        <AccordionTrigger className="p-8 hover:no-underline data-[state=open]:border-b border-black bg-white hover:bg-gray-50 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500">
-          <div className="flex flex-col sm:flex-row w-full items-start sm:items-center justify-between text-left pr-4">
-            <div>
-              <h3 className="font-heading text-xl md:text-2xl text-black text-left mb-2 sm:mb-0">Research & Development</h3>
-            </div>
-            <span className="font-mono text-[11px] tracking-wider uppercase border border-black px-3 py-1">
-              Learn More
-            </span>
+      <AccordionItem value="research" className="border border-black">
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
+          <div className="flex flex-col items-start">
+            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
+              Research & Development
+            </h3>
+            <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
+              Custom AI product development and technical research
+            </p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
-            <div className="order-2 md:order-1">
-              <p className="text-base md:text-lg mb-4 font-sans text-gray-700">
-                Bespoke R&D sprints for teams pushing the frontier of AI, media, and digital culture.
-              </p>
-              <h4 className="font-mono text-[11px] tracking-wider mt-6 md:mt-8 mb-4 uppercase text-black">Sample capabilities</h4>
-              <ul className="space-y-3 mb-8 font-sans text-gray-700">
+            <div>
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">Our capabilities</h4>
+              <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Prototype agent systems & custom LLM workflows</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>AI product development:</strong> Custom applications and services for your business</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Exploratory studies in memetics, creative AI, or decentralized media</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Technical research:</strong> Exploring frontier AI capabilities for competitive advantage</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">✓</span>
-                  <span>Proof-of-concept builds that stress-test "next-gen" ideas before full investment</span>
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>System integration:</strong> Connecting AI solutions with existing infrastructure</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-2">•</span>
+                  <span><strong>Performance optimization:</strong> Scaling AI systems for production environments</span>
                 </li>
               </ul>
+              
+              <p className="text-sm text-gray-600 mb-6">
+                <strong>Approach:</strong> We combine engineering expertise with research methodology to build AI solutions that work in the real world.
+              </p>
+              
               <Link
                 href="#contact"
                 className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-8 py-3 hover:bg-black hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-blue-500"
@@ -220,12 +182,12 @@ export default function ServicesAccordion() {
                 EXPLORE R&D POSSIBILITIES →
               </Link>
             </div>
-            <div className="w-full aspect-video border border-black overflow-hidden order-1 md:order-2">
+            <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
                 src="/content/stairway.png" 
-                alt="Research and Development" 
-                width={800} 
-                height={450} 
+                alt="Research and Development"
+                width={800}
+                height={450}
                 className="w-full h-full object-cover"
               />
             </div>
