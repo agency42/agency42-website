@@ -1,6 +1,8 @@
 import { getCaseStudyData, getSortedCaseStudiesData } from '@/lib/case-studies'
 import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
+import CaseStudyLayout from '@/components/CaseStudyLayout'
+import Link from 'next/link'
 
 // Generate metadata for each case study page
 export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
@@ -23,25 +25,21 @@ export default async function CaseStudyPage({ params }: { params: { slug: string
     }
 
     return (
-        <article className="min-h-screen bg-background text-foreground pt-24">
-            <main className="container mx-auto max-w-3xl px-4 py-16">
-                <header className="mb-12 text-center">
-                    <h1 className="text-4xl md:text-5xl font-heading font-medium mb-4">{caseStudy.title}</h1>
-                    <p className="text-gray-500 font-mono text-sm">{caseStudy.date}</p>
-                </header>
-
-                <div
-                    className="prose prose-lg max-w-none mx-auto"
-                    dangerouslySetInnerHTML={{ __html: caseStudy.contentHtml }}
-                />
-
-                <div className="mt-16 text-center">
-                    <a href="/projects" className="text-foreground hover:text-neutral-600 transition-colors">
-                        ← Back to all projects
-                    </a>
-                </div>
-            </main>
-        </article>
+        <div>
+            <CaseStudyLayout
+                title={caseStudy.title}
+                hero={caseStudy.hero}
+                stats={caseStudy.stats}
+                contentHtml={caseStudy.contentHtml}
+                headings={caseStudy.headings}
+                diagrams={caseStudy.diagrams}
+            />
+            <div className="text-center py-12 bg-white text-black">
+                <Link href="/projects" className="text-foreground hover:text-neutral-600 transition-colors">
+                    ← Back to all projects
+                </Link>
+            </div>
+        </div>
     )
 }
 
