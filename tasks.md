@@ -34,12 +34,28 @@ This session focused on deep cleaning and aligning the website's technical and s
 
 ## Backlog & Next Steps
 
-- **[ ] Case Studies:** Write up and integrate detailed case studies.
-  - [ ] organize the project files to prep for case study implementation
-  - [ ] add case studies
-  - [ ] commit this update to the current branch
-- **[ ] Final Copy Review:** Final review of copy on all pages  
-- [ ] review case studies
-- [ ] company page: Saint Martin name is wrong it is Saint Louis 
+- **[ ] Case Studies Revamp (Research → Design → Build)**
+  1. **Research & Inspiration**
+     - [ ] Audit 5–7 standout agency/SaaS case-study pages (structure, storytelling, visuals, CTAs).
+     - [ ] Document findings in `docs/case-study-research.md` (screenshots + notes).
+  2. **Information Architecture**
+     - [ ] Define ideal content model: hero image, exec summary, metrics, problem → solution → outcome, tech stack, testimonial, CTA.
+     - [ ] Extend markdown front-matter schema to include new fields.
+  3. **Visual & UX Design**
+     - [ ] Wireframe `/projects` listing page (card/grid with hero thumbnails & key stats).
+     - [ ] Wireframe individual case-study page (hero, sticky sidebar nav, highlight bars for metrics).
+  4. **Implementation (Next.js + Tailwind)**
+     - [ ] Build new `CaseStudyCard` component & integrate into `app/projects/page.tsx`.
+     - [ ] Create `CaseStudyLayout` for detail pages to handle hero, TOC, and CTA.
+     - [ ] Update markdown utility to surface front-matter to layout.
+  5. **Content Upgrade**
+     - [ ] Rewrite existing case studies to fit the new framework.
+     - [ ] Add high-quality images/screenshots.
+  6. **QA & Launch**
+     - [ ] Cross-browser visual test & Lighthouse audit.
+     - [ ] Remove `noindex, nofollow` tag once satisfied.
+
+**[ ] Final Copy Review** – Conduct after new case-study pages are live.
+**[ ] Company Page Fix** – Correct "Saint Martin" to "Saint Louis."
 
 *This new format provides a clearer, session-based overview of our work.*

@@ -45,4 +45,62 @@ The `feature/clean-design` branch will be our working branch. We need to bring i
 ## Style & Copy Guidelines
 
 - **Tone:** Aim for clarity, depth, and empowerment. Focus on the client's transformation and capability, not just speed or our process.
-- **No Emojis:** Avoid using emojis in user-facing copy to maintain a professional and substantive tone. 
+- **No Emojis:** Avoid using emojis in user-facing copy to maintain a professional and substantive tone.
+
+## Case Study Revamp Notes – 2025-06-23
+
+### Ranking (strongest → weakest)
+1. **Cogent World** – Scaling Operations: How AI Automation Identified 1,300+ Hours of Annual Savings
+2. **Satoshi AI** – Mining Attention: How an Autonomous AI Agent Generated a $50 M Memecoin
+3. **Daybloom** – Creating Immersive AI Social Media Experiences
+
+### Why Cogent World Comes First
+- Quantified impact (hours + $$) is upfront – perfect for a "quick-stats" bar.
+- Clear Problem → Solution → Outcome headings with bulletised sub-sections.
+- Includes ROI / break-even analysis.
+- Plenty of graphic hooks (workflow charts, savings timeline).
+
+### Anonymisation Plan (pre-client-approval)
+| Original | Replacement |
+| -------- | ----------- |
+| Cogent World | **Acme Marketing** (generic alias) |
+| Specific employee names | Role-based labels (e.g. *Campaign Coordinator*) |
+| Exact revenue / headcount | Broad descriptors (e.g. "mid-7-figure revenue", "50+ employees") |
+| City / brand mentions | Generic equivalents (e.g. "East-Coast HQ", "global beverage brands") |
+
+### Image / Asset Needs
+1. **Hero banner** – abstract, monochrome illustration (≈1600×800).
+2. **Workflow diagram** – before/after or process flow.
+3. **Savings chart** – hours vs $$ visual.
+4. (Optional) Team interview photo (faces blurred OK).
+Store at `public/images/case-studies/acme-marketing/`.
+
+### Front-Matter Schema (draft)
+```yaml
+---
+title: Scaling Operations: …
+date: 2024-…
+hero: /images/case-studies/acme-marketing/hero.png
+stats:
+  hours_saved: 1300
+  annual_value: 52000
+  roi_months: 5
+---
+```
+
+### Implementation Roadmap
+1. **Extend markdown utilities** to read new `stats` + `hero` fields.
+2. **Build `CaseStudyLayout`**
+   - Hero image + quick-stats bar
+   - Sticky sidebar TOC (Tailwind + headings anchor links)
+   - Typography follows `docs/design-aesthetics.md` rules.
+3. **Create `CaseStudyCard`** for `/projects` listing page.
+4. **Convert & anonymise Cogent World markdown** using the new schema.
+5. **Populate images** once provided.
+6. Repeat for Satoshi AI & Daybloom.
+
+### Waiting On (from Ken)
+- Approval on alias (*Acme Marketing* OK?).
+- Hero + supporting screenshots/charts named per above.
+
+--- 
