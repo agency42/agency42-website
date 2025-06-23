@@ -15,11 +15,18 @@ export default function ServicesAccordion() {
     <Accordion type="single" collapsible className="w-full">
       {/* Workshops & Coaching */}
       <AccordionItem value="workshops" className="border border-black mb-4">
-        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
-          <div className="flex flex-col items-start">
-            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
-              Workshops & Coaching
-            </h3>
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50 group">
+          <div className="flex flex-col items-start w-full">
+            <div className="flex items-center justify-between w-full">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-extrabold text-black">
+                Workshops & Coaching
+              </h3>
+              <div className="flex items-center ml-4">
+                <span className="text-black font-mono text-lg group-data-[state=open]:rotate-90 transition-transform duration-200">
+                  →
+                </span>
+              </div>
+            </div>
             <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
               Hands-on training for teams and individuals to use AI effectively in their work
             </p>
@@ -70,11 +77,18 @@ export default function ServicesAccordion() {
 
       {/* Fractional AI Leadership */}
       <AccordionItem value="fractional" className="border border-black mb-4">
-        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
-          <div className="flex flex-col items-start">
-            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
-              Fractional AI Leadership
-            </h3>
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50 group">
+          <div className="flex flex-col items-start w-full">
+            <div className="flex items-center justify-between w-full">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-extrabold text-black">
+                Fractional AI Leadership
+              </h3>
+              <div className="flex items-center ml-4">
+                <span className="text-black font-mono text-lg group-data-[state=open]:rotate-90 transition-transform duration-200">
+                  →
+                </span>
+              </div>
+            </div>
             <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
               Ongoing strategic partnership to transform your operations with AI
             </p>
@@ -138,11 +152,18 @@ export default function ServicesAccordion() {
 
       {/* Research & Development */}
       <AccordionItem value="research" className="border border-black">
-        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50">
-          <div className="flex flex-col items-start">
-            <h3 className="text-xl md:text-2xl font-heading font-medium text-black">
-              Research & Development
-            </h3>
+        <AccordionTrigger className="px-8 py-6 text-left bg-white hover:bg-gray-50 [&[data-state=open]]:bg-gray-50 group">
+          <div className="flex flex-col items-start w-full">
+            <div className="flex items-center justify-between w-full">
+              <h3 className="text-xl md:text-2xl lg:text-3xl font-heading font-extrabold text-black">
+                Research & Development
+              </h3>
+              <div className="flex items-center ml-4">
+                <span className="text-black font-mono text-lg group-data-[state=open]:rotate-90 transition-transform duration-200">
+                  →
+                </span>
+              </div>
+            </div>
             <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
               Custom AI product development and technical research
             </p>
