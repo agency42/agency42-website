@@ -91,31 +91,31 @@ export default function ServicesPage() {
       {/* Why Companies Choose Our Approach */}
       <section className="py-16 md:py-24 px-4 bg-gray-50 border-b border-black">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl md:text-3xl font-heading font-medium mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-12">
             Why Companies Choose Our Approach
           </h2>
-          <div className="bg-white border-2 border-black rounded-lg p-8 shadow-lg" style={{ boxShadow: '8px 8px 0px 0px rgba(0,0,0,1)' }}>
-            <p className="text-lg md:text-xl font-sans text-gray-800 mb-4">
+          <div className="bg-white border-2 border-black p-8 text-left" style={{ boxShadow: '8px 8px 0px 0px rgba(0,0,0,1)' }}>
+            <p className="text-lg md:text-xl font-sans text-gray-800 mb-4 text-center">
               We've never found a company that couldn't save <strong>1000+ hours annually.</strong>
             </p>
-            <p className="text-base text-gray-600 font-sans mb-8">
+            <p className="text-base text-gray-600 font-sans mb-8 text-center">
               The manual work is always there. Most companies just can't see it.
             </p>
             
-            <div className="text-left max-w-2xl mx-auto">
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">What You Get:</h3>
-              <ul className="space-y-3 text-gray-700">
+            <div className="max-w-2xl mx-auto">
+              <h3 className="font-mono text-sm uppercase tracking-wider text-gray-700 mb-4">What You Get:</h3>
+              <ul className="space-y-3 font-sans text-gray-700 text-base">
                 <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span>Complete workflow analysis and automation roadmap</span>
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Complete workflow analysis</strong> and automation roadmap</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span>Technical specifications for AI integration</span>
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Technical specifications</strong> for AI integration</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span>Team adoption strategy that actually works</span>
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Team adoption strategy</strong> that actually works</span>
                 </li>
               </ul>
             </div>
@@ -126,7 +126,7 @@ export default function ServicesPage() {
       {/* Contact Form Section */}
       <section id="contact" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-4 md:mb-6">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-6">
             Ready to discover your hidden operational value?
           </h2>
           <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-gray-600">
