@@ -197,14 +197,6 @@ export default function HomePageClient({
                   ></iframe>
                 )}
               </div>
-              <div className="text-center mt-12">
-                <Link
-                  href="/projects"
-                  className="inline-block bg-black text-white font-mono text-sm font-medium tracking-wide px-8 py-4 hover:bg-gray-900 transition-colors duration-200"
-                >
-                  Explore Case Studies
-                </Link>
-              </div>
             </div>
           </div>
         </section>

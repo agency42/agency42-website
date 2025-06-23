@@ -12,7 +12,6 @@ export default function Navigation() {
   const navLinks = [
     { href: "/", label: "HOME" },
     { href: "/services", label: "SERVICES" },
-    { href: "/projects", label: "OUR WORK" },
     { href: "/content", label: "STORIES" },
     ...(showResearchLink ? [{ href: "/research", label: "RESEARCH" }] : []),
     { href: "/company", label: "COMPANY" },
