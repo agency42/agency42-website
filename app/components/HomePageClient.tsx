@@ -7,8 +7,6 @@ import { TestimonialCarousel } from "./TestimonialCarousel";
 import { ClientLogoBar } from "./ClientLogoBar";
 import { HeroSection } from "./HeroSection";
 import { cn } from "@/lib/utils";
-import { InfiniteSlider } from './InfiniteSlider'
-import Image from 'next/image'
 
 // Define props interface
 interface HomePageClientProps {
@@ -30,7 +28,7 @@ export default function HomePageClient({
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState("");
   const [isError, setIsError] = useState(false);
-  const [showVideo, setShowVideo] = useState(false)
+  const [showVideo, setShowVideo] = useState(false);
 
   // Format number with commas
   const formatNumber = (num: number | undefined): string => {
@@ -144,31 +142,26 @@ export default function HomePageClient({
         {/* Hero Section */}
         <HeroSection />
 
-        {/* Proof of Capability Section */}
-        <section className="py-12 md:py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
-                Proof of Capability
-              </h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                Where our partners are taking command
-              </p>
-            </div>
+        {/* Impact Section */}
+        <section className="py-20 bg-white relative">
+          <div className="container mx-auto max-w-6xl px-4">
+            <h2 className="text-center font-mono text-xs uppercase tracking-widest mb-16 text-gray-600">
+              Impact
+            </h2>
+            <p className="text-center text-4xl md:text-5xl font-heading font-light text-black mb-16">
+              How we apply creativity to scale innovation
+            </p>
 
             {/* Video Player */}
-            <div className="mt-12 max-w-4xl mx-auto">
+            <div className="max-w-4xl mx-auto">
               <div className="aspect-video w-full bg-gray-900 rounded-lg shadow-lg overflow-hidden relative">
                 {!showVideo ? (
                   <>
-                    <Image
+                    <img
                       src="https://img.youtube.com/vi/jWUOS_OsOPM/maxresdefault.jpg"
                       alt="Agency42 workflow diagram video thumbnail"
-                      layout="fill"
-                      objectFit="cover"
-                      className="cursor-pointer transition-transform duration-300 hover:scale-105"
+                      className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                       onClick={() => setShowVideo(true)}
-                      unoptimized
                     />
                     <div 
                       className="absolute inset-0 flex items-center justify-center cursor-pointer" 
@@ -201,10 +194,10 @@ export default function HomePageClient({
                   ></iframe>
                 )}
               </div>
-              <div className="mt-8 text-center">
+              <div className="text-center mt-12">
                 <Link
                   href="/projects"
-                  className="inline-block bg-black text-white font-mono text-sm font-medium tracking-wide px-10 py-4 hover:bg-gray-900 transition-colors duration-200"
+                  className="inline-block bg-black text-white font-mono text-sm font-medium tracking-wide px-8 py-4 hover:bg-gray-900 transition-colors duration-200"
                 >
                   Explore Case Studies
                 </Link>
@@ -213,52 +206,64 @@ export default function HomePageClient({
           </div>
         </section>
 
-        {/* Your AI Journey Section */}
-        <section id="strategy" className="py-16 md:py-24 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center">
-              <h2 className="text-sm font-semibold text-indigo-600 tracking-wide uppercase">
-                The Path to Mastery
+        {/* Our Strategy Section */}
+        <section
+          id="strategy"
+          className="py-24 bg-white/95 backdrop-blur-sm relative"
+        >
+          <div className="container mx-auto max-w-6xl px-4">
+            <div className="text-center mb-16">
+              <h2 className="font-mono text-xs uppercase tracking-widest mb-6 text-gray-600">
+                Our Strategy
               </h2>
-              <p className="mt-2 text-3xl font-extrabold text-gray-900 tracking-tight sm:text-4xl">
-                From clarity to command
-              </p>
+              <h3 className="text-4xl md:text-5xl font-heading font-light text-black">
+                How we work
+              </h3>
             </div>
-            <div className="mt-12 space-y-12 lg:space-y-0 lg:grid lg:grid-cols-3 lg:gap-x-8">
-              <div className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900">1. Find Your Leverage Point</h3>
-                  <p className="mt-4 text-base text-gray-600">
-                    True progress starts with focus. We help you identify the precise point in your work where AI can deliver the most significant and immediate advantage.
-                  </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+              {/* Map */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-mono text-sm font-medium mb-6 mx-auto">
+                  01
                 </div>
-                <a href="/services#contact" className="mt-6 inline-block text-indigo-600 hover:text-indigo-500 font-semibold">
-                  Find Your Focus &rarr;
-                </a>
+                <h4 className="font-heading text-xl font-medium mb-4 text-black">
+                  Map
+                </h4>
+                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                  We map your operational landscape—analyzing workflows,
+                  capabilities, and culture to reveal where AI can unlock real
+                  leverage.
+                </p>
               </div>
 
-              <div className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900">2. Build Your Core Capability</h3>
-                  <p className="mt-4 text-base text-gray-600">
-                    Together, we build a foundational AI tool or workflow. This isn't just a prototype; it's your first step in building lasting in-house AI competence.
-                  </p>
+              {/* Design */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-mono text-sm font-medium mb-6 mx-auto">
+                  02
                 </div>
-                <a href="/services#contact" className="mt-6 inline-block text-indigo-600 hover:text-indigo-500 font-semibold">
-                  Build Your Engine &rarr;
-                </a>
+                <h4 className="font-heading text-xl font-medium mb-4 text-black">
+                  Design
+                </h4>
+                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                  Through hands-on collaboration, we co-create tools and
+                  prototypes—rapidly shaping solutions your team can see and
+                  test.
+                </p>
               </div>
 
-              <div className="relative p-8 bg-white border border-gray-200 rounded-2xl shadow-sm flex flex-col">
-                <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gray-900">3. Scale Your Advantage</h3>
-                  <p className="mt-4 text-base text-gray-600">
-                    We help you expand that core capability across your organization, creating a compounding effect that solidifies your competitive edge.
-                  </p>
+              {/* Scale */}
+              <div className="text-center">
+                <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-mono text-sm font-medium mb-6 mx-auto">
+                  03
                 </div>
-                <a href="/services#contact" className="mt-6 inline-block text-indigo-600 hover:text-indigo-500 font-semibold">
-                  Own Your Edge &rarr;
-                </a>
+                <h4 className="font-heading text-xl font-medium mb-4 text-black">
+                  Scale
+                </h4>
+                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                  We help your AI systems scale and evolve—learning from
+                  real-world use and compounding value as your business grows.
+                </p>
               </div>
             </div>
           </div>
@@ -285,19 +290,19 @@ export default function HomePageClient({
         </section>
 
         {/* Subscribe Section */}
-        <section className="py-20 text-center bg-white">
-          <div className="container mx-auto max-w-4xl px-4">
-            <h2 className="text-3xl md:text-4xl font-heading mb-6">
-              Ready to discover your hidden operational value?
+        <section className="py-20 bg-black text-white text-center relative">
+          <div className="container mx-auto max-w-2xl px-4">
+            <h2 className="text-3xl font-heading font-light mb-6">
+              Work With Us
             </h2>
-            <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let's find out if we're a good fit. The first step is a simple needs analysis so we can understand your specific situation.
+            <p className="mb-8 text-gray-300 font-sans leading-relaxed">
+              Don't let great ideas die on the whiteboard.
             </p>
             <Link
               href="/services#contact"
-              className="inline-block bg-black text-white font-mono text-sm font-medium tracking-wide px-10 py-4 hover:bg-gray-900 transition-colors duration-200"
+              className="inline-block bg-white text-black font-mono text-sm font-medium tracking-wide px-8 py-4 hover:bg-gray-100 transition-colors duration-200"
             >
-              Analyze My Needs
+              Get In Touch
             </Link>
           </div>
         </section>
