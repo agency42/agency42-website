@@ -2,7 +2,7 @@ import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import './globals.css'
-import Navigation from './components/Navigation'
+import Navigation from '@/components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
 import { Footer } from '@/components/Footer'
 

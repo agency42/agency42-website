@@ -1,10 +1,12 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import QualForm from '../components/QualForm'
-import { ConwaySim } from '@/app/components/ConwaySim'
-import { FlickeringGrid } from '@/app/components/FlickeringGrid'
-import ServicesAccordion from '../components/ServicesAccordion'
+import React from 'react'
+import { Metadata } from 'next'
+
+import QualForm from '@/components/QualForm'
+import { ConwaySim } from '@/components/ConwaySim'
+import { FlickeringGrid } from '@/components/FlickeringGrid'
+import ServicesAccordion from '@/components/ServicesAccordion'
 
 export const metadata: Metadata = {
   title: 'AI Services: Audits, Workshops, Retainers | Agency/42',
