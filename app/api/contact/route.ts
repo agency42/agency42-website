@@ -3,8 +3,18 @@ import { Resend } from 'resend';
 import ClientEmail from '@/app/api/contact/emails/ClientEmail';
 import TeamEmail from '@/app/api/contact/emails/TeamEmail';
 
-// Initialize Resend with API key
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend conditionally to avoid runtime errors in local/dev when the
+// API key is not configured. This prevents the entire route from crashing and
+// allows form submissions to continue (e.g. for testing) while simply
+// skipping the email-sending step.
+
+const RESEND_API_KEY = process.env.RESEND_API_KEY;
+const resend = RESEND_API_KEY ? new Resend(RESEND_API_KEY) : null;
+
+if (!RESEND_API_KEY) {
+  // eslint-disable-next-line no-console
+  console.warn('RESEND_API_KEY is not set; emails will not be sent.');
+}
 
 // Team email that will receive notifications
 const TEAM_EMAIL = process.env.TEAM_EMAIL || 'hello@agency42.com';
@@ -40,12 +50,16 @@ export async function POST(request: NextRequest) {
     }
 
     // Send email to client (confirmation receipt)
+    if (resend) {
       await resend.emails.send({
-      from: 'Agency42 <contact@agency42.com>',
-      to: email,
-      subject: 'We received your message',
-      react: ClientEmail({ clientName: name }),
-    });
+        from: 'Agency42 <contact@agency42.com>',
+        to: email,
+        subject: 'We received your message',
+        react: ClientEmail({ clientName: name }),
+      });
+    } else {
+      console.log('[Email Disabled] Would send confirmation email to client.');
+    }
     
     // Format message for team notification
     const formattedMessage = `
@@ -57,17 +71,21 @@ Budget Range: ${budget || 'Not specified'}
     `.trim();
 
     // Send email to team (notification of submission)
+    if (resend) {
       await resend.emails.send({
-      from: 'Agency42 Contact Form <contact@agency42.com>',
-      to: TEAM_EMAIL,
-      subject: `New Submission from ${name}`,
-      react: TeamEmail({ 
-        name, 
-        email, 
-        message: formattedMessage, 
-        company: companyName 
-      }),
-    });
+        from: 'Agency42 Contact Form <contact@agency42.com>',
+        to: TEAM_EMAIL,
+        subject: `New Submission from ${name}`,
+        react: TeamEmail({
+          name,
+          email,
+          message: formattedMessage,
+          company: companyName,
+        }),
+      });
+    } else {
+      console.log('[Email Disabled] Would send notification email to team.');
+    }
     
     // -- Discord Webhook Notification --
     if (DISCORD_WEBHOOK_URL) {
