@@ -201,7 +201,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
             required
             value={formState.projectDescription}
             onChange={handleChange}
-            placeholder="Please describe your AI challenges or opportunities. What are you hoping to achieve?"
+            placeholder="What AI vision do you want to bring to life? Describe your goals, challenges, or the specific outcomes you're looking to achieve."
             className="w-full p-3 font-sans bg-white text-black border-2 border-black rounded-none focus:outline-none focus:ring-0 focus:border-black transition h-32 resize-none"
           />
         </div>
@@ -218,7 +218,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
         className="w-full bg-black text-white font-mono text-[11px] tracking-wider uppercase py-4 hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black disabled:opacity-50 border-2 border-black"
         disabled={isSubmitting}
       >
-        {isSubmitting ? 'ANALYZING...' : 'ANALYZE MY NEEDS'}
+        {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
       </button>
       
       <p className="mt-4 text-xs text-gray-600 text-center font-sans">

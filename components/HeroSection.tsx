@@ -29,8 +29,8 @@ export function HeroSection() {
         <div className="max-w-5xl mx-auto">
           <TypewriterAnimation
             texts={[
-              "From AI Ambition to Action.",
-              "We don't just build AI systems. We build your team's capability to command them.",
+              "Build tomorrow's competitive edge.",
+              "We turn your AI ambitions into real-world advantages.",
             ]}
             textClasses={[
               "text-3xl md:text-4xl lg:text-5xl font-heading font-normal text-black tracking-tight leading-[1.05] text-center",
@@ -50,7 +50,7 @@ export function HeroSection() {
                   href="/services#contact"
                   className="inline-block bg-black text-white font-mono text-sm font-medium tracking-wide px-10 py-4 hover:bg-gray-900 transition-colors duration-200"
                 >
-                  Analyze My Needs
+                  Get Started
                 </Link>
                 <style jsx>{`
                   .animate-fade-in {

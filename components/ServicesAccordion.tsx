@@ -35,24 +35,24 @@ export default function ServicesAccordion() {
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">What we teach</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">Training for</h4>
               <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Creative professionals:</strong> AI tools for design, content creation, and client work</span>
+                  <span><strong>Creatives:</strong> AI-powered design and content creation to accelerate client work.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Software engineers:</strong> AI integration in production environments</span>
+                  <span><strong>Developers:</strong> Deploying and scaling AI-assisted code in production environments.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Business teams:</strong> Workflow automation and process optimization</span>
+                  <span><strong>Businesses:</strong> Building an AI-native culture that turns strategy into a strategic advantage.</span>
                 </li>
               </ul>
               
               <p className="text-sm text-gray-600 mb-6">
-                <strong>Format:</strong> Interactive workshops, 1-on-1 coaching sessions, and ongoing team support to maximize adoption through proven AI implementation methods.
+                <strong>Format:</strong> Interactive workshops and 1-on-1 coaching sessions to maximize adoption through proven AI implementation methods.
               </p>
               
               <Link
@@ -90,41 +90,28 @@ export default function ServicesAccordion() {
               </div>
             </div>
             <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
-              Ongoing strategic partnership to transform your operations with AI
+              Your dedicated AI partner from strategy to innovation.
             </p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">What's included</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">What you get</h4>
               <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>AI Audits:</strong> Analyze team workflows and technology systems to find workflow automation opportunities</span>
+                  <span><strong>Executive AI Strategy:</strong> Ongoing guidance and coaching to align your business goals with the AI landscape.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Strategic roadmapping:</strong> Clear implementation timeline with ROI projections</span>
+                  <span><strong>Continuous Innovation Roadmap:</strong> Proactively identifying and mapping new opportunities for your team to pursue.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Stakeholder interviews:</strong> Understand team needs and resistance points</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span><strong>Data analysis:</strong> Identify patterns and optimization opportunities</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span><strong>Ongoing support:</strong> Monthly strategy sessions and team coaching</span>
+                  <span><strong>Technical Project Leadership:</strong> Guiding your internal developers to successfully design, build, and ship critical AI projects.</span>
                 </li>
               </ul>
-              
-              <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
-                <p className="font-mono text-[11px] tracking-wider uppercase text-black mb-2">Real Example: Marketing Agency</p>
-                <p className="text-sm text-gray-700">300+ hours of time-saving opportunities identified through systematic workflow analysis and process mapping.</p>
-              </div>
               
               <p className="text-sm text-gray-600 mb-6">
                 <strong>Commitment:</strong> Monthly retainer based on your needs and company size. Minimum 3-month engagement.
@@ -165,35 +152,31 @@ export default function ServicesAccordion() {
               </div>
             </div>
             <p className="text-sm md:text-base text-gray-600 mt-2 font-sans">
-              Custom AI product development and technical research
+              Building your custom AI vision into reality.
             </p>
           </div>
         </AccordionTrigger>
         <AccordionContent className="p-8 pt-6 bg-white">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-start">
             <div>
-              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">Our capabilities</h4>
+              <h4 className="font-mono text-[11px] tracking-wider mb-4 uppercase text-black">Where we excel</h4>
               <ul className="space-y-3 mb-6 font-sans text-gray-700">
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>AI product development:</strong> Custom applications and services for your business</span>
+                  <span><strong>Intelligent Agents & Automation:</strong> We design and build autonomous systems for customer support, social media, and lead generation.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>Technical research:</strong> Exploring frontier AI capabilities for competitive advantage</span>
+                  <span><strong>Content & Asset Generation:</strong> We create custom models and engines for generating unique marketing copy, digital assets, and more.</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-black mr-2">•</span>
-                  <span><strong>System integration:</strong> Connecting AI solutions with existing infrastructure</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-black mr-2">•</span>
-                  <span><strong>Performance optimization:</strong> Scaling AI systems for production environments</span>
+                  <span><strong>Digital Twins & Personas:</strong> We develop AI-powered digital twins and influencers that engage audiences and embody your brand.</span>
                 </li>
               </ul>
               
               <p className="text-sm text-gray-600 mb-6">
-                <strong>Approach:</strong> We combine engineering expertise with research methodology to build AI solutions that work in the real world.
+                <strong>Approach:</strong> We apply our deep expertise in AI agents and marketing to build practical, high-impact solutions that connect with your audience.
               </p>
               
               <Link

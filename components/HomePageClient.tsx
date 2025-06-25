@@ -152,11 +152,11 @@ export default function HomePageClient({
               Impact
             </h2>
             <p className="text-center text-4xl md:text-5xl font-heading font-light text-black mb-16">
-              How we apply creativity to scale innovation
+              See how we innovate
             </p>
 
             {/* Video Player */}
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-3xl mx-auto">
               <div className="aspect-video w-full bg-gray-900 rounded-lg shadow-lg overflow-hidden relative">
                 {!showVideo ? (
                   <>
@@ -234,9 +234,7 @@ export default function HomePageClient({
                   Map
                 </h4>
                 <p className="text-gray-600 font-sans leading-relaxed text-sm">
-                  We map your operational landscape—analyzing workflows,
-                  capabilities, and culture to reveal where AI can unlock real
-                  leverage.
+                  We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.
                 </p>
               </div>
 
@@ -249,23 +247,20 @@ export default function HomePageClient({
                   Design
                 </h4>
                 <p className="text-gray-600 font-sans leading-relaxed text-sm">
-                  Through hands-on collaboration, we co-create tools and
-                  prototypes—rapidly shaping solutions your team can see and
-                  test.
+                  Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.
                 </p>
               </div>
 
-              {/* Scale */}
+              {/* Build */}
               <div className="text-center">
                 <div className="w-16 h-16 bg-black text-white flex items-center justify-center font-mono text-sm font-medium mb-6 mx-auto">
                   03
                 </div>
                 <h4 className="font-heading text-xl font-medium mb-4 text-black">
-                  Scale
+                  Build
                 </h4>
                 <p className="text-gray-600 font-sans leading-relaxed text-sm">
-                  We help your AI systems scale and evolve—learning from
-                  real-world use and compounding value as your business grows.
+                  Our team gets to work, building and shipping the custom AI systems that give you a competitive edge.
                 </p>
               </div>
             </div>
