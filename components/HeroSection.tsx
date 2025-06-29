@@ -19,9 +19,9 @@ export function HeroSection() {
           <Image
             src="/content/images/logos/agency42.png"
             alt="Agency 42"
-            width={300}
-            height={150}
-            className="h-32 md:h-40 w-auto object-contain"
+            width={240}
+            height={120}
+            className="h-20 sm:h-24 md:h-32 w-auto object-contain"
           />
         </div>
 
