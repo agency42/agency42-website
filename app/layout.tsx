@@ -38,10 +38,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; //
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL), // Important for absolute URLs in OG/Twitter images
   title: {
-    default: 'Agency 42 | Human Efficiency Through AI', // Default title
+    default: "Agency 42 | Build Tomorrow's Competitive Edge", // Default title now matches hero copy
     template: '%s | Agency 42', // Template for page-specific titles
   },
-  description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows, turning unknown-unknowns into 10x outcomes.', // More descriptive default
+  description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
   icons: {
     icon: [
       {
@@ -88,8 +88,8 @@ export const metadata: Metadata = {
   },
   // Add Open Graph and Twitter metadata defaults
   openGraph: {
-    title: 'Agency 42 | Human Efficiency Through AI',
-    description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows.',
+    title: "Agency 42 | Build Tomorrow's Competitive Edge",
+    description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
     url: BASE_URL,
     siteName: 'Agency 42',
     // Add a default image for sharing
@@ -106,8 +106,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Agency 42 | Human Efficiency Through AI',
-    description: 'Agency 42 partners with teams to map, prototype, and deploy high-impact AI workflows.',
+    title: "Agency 42 | Build Tomorrow's Competitive Edge",
+    description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
     // Add the same default image or a Twitter-specific one
     images: ['/content/images/og-default.png'], // Replace with your actual default Twitter image path
     // Optional: Add Twitter site handle if you have one

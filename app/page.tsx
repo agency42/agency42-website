@@ -5,12 +5,9 @@ import path from 'path' // Import path
 
 // Updated metadata based on PRD v2 focus and homepage content analysis
 export const metadata: Metadata = {
-  // Updated title to reflect hero and actions
-  title: 'Agency/42 | Versatile AI Consulting: Map, Prototype, Deploy',
-  // Updated description to use hero paragraph language
-  description: 'Agency/42 partners with teams to map, prototype, and deploy high-impact AI workflows. We offer versatile AI consulting focused on strategy, diagnostics, and design.',
-  // Updated keywords to include homepage terms
-  keywords: ['AI consulting', 'AI strategy', 'AI implementation', 'AI workflows', 'AI prototyping', 'AI deployment', 'AI audit', 'AI workshop', 'systems thinking', 'AI diagnostics', 'generative AI', 'AI automation'], 
+  title: "Build Tomorrow's Competitive Edge | Agency/42", // Follows hero headline
+  description: "We turn your AI ambitions into real-world advantage—mapping opportunities, prototyping fast, and shipping systems that compound.",
+  keywords: ['AI consulting', 'AI strategy', 'AI implementation', 'AI workflows', 'AI prototyping', 'AI deployment', 'competitive edge', 'AI audit', 'AI workshop', 'systems thinking', 'generative AI', 'AI automation'],
 }
 
 // Updated interface
