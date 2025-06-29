@@ -95,10 +95,10 @@ export const metadata: Metadata = {
     // Add a default image for sharing
     images: [
       {
-        url: '/content/images/og-default.png', // Replace with your actual default OG image path
+        url: '/content/hero-crop.png',
         width: 1200,
         height: 630,
-        alt: 'Agency 42 Logo and tagline',
+        alt: 'Surreal lunar-library landscape with Agency 42 delta symbol',
       },
     ],
     locale: 'en_US',
@@ -109,7 +109,7 @@ export const metadata: Metadata = {
     title: "Agency 42 | Build Tomorrow's Competitive Edge",
     description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
     // Add the same default image or a Twitter-specific one
-    images: ['/content/images/og-default.png'], // Replace with your actual default Twitter image path
+    images: ['/content/hero-crop.png'],
     // Optional: Add Twitter site handle if you have one
     // site: '@agency42co',
     // Optional: Add Twitter creator handle if relevant
