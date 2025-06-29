@@ -1,28 +1,34 @@
 import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
-import { Inter, IBM_Plex_Mono, DotGothic16 } from "next/font/google"
+import localFont from 'next/font/local'
+import { IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
-import Navigation from './components/Navigation'
+import Navigation from '@/components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
 import { Footer } from '@/components/Footer'
 
 // Instantiate the fonts
-const inter = Inter({ 
-  subsets: ['latin'],
+const inter = localFont({
+  src: [
+    {
+      path: './fonts/Inter-Variable.woff2',
+      weight: '100 900',
+      style: 'normal',
+    },
+  ],
   display: 'swap',
   variable: '--font-inter',
 })
 
 const ibmPlexMono = IBM_Plex_Mono({
-  subsets: ['latin'],
   weight: ['400'],
+  subsets: ['latin'],
   display: 'swap',
   variable: '--font-ibm-plex-mono',
 })
 
-const pixelFont = DotGothic16({
-  subsets: ['latin'],
-  weight: '400',
+const pixelFont = localFont({
+  src: [{ path: './fonts/DotGothic16-Regular.ttf', weight: '400', style: 'normal' }],
   display: 'swap',
   variable: '--font-pixel',
 })

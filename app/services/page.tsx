@@ -1,10 +1,12 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import QualForm from '../components/QualForm'
-import { ConwaySim } from '@/app/components/ConwaySim'
-import { FlickeringGrid } from '@/app/components/FlickeringGrid'
-import ServicesAccordion from '../components/ServicesAccordion'
+import React from 'react'
+import { Metadata } from 'next'
+
+import QualForm from '@/components/QualForm'
+import { ConwaySim } from '@/components/ConwaySim'
+import { FlickeringGrid } from '@/components/FlickeringGrid'
+import ServicesAccordion from '@/components/ServicesAccordion'
 
 export const metadata: Metadata = {
   title: 'AI Services: Audits, Workshops, Retainers | Agency/42',
@@ -28,88 +30,68 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   return (
     <div className="bg-white text-black pt-16 md:pt-24">
-      {/* Hero section with improved mobile layout */}
-      <section className="pt-8 md:pt-14 pb-20 md:pb-28 px-4 border-b border-black relative overflow-hidden">
-        <div className="container mx-auto max-w-6xl">
-          <div className="flex flex-col md:grid md:grid-cols-2 gap-12 items-start md:items-center">
-            <div className="w-full aspect-video md:h-96 flex items-center justify-center bg-black order-first">
-              <ConwaySim 
-                speed={0.033} 
-                initialDensity={0.3} 
-                preWarmSteps={50}
-              />
-            </div>
-            <div className="w-full">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-heading font-medium mb-6">
-                Operate at the speed of AI
-              </h1>
-              <p className="text-base md:text-lg mb-8 font-sans text-gray-600 max-w-xl">
-                We take a systematic approach to designing intelligent systems, automating workflows, and exploring frontier AI use cases—bridging strategy and execution at every step.
-              </p>
-              <Link
-                href="#contact"
-                className="inline-block border border-black text-black font-mono text-[11px] tracking-wider px-6 md:px-8 py-3 hover:bg-black hover:text-white transition-colors"
-              >
-                GET STARTED →
-              </Link>
-            </div>
-          </div>
+      {/* Simplified Hero section */}
+      <section className="pt-8 md:pt-14 pb-16 md:pb-20 px-4 border-b border-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-normal mb-6 text-black tracking-tight leading-[1.05]">
+            Define what's next for your industry.
+          </h1>
+          <p className="text-base md:text-lg mb-8 font-sans text-gray-600 max-w-2xl mx-auto">
+            From strategy to implementation, we partner with you to build the custom AI systems that define your future.
+          </p>
+          <Link
+            href="#contact"
+            className="inline-block bg-black text-white font-mono text-[11px] tracking-wider uppercase px-8 py-3 hover:bg-gray-900 transition-colors duration-200"
+          >
+            Let's Build
+          </Link>
         </div>
       </section>
 
-      {/* Process Section - improved mobile layout */}
+      {/* Services Section - Now the main focus */}
+      <section id="services" className="py-16 md:py-24 px-4 border-b border-black">
+        <div className="container mx-auto max-w-6xl">
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
+            How We Help
+          </h2>
+          <ServicesAccordion />
+        </div>
+      </section>
+
+      {/* Our Approach Section */}
       <section id="process" className="py-16 md:py-24 border-b border-black px-4">
         <div className="container mx-auto max-w-6xl">
-          <div className="mb-8 md:mb-12">
-            <div 
-              className="w-full overflow-hidden border border-black"
-              style={{ 
-                height: 'min(64vh, 255px)',
-                maxHeight: '255px',
-                aspectRatio: '16/9'
-              }}
-            >
-              <FlickeringGrid 
-                rows={40}
-                columns={40}
-                speed={6000}
-                probability={0.033}
-                activeColor="#000000"
-                inactiveColor="rgba(0,0,0,0.1)"
-                className="h-full w-full"
-              />
-            </div>
-          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
             <div>
-              <h3 className="text-2xl md:text-3xl lg:text-4xl font-heading font-light mb-4">
-                Creative Engineering, <br className="hidden md:block" /> Beyond Automation
+              <h3 className="text-2xl md:text-3xl font-heading font-light mb-4">
+                Our Approach
               </h3>
               <p className="mb-8 font-sans text-gray-600 text-base md:text-lg">
-                We blend imaginative engineering with deep research to help teams move fast, build trust, and turn learning into lasting advantage.
+                Most companies think AI is about efficiency. We think it's about advantage. Our process is designed to find and build that advantage with you.
               </p>
             </div>
             <div>
-              <ol className="list-none space-y-6 md:space-y-8 font-sans text-gray-600">
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Map</span>
-                  <p className="mt-2 text-base md:text-lg">We immerse ourselves in your culture, workflows, and data—mapping both the human and technical landscape to reveal where inventive AI can unlock real leverage.</p>
+              <ol className="list-none space-y-8 font-sans text-gray-800">
+                <li className="flex items-start">
+                  <span className="font-mono text-sm text-black mr-4 mt-1">01</span>
+                  <div>
+                    <h4 className="font-bold text-black mb-1">Map</h4>
+                    <p className="text-gray-600">We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.</p>
+                  </div>
                 </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Discover</span>
-                  <p className="mt-2 text-base md:text-lg">Through systems thinking and diagnostic tools, we surface bottlenecks, quick wins, and bold opportunities that matter most to your people and your mission.</p>
+                <li className="flex items-start">
+                  <span className="font-mono text-sm text-black mr-4 mt-1">02</span>
+                  <div>
+                    <h4 className="font-bold text-black mb-1">Design</h4>
+                    <p className="text-gray-600">Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.</p>
+                  </div>
                 </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Design</span>
-                  <p className="mt-2 text-base md:text-lg">In hands-on workshops, we co-create new tools, processes, and capabilities—rapidly prototyping ideas so teams can see, shape, and own the future.</p>
-                </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Scale</span>
-                  <p className="mt-2 text-base md:text-lg">Once new systems are in place, we help you scale them—ensuring your solutions grow seamlessly with your business and deliver impact at every level.</p>
-                </li>
-                <li>
-                  <span className="font-mono text-[11px] tracking-wider uppercase text-black">Evolve</span>
-                  <p className="mt-2 text-base md:text-lg">As your business grows, we continuously adapt your AI solutions—ensuring they stay effective, relevant, and aligned with your evolving goals.</p>
+                <li className="flex items-start">
+                  <span className="font-mono text-sm text-black mr-4 mt-1">03</span>
+                  <div>
+                    <h4 className="font-bold text-black mb-1">Build</h4>
+                    <p className="text-gray-600">Our team gets to work, building and shipping the custom AI systems that transform your market position.</p>
+                  </div>
                 </li>
               </ol>
             </div>
@@ -117,24 +99,50 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* Services Section with Accordion */}
-      <section id="services" className="py-16 md:py-24 px-4 border-b border-black">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
-            Our Services
+      {/* Why Companies Choose Our Approach - TEMPORARILY HIDDEN
+      <section className="py-16 md:py-24 px-4 bg-gray-50 border-b border-black">
+        <div className="container mx-auto max-w-4xl text-center">
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-12">
+            Why Companies Choose Our Approach
           </h2>
-          <ServicesAccordion />
+          <div className="bg-white border-2 border-black p-8 text-left" style={{ boxShadow: '8px 8px 0px 0px rgba(0,0,0,1)' }}>
+            <p className="text-lg md:text-xl font-sans text-gray-800 mb-4 text-center">
+              Every business has <strong>unique advantages</strong> waiting to be amplified by AI.
+            </p>
+            <p className="text-base text-gray-600 font-sans mb-8 text-center">
+              The question isn't whether they exist. It's whether you can see them.
+            </p>
+            
+            <div className="max-w-2xl mx-auto">
+              <h3 className="font-mono text-sm uppercase tracking-wider text-gray-700 mb-4">What You Get:</h3>
+              <ul className="space-y-3 font-sans text-gray-700 text-base">
+                <li className="flex items-start">
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Revenue generation roadmap</strong> with competitive advantage opportunities</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Custom AI architecture</strong> that understands your business DNA</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-black mr-3 mt-1">→</span>
+                  <span><strong>Strategic deployment plan</strong> that builds capabilities competitors can't match</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
+      */}
 
       {/* Contact Form Section */}
       <section id="contact" className="py-16 md:py-24 px-4">
         <div className="container mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-4 md:mb-6">
-            Ready to Start Your AI Journey?
+          <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-6">
+            Ready to build your competitive edge?
           </h2>
-          <p className="text-base md:text-lg mb-8 md:mb-12 max-w-2xl mx-auto font-sans text-gray-600">
-            Fill out the form below, and we'll schedule a discovery call to discuss your needs and how we can help.
+          <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-gray-600">
+            Tell us about your business and we'll show you how AI can transform your industry position.
           </p>
           
           <QualForm className="text-left" />

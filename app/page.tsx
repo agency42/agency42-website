@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import HomePageClient from './components/HomePageClient'
+import HomePageClient from '@/components/HomePageClient'
 import fs from 'fs/promises' // Import fs
 import path from 'path' // Import path
 
