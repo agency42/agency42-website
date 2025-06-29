@@ -61,7 +61,7 @@ The agent's persona draws on Satoshi Nakamoto's legendary status in Bitcoin hist
 
 ### Technical Architecture: Autonomous Operation
 
-**Terminal System**: Agentic framework enabling autonomous Twitter interaction without human intervention, allowing the agent to compose tweets, respond to mentions, and engage with the crypto community independently.
+**Terminal Simulation**: A virtual command-line interface that lets the AI type simple commands—like "tweet" or "reply"—to post on Twitter and pull information from the web, giving it full social-media control without a human at the keyboard.
 
 **Cloud Memories**: Graph-RAG framework based on Mem0 architecture, storing and retrieving contextual information about conversations, community members, and relevant crypto topics to maintain coherent interactions over time.
 

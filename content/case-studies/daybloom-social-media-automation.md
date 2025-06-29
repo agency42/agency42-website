@@ -1,32 +1,25 @@
 ---
-title: "Daybloom: Creating Immersive AI Social Media Experiences"
-date: 2023-11-15
-description: "Learn how Agency42's Daybloom platform uses memory-enabled AI agents to power authentic social media automation, processing 5,000 messages weekly and generating $50K in revenue."
-summary: "Agency42's Daybloom platform pioneers memory-driven AI agents for social media. By processing 5,000 messages weekly for partners like Prerich and GameOver, it achieves authentic, at-scale community engagement, leading to 25% growth in message rates and $50K in revenue. This case study explores its architecture, which combines Neo4j, Qdrant, and Mem0."
+title: "Daybloom: Memory-Driven Social AI"
+date: 2024-04-15
+description: "Daybloom processes 5,000 AI messages every week—tweets, Discord replies, and behind-the-scenes reasoning—giving brands a 24/7 personality that actually remembers you."
+summary: "Daybloom shows how memory-enabled AI agents can scale authentic engagement: 5k messages/week, 25 % MoM growth, and $50 k revenue from its first two enterprise partners."
 hero: "/content/daybloom.jpeg"
-
 client:
-  name: "Daybloom"
-  industry: "Social Media & AI"
-  location: "San Francisco, CA"
-
+  name: "Daybloom (Platform)"
+  industry: "AI Social Automation"
+  location: "Global"
 services:
-  - "Autonomous AI Agents"
-  - "Generative AI"
-
+  - "AI Social Media Automation"
+  - "Memory Architecture"
 tags:
   - "AI Agents"
-  - "Social Media Automation"
-  - "Community Engagement"
-  - "Generative AI"
-  - "Brand Personality"
-  - "Mem0"
-
-stats:
-  revenue_usd: 50000
-  growth_percent: 25
-  messages_weekly: 5000
+  - "Social Media"
+  - "Automation"
+  - "Memory"
+  - "Discord"
+published: true
 ---
+
 # Daybloom: Creating Immersive AI Social Media Experiences
 
 ## Executive Summary

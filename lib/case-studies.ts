@@ -20,6 +20,7 @@ interface CaseStudyData {
   headings: Heading[];
   title: string;
   date: string;
+  published: boolean;
   description?: string;
   summary?: string;
   hero?: string;
@@ -37,23 +38,26 @@ interface CaseStudyData {
 export function getSortedCaseStudiesData(): Omit<CaseStudyData, 'contentHtml' | 'headings'>[] {
   // Get file names under /content/case-studies
   const fileNames = fs.readdirSync(caseStudiesDirectory)
-  const allCaseStudiesData = fileNames.map(fileName => {
-    // Remove ".md" from file name to get id
-    const id = fileName.replace(/\.md$/, '')
+  const allCaseStudiesData = fileNames
+    .map(fileName => {
+      // Remove ".md" from file name to get id
+      const id = fileName.replace(/\.md$/, '')
 
-    // Read markdown file as string
-    const fullPath = path.join(caseStudiesDirectory, fileName)
-    const fileContents = fs.readFileSync(fullPath, 'utf8')
+      // Read markdown file as string
+      const fullPath = path.join(caseStudiesDirectory, fileName)
+      const fileContents = fs.readFileSync(fullPath, 'utf8')
 
-    // Use gray-matter to parse the post metadata section
-    const matterResult = matter(fileContents)
+      // Use gray-matter to parse the post metadata section
+      const matterResult = matter(fileContents)
 
-    // Combine the data with the id
-    return {
-      id,
-      ...matterResult.data,
-    } as Omit<CaseStudyData, 'contentHtml' | 'headings'>
-  })
+      // Combine the data with the id
+      return {
+        id,
+        ...matterResult.data,
+      } as Omit<CaseStudyData, 'contentHtml' | 'headings'>
+    })
+    .filter(study => study.published !== false); // Filter out unpublished studies
+
   // Sort case studies by date
   return allCaseStudiesData.sort((a, b) => {
     if (a.date < b.date) {

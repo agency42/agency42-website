@@ -43,7 +43,7 @@ export default function HomePageClient({
     {
       src: "/content/images/logos/wiserx.png",
       alt: "WiserX",
-      url: "https://home.wiserx.co/",
+      url: "https://www.wiserx.io/",
     },
     {
       src: "/content/images/logos/gameover.png",
@@ -53,18 +53,14 @@ export default function HomePageClient({
     {
       src: "/content/images/logos/storyprotocol.png",
       alt: "Story Protocol",
-      url: "https://www.story.foundation/",
+      url: "https://storyprotocol.xyz/",
     },
     {
       src: "/content/images/logos/prerich.png",
       alt: "Prerich",
-      invert: true,
       url: "https://www.prerich.com/",
     },
   ];
-
-  // Filter out Prerich logo before passing to the component
-  const filteredLogos = clientLogos.filter((logo) => logo.alt !== "Prerich");
 
   const testimonials = [
     {
@@ -273,7 +269,7 @@ export default function HomePageClient({
             <h3 className="text-center font-mono text-xs uppercase tracking-widest mb-12 text-gray-600">
               Partners
             </h3>
-            <ClientLogoBar logos={filteredLogos} />
+            <ClientLogoBar logos={clientLogos} />
           </div>
         </section>
 

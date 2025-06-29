@@ -1,16 +1,13 @@
 ---
-title: "Scaling Operations: How AI Automation Identified 1,300+ Hours of Annual Savings"
-date: 2024-01-15
-description: "A deep-dive into how Agency42's AI opportunity audit for a B2B marketing agency uncovered over 1,300 hours of annual time savings, generating $52,000+ in operational value."
-summary: "Agency42 conducted a comprehensive AI opportunity audit for 'Acme Marketing,' a mid-7-figure B2B marketing agency. The audit identified 930–1,349 hours of annual time savings worth over $52,000 by targeting manual processes in financial reconciliation, vendor payments, and campaign outreach. This case study details the methodology, findings, and ROI."
-hero: "/content/ai-opportunity-gen.jpeg"
-diagrams:
-  - "/images/case-studies/acme-marketing/workflow.png"
-  - "/images/case-studies/acme-studies/acme-marketing/savings-chart.png"
-
+title: "Automating 467 Hours of Manual Work for a Global Logistics Firm"
+date: "2023-11-15"
+description: "How Agency42 identified and automated over 467 hours of hidden manual work in the financial reconciliation process for Cogent World, unlocking significant operational value."
+summary: "We mapped Cogent World's financial reconciliation process, uncovered 467 hours of manual data work, and built an AI-powered system to automate it, resulting in a 92% reduction in processing time."
+hero: "/content/images/digital-mind-design.png"
+published: false
 client:
-  name: "Acme Marketing (Anonymized)"
-  industry: "B2B Marketing"
+  name: "Cogent World"
+  industry: "Global Logistics"
   location: "Los Angeles, CA"
 
 services:
@@ -26,7 +23,7 @@ tags:
   - "B2B Services"
 
 stats:
-  hours_saved: 1300
+  hours_saved: 467
   annual_value: 52000
   roi_months: 5
 ---

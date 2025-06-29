@@ -4,13 +4,14 @@ This document tracks our activity, status, and progress.
 
 ## Session Summary (Current)
 
-This session focused on deep cleaning and aligning the website's technical and strategic foundations. We accomplished the following:
+This session was dedicated to a comprehensive copy and strategy overhaul to align the entire website with our core value proposition: moving beyond simple efficiency to build strategic advantages for our clients.
 
-- **Font System Refactor:** Resolved a persistent font loading issue by moving all fonts to a local setup (`/app/fonts`), eliminating network dependencies and ensuring consistent rendering.
-- **Design & Typography Alignment:** Established a formal `design-aesthetics.md` guide to govern typography rules. Applied these rules across the site, notably strengthening heading weights (`font-extrabold`) for better visual hierarchy on the services accordion and other pages.
-- **Documentation Overhaul:** Consolidated three fragmented strategy documents (`digital-strategy.md`, `copy-strategy-v2.md`, `geo_plan.md`) into a single, unified `docs/growth-strategy.md`. This creates a single source of truth for our vision, messaging, and marketing tactics.
-- **README Update:** Completely rewrote the project `README.md` to be accurate, providing clear setup instructions and reflecting the current tech stack and feature set.
-- **Content & Copy Refinements:** Replaced the "Proof of Capability" section on the homepage with a more dynamic video feature titled "Impact." Updated copy for better flow and clarity.
+- **Strategic Realignment:** Shifted messaging from "saving time and reducing costs" to "creating new capabilities and competitive advantages." This better targets innovative clients looking for a strategic partner.
+- **Homepage Copy:** Reworked the hero section, "How We Work" framework (`Map, Design, Build`), and CTAs to reflect the new strategy. The main headline is now "Build tomorrow's competitive edge," with the subtext, "We turn your AI ambitions into real-world advantages."
+- **Services Page Copy:** Rewrote the hero section ("Define what's next for your industry.") and aligned the `ServicesAccordion` content. Each service now has a clear, strategic purpose, and all copy reflects the partnership model.
+- **Company Page Copy:** Overhauled the page to focus on the team as "AI innovation partners." Removed redundant sections and rewrote all team bios to be more personal, concise, and aligned with our new messaging. Corrected team roles and names.
+- **Documentation Sync:** Updated `growth-strategy.md` and `case-study-research.md` to be the single source of truth for our new strategic direction and copy.
+- **Button & Form Alignment:** Standardized CTA buttons across the site (e.g., "Let's Build," "Send Message") and refined form copy for clarity and consistency.
 
 ---
 
@@ -36,12 +37,14 @@ This session focused on deep cleaning and aligning the website's technical and s
   - Extended the markdown data layer to support a richer content schema for SEO and dynamic rendering.
   - Refactored all existing case studies to the new format with updated content and imagery.
   - Fixed recurring GitHub API errors by removing the unused "lines of code" feature.
+- **[✓] Final Copy Review** – Conducted a full-site copy review and rewrite.
+- **[✓] Company Page Fix** – Corrected "Saint Martin" to "Saint Louis" and updated all team roles/bios.
 
 ---
 
 ## Backlog & Next Steps
 
-- **[ ] Final Copy Review** – Conduct after new case-study pages are live.
-- **[ ] Company Page Fix** – Correct "Saint Martin" to "Saint Louis."
+- **[ ] Add 'Dash' Client Logo** – Awaiting logo asset to add `dashworld.gg` to the client carousel.
+- **[ ] Confirm Client Approvals** – Follow up with Daybloom and Cogent World to get approval before re-publishing their case studies.
 
 *This new format provides a clearer, session-based overview of our work.*

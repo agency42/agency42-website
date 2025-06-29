@@ -6,26 +6,18 @@ This document is the single source of truth for growth strategy, messaging, and 
 
 ### 1.1. Overarching Vision
 
-To establish Agency42 as the definitive authority in operational AI for creative and service-based businesses. We achieve this by integrating three core pillars:
+To establish Agency42 as the definitive authority in building strategic AI capabilities for ambitious companies. We achieve this by integrating three core pillars:
 
-1.  **Persuasive, Data-Driven Copy:** To convert visitors by speaking directly to their business challenges with concrete proof.
-2.  **Generative Engine Optimization (GEO):** To become a primary source for AI models answering questions about AI in our niche.
+1.  **Persuasive, Benefit-Driven Copy:** To convert visitors by clearly articulating how we create new advantages.
+2.  **Generative Engine Optimization (GEO):** To become a primary source for AI models answering questions about applied AI strategy.
 3.  **Foundational Search Engine Optimization (SEO):** To capture high-intent traffic from traditional search engines.
 
 ### 1.2. Foundational Principles
 
-Our strategy is built on a few core beliefs about how to communicate value, build trust, and drive action in a complex B2B market.
-
-#### Communication & Psychology Principles
-*   **The Cognitive Bridge:** AI is complex. We make it understandable by leading with specific, real-world examples and offering deeper explanations on demand. We build a bridge from their problem to our solution.
-*   **The Trust Gradient:** Trust isn't binary; it's built in layers. We establish it immediately with visual polish and hard numbers (e.g., "$53k value"), reinforce it by showing our reasoning, and solidify it by acknowledging limitations (intellectual honesty).
-*   **The Decision Architecture:** We guide potential clients by first validating their problem, then showing a clear path to transformation through client stories, and finally mitigating risk with specific guarantees.
-
-#### Technical & Visibility Principles
-*   **LLM Visibility is the New SEO:** We optimize for machine readability, structured data, and authoritative citations to become a preferred source for AI assistants like ChatGPT and Perplexity.
-*   **Structured Data is Critical:** We use schemas (FAQ, How-To, Service) to give LLMs rich, machine-readable context, helping them surface our content as direct answers.
-*   **Content Clusters Build Authority:** We use a "hub and spoke" model to build deep authority on core topics, helping LLMs recognize our expertise.
-*   **Long-tail, High-Intent Keywords Win:** We target specific, conversational search phrases that signal a user is ready to solve a problem (e.g., "AI strategy workshop for creative agencies").
+*   **Shift from Efficiency to Advantage:** Our core message is not about saving time or money; it's about creating new, durable competitive advantages. We help companies do things they couldn't do before.
+*   **Partners, Not Vendors:** We position ourselves as strategic partners who integrate with a client's team, not just tactical implementers.
+*   **Clarity Over Jargon:** AI is complex. We make it understandable by focusing on outcomes and capabilities, not just the underlying technology.
+*   **LLM Visibility is the New SEO:** We optimize for machine readability and structured data to become a preferred source for AI assistants.
 
 ---
 
@@ -33,71 +25,41 @@ Our strategy is built on a few core beliefs about how to communicate value, buil
 
 This is the tactical guide for *what we say and how we say it*.
 
-### 2.1. Key Messaging Framework
+### 2.1. Core Messaging Framework
 
-**Value Proposition Shift:**
-- **From**: Generic AI capability building.
-- **To**: **Hidden operational value discovery and capture.**
+*   **Value Proposition:** We partner with ambitious companies to turn their AI aspirations into real-world, industry-defining advantages.
+*   **Audience Focus:** Our ideal client is past basic AI adoption and wants to be an innovator. They are looking for a strategic partner, not just a way to cut costs.
+*   **Tone:** Confident, strategic, forward-looking, and collaborative.
 
-**Hero Message Evolution:**
-- **BEFORE (Abstract):** "From AI Ambition to Action."
-- **AFTER (Concrete & Data-Driven):**
-    - **HEADLINE:** "We've saved clients 1000s of hours of manual work they didn't know they were doing"
-    - **SUBHEAD:** "In 6 weeks, Agency42 discovered $53,000 in hidden operational value for Cogent World. Our systematic approach finds the AI opportunities your team can't see - then builds the systems to capture them."
+### 2.2. CTA Strategy
 
-### 2.2. CTA Strategy: Differentiated Psychology
-
-- **Universal CTA:** **"ANALYZE MY NEEDS"** (Consultative, personalized)
-- **Service-Specific CTAs:**
-    - **AI Opportunity Audit:** "SEE IF YOU QUALIFY →" (Creates exclusivity)
-    - **Fractional AI Leadership:** "CHECK YOUR FIT →" (Mutual evaluation)
+*   **Primary CTA:** "Let's Build" / "Get Started" — Action-oriented and inviting.
+*   **Form Submission:** "Send Message" — Clear and standard for contact forms.
+*   **Service-Specific:** Each CTA should feel like the logical next step for that specific service (e.g., "Explore R&D Possibilities").
 
 ### 2.3. Page-by-Page Copy
 
-#### Homepage
-*   **Hero Section:**
-    *   HEADLINE: "We've saved clients 1000s of hours of manual work they didn't know they were doing"
-    *   SUBHEAD: "In 6 weeks, Agency42 discovered $53,000 in hidden operational value for Cogent World..."
-    *   CTA: "ANALYZE MY NEEDS"
-*   **Social Proof Section ("Real Results from Real Companies"):**
-    *   **COGENT WORLD:** "1000s of hours of manual work eliminated annually... Result: $38k-$53k annual operational value"
-    *   **HERMAN-SCHEER:** "From creative workflows to $90k revenue opportunities... Result: Fractional AI leadership + new revenue stream"
-    *   **DOG & PONY:** "73% team adoption rate vs 30% industry average... Result: 8/8 developers actively using AI daily"
+#### Homepage (`app/page.tsx` & `components/HeroSection.tsx`)
+*   **Headline:** "Build tomorrow's competitive edge."
+*   **Subtext:** "We turn your AI ambitions into real-world advantages."
+*   **"How We Work" Framework:** `Map, Design, Build`
+    *   **Map:** "We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities."
+    *   **Design:** "Together, we map out potential AI solutions and design a clear execution plan for the most promising projects."
+    *   **Build:** "Our team gets to work, building and shipping the custom AI systems that transform your market position."
 
-#### Services Page
-*   **Hero Section:**
-    *   HEADLINE: "Your biggest AI opportunity is probably something you do every day but never thought to automate"
-    *   SUBHEAD: "Most $6M-$15M companies have 900+ hours of manual work hiding in plain sight..."
-*   **Qualification Box:**
-    *   ✅ **This is for you if:** $6M-$15M revenue, scaling but manual work is bottlenecking growth.
-    *   ❌ **This is NOT for you if:** Under $5M revenue, already have dedicated AI team.
-*   **Services Accordion (AI Opportunity Audit):**
-    *   TITLE: "The 'Hidden Hours' Discovery Process"
-    *   EXAMPLE: "REAL EXAMPLE: Cogent World thought they needed 'general AI help' → We found 467 hours in financial reconciliation alone..."
-    *   INCLUDES: "✓ Systematic workflow analysis ✓ Team readiness assessment ✓ ROI-driven implementation roadmap"
-    *   GUARANTEE: "If we don't find at least $25k in annual operational value, we refund 50% of your investment."
-    *   METRICS: "Investment: $30k-$100k | Timeline: 6 weeks | ROI: $38k-$53k annually"
+#### Services Page (`app/services/page.tsx`)
+*   **Headline:** "Define what's next for your industry."
+*   **Subtext:** "From strategy to implementation, we partner with you to build the custom AI systems that define your future."
+*   **Services Accordion Subtitles:**
+    *   **Workshops & Coaching:** "Hands-on training for teams and individuals to use AI effectively in their work."
+    *   **Fractional AI Leadership:** "Your dedicated AI partner from strategy to innovation."
+    *   **Research & Development:** "Building your custom AI vision into reality."
+*   **Contact Form Headline:** "Ready to build your competitive edge?"
 
-#### Contact Section
-*   HEADLINE: "Ready to discover your hidden operational value?"
-*   SUBHEAD: "Complete the form below so we can analyze your specific situation..."
-*   PROCESS:
-    1.  You complete our qualification form (2 minutes)
-    2.  We review your business profile within 24 hours
-    3.  If there's a strong fit, we'll schedule a strategy call
-    4.  No fit? We'll send you relevant resources instead
-
-#### About Page
-*   THEME: "Why Our Clients Actually Adopt AI"
-*   PREMISE: "Most AI consultants fail at adoption because they focus on technology, not psychology."
-*   BIOS: Frame Ken (Human Factors), Rob (System Engineering), and Boop-OSHI (Memetics Engineering) around this theme.
-*   THE RESULT: "73% adoption rates vs 30% industry average."
-
-### 2.4. Risk Reversal: The Guarantee
-
-*   SECTION TITLE: "What if we don't find hidden value?"
-*   GUARANTEE: "In 24 months, we've never had a client where we couldn't identify significant operational inefficiencies worth $25k+ annually... If our assessment doesn't reveal at least $25k in annual value, we'll refund 50% of your investment."
-*   CONFIDENCE: "Why we're confident: • Systematic methodology • Proven across industries • 73% adoption success rate..."
+#### Company Page (`app/company/page.tsx`)
+*   **Headline:** "Meet your AI innovation partners."
+*   **Team Bio Style:** Lead with a unique, descriptive title for each co-founder that captures their essence (e.g., "A strategist specializing in the human side of AI..."). Bios should be personal and highlight core philosophies.
+*   **Final CTA:** "Ready to partner with us? Let's discuss how our team can help you bring your AI vision to life."
 
 ---
 

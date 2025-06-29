@@ -1,6 +1,7 @@
 import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
+import { IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import Navigation from '@/components/Navigation'
 import { PostHogProvider } from './providers/PostHogProvider'
@@ -8,19 +9,32 @@ import { Footer } from '@/components/Footer'
 
 // Instantiate the fonts
 const inter = localFont({
-  src: './fonts/Inter-Variable.woff2',
+  src: [
+    {
+      path: './fonts/Inter-Variable.woff2',
+      weight: '100 900', // Variable font weight range
+      style: 'normal',
+    },
+  ],
   display: 'swap',
   variable: '--font-inter',
 })
 
-const ibmPlexMono = localFont({
-  src: './fonts/IBMPlexMono-Regular.woff2',
+const ibmPlexMono = IBM_Plex_Mono({
+  weight: ['400'],
+  subsets: ['latin'],
   display: 'swap',
   variable: '--font-ibm-plex-mono',
 })
 
 const pixelFont = localFont({
-  src: './fonts/DotGothic16-Regular.ttf',
+  src: [
+    {
+      path: './fonts/DotGothic16-Regular.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+  ],
   display: 'swap',
   variable: '--font-pixel',
 })

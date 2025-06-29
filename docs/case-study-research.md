@@ -1,5 +1,7 @@
 # Case Study Research & Inspiration
 
+**Note:** Our case studies must now align with our core strategy of building **new capabilities and strategic advantages.** While time and cost savings are valuable, the primary narrative of each case study should focus on how we helped a client do something they couldn't do before, enter a new market, or create a durable competitive advantage.
+
 This document collects references and notes on exceptional case-study examples to inform the redesign of Agency42's project section.
 
 ## Reference Gallery (Screenshot + Link + Key Takeaways)
@@ -16,11 +18,11 @@ _Add more rows as needed._
 
 ## Common Patterns Observed
 
-- **Hero with quick stats** (ROI, time savings, metrics) immediately communicates impact.
-- **Problem → Solution → Outcome** narrative keeps story clear.
-- **Rich visuals** (before/after, product UI, charts) break up text.
+- **Hero with key outcomes** (e.g., "Launched New Product Line," "Automated Core Business Function") immediately communicates impact.
+- **Problem → Solution → Strategic Advantage** narrative keeps the story clear.
+- **Rich visuals** (before/after, product UI, architecture diagrams) break up text.
 - **Sticky in-page nav** aids long-form scanning.
-- **Strong CTA** ("Talk to us") after proof section.
+- **Strong CTA** ("Let's build your advantage") after the proof section.
 
 ## Design Elements Worth Borrowing
 

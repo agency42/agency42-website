@@ -29,27 +29,25 @@ export function TypewriterAnimation({
   // Thinking dots animation
   const [thinkingDots, setThinkingDots] = useState("");
 
+  // Handle the initial "thinking…" phase
   useEffect(() => {
-    if (!isThinking) return;
+    if (!isThinking) return; // Skip when we're done thinking
 
     const thinkingInterval = setInterval(() => {
-      setThinkingDots((prev) => {
-        if (prev.length >= 3) return "";
-        return prev + ".";
-      });
+      setThinkingDots((prev) => (prev.length >= 3 ? "" : prev + "."));
     }, 500);
 
     const thinkingTimer = setTimeout(() => {
       setIsThinking(false);
       setThinkingDots("");
-      clearInterval(thinkingInterval);
     }, thinkingDuration);
 
+    // Clean-up on unmount or when dependencies change
     return () => {
       clearInterval(thinkingInterval);
       clearTimeout(thinkingTimer);
     };
-  }, [thinkingDuration]);
+  }, [isThinking, thinkingDuration]);
 
   // Typewriter effect
   useEffect(() => {
