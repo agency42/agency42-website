@@ -24,7 +24,7 @@ published: true
 
 ## Executive Summary
 
-Agency42's Daybloom platform orchestrates **thousands of multi-platform interactions**—from social posts to Discord conversations—through a unified memory architecture. Deployments with founding partners Prerich and Game Over prove that memory-enabled AI agents can sustain authentic brand personalities at scale.
+Agency42's Daybloom platform orchestrates **thousands of multi-platform interactions**—from social posts to Discord conversations—through a unified memory architecture. Deployments with founding partners Meme X Capital and FutureType Media prove that memory-enabled AI agents can sustain authentic brand personalities at scale.
 
 ## The Challenge: Authentic Engagement at Scale
 
@@ -56,12 +56,12 @@ Daybloom is built for narrative coherence rather than raw message volume. Key su
 
 ## Implementation: Founding Partner Success
 
-### Alpha Testing with Prerich and Game Over
+### Alpha Testing with Meme X Capital and FutureType Media
 Daybloom entered alpha testing with two founding enterprise partners, providing real-world validation of the memory-driven approach to social media automation.
 
-**Prerich Deployment**: A fleet of referral-focused AI characters that identify, engage, and reward brand advocates—amplifying word-of-mouth growth while staying on-brand across every interaction.
+**Meme X Capital Deployment**: A cryptocurrency trading platform leveraging AI characters to identify, engage, and reward brand advocates—amplifying word-of-mouth growth while staying on-brand across every interaction.
 
-**Game Over Implementation**: An AI DJ and music-producer persona that curates playlists, drops new tracks, and banters with fans in real time—turning social channels into an always-on backstage experience.
+**FutureType Media Implementation**: An innovative music marketing agency utilizing an AI DJ and music-producer persona that curates playlists, drops new tracks, and banters with fans in real time—turning social channels into an always-on backstage experience.
 
 ### Platform Website and User Experience
 Daybloom operates as a standalone platform with dedicated website, enabling users to create and manage their own AI characters through an intuitive interface.
@@ -149,8 +149,10 @@ Early deployments with founding partners validate market demand for sophisticate
 
 Daybloom demonstrates that AI social media automation can transcend basic scheduling and generic responses to create genuine community relationships. As the platform continues growing, it positions Agency42 at the forefront of memory-driven AI applications that enhance rather than replace human social interaction.
 
-The success with founding partners Prerich and Game Over provides foundation for expanding to additional enterprise clients seeking authentic social media automation that builds genuine community connections through advanced AI personality and memory systems.
+The success with founding partners Meme X Capital and FutureType Media provides foundation for expanding to additional enterprise clients seeking authentic social media automation that builds genuine community connections through advanced AI personality and memory systems.
 
 ---
 
 *This case study demonstrates Daybloom's success in creating memory-driven AI social media experiences that generate measurable business results while building authentic community relationships at scale.*
+
+*Select partner names have been changed to maintain confidentiality.*
