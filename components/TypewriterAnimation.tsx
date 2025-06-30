@@ -84,39 +84,54 @@ export function TypewriterAnimation({
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Render thinking dots
-  if (isThinking) {
-    return (
-      <div className={cn("flex items-center justify-center", className)}>
-        <span className="text-gray-400 font-mono text-lg min-w-[100px] text-center">
-          thinking{thinkingDots}
-        </span>
-      </div>
-    );
-  }
-
   return (
-    <div className={className}>
-      {texts.map((text, index) => {
-        const textClass = textClasses[index] || "";
+    <div className={cn("relative", className)}>
+      {/*
+        INVISIBLE PLACEHOLDER
+        This sets the final height of the component.
+        The structure here must be IDENTICAL to the animated block below.
+      */}
+      <div className="opacity-0" aria-hidden={true}>
+        {texts.map((text, index) => (
+          <div key={`placeholder-${index}`} className={cn("mb-8 last:mb-0", textClasses[index] || "")}>
+            {text}
+          </div>
+        ))}
+      </div>
 
-        if (index < currentTextIndex) {
-          // Already completed text
-          return (
-            <div key={index} className={cn("mb-8 last:mb-0", textClass)}>
-              {text}
-            </div>
-          );
-        } else if (index === currentTextIndex) {
-          // Currently typing text
-          return (
-            <div key={index} className={cn("mb-8 last:mb-0", textClass)}>
-              {currentText}
-            </div>
-          );
-        }
-        return null;
-      })}
+      {/*
+        ANIMATED OVERLAY
+        This is absolutely positioned and sits on top of the placeholder.
+      */}
+      <div className="absolute inset-0">
+        {isThinking ? (
+          // Center the "thinking" text vertically and horizontally inside the overlay
+          <div className="h-full flex justify-center items-center">
+            <span className="text-gray-400 font-mono text-lg">
+              thinking{thinkingDots}
+            </span>
+          </div>
+        ) : (
+          // When typing, the structure is IDENTICAL to the placeholder block.
+          texts.map((text, index) => {
+            const textClass = cn("mb-8 last:mb-0", textClasses[index] || "");
+
+            // Render completed text
+            if (index < currentTextIndex) {
+              return <div key={index} className={textClass}>{text}</div>;
+            }
+
+            // Render currently typing text
+            if (index === currentTextIndex) {
+              // Use a non-breaking space to prevent height collapse on empty string
+              return <div key={index} className={textClass}>{currentText || '\u00A0'}</div>;
+            }
+
+            // Render future text invisibly to hold space and maintain structure
+            return <div key={index} className={cn(textClass, "opacity-0")} aria-hidden={true}>{text}</div>;
+          })
+        )}
+      </div>
     </div>
   );
 }

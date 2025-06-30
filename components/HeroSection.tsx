@@ -11,22 +11,20 @@ export function HeroSection() {
   return (
     <section className="min-h-[calc(100vh-5rem)] flex items-center justify-center relative">
       {/* Semi-transparent overlay for better text readability */}
-      <div className="absolute inset-0 bg-white/90 backdrop-blur-sm" />
+      <div className="absolute inset-0 bg-white/85 backdrop-blur-sm" />
 
-      <div className="relative z-10 text-center px-4">
-        {/* Logo - better sized */}
-        <div className="flex justify-center mb-16">
+      <div className="relative z-10 w-full max-w-5xl px-4">
+        <div className="flex flex-col items-center space-y-12 md:space-y-16">
+          {/* Logo */}
           <Image
             src="/content/images/logos/agency42.png"
             alt="Agency 42"
-            width={240}
-            height={120}
-            className="h-20 sm:h-24 md:h-32 w-auto object-contain"
+            width={360}
+            height={180}
+            className="h-28 sm:h-36 md:h-44 w-auto object-contain"
           />
-        </div>
 
-        {/* Animated tagline */}
-        <div className="max-w-5xl mx-auto">
+          {/* Animated Tagline */}
           <TypewriterAnimation
             texts={[
               "Build tomorrow's competitive edge.",
@@ -37,13 +35,13 @@ export function HeroSection() {
               "text-base md:text-lg text-gray-600 font-sans leading-relaxed text-center max-w-3xl mx-auto",
             ]}
             onComplete={() => setShowButton(true)}
-            className="min-h-[200px] flex flex-col justify-center items-center"
+            className="flex flex-col justify-center items-center text-center"
             speed={30}
             thinkingDuration={1500}
           />
 
-          {/* Button container - always present to prevent layout shift */}
-          <div className="text-center mt-16 h-14 flex items-center justify-center">
+          {/* Button */}
+          <div className="h-14 flex items-center justify-center">
             {showButton && (
               <div className="opacity-0 animate-fade-in">
                 <Link
