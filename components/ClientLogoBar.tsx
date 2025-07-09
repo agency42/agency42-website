@@ -41,7 +41,8 @@ export function ClientLogoBar({
               height={200}
               className={cn(
                 "h-40 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-300 filter grayscale hover:grayscale-0",
-                logo.invert && "invert"
+                logo.invert && "invert",
+                logo.alt === "Prerich" && "h-12"
               )}
             />
           </Link>

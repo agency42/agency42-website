@@ -41,22 +41,22 @@ export default function HomePageClient({
   // Updated client logos based on public/logos directory
   const clientLogos = [
     {
-      src: "/content/images/logos/wiserx.png",
+      src: "/images/logos/wiserx.png",
       alt: "WiserX",
-      url: "https://www.wiserx.io/",
+      url: "https://www.linkedin.com/company/wise-rx/",
     },
     {
-      src: "/content/images/logos/gameover.png",
+      src: "/images/logos/gameover.png",
       alt: "GameOver",
       url: "https://www.gameovermedia.io/",
     },
     {
-      src: "/content/images/logos/storyprotocol.png",
+      src: "/images/logos/storyprotocol.png",
       alt: "Story Protocol",
       url: "https://storyprotocol.xyz/",
     },
     {
-      src: "/content/images/logos/prerich.png",
+      src: "/images/logos/prerichv3.webp",
       alt: "Prerich",
       url: "https://www.prerich.com/",
     },

@@ -101,9 +101,7 @@ export const ClientCarousel = React.forwardRef<HTMLDivElement, ClientCarouselPro
                     width={120} 
                     height={60} 
                     className={cn(
-                      "object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 filter grayscale contrast-125",
-                      // Invert specific light logos to make them visible on white bg
-                      logo.src === '/logos/prerich.png' && "invert brightness-75"
+                      "object-contain opacity-80 hover:opacity-100 transition-opacity duration-200 filter grayscale contrast-125"
                     )}
                   />
                 </div>
