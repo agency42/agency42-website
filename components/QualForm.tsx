@@ -184,7 +184,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
               <SelectValue placeholder="Select an option" />
             </SelectTrigger>
             <SelectContent className="bg-white border-2 border-black rounded-none shadow-lg">
-              <SelectItem value="$4k-$10k">$4k-$10k</SelectItem>
+              <SelectItem value="<10k">Less than $10k</SelectItem>
               <SelectItem value="$10k-$25k">$10k-$25k</SelectItem>
               <SelectItem value="$25k-$50k">$25k-$50k</SelectItem>
               <SelectItem value="$50k+">$50k+</SelectItem>
