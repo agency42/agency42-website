@@ -60,11 +60,11 @@ export const TestimonialCarousel = React.forwardRef<
                     className="w-full"
                   >
                     {/* Testimonial Quote */}
-                    <blockquote className="text-xl md:text-2xl text-gray-800 mb-8 font-sans leading-relaxed max-w-3xl mx-auto">
+                    <blockquote className="text-xl md:text-2xl text-black mb-8 font-sans leading-relaxed max-w-3xl mx-auto">
                       "{testimonial.quote}"
                     </blockquote>
                     {/* Attribution */}
-                    <p className="font-mono text-xs uppercase tracking-widest text-gray-500">
+                    <p className="font-mono text-xs uppercase tracking-widest text-black">
                       {testimonial.attribution}
                     </p>
                   </motion.div>

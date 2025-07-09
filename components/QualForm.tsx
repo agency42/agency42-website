@@ -221,8 +221,8 @@ export default function QualForm({ className = '' }: QualFormProps) {
         {isSubmitting ? 'SENDING...' : 'SEND MESSAGE'}
       </button>
       
-      <p className="mt-4 text-xs text-gray-600 text-center font-sans">
-        By submitting this form, you agree to our <Link href="/legal/privacy" className="underline hover:text-black text-gray-600">Privacy Policy</Link>.
+      <p className="mt-4 text-xs text-black text-center font-sans">
+        By submitting this form, you agree to our <Link href="/legal/privacy" className="underline hover:text-black text-black">Privacy Policy</Link>.
       </p>
     </form>
   )

@@ -32,7 +32,7 @@ export function HeroSection() {
             ]}
             textClasses={[
               "text-3xl md:text-4xl lg:text-5xl font-heading font-normal text-black tracking-tight leading-[1.05] text-center",
-              "text-base md:text-lg text-gray-600 font-sans leading-relaxed text-center max-w-3xl mx-auto",
+              "text-base md:text-lg text-black font-sans leading-relaxed text-center max-w-3xl mx-auto",
             ]}
             onComplete={() => setShowButton(true)}
             className="flex flex-col justify-center items-center text-center"

@@ -36,7 +36,7 @@ export default function ServicesPage() {
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-heading font-normal mb-6 text-black tracking-tight leading-[1.05]">
             Define what's next for your industry.
           </h1>
-          <p className="text-base md:text-lg mb-8 font-sans text-gray-600 max-w-2xl mx-auto">
+          <p className="text-base md:text-lg mb-8 font-sans text-black max-w-2xl mx-auto">
             From strategy to implementation, we partner with you to build the custom AI systems that define your future.
           </p>
           <Link
@@ -66,7 +66,7 @@ export default function ServicesPage() {
               <h3 className="text-2xl md:text-3xl font-heading font-light mb-4">
                 Our Approach
               </h3>
-              <p className="mb-8 font-sans text-gray-600 text-base md:text-lg">
+              <p className="mb-8 font-sans text-black text-base md:text-lg">
                 Most companies think AI is about efficiency. We think it's about advantage. Our process is designed to find and build that advantage with you.
               </p>
             </div>
@@ -76,21 +76,21 @@ export default function ServicesPage() {
                   <span className="font-mono text-sm text-black mr-4 mt-1">01</span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Map</h4>
-                    <p className="text-gray-600">We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.</p>
+                    <p className="text-black">We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="font-mono text-sm text-black mr-4 mt-1">02</span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Design</h4>
-                    <p className="text-gray-600">Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.</p>
+                    <p className="text-black">Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.</p>
                   </div>
                 </li>
                 <li className="flex items-start">
                   <span className="font-mono text-sm text-black mr-4 mt-1">03</span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Build</h4>
-                    <p className="text-gray-600">Our team gets to work, building and shipping the custom AI systems that transform your market position.</p>
+                    <p className="text-black">Our team gets to work, building and shipping the custom AI systems that transform your market position.</p>
                   </div>
                 </li>
               </ol>
@@ -141,7 +141,7 @@ export default function ServicesPage() {
           <h2 className="text-3xl md:text-4xl font-heading font-extrabold mb-4 md:mb-6">
             Ready to build your competitive edge?
           </h2>
-          <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-gray-600">
+          <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-black">
             Tell us about your business and we'll show you how AI can transform your industry position.
           </p>
           

@@ -229,7 +229,7 @@ export default function HomePageClient({
                 <h4 className="font-heading text-xl font-medium mb-4 text-black">
                   Map
                 </h4>
-                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                <p className="text-black font-sans leading-relaxed text-sm">
                   We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.
                 </p>
               </div>
@@ -242,7 +242,7 @@ export default function HomePageClient({
                 <h4 className="font-heading text-xl font-medium mb-4 text-black">
                   Design
                 </h4>
-                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                <p className="text-black font-sans leading-relaxed text-sm">
                   Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.
                 </p>
               </div>
@@ -255,7 +255,7 @@ export default function HomePageClient({
                 <h4 className="font-heading text-xl font-medium mb-4 text-black">
                   Build
                 </h4>
-                <p className="text-gray-600 font-sans leading-relaxed text-sm">
+                <p className="text-black font-sans leading-relaxed text-sm">
                   Our team gets to work, building and shipping the custom AI systems that give you a competitive edge.
                 </p>
               </div>
