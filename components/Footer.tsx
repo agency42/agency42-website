@@ -13,7 +13,7 @@ export function Footer() {
 
   return (
     <footer className="bg-black text-white relative">
-      <div className="container mx-auto max-w-6xl px-4 py-16">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Column 1: Branding */}
           <div>
@@ -48,23 +48,15 @@ export function Footer() {
               <li>
                 <Link href="/content">
                   <CenterUnderline
-                    label="Content"
+                    label="Stories"
                     className="text-gray-300 hover:text-white font-sans transition-colors duration-200"
                   />
                 </Link>
               </li>
               <li>
-                <Link href="/research">
+                <Link href="/company">
                   <CenterUnderline
-                    label="Research"
-                    className="text-gray-300 hover:text-white font-sans transition-colors duration-200"
-                  />
-                </Link>
-              </li>
-              <li>
-                <Link href="/about">
-                  <CenterUnderline
-                    label="About"
+                    label="Company"
                     className="text-gray-300 hover:text-white font-sans transition-colors duration-200"
                   />
                 </Link>
