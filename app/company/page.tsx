@@ -26,11 +26,11 @@ export const metadata: Metadata = {
     'AI vision execution',
   ],
   openGraph: {
-    images: ['/content/images/42-logo-wide.png'],
+    images: ['/images/logos/agency42.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/content/images/42-logo-wide.png'],
+    images: ['/images/logos/agency42.png'],
   }
 }
 
@@ -58,7 +58,7 @@ export default function CompanyPage() {
                 aria-label="Link to Ken Cavanagh's profile"
               >
                 <Image
-                  src="/content/images/ken-ghibli.png"
+                  src="/images/team/ken-ghibli.png"
                   alt="Ghibli-style headshot of Ken Cavanagh"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 object-top"
@@ -66,7 +66,7 @@ export default function CompanyPage() {
                   priority
                 />
                 <Image
-                  src="/content/images/ken.png"
+                  src="/images/team/ken.png"
                   alt="Headshot of Ken Cavanagh"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 object-top"
@@ -92,7 +92,7 @@ export default function CompanyPage() {
                 aria-label="Link to Rob Renn's profile"
               >
                 <Image
-                  src="/content/images/rob-ghibli.png"
+                  src="/images/team/rob-ghibli.png"
                   alt="Ghibli-style headshot of Rob Renn"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 object-[center_20%]"
@@ -100,7 +100,7 @@ export default function CompanyPage() {
                   priority
                 />
                 <Image
-                  src="/content/images/rob.jpeg"
+                  src="/images/team/rob.jpeg"
                   alt="Headshot of Rob Renn"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 object-center"
@@ -126,7 +126,7 @@ export default function CompanyPage() {
                 aria-label="Link to Saint Louis's profile"
               >
                 <Image
-                  src="/content/images/saint-ghibli.png"
+                  src="/images/team/saint-ghibli.png"
                   alt="Ghibli-style headshot of Saint Louis"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-100 group-hover:opacity-0 object-[center_25%]"
@@ -134,7 +134,7 @@ export default function CompanyPage() {
                   priority
                 />
                 <Image
-                  src="/content/images/saint.jpeg"
+                  src="/images/team/saint.jpeg"
                   alt="Headshot of Saint Louis"
                   fill
                   className="object-cover transition-opacity duration-300 ease-in-out opacity-0 group-hover:opacity-100 object-center"

@@ -45,18 +45,18 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: '/favicon/favicon.ico',
+        url: '/icons/favicon.ico',
         sizes: 'any',
         rel: 'icon', // Ensure rel: 'icon' is present
       },
       {
-        url: '/favicon/favicon-16x16.png',
+        url: '/icons/favicon-16x16.png',
         sizes: '16x16',
         type: 'image/png',
         rel: 'icon',
       },
       {
-        url: '/favicon/favicon-32x32.png',
+        url: '/icons/favicon-32x32.png',
         sizes: '32x32',
         type: 'image/png',
         rel: 'icon',
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     ],
     apple: [ // Ensure apple is an array
         {
-            url: '/favicon/apple-touch-icon.png',
+            url: '/icons/apple-touch-icon.png',
             sizes: '180x180',
             type: 'image/png',
         }
@@ -72,15 +72,15 @@ export const metadata: Metadata = {
     other: [
       {
         rel: 'manifest',
-        url: '/favicon/site.webmanifest',
+        url: '/icons/site.webmanifest',
       },
       {
-        url: '/favicon/android-chrome-192x192.png',
+        url: '/icons/android-chrome-192x192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        url: '/favicon/android-chrome-512x512.png',
+        url: '/icons/android-chrome-512x512.png',
         sizes: '512x512',
         type: 'image/png',
       }

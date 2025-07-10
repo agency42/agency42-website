@@ -64,7 +64,7 @@ export default function ServicesAccordion() {
             </div>
             <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
-                src="/content/deltaspacewide.png" 
+                src="/images/services/deltaspacewide.png" 
                 alt="Workshops & Coaching"
                 width={800}
                 height={450}
@@ -126,7 +126,7 @@ export default function ServicesAccordion() {
             </div>
             <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
-                src="/content/observe.png" 
+                src="/images/services/observe.png" 
                 alt="Fractional AI Leadership"
                 width={800}
                 height={450}
@@ -188,7 +188,7 @@ export default function ServicesAccordion() {
             </div>
             <div className="w-full aspect-video border border-black overflow-hidden">
               <Image 
-                src="/content/stairway.png" 
+                src="/images/services/stairway.png" 
                 alt="Research and Development"
                 width={800}
                 height={450}

@@ -4,7 +4,7 @@
     "tag": "community", 
     "title": "Vibe Coding Community",
     "description": "Join our weekly live coding sessions and discussions on AI development.",
-    "imageOverride": "/content/images/AIclass1.jpeg", 
+    "imageOverride": "/images/content/AIclass1.jpeg", 
     "link": "https://discord.com/invite/amR4AEjqh4",
     "date": "2024-01-01",
     "isFeaturedVideo": false
@@ -14,7 +14,7 @@
     "tag": "workshop",
     "title": "Rick & Morty Digital Twins",
     "description": "Watch the creation process of AI digital twins based on popular characters.",
-    "imageOverride": "/content/images/rick-1.png", 
+    "imageOverride": "/images/content/rick-1.png", 
     "link": "https://www.youtube.com/live/ulVeaMW6WyY",
     "date": "2024-07-15", 
     "isFeaturedVideo": false 
@@ -24,7 +24,7 @@
     "tag": "article",
     "title": "Digital Mind Design: From Tool AIs to Agents",
     "description": "Exploring the evolution of AI from simple tools to complex autonomous agents.",
-    "imageOverride": "/content/images/digital-mind-design.png", 
+    "imageOverride": "/images/content/digital-mind-design.png", 
     "link": "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
     "date": "2024-06-10",
     "isFeaturedVideo": false
@@ -34,7 +34,7 @@
     "tag": "article",
     "title": "Don't Panic: 42 Questions on AI & The Future of Work",
     "description": "Key questions to consider as AI continues to reshape industries and roles.",
-    "imageOverride": "/content/images/dontpanic1.png", 
+    "imageOverride": "/images/content/dontpanic1.png", 
     "link": "https://www.linkedin.com/pulse/dont-panic-42-questions-ai-future-work-agency42co-g4mzc/",
     "date": "2024-05-20", 
     "isFeaturedVideo": false
@@ -44,7 +44,7 @@
     "tag": "newsletter",
     "title": "Year of the Dragon",
     "description": "Improbable Automata #1: Genesis, this year in AI, predictions for 2025.",
-    "imageOverride": "/content/images/alfie.png",
+    "imageOverride": "/images/content/alfie.png",
     "link": "https://improbable.beehiiv.com/p/year-of-the-dragon",
     "date": "2025-01-02",
     "isFeaturedVideo": false
@@ -54,7 +54,7 @@
     "tag": "newsletter",
     "title": "Grey Zone",
     "description": "Improbable Automata #2: 100 days into the intelligence explosion.",
-    "imageOverride": "/content/images/greyzone.png",
+    "imageOverride": "/images/content/greyzone.png",
     "link": "https://improbable.beehiiv.com/p/grey-zone",
     "date": "2025-04-23",
     "isFeaturedVideo": false
@@ -64,7 +64,7 @@
     "tag": "workshop",
     "title": "Vibe Coding 101",
     "description": "A workshop on how to code with AI from beginner to advanced.",
-    "imageOverride": "/content/images/vibecodeworkshop.jpeg", 
+    "imageOverride": "/images/content/vibecodeworkshop.jpeg", 
     "link": "https://www.youtube.com/watch?v=5wKatfTklCY",
     "date": "2025-04-04", 
     "isFeaturedVideo": true 

@@ -3,7 +3,7 @@ title: "Daybloom: Memory-Driven Social AI"
 date: 2024-04-15
 description: "Daybloom delivers always-on AI characters that post, chat, and remember—giving brands a 24/7 presence that stays true to voice."
 summary: "Daybloom shows how memory-driven AI characters can deliver authentic, multi-platform engagement—validated by early deployments with two founding partners."
-hero: "/content/daybloom.jpeg"
+hero: "/images/case-studies/daybloom.jpeg"
 client:
   name: "Daybloom (Platform)"
   industry: "AI Social Automation"

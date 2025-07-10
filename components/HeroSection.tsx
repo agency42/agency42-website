@@ -17,7 +17,7 @@ export function HeroSection() {
         <div className="flex flex-col items-center space-y-12 md:space-y-16">
           {/* Logo */}
           <Image
-            src="/content/images/logos/agency42.png"
+            src="/images/logos/agency42.png"
             alt="Agency 42"
             width={360}
             height={180}

@@ -3,7 +3,7 @@ title: "Satoshi AI: An Experimental Autonomous Marketing Engine"
 date: 2024-03-01
 description: "Bootoshi's experiment with autonomous brand storytelling proved an AI persona can capture attention and revenue—in this case anchoring a $50M token and 7,000 organic followers."
 summary: "Bootoshi's autonomous brand experiment, Satoshi AI, demonstrated that narrative-driven AI can mine attention at scale, blending technical ingenuity with memetic engineering."
-hero: "/content/satoshiai-gen.jpeg"
+hero: "/images/case-studies/satoshiai-gen.jpeg"
 
 client:
   name: "Bootoshi (Experimental R&D)"
@@ -93,7 +93,7 @@ The agent operates independently across multiple interaction types:
 - **Cultural participation**: Engaging with crypto memes, trends, and community events authentically.
 
 <figure>
-  <img src="/images/cypher1.jpg" alt="Consistent Satoshi AI render" />
+  <img src="/images/case-studies/cypher1.jpg" alt="Consistent Satoshi AI render" />
   <figcaption>Example output from the custom Flux model that keeps the agent's visual identity on-brand across platforms.</figcaption>
 </figure>
 

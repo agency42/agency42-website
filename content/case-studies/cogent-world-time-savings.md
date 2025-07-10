@@ -3,7 +3,7 @@ title: "Automating 467 Hours of Manual Work for a Global Logistics Firm"
 date: "2023-11-15"
 description: "How Agency42 identified and automated over 467 hours of hidden manual work in the financial reconciliation process for Cogent World, unlocking significant operational value."
 summary: "We mapped Cogent World's financial reconciliation process, uncovered 467 hours of manual data work, and built an AI-powered system to automate it, resulting in a 92% reduction in processing time."
-hero: "/content/images/digital-mind-design.png"
+hero: "/images/case-studies/digital-mind-design.png"
 published: false
 client:
   name: "Cogent World"
