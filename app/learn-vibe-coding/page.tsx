@@ -1,14 +1,17 @@
 "use client"
 
-import type React from "react"
+import React, { useState } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, ArrowRight, Zap, Users, Code, Star } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { WorkshopQuoteModal } from "@/components/WorkshopQuoteModal" // We will create this
 
 export default function VibeCoachingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   const pricingPlans = [
     {
       name: "Starter Kit",
@@ -21,6 +24,7 @@ export default function VibeCoachingPage() {
       ],
       cta: "Get Your Starter Kit",
       popular: false,
+      link: "https://calendly.com/ken-agency42/vibe-code-strategy-call",
     },
     {
       name: "Session Block",
@@ -33,6 +37,7 @@ export default function VibeCoachingPage() {
       ],
       cta: "Start a Session Block",
       popular: true,
+      link: "https://calendly.com/ken-agency42/vibe-code-strategy-call",
     },
     {
       name: "Workshops",
@@ -70,10 +75,10 @@ export default function VibeCoachingPage() {
             Vibe Code Coaching
           </h1>
           <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-            Ship your MVP 10× faster with an AI pair-programmer & senior mentor.
+            Ship 10× faster with an AI pair-programmer & senior mentor.
           </p>
           <div className="space-x-4">
-            <Link href="https://buy.stripe.com/placeholder_for_strategy_session" passHref>
+            <Link href="https://calendly.com/ken-agency42/vibe-code-strategy-call" passHref>
               <Button size="lg">
                 Book a Strategy Session
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -154,7 +159,7 @@ export default function VibeCoachingPage() {
                 )}
               >
                 <CardHeader>
-                  <CardTitle className="font-heading font-bold">{plan.name}</CardTitle>
+                  <CardTitle className="font-sans font-bold text-2xl">{plan.name}</CardTitle>
                   <CardDescription>{plan.description}</CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow space-y-4">
@@ -191,6 +196,7 @@ export default function VibeCoachingPage() {
                     <Button
                       className="w-full"
                       variant={plan.popular ? "default" : "outline"}
+                      onClick={() => plan.name === 'Workshops' && setIsModalOpen(true)}
                     >
                       {plan.cta}
                     </Button>
@@ -300,7 +306,7 @@ export default function VibeCoachingPage() {
                 What does a strategy session cover?
               </AccordionTrigger>
               <AccordionContent className="text-muted-foreground">
-                It's a deep dive to audit your idea and skills. We'll map your goals to a concrete development roadmap and give you an exact estimate for your first feature sprint. You'll leave with a clear action plan to build your MVP.
+                It's a 45-minute session to assess your needs, map your development goals, and design a custom curriculum plan. The session fee is then credited towards any future coaching block.
               </AccordionContent>
             </AccordionItem>
 
@@ -315,6 +321,7 @@ export default function VibeCoachingPage() {
           </Accordion>
         </div>
       </section>
+      <WorkshopQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
