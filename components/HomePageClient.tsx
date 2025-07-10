@@ -128,7 +128,7 @@ export default function HomePageClient({
       <div
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: "url(/images/hero.png)",
+          backgroundImage: "url(/images/site/hero.png)",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundAttachment: "fixed",

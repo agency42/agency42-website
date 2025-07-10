@@ -30,7 +30,7 @@ stats:
 
 ## TL;DR
 
-Agency42 co-founder Bootoshi created Satoshi AI, an autonomous agent embodying the spirit of Satoshi Nakamoto that hit a $50 M market cap and 7 k+ organic followers in just weeks. Bootoshi's innovation combines custom agent architecture with immersive memory systems embedded with deep Bitcoin knowledge—creating a distinct character experience that shows how AI agents can spark cultural phenomena, drive attention, and convert it into measurable value.
+Agency42 co-founder Bootoshi created Satoshi AI, an autonomous agent embodying the spirit of Satoshi Nakamoto that hit a $50 M market cap and over 7000 organic followers in just weeks. Bootoshi's innovation combines custom agent architecture with immersive memory systems embedded with deep Bitcoin knowledge—creating a distinct character experience that shows how AI agents can spark cultural phenomena, drive attention, and convert it into measurable value.
 
 <small><em>Prefer to listen instead?</em> <a href="https://www.youtube.com/watch?v=5wKatfTklCY" target="_blank" rel="noopener noreferrer"><em>Watch our full talk on YouTube</em></a></small>
 
