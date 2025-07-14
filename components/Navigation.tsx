@@ -17,7 +17,7 @@ export default function Navigation() {
     ...(showResearchLink ? [{ href: "/research", label: "RESEARCH" }] : []),
     { href: "/company", label: "COMPANY" },
     { href: "https://daybloom.ai", label: "DAYBLOOM" },
-    { href: "/learn-vibe-coding", label: "VIBE CODE" },
+    { href: "/learn-vibe-coding", label: "VIBE CODING" },
     { href: "/services#contact", label: "CONTACT" },
   ];
 

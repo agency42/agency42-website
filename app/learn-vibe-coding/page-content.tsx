@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { ArrowRight, Check, Zap, Users, Code, Star } from "lucide-react"
+import { ArrowRight, Check, Zap, Star, Code, SlidersHorizontal, Keyboard, Rocket, GraduationCap } from "lucide-react"
 import { cn } from "@/lib/utils"
-import Head from 'next/head'
 import WorkshopQuoteModal from "@/components/WorkshopQuoteModal";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
 // FAQ data for JSON-LD
 const faqData = {
@@ -17,18 +17,18 @@ const faqData = {
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "What does a discovery session cover?",
+      "name": "How many sessions do I need?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "It's a 30-minute session to assess your needs, map your development goals, and design a custom curriculum plan. The session fee is then credited towards any future coaching block."
+        "text": "Most clients hit MVP in 3-6 sessions. We scope the exact roadmap together during your Discovery Call."
       }
     },
     {
       "@type": "Question",
-      "name": "How many sprint blocks will I need?",
+      "name": "What does a discovery session cover?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Most founders ship their MVP in 2-3 blocks. Your required number of blocks depends on the project's complexity. We'll give you a precise estimate during the initial Discovery Call."
+        "text": "It's a 30-minute call to map goals, assess complexity, and design your custom coaching plan. The fee is credited toward any future coaching block."
       }
     },
     {
@@ -49,8 +49,8 @@ const courseData = {
   "itemListElement": [
     {
       "@type": "Course",
-      "name": "Starter Kit",
-      "description": "Strategy call plus a session to build your AI workflow.",
+      "name": "Hands-On AI Co-Pilot Coaching",
+      "description": "Custom one-on-one program to ship production-ready features.",
       "provider": {
         "@type": "Organization",
         "name": "Agency 42"
@@ -58,17 +58,8 @@ const courseData = {
     },
     {
       "@type": "Course",
-      "name": "Session Block",
-      "description": "Our best value package to go from idea to shipped feature.",
-      "provider": {
-        "@type": "Organization",
-        "name": "Agency 42"
-      }
-    },
-    {
-      "@type": "Course",
-      "name": "Workshops",
-      "description": "For companies, schools, small teams, and community events.",
+      "name": "AI Coding Workshops",
+      "description": "Half-day or full-day training for engineering teams and universities.",
       "provider": {
         "@type": "Organization",
         "name": "Agency 42"
@@ -80,29 +71,44 @@ const courseData = {
 export default function LearnVibeCodingPageContent() {
   const pricingPlans = [
     {
-      name: "1-on-1 Sessions",
-      description: "A tailored curriculum to transform your workflow and ship your product faster.",
-      price: "$3000",
-      price_prefix: "Starting at",
-      features: [
-        "Custom curriculum designed for your specific goals.",
-        "Async support from your mentor",
-        "Weekly one-on-one pair-programming sessions.",
-      ],
-      cta: "Book a Discovery Call",
-      ctaType: "link",
-    },
-    {
-      name: "Team Workshops",
-      description: "Onboard your entire team to AI-native workflows with a custom-designed workshop.",
+      name: "For Teams & Organizations",
+      description: "Transform your engineering team's AI capability.",
       price: "Custom Quote",
       features: [
-        "Hands-on training tailored to your company's stack.",
-        "Async support from our team.",
-        "Boost your team's productivity and innovation.",
+        "On-site or remote team training",
+        "Solve real business problems",
+        "Unlock 10x productivity gains",
       ],
-      cta: "Request a Quote",
+      cta: "Request Quote",
       ctaType: "modal",
+      modalType: 'team',
+    },
+    {
+      name: "For Founders & Executives",
+      description: "Private mentorship to 10x your development speed.",
+      price: "$2500/mo",
+      features: [
+        "Custom curriculum for your goals",
+        "Direct mentor access",
+        "Weekly pair-programming sessions",
+      ],
+      cta: "Book Discovery Call",
+      ctaType: "modal",
+      modalType: 'individual',
+      featured: true,
+    },
+    {
+      name: "For Universities & Research Labs",
+      description: "Future-proof students with cutting-edge AI skills.",
+      price: "Custom Quote",
+      features: [
+        "Custom curriculum design",
+        "Prepare students for AI-first industry",
+        "Accelerate research output",
+      ],
+      cta: "Request Quote",
+      ctaType: "modal",
+      modalType: 'university',
     },
   ]
 
@@ -115,9 +121,31 @@ export default function LearnVibeCodingPageContent() {
     features: string[];
     cta: string;
     ctaType: "link" | "modal";
+    modalType?: 'individual' | 'team' | 'university';
+    featured?: boolean;
   };
 
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // Testimonials data for the carousel
+  const testimonials = [
+    {
+      quote: "Singular best training on AI that I've ever attended.",
+      attribution: "Michael Killian, Associate Professor @ Florida State University",
+    },
+    {
+      quote: "In a single session we integrated Notion, Obsidian, and Zotero into an AI-powered workflow—no technical hiccups at all. Game-changing.",
+      attribution: "Shingai Thornton, Halcyonic Systems | Researcher @ Binghamton University",
+    },
+    {
+      quote: "The crew led a virtual 3 hour vibe-coding 101 workshop and had a group of 100+ devs engaged the entire time.",
+      attribution: "Nick George, Story Protocol",
+    },
+    {
+      quote: "Managed to take my HTML from 2500 lines down to 600 and tidy things up... didn't believe I was vibe coding.",
+      attribution: "Meme Records",
+    },
+  ];
+
+  const [modalType, setModalType] = useState<'individual' | 'team' | 'university' | null>(null);
 
   return (
     <>
@@ -129,95 +157,259 @@ export default function LearnVibeCodingPageContent() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(courseData) }}
       />
-      <WorkshopQuoteModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <WorkshopQuoteModal 
+        isOpen={modalType !== null} 
+        onClose={() => setModalType(null)}
+        interestType={modalType}
+      />
       <div className="bg-background text-foreground">
         {/* Hero Section */}
         <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
+            {/* Hero Copy (reverted) */}
             <h1 className="text-5xl font-bold text-primary mb-6 leading-tight tracking-tighter text-center">
-              Vibe Code Coaching
+              Ship 10× Faster With AI-Assisted Development
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Ship 10× faster with an AI pair-programmer & senior mentor.
+              Elite AI coding mentorship for founders, teams, and scholars.
             </p>
-            <div className="space-x-4">
-              <Link href="https://calendly.com/ken-agency42/vibe-code-strategy-call" passHref>
-                <Button size="lg">
-                  Book a Discovery Call
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
+            <div className="relative mx-auto mt-8 w-full max-w-3xl">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link href="#pricing" passHref>
+                  <Button size="lg">
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+                <Link href="#how-it-works" passHref>
+                  <Button size="lg" variant="outline">
+                    How It Works
+                  </Button>
+                </Link>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* What you get Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+        {/* What is Vibe Coding? Section - Moved up */}
+        <section id="what-is-vibe-coding" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
+          <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+            {/* Left: Video and CTA */}
+            <div className="space-y-6">
+              <div className="aspect-video rounded-lg overflow-hidden border">
+                  <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/6poldoGRsjY"
+                      title="How to use Cursor Rules to write better code with AI"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                  ></iframe>
+              </div>
+              {/* Vibe Code University invite moved here */}
+              <div className="text-center">
+                <Link href="https://discord.gg/8AWegh9H" passHref>
+                  <Button size="lg" variant="outline">
+                    <GraduationCap className="mr-2 h-5 w-5" />
+                    Vibe Code University
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+            {/* Right: Narrative */}
+            <div className="space-y-6">
+              <h2 className="text-3xl font-bold text-primary">
+                What is Vibe Coding?
+              </h2>
+              <div className="space-y-4 text-muted-foreground">
+                <p>
+                  <strong>Vibe Coding isn't about replacing your thinking with AI.</strong> It's about amplifying how you think — turning your ideas into code faster and more systematically.
+                </p>
+                <p>
+                Software development is shifting from writing lines of code to guiding AI systems that edit multiple lines simultaneously.
+                </p>
+                <p>
+                  <strong>Our approach teaches you to:</strong>
+                </p>
+                <ul className="list-disc list-inside space-y-2 ml-4">
+                  <li>Express ideas as precise, testable instructions</li>
+                  <li>Work with AI as a co-pilot that extends your capabilities</li>
+                  <li>Build reliable production-grade systems that scale</li>
+                </ul>
+                <p>
+                  We help you build the frameworks, workflows, and development practices to ship better, faster, and smarter with AI.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Social Proof Highlight with Carousel */}
+        <section className="py-16 px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <TestimonialCarousel 
+              testimonials={testimonials} 
+              className="text-center"
+              showStars={true}
+              largeText={true}
+            />
+          </div>
+        </section>
+
+        {/* How It Works Section */}
+        <section id="how-it-works" className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary text-center mb-16">
-              What You Get
-            </h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <Card className="bg-background hover:border-primary/50 transition-all duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Zap className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="font-sans font-bold">AI Co-pilot Setup</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Custom Cursor Rules, Claude Code configs, and AI-accelerated workflows tailored to your stack, coding style, and goals.
-                  </p>
-                </CardContent>
-              </Card>
+            <div className="text-center mb-16">
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                How It Works
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                A comprehensive approach to mastering AI-assisted development
+              </p>
+            </div>
 
-              <Card className="bg-background hover:border-primary/50 transition-all duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Code className="h-6 w-6 text-primary" />
+            {/* Phase 1: Build Your AI Stack */}
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <SlidersHorizontal className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="font-sans font-bold">1-on-1 Vibe Coding Sessions</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Ship features in weeks, not months. We'll review your code in real-time and accelerate your progress.
-                  </p>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary">Phase 1: Build Your AI Stack</h3>
+                    <p className="text-sm text-muted-foreground">Setup, configs, cursor rules, docs</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">
+                  We design your complete AI development environment from scratch. Custom Cursor rules, LLM-friendly documentation, and project protocols tailored to your specific goals and tech stack.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Custom Cursor rules and Claude Code config files</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">LLM-friendly documentation structure</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Project roadmap and development protocols</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-background rounded-lg p-8 border">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Code className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-bold text-center mb-2">Core Skill: Prompt Engineering</h4>
+                <p className="text-sm text-muted-foreground text-center">
+                  Learn to translate natural language ideas into working features with confidence you're not breaking anything.
+                </p>
+              </div>
+            </div>
 
-              <Card className="bg-background hover:border-primary/50 transition-all duration-300">
-                <CardHeader>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
-                    <Users className="h-6 w-6 text-primary" />
+            {/* Phase 2: Pair Program with Experts */}
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div className="bg-background rounded-lg p-8 border md:order-1">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Zap className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-bold text-center mb-2">Core Skill: AI-Assisted Development</h4>
+                <p className="text-sm text-muted-foreground text-center">
+                  Master using Cursor + Claude Code to plan, document, test, and build 10× faster—without losing control.
+                </p>
+              </div>
+              <div className="space-y-6 md:order-2">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Keyboard className="h-6 w-6 text-primary" />
                   </div>
-                  <CardTitle className="font-sans font-bold">Builder Community</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Access to a community of builders. Get unstuck fast with peer and expert support.
-                  </p>
-                </CardContent>
-              </Card>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary">Phase 2: Pair Program with Experts</h3>
+                    <p className="text-sm text-muted-foreground">Live sessions, real projects, advanced prompting</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">
+                  Real-time mentorship on your actual projects. We pair-program with you, teaching advanced prompting techniques and AI-first development patterns through hands-on practice.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Live sessions and workshops</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Advanced prompt engineering techniques</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Real-time feature development guidance</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Phase 3: Ship Production-Ready */}
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                    <Rocket className="h-6 w-6 text-primary" />
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-primary">Phase 3: Ship Production-Ready</h3>
+                    <p className="text-sm text-muted-foreground">Scale, release, maintain</p>
+                  </div>
+                </div>
+                <p className="text-muted-foreground">
+                  Deploy with confidence. We implement production-grade practices that ensure your AI-built systems handle real users, real data, and real business requirements at scale.
+                </p>
+                <div className="space-y-2">
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Production deployment strategies</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Repeatable release workflows</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <Check className="h-4 w-4 text-primary" />
+                    <span className="text-sm text-muted-foreground">Scaling and maintenance best practices</span>
+                  </div>
+                </div>
+              </div>
+              <div className="bg-background rounded-lg p-8 border">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Check className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-bold text-center mb-2">Core Skill: Production Best Practices</h4>
+                <p className="text-sm text-muted-foreground text-center">
+                  Build repeatable workflows that take your projects from prototype to production scale reliably.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Pricing Section */}
+        {/* Our Plans Section */}
         <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Pricing</h2>
+              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Our Plans</h2>
               <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Simple, transparent pricing for teams and individuals.
+                We work with a select group of motivated clients each quarter.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-center">
               {(pricingPlans as PricingPlan[]).map((plan, index) => (
                 <Card
                   key={index}
                   className={cn(
-                    "flex flex-col",
+                    "flex flex-col border",
+                    plan.featured && "md:scale-110 md:shadow-lg relative z-10"
                   )}
                 >
                   <CardHeader>
@@ -252,7 +444,7 @@ export default function LearnVibeCodingPageContent() {
                     ) : (
                       <Button
                         className="w-full"
-                        onClick={() => setIsModalOpen(true)}
+                        onClick={() => setModalType(plan.modalType || 'team')}
                       >
                         {plan.cta}
                       </Button>
@@ -263,106 +455,60 @@ export default function LearnVibeCodingPageContent() {
             </div>
           </div>
         </section>
-        
-        {/* Testimonials */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
-          <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary text-center mb-16">
-              From Our Community
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="bg-background">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <blockquote className="text-foreground/80 mb-4 italic">
-                    "Singular best training on AI that I've ever attended."
-                  </blockquote>
-                  <cite className="font-mono text-sm">
-                    — Michael Killian, Assoc. Prof. @ Florida State University
-                  </cite>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-background">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <blockquote className="text-foreground/80 mb-4 italic">
-                    "Managed to take my HTML from 2500 lines down to 600 and tidy things up... didn't believe I was vibe coding."
-                  </blockquote>
-                  <cite className="font-mono text-sm">— Meme Records</cite>
-                </CardContent>
-              </Card>
-
-              <Card className="bg-background">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <blockquote className="text-foreground/80 mb-4 italic">
-                    "The crew led a virtual 3 hour vibe-coding 101 workshop and had a group of 100+ devs engaged the entire time."
-                  </blockquote>
-                  <cite className="font-mono text-sm">— Nick, Story Protocol</cite>
-                </CardContent>
-              </Card>
-              
-              <Card className="bg-background">
-                <CardContent className="pt-6">
-                  <div className="flex mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="h-4 w-4 fill-primary text-primary" />
-                    ))}
-                  </div>
-                  <blockquote className="text-foreground/80 mb-4 italic">
-                    "Each call nuked blockers that had us spinning. Easily worth the fee."
-                  </blockquote>
-                  <cite className="font-mono text-sm">— Nash, What Works Global</cite>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
 
         {/* FAQ Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold text-primary text-center mb-16">
               Frequently Asked Questions
             </h2>
             <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="strategy-session-cover">
+              <AccordionItem value="who-is-this-for">
                 <AccordionTrigger className="font-sans font-semibold">
-                  What does a discovery session cover?
+                  Who is this for?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  It's a 30-minute session to assess your needs, map your development goals, and design a custom curriculum plan. The session fee is then credited towards any future coaching block.
+                  We work with founders, executives, researchers, developers, and organizations who want to integrate AI into their workflows. Whether you're an individual or part of a larger team, if you're aiming to build faster and smarter with AI, this program is designed for you.
                 </AccordionContent>
               </AccordionItem>
 
-              <AccordionItem value="how-many-blocks">
+              <AccordionItem value="how-long-does-it-take">
                 <AccordionTrigger className="font-sans font-semibold">
-                  How many sprint blocks will I need?
+                  How long does it take?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Most founders ship their MVP in 2-3 blocks. Your required number of blocks depends on the project's complexity. We'll give you a precise estimate during the initial Discovery Call.
+                  Our curriculum is flexible — from focused, condensed sprints to comprehensive, hands-on programs. Depending on your needs, we offer:
+                  <br /><br />
+                  • Pair coding sessions (typically 90 minutes)<br />
+                  • Live workshops (2-4 hours)<br />
+                  • Async support to meet specific project milestones
                 </AccordionContent>
               </AccordionItem>
-              
-              <AccordionItem value="prerequisites">
+
+              <AccordionItem value="company-wide-implementation">
                 <AccordionTrigger className="font-sans font-semibold">
-                  What prerequisite skills do I need?
+                  Can you help us implement AI across our whole company?
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground">
-                  Basic programming knowledge in any language is helpful, but not required. We've successfully worked with complete beginners who are highly motivated. The AI co-pilot setup dramatically accelerates the learning curve.
+                  Yes. We design custom AI transformation programs for organizations. This includes training multiple teams, setting development standards, and creating internal knowledge transfer systems. Contact us for a custom enterprise proposal.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="what-results">
+                <AccordionTrigger className="font-sans font-semibold">
+                  What kind of results can we expect?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  Clients typically see accelerated development speed, improved code quality, and clearer alignment between business goals and technical delivery.
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="discovery-session">
+                <AccordionTrigger className="font-sans font-semibold">
+                  What happens in the discovery session?
+                </AccordionTrigger>
+                <AccordionContent className="text-muted-foreground">
+                  The 30-minute discovery call is a strategic conversation to assess your current development process, identify bottlenecks, and co-design your custom AI roadmap. We'll determine fit, set clear expectations, and outline next steps.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>
