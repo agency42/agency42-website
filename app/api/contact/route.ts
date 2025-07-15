@@ -8,19 +8,19 @@ const TEAM_EMAIL = process.env.TEAM_EMAIL || 'hello@agency42.co';
 const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
 
 // Validation functions remain the same
-function validateWorkshopQuote(body: any) {
+function validateWorkshopQuote(body: Record<string, unknown>): boolean {
   const { name, email, companyName, attendees, proficiency } = body;
-  return name && email && companyName && attendees && proficiency;
+  return Boolean(name && email && companyName && attendees && proficiency);
 }
 
-function validateQualForm(body: any) {
+function validateQualForm(body: Record<string, unknown>): boolean {
   const { name, email, projectDescription, message } = body;
-  return name && email && (projectDescription || message);
+  return Boolean(name && email && (projectDescription || message));
 }
 
-function validateWorkWithUs(body: any) {
+function validateWorkWithUs(body: Record<string, unknown>): boolean {
   const { email, task } = body;
-  return email && task;
+  return Boolean(email && task);
 }
 
 export async function POST(request: NextRequest) {
@@ -55,7 +55,17 @@ export async function POST(request: NextRequest) {
     let teamHtml: string;
     let clientSubject: string;
     let clientHtml: string;
-    let discordEmbeds: any[];
+    let discordEmbeds: Array<{
+      title: string;
+      color: number;
+      fields: Array<{
+        name: string;
+        value: string;
+        inline?: boolean;
+      }>;
+      footer: { text: string };
+      timestamp: string;
+    }>;
 
     if (type === 'workshop_quote') {
       const { companyName, attendees, proficiency } = body;

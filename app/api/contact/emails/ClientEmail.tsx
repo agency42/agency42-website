@@ -29,7 +29,7 @@ const ClientEmail: React.FC<ClientEmailProps> = ({ clientName }) => {
           <Section>
             <Text style={styles.text}>Hi {clientName},</Text>
             <Text style={styles.text}>
-              Thank you for reaching out to us. We've received your message and our team will review it shortly.
+              Thank you for reaching out to us. We&apos;ve received your message and our team will review it shortly.
             </Text>
             <Text style={styles.text}>
               We typically respond within 1-2 business days. If your matter is urgent, please feel free to call us directly.

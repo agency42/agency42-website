@@ -70,12 +70,13 @@ export const WorkWithUsModal: React.FC<WorkWithUsModalProps> = ({ isOpen, onClos
       setTimeout(() => {
         onClose()
       }, 3000)
-    } catch (error: any) {
+    } catch (error: unknown) {
       console.error('Submission error:', error)
-      if (error.name === 'AbortError') {
+      if (error instanceof Error && error.name === 'AbortError') {
         setErrorMessage('Request timed out. Please try again.')
       } else {
-        setErrorMessage(error.message || 'Unable to process inquiry. Please try again or contact us directly.')
+        const errorMessage = error instanceof Error ? error.message : 'Unable to process inquiry. Please try again or contact us directly.';
+        setErrorMessage(errorMessage);
       }
     } finally {
       setIsSubmitting(false)
