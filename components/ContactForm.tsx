@@ -52,7 +52,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: 'vibe_code_inquiry' }),
       });
 
       const data = await response.json();
@@ -155,7 +155,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
         </div>
         
         <div>
-          <Label htmlFor="message">Message *</Label>
+          <Label htmlFor="message">Tell us about the learner(s) *</Label>
           <Textarea
             id="message"
             name="message"
@@ -163,6 +163,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
             required
             value={formData.message}
             onChange={handleChange}
+            placeholder="Who will be learning AI? Share current skill level, goals, and any timelines you're working toward."
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={status.isSubmitting}
           />

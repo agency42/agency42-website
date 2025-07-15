@@ -29,7 +29,7 @@ export type WorkshopQuoteModalProps = {
 }
 
 export default function WorkshopQuoteModal({ isOpen, onClose, interestType }: WorkshopQuoteModalProps) {
-  return (
+    return (
     <Dialog open={isOpen} onOpenChange={onClose}>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
@@ -37,9 +37,9 @@ export default function WorkshopQuoteModal({ isOpen, onClose, interestType }: Wo
           <DialogDescription>
             Tell us a bit about your goals, and we'll get in touch to design a plan that's right for you.
           </DialogDescription>
-        </DialogHeader>
+                            </DialogHeader>
         <ContactForm interestType={interestType} />
-      </DialogContent>
-    </Dialog>
+            </DialogContent>
+        </Dialog>
   )
 } 

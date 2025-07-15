@@ -14,8 +14,13 @@ function validateWorkshopQuote(body: any) {
 }
 
 function validateQualForm(body: any) {
-  const { name, email, projectDescription } = body;
-  return name && email && projectDescription;
+  const { name, email, projectDescription, message } = body;
+  return name && email && (projectDescription || message);
+}
+
+function validateWorkWithUs(body: any) {
+  const { email, task } = body;
+  return email && task;
 }
 
 export async function POST(request: NextRequest) {
@@ -28,7 +33,10 @@ export async function POST(request: NextRequest) {
     let isValid = false;
     if (type === 'workshop_quote') {
       isValid = validateWorkshopQuote(body);
+    } else if (type === 'work_with_us') {
+      isValid = validateWorkWithUs(body);
     } else {
+      // Covers 'qual_form' and 'vibe_code_inquiry'
       isValid = validateQualForm(body);
     }
 
@@ -85,39 +93,141 @@ export async function POST(request: NextRequest) {
         footer: { text: 'Agency42 Website' },
         timestamp: new Date().toISOString()
       }];
-    } else {
-      const { companyName, companySize, budget, projectDescription } = body;
-      teamSubject = `New Submission from ${name}`;
-      clientSubject = `We received your message - Agency 42`;
+    } else if (type === 'work_with_us') {
+      const { email: workEmail, task } = body;
+      // For work with us we might not have a name/company fields
+      teamSubject = `New Work With Us Inquiry`;
+      clientSubject = `We received your request - Agency 42`;
       teamHtml = `
-        <h1>New Qual Form Submission</h1>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Company:</strong> ${companyName || 'N/A'}</p>
-        <p><strong>Company Size:</strong> ${companySize || 'N/A'}</p>
-        <p><strong>Budget:</strong> ${budget || 'N/A'}</p>
-        <hr />
-        <p><strong>Description:</strong></p>
-        <p>${projectDescription}</p>
+        <h1>New Work With Us Inquiry</h1>
+        <p><strong>Email:</strong> ${workEmail}</p>
+        <p><strong>Task:</strong></p>
+        <p>${task}</p>
       `;
       clientHtml = `
-        <h1>Thank you for reaching out!</h1>
-        <p>We've received your message and will get back to you as soon as possible.</p>
+        <h1>Thanks for reaching out!</h1>
+        <p>We've received your request and will get back to you as soon as possible.</p>
       `;
       discordEmbeds = [{
-        title: '🚀 New Qual Form Submission',
-        color: 0xffa500,
+        title: '💼 New Work With Us Inquiry',
+        color: 0x228b22,
         fields: [
-          { name: '👤 Name', value: name, inline: true },
-          { name: '🏢 Company', value: companyName || 'N/A', inline: true },
-          { name: '✉️ Email', value: email, inline: false },
-          { name: '👥 Company Size', value: companySize || 'N/A', inline: true },
-          { name: '💰 Budget', value: budget || 'N/A', inline: true },
-          { name: '📝 Project Description', value: projectDescription.substring(0, 1000) + (projectDescription.length > 1000 ? '...' : ''), inline: false },
+          { name: '✉️ Email', value: workEmail, inline: false },
+          { name: '📝 Task', value: task.substring(0, 1000) + (task.length > 1000 ? '...' : ''), inline: false },
         ],
         footer: { text: 'Agency42 Website' },
         timestamp: new Date().toISOString()
       }];
+    } else {
+      // Covers qual_form, vibe_code_inquiry, services_inquiry
+      const company = body.companyName || body.company || 'N/A';
+      const companySize = body.companySize || 'N/A';
+      const budget = body.budget || 'N/A';
+      const description = body.projectDescription || body.message || '';
+
+      const isVibe = type === 'vibe_code_inquiry';
+      const isServices = type === 'services_inquiry';
+
+      if (isVibe) {
+        // Vibe Code Inquiry formatting
+        const interest = body.interestType || 'N/A';
+        teamSubject = `New Vibe Code Inquiry from ${name}`;
+        clientSubject = `We received your inquiry - Agency 42`;
+        teamHtml = `
+          <h1>New Vibe Code Inquiry</h1>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Interest Type:</strong> ${interest}</p>
+          <p><strong>Company:</strong> ${company}</p>
+          <hr />
+          <p><strong>Message:</strong></p>
+          <p>${description}</p>
+        `;
+        clientHtml = `
+          <h1>Thanks for reaching out!</h1>
+          <p>We've received your inquiry and will follow up shortly with next steps.</p>
+        `;
+        discordEmbeds = [{
+          title: '💫 New Vibe Code Inquiry',
+          color: 0x6a0dad,
+          fields: [
+            { name: '👤 Name', value: name, inline: true },
+            { name: '✉️ Email', value: email, inline: true },
+            { name: '🎯 Interest', value: interest, inline: true },
+            { name: '🏢 Company', value: company, inline: false },
+            { name: '📝 Message', value: description.substring(0, 1000) + (description.length > 1000 ? '...' : ''), inline: false },
+          ],
+          footer: { text: 'Agency42 Website' },
+          timestamp: new Date().toISOString()
+        }];
+      } else if (isServices) {
+        // Services Inquiry (formerly qual form)
+        teamSubject = `New Services Inquiry from ${name}`;
+        clientSubject = `We received your message - Agency 42`;
+        teamHtml = `
+          <h1>New Services Inquiry</h1>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company}</p>
+          <p><strong>Company Size:</strong> ${companySize}</p>
+          <p><strong>Budget:</strong> ${budget}</p>
+          <hr />
+          <p><strong>Description:</strong></p>
+          <p>${description}</p>
+        `;
+        clientHtml = `
+          <h1>Thank you for reaching out!</h1>
+          <p>We've received your message and will get back to you as soon as possible.</p>
+        `;
+        discordEmbeds = [{
+          title: '🛠️ New Services Inquiry',
+          color: 0xffa500,
+          fields: [
+            { name: '👤 Name', value: name, inline: true },
+            { name: '🏢 Company', value: company, inline: true },
+            { name: '✉️ Email', value: email, inline: false },
+            { name: '👥 Company Size', value: companySize, inline: true },
+            { name: '💰 Budget', value: budget, inline: true },
+            { name: '📝 Description', value: description.substring(0, 1000) + (description.length > 1000 ? '...' : ''), inline: false },
+          ],
+          footer: { text: 'Agency42 Website' },
+          timestamp: new Date().toISOString()
+        }];
+      } else {
+        // Generic / legacy qual form
+        const baseTitle = 'Qual Form Submission';
+        teamSubject = `New ${baseTitle} from ${name}`;
+        clientSubject = `We received your message - Agency 42`;
+        teamHtml = `
+          <h1>New ${baseTitle}</h1>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Company:</strong> ${company}</p>
+          <p><strong>Company Size:</strong> ${companySize}</p>
+          <p><strong>Budget:</strong> ${budget}</p>
+          <hr />
+          <p><strong>Description:</strong></p>
+          <p>${description}</p>
+        `;
+        clientHtml = `
+          <h1>Thank you for reaching out!</h1>
+          <p>We've received your message and will get back to you as soon as possible.</p>
+        `;
+        discordEmbeds = [{
+          title: '🚀 New Qual Form Submission',
+          color: 0x00bfff,
+          fields: [
+            { name: '👤 Name', value: name, inline: true },
+            { name: '🏢 Company', value: company, inline: true },
+            { name: '✉️ Email', value: email, inline: false },
+            { name: '👥 Company Size', value: companySize, inline: true },
+            { name: '💰 Budget', value: budget, inline: true },
+            { name: '📝 Description', value: description.substring(0, 1000) + (description.length > 1000 ? '...' : ''), inline: false },
+          ],
+          footer: { text: 'Agency42 Website' },
+          timestamp: new Date().toISOString()
+        }];
+      }
     }
     
     // Using a verified sending domain is best practice

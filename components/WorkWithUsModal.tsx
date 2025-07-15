@@ -41,7 +41,7 @@ export const WorkWithUsModal: React.FC<WorkWithUsModalProps> = ({ isOpen, onClos
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ email, task }),
+        body: JSON.stringify({ email, task, type: 'work_with_us' }),
         signal: controller.signal
       })
 

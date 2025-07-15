@@ -61,7 +61,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, type: 'services_inquiry' }),
       })
 
       const data = await response.json()
