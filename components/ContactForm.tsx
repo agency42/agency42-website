@@ -1,13 +1,23 @@
-'use client';
+"use client"
 
 import React, { useState } from 'react';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Textarea } from './ui/textarea';
+import { Label } from './ui/label';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 
-export default function ContactForm() {
+interface ContactFormProps {
+  interestType: 'individual' | 'team' | 'university' | null;
+}
+
+export default function ContactForm({ interestType }: ContactFormProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     company: '',
-    message: ''
+    message: '',
+    interestType: interestType || 'individual',
   });
   
   const [status, setStatus] = useState({
@@ -22,10 +32,13 @@ export default function ContactForm() {
     setFormData(prev => ({ ...prev, [name]: value }));
   };
 
+  const handleSelectChange = (value: string) => {
+    setFormData(prev => ({ ...prev, interestType: value as 'individual' | 'team' | 'university' }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Reset status
     setStatus({
       isSubmitting: true,
       isSuccess: false,
@@ -39,7 +52,7 @@ export default function ContactForm() {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, type: 'vibe_code_inquiry' }),
       });
 
       const data = await response.json();
@@ -48,12 +61,12 @@ export default function ContactForm() {
         throw new Error(data.error || 'Something went wrong');
       }
 
-      // Clear form on success
       setFormData({
         name: '',
         email: '',
         company: '',
-        message: ''
+        message: '',
+        interestType: interestType || 'individual',
       });
 
       setStatus({
@@ -73,9 +86,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-lg shadow-md p-6">
-      <h2 className="text-2xl font-bold mb-6 text-center">Contact Us</h2>
-      
+    <div className="p-6 bg-white rounded-lg shadow-md">
       {status.isSuccess && (
         <div className="mb-4 p-3 bg-green-100 text-green-700 rounded">
           {status.message}
@@ -90,10 +101,21 @@ export default function ContactForm() {
       
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
-            Name *
-          </label>
-          <input
+          <Label htmlFor="interestType">I'm interested in...</Label>
+          <Select onValueChange={handleSelectChange} defaultValue={formData.interestType} required>
+            <SelectTrigger>
+              <SelectValue placeholder="Select an option" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="individual">Founder/Executive</SelectItem>
+              <SelectItem value="team">Team/Company</SelectItem>
+              <SelectItem value="university">University/Lab</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+        <div>
+          <Label htmlFor="name">Name *</Label>
+          <Input
             id="name"
             name="name"
             type="text"
@@ -106,10 +128,8 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-            Email *
-          </label>
-          <input
+          <Label htmlFor="email">Email *</Label>
+          <Input
             id="email"
             name="email"
             type="email"
@@ -122,10 +142,8 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-1">
-            Company
-          </label>
-          <input
+          <Label htmlFor="company">Company or University</Label>
+          <Input
             id="company"
             name="company"
             type="text"
@@ -137,27 +155,26 @@ export default function ContactForm() {
         </div>
         
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
-            Message *
-          </label>
-          <textarea
+          <Label htmlFor="message">Tell us about the learner(s) *</Label>
+          <Textarea
             id="message"
             name="message"
             rows={4}
             required
             value={formData.message}
             onChange={handleChange}
+            placeholder="Who will be learning AI? Share current skill level, goals, and any timelines you're working toward."
             className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
             disabled={status.isSubmitting}
-          ></textarea>
+          />
         </div>
         
         <button
           type="submit"
           disabled={status.isSubmitting}
-          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors disabled:opacity-50"
+          className="w-full bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors disabled:opacity-50"
         >
-          {status.isSubmitting ? 'Sending...' : 'Send Message'}
+          {status.isSubmitting ? 'Sending...' : 'Submit Request'}
         </button>
       </form>
     </div>

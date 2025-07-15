@@ -61,7 +61,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(formState),
+        body: JSON.stringify({ ...formState, type: 'services_inquiry' }),
       })
 
       const data = await response.json()
@@ -85,10 +85,11 @@ export default function QualForm({ className = '' }: QualFormProps) {
         budget: '',
         projectDescription: ''
       })
-    } catch (error: any) {
-      setSubmitError(error.message || 'Failed to submit form. Please try again.')
+    } catch (error: unknown) {
+      const errorMessage = error instanceof Error ? error.message : 'Failed to submit form. Please try again.';
+      setSubmitError(errorMessage);
       posthog.capture('qual_form_failed', { 
-        error: error.message,
+        error: errorMessage,
         ...formState 
       })
     } finally {
@@ -102,7 +103,7 @@ export default function QualForm({ className = '' }: QualFormProps) {
         <div className="text-center text-black">
           <h3 className="text-2xl font-heading font-medium mb-4">Thank You For Your Interest</h3>
           <p className="mb-6 font-sans">
-            We've received your submission and will review it shortly. If your needs align with our expertise, we'll reach out to schedule a discovery call.
+            We&apos;ve received your submission and will review it shortly. If your needs align with our expertise, we&apos;ll reach out to schedule a discovery call.
           </p>
           <p className="font-mono text-[11px] tracking-wider text-gray-600 uppercase">
             Check your email for a confirmation message.

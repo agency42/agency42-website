@@ -10,7 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel"; // Make sure this path is correct
-import { ArrowLeft, ArrowRight } from "lucide-react";
+import { ArrowLeft, ArrowRight, Star } from "lucide-react";
 
 // Updated interface to match HomePageClient data
 interface TestimonialData {
@@ -21,13 +21,15 @@ interface TestimonialData {
 interface TestimonialCarouselProps
   extends React.HTMLAttributes<HTMLDivElement> {
   testimonials: TestimonialData[];
+  showStars?: boolean;
+  largeText?: boolean;
 }
 
 // Main Testimonial Carousel Component
 export const TestimonialCarousel = React.forwardRef<
   HTMLDivElement,
   TestimonialCarouselProps
->(({ className, testimonials, ...props }, ref) => {
+>(({ className, testimonials, showStars = false, largeText = false, ...props }, ref) => {
   const [api, setApi] = React.useState<CarouselApi>();
   const [current, setCurrent] = React.useState(0);
 
@@ -59,13 +61,33 @@ export const TestimonialCarousel = React.forwardRef<
                     transition={{ duration: 0.5 }}
                     className="w-full"
                   >
+                    {/* Stars - conditionally rendered */}
+                    {showStars && (
+                      <div className="flex justify-center mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-6 w-6 fill-primary text-primary" />
+                        ))}
+                      </div>
+                    )}
+                    
                     {/* Testimonial Quote */}
-                    <blockquote className="text-xl md:text-2xl text-black mb-8 font-sans leading-relaxed max-w-3xl mx-auto">
+                    <blockquote className={cn(
+                      "mb-8 font-sans leading-relaxed max-w-3xl mx-auto italic",
+                      largeText 
+                        ? "text-xl md:text-2xl text-foreground/90" 
+                        : "text-xl md:text-2xl text-black"
+                    )}>
                       "{testimonial.quote}"
                     </blockquote>
+                    
                     {/* Attribution */}
-                    <p className="font-mono text-xs uppercase tracking-widest text-black">
-                      {testimonial.attribution}
+                    <p className={cn(
+                      "font-mono text-xs uppercase tracking-widest",
+                      largeText 
+                        ? "text-muted-foreground" 
+                        : "text-black"
+                    )}>
+                      — {testimonial.attribution}
                     </p>
                   </motion.div>
                 </AnimatePresence>
@@ -81,7 +103,7 @@ export const TestimonialCarousel = React.forwardRef<
                 className={cn(
                   "w-2 h-2 rounded-full transition-all duration-200",
                   index === current
-                    ? "bg-black w-8"
+                    ? "bg-primary w-8"
                     : "bg-gray-300 hover:bg-gray-400"
                 )}
                 onClick={() => api?.scrollTo(index)}
