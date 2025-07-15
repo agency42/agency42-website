@@ -77,7 +77,7 @@ export default function LearnVibeCodingPageContent() {
       features: [
         "On-site or remote team training",
         "Solve real business problems",
-        "Unlock 10x productivity gains",
+        "Integrate AI into your development workflow",
       ],
       cta: "Request Quote",
       ctaType: "modal",
@@ -87,9 +87,10 @@ export default function LearnVibeCodingPageContent() {
       name: "For Founders & Executives",
       description: "Private mentorship to 10x your development speed.",
       price: "$2500/mo",
+      price_prefix: "Starting at",
       features: [
-        "Custom curriculum for your goals",
-        "Direct mentor access",
+        "Custom guidance for your goals",
+        "Direct mentor access for your projects",
         "Weekly pair-programming sessions",
       ],
       cta: "Book Discovery Call",
@@ -417,9 +418,15 @@ export default function LearnVibeCodingPageContent() {
                     <CardDescription>{plan.description}</CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow space-y-4">
-                    <div className="text-4xl font-bold flex items-baseline">
+                    <div className="text-4xl font-bold flex items-center">
                       {plan.price_prefix && (
-                        <span className="text-lg font-normal text-muted-foreground mr-2">{plan.price_prefix}</span>
+                        <div className="mr-2 flex flex-col">
+                          {plan.price_prefix.split(' ').map((word, i) => (
+                            <span key={i} className="text-sm font-normal text-muted-foreground leading-tight">
+                              {word}
+                            </span>
+                          ))}
+                        </div>
                       )}
                       {plan.price}
                     </div>
