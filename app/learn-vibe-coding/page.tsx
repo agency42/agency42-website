@@ -11,10 +11,10 @@ export const metadata: Metadata = {
       "Level up your coding with 1-on-1 AI-assisted pair programming. We provide custom-tailored coaching to help you master AI-native workflows and ship your MVP faster.",
     images: [
       {
-        url: "/images/media/vibe-code-coaching.png",
+        url: "/images/media/vibe-code-poster3.png",
         width: 1200,
         height: 630,
-        alt: "Vibe Coding - AI-Assisted Programming",
+        alt: "Vibe Coding – Penrose triangle illustration",
       },
     ],
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Vibe Coding: Learn to Build 10x Faster with an AI Mentor",
     description:
       "Level up your coding with 1-on-1 AI-assisted pair programming. We provide custom-tailored coaching to help you master AI-native workflows and ship your MVP faster.",
-    images: ["/images/media/vibe-code-coaching.png"],
+    images: ["/images/media/vibe-code-poster3.png"],
   },
 };
 
