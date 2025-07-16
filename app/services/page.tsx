@@ -1,31 +1,52 @@
-import Image from 'next/image'
-import Link from 'next/link'
-import React from 'react'
-import { Metadata } from 'next'
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
+import { Metadata } from "next";
 
-import QualForm from '@/components/QualForm'
-import { ConwaySim } from '@/components/ConwaySim'
-import { FlickeringGrid } from '@/components/FlickeringGrid'
-import ServicesAccordion from '@/components/ServicesAccordion'
+import QualForm from "@/components/QualForm";
+import { ConwaySim } from "@/components/ConwaySim";
+import { FlickeringGrid } from "@/components/FlickeringGrid";
+import ServicesAccordion from "@/components/ServicesAccordion";
 
 export const metadata: Metadata = {
-  title: 'AI Services: Audits, Workshops, Retainers | Agency/42',
-  description: 'Agency/42 offers AI Opportunity Audits, Hands-on Workshops, and Fractional AI CTO services to implement effective AI solutions and drive business results.',
+  title: "AI Services: Audits, Workshops, Retainers | Agency/42",
+  description:
+    "Agency/42 offers AI Opportunity Audits, Hands-on Workshops, and Fractional AI CTO services to implement effective AI solutions and drive business results.",
   keywords: [
-    'AI audit',
-    'AI workshop',
-    'fractional AI CTO',
-    'AI consulting services',
-    'AI implementation services',
-    'AI strategy development',
-    'applied AI services',
-    'AI roadmap',
-    'AI prototyping',
-    'AI workflow automation',
-    'AI process optimization',
-    'human-centric AI implementation',
+    "AI audit",
+    "AI workshop",
+    "fractional AI CTO",
+    "AI consulting services",
+    "AI implementation services",
+    "AI strategy development",
+    "applied AI services",
+    "AI roadmap",
+    "AI prototyping",
+    "AI workflow automation",
+    "AI process optimization",
+    "human-centric AI implementation",
   ],
-}
+  openGraph: {
+    title: "AI Services: Audits, Workshops, Retainers | Agency/42",
+    description:
+      "Agency/42 offers AI Opportunity Audits, Hands-on Workshops, and Fractional AI CTO services to implement effective AI solutions and drive business results.",
+    images: [
+      {
+        url: "/content/hero-crop.png",
+        width: 1200,
+        height: 630,
+        alt: "Agency/42 AI Services - Audits, Workshops, Retainers",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Services: Audits, Workshops, Retainers | Agency/42",
+    description:
+      "Agency/42 offers AI Opportunity Audits, Hands-on Workshops, and Fractional AI CTO services to implement effective AI solutions and drive business results.",
+    images: ["/content/hero-crop.png"],
+  },
+};
 
 export default function ServicesPage() {
   return (
@@ -37,7 +58,8 @@ export default function ServicesPage() {
             Define what's next for your industry.
           </h1>
           <p className="text-base md:text-lg mb-8 font-sans text-black max-w-2xl mx-auto">
-            From strategy to implementation, we partner with you to build the custom AI systems that define your future.
+            From strategy to implementation, we partner with you to build the
+            custom AI systems that define your future.
           </p>
           <Link
             href="#contact"
@@ -49,7 +71,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Services Section - Now the main focus */}
-      <section id="services" className="py-16 md:py-24 px-4 border-b border-black">
+      <section
+        id="services"
+        className="py-16 md:py-24 px-4 border-b border-black"
+      >
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-heading font-medium mb-8 md:mb-12 text-center">
             How We Help
@@ -59,7 +84,10 @@ export default function ServicesPage() {
       </section>
 
       {/* Our Approach Section */}
-      <section id="process" className="py-16 md:py-24 border-b border-black px-4">
+      <section
+        id="process"
+        className="py-16 md:py-24 border-b border-black px-4"
+      >
         <div className="container mx-auto max-w-6xl">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 items-start">
             <div>
@@ -67,30 +95,48 @@ export default function ServicesPage() {
                 Our Approach
               </h3>
               <p className="mb-8 font-sans text-black text-base md:text-lg">
-                Most companies think AI is about efficiency. We think it's about advantage. Our process is designed to find and build that advantage with you.
+                Most companies think AI is about efficiency. We think it's about
+                advantage. Our process is designed to find and build that
+                advantage with you.
               </p>
             </div>
             <div>
               <ol className="list-none space-y-8 font-sans text-gray-800">
                 <li className="flex items-start">
-                  <span className="font-mono text-sm text-black mr-4 mt-1">01</span>
+                  <span className="font-mono text-sm text-black mr-4 mt-1">
+                    01
+                  </span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Map</h4>
-                    <p className="text-black">We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.</p>
+                    <p className="text-black">
+                      We integrate with your team to learn your business,
+                      understand your market, and identify the highest-impact AI
+                      opportunities.
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-mono text-sm text-black mr-4 mt-1">02</span>
+                  <span className="font-mono text-sm text-black mr-4 mt-1">
+                    02
+                  </span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Design</h4>
-                    <p className="text-black">Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.</p>
+                    <p className="text-black">
+                      Together, we map out potential AI solutions and design a
+                      clear execution plan for the most promising projects.
+                    </p>
                   </div>
                 </li>
                 <li className="flex items-start">
-                  <span className="font-mono text-sm text-black mr-4 mt-1">03</span>
+                  <span className="font-mono text-sm text-black mr-4 mt-1">
+                    03
+                  </span>
                   <div>
                     <h4 className="font-bold text-black mb-1">Build</h4>
-                    <p className="text-black">Our team gets to work, building and shipping the custom AI systems that transform your market position.</p>
+                    <p className="text-black">
+                      Our team gets to work, building and shipping the custom AI
+                      systems that transform your market position.
+                    </p>
                   </div>
                 </li>
               </ol>
@@ -142,12 +188,13 @@ export default function ServicesPage() {
             Ready to build your competitive edge?
           </h2>
           <p className="text-base md:text-lg mb-8 max-w-2xl mx-auto font-sans text-black">
-            Tell us about your business and we'll show you how AI can transform your industry position.
+            Tell us about your business and we'll show you how AI can transform
+            your industry position.
           </p>
-          
+
           <QualForm className="text-left" />
         </div>
       </section>
     </div>
-  )
-} 
+  );
+}
