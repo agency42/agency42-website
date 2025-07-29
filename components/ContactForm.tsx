@@ -1,86 +1,97 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Textarea } from './ui/textarea';
-import { Label } from './ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import React, { useState } from "react";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
+import { Label } from "./ui/label";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "./ui/select";
 
 interface ContactFormProps {
-  interestType: 'individual' | 'team' | 'university' | null;
+  interestType: "individual" | "team" | "university" | null;
 }
 
 export default function ContactForm({ interestType }: ContactFormProps) {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: '',
-    interestType: interestType || 'individual',
+    name: "",
+    email: "",
+    company: "",
+    message: "",
+    interestType: interestType || "individual",
   });
-  
+
   const [status, setStatus] = useState({
     isSubmitting: false,
     isSuccess: false,
     isError: false,
-    message: ''
+    message: "",
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSelectChange = (value: string) => {
-    setFormData(prev => ({ ...prev, interestType: value as 'individual' | 'team' | 'university' }));
+    setFormData((prev) => ({
+      ...prev,
+      interestType: value as "individual" | "team" | "university",
+    }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     setStatus({
       isSubmitting: true,
       isSuccess: false,
       isError: false,
-      message: ''
+      message: "",
     });
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
+      const response = await fetch("/api/contact", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, type: 'vibe_code_inquiry' }),
+        body: JSON.stringify({ ...formData, type: "vibe_code_inquiry" }),
       });
 
       const data = await response.json();
 
       if (!response.ok) {
-        throw new Error(data.error || 'Something went wrong');
+        throw new Error(data.error || "Something went wrong");
       }
 
       setFormData({
-        name: '',
-        email: '',
-        company: '',
-        message: '',
-        interestType: interestType || 'individual',
+        name: "",
+        email: "",
+        company: "",
+        message: "",
+        interestType: interestType || "individual",
       });
 
       setStatus({
         isSubmitting: false,
         isSuccess: true,
         isError: false,
-        message: 'Thank you! Your message has been sent.'
+        message: "Thank you! Your message has been sent.",
       });
     } catch (error) {
       setStatus({
         isSubmitting: false,
         isSuccess: false,
         isError: true,
-        message: error instanceof Error ? error.message : 'Failed to send message'
+        message:
+          error instanceof Error ? error.message : "Failed to send message",
       });
     }
   };
@@ -92,17 +103,21 @@ export default function ContactForm({ interestType }: ContactFormProps) {
           {status.message}
         </div>
       )}
-      
+
       {status.isError && (
         <div className="mb-4 p-3 bg-red-100 text-red-700 rounded">
           {status.message}
         </div>
       )}
-      
+
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <Label htmlFor="interestType">I'm interested in...</Label>
-          <Select onValueChange={handleSelectChange} defaultValue={formData.interestType} required>
+          <Select
+            onValueChange={handleSelectChange}
+            defaultValue={formData.interestType}
+            required
+          >
             <SelectTrigger>
               <SelectValue placeholder="Select an option" />
             </SelectTrigger>
@@ -126,7 +141,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
             disabled={status.isSubmitting}
           />
         </div>
-        
+
         <div>
           <Label htmlFor="email">Email *</Label>
           <Input
@@ -140,7 +155,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
             disabled={status.isSubmitting}
           />
         </div>
-        
+
         <div>
           <Label htmlFor="company">Company or University</Label>
           <Input
@@ -153,7 +168,7 @@ export default function ContactForm({ interestType }: ContactFormProps) {
             disabled={status.isSubmitting}
           />
         </div>
-        
+
         <div>
           <Label htmlFor="message">Tell us about the learner(s) *</Label>
           <Textarea
@@ -168,15 +183,15 @@ export default function ContactForm({ interestType }: ContactFormProps) {
             disabled={status.isSubmitting}
           />
         </div>
-        
+
         <button
           type="submit"
           disabled={status.isSubmitting}
           className="w-full bg-black hover:bg-gray-800 text-white font-medium py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-black focus:ring-offset-2 transition-colors disabled:opacity-50"
         >
-          {status.isSubmitting ? 'Sending...' : 'Submit Request'}
+          {status.isSubmitting ? "Sending..." : "Submit Request"}
         </button>
       </form>
     </div>
   );
-} 
+}

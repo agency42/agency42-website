@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function UnsubscribeForm() {
   const searchParams = useSearchParams();
@@ -168,12 +169,12 @@ export default function UnsubscribeForm() {
         >
           {isSubmitting ? "Processing..." : "Confirm Unsubscribe"}
         </button>
-        <a
+        <Link
           href="/"
           className="flex-1 text-center bg-white text-black border-2 border-black font-mono text-[11px] tracking-wider uppercase px-8 py-3 hover:bg-gray-50 transition-colors duration-200"
         >
           Cancel
-        </a>
+        </Link>
       </div>
 
       <div className="text-xs text-gray-600 font-sans text-center">

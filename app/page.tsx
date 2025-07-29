@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import HomePageClient from "@/components/HomePageClient";
-import { getFeaturedVideo, getYouTubeId } from "@/lib/content";
 
 // Updated metadata based on PRD v2 focus and homepage content analysis
 export const metadata: Metadata = {
@@ -46,10 +45,5 @@ export const metadata: Metadata = {
 // Main home page component (Server Component)
 
 export default async function Home() {
-  const featuredVideo = await getFeaturedVideo();
-  const featuredVideoId = featuredVideo
-    ? getYouTubeId(featuredVideo.link)
-    : null;
-
-  return <HomePageClient featuredVideoId={featuredVideoId} />;
+  return <HomePageClient />;
 }

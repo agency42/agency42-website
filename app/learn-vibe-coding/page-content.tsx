@@ -20,7 +20,6 @@ import {
   ArrowRight,
   Check,
   Zap,
-  Star,
   Code,
   SlidersHorizontal,
   Keyboard,
