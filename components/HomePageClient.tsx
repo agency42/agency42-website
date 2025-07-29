@@ -162,8 +162,8 @@ export default function HomePageClient({
                       className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                       onClick={() => setShowVideo(true)}
                     />
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center cursor-pointer" 
+                    <div
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
                       onClick={() => setShowVideo(true)}
                     >
                       <button
@@ -230,7 +230,8 @@ export default function HomePageClient({
                   Map
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.
+                  We integrate with your team to learn your business, understand
+                  your market, and identify the highest-impact AI opportunities.
                 </p>
               </div>
 
@@ -243,7 +244,8 @@ export default function HomePageClient({
                   Design
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.
+                  Together, we map out potential AI solutions and design a clear
+                  execution plan for the most promising projects.
                 </p>
               </div>
 
@@ -256,7 +258,8 @@ export default function HomePageClient({
                   Build
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  Our team gets to work, building and shipping the custom AI systems that give you a competitive edge.
+                  Our team gets to work, building and shipping the custom AI
+                  systems that give you a competitive edge.
                 </p>
               </div>
             </div>
@@ -290,7 +293,7 @@ export default function HomePageClient({
               Work With Us
             </h2>
             <p className="mb-8 text-gray-300 font-sans leading-relaxed">
-              Don't let great ideas die on the whiteboard.
+              Great ideas don’t wait. Neither do we
             </p>
             <Link
               href="/services#contact"
