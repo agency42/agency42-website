@@ -23,8 +23,8 @@ export function TypewriterAnimation({
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [currentText, setCurrentText] = useState("");
   const [isThinking, setIsThinking] = useState(true);
-  const [showCursor, setShowCursor] = useState(true);
-  const [isComplete, setIsComplete] = useState(false);
+  const [, setShowCursor] = useState(true);
+  const [, setIsComplete] = useState(false);
 
   // Thinking dots animation
   const [thinkingDots, setThinkingDots] = useState("");
@@ -93,7 +93,10 @@ export function TypewriterAnimation({
       */}
       <div className="opacity-0" aria-hidden={true}>
         {texts.map((text, index) => (
-          <div key={`placeholder-${index}`} className={cn("mb-8 last:mb-0", textClasses[index] || "")}>
+          <div
+            key={`placeholder-${index}`}
+            className={cn("mb-8 last:mb-0", textClasses[index] || "")}
+          >
             {text}
           </div>
         ))}
@@ -118,17 +121,33 @@ export function TypewriterAnimation({
 
             // Render completed text
             if (index < currentTextIndex) {
-              return <div key={index} className={textClass}>{text}</div>;
+              return (
+                <div key={index} className={textClass}>
+                  {text}
+                </div>
+              );
             }
 
             // Render currently typing text
             if (index === currentTextIndex) {
               // Use a non-breaking space to prevent height collapse on empty string
-              return <div key={index} className={textClass}>{currentText || '\u00A0'}</div>;
+              return (
+                <div key={index} className={textClass}>
+                  {currentText || "\u00A0"}
+                </div>
+              );
             }
 
             // Render future text invisibly to hold space and maintain structure
-            return <div key={index} className={cn(textClass, "opacity-0")} aria-hidden={true}>{text}</div>;
+            return (
+              <div
+                key={index}
+                className={cn(textClass, "opacity-0")}
+                aria-hidden={true}
+              >
+                {text}
+              </div>
+            );
           })
         )}
       </div>

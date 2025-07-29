@@ -20,6 +20,7 @@ import {
   ArrowRight,
   Check,
   Zap,
+  Star,
   Code,
   SlidersHorizontal,
   Keyboard,
@@ -257,32 +258,49 @@ export default function LearnVibeCodingPageContent() {
               </h2>
               <div className="space-y-4 text-muted-foreground">
                 <p>
-                  Vibe Coding transforms software development by using AI as a
-                  strategic partner to execute ideas as structured systems.
-                  Developers guide AI with precise language, iterate rapidly,
-                  and focus on architecture rather than syntax—turning
-                  development into a live feedback loop between human intent and
-                  machine execution.
+                  Vibe Coding is a method of building software by working
+                  directly with AI to execute ideas as structured systems.
+                  Developers guide the AI using precise language, then refine
+                  the outputs through iteration and architectural thinking.
+                </p>
+                <p>
+                  Vibe coders don't write every line — they design workflows,
+                  give directional input, and shape outcomes in real time. The
+                  focus shifts from syntax to strategy.
+                </p>
+                <p>
+                  This approach prioritizes flow, feedback, and system behavior
+                  over manual implementation. It turns the development process
+                  into a live feedback loop between human intent and machine
+                  execution.
                 </p>
 
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-primary">
-                    Core Practices
+                    🧠 Core Practices
                   </h3>
                   <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Structure functionality as testable prompts</li>
-                    <li>Iterate in real-time during development</li>
-                    <li>Design for modularity and scale</li>
+                    <li>
+                      Describe functionality in structured, testable prompts
+                    </li>
+                    <li>Refine outputs as you build, not after</li>
+                    <li>
+                      Treat AI as a tool for architecture, not just code
+                      suggestions
+                    </li>
+                    <li>Design with modularity, clarity, and scale in mind</li>
                   </ul>
                 </div>
 
                 <div className="space-y-3">
                   <h3 className="text-xl font-semibold text-primary">
-                    Why It Matters
+                    ⚙️ Why It Matters
                   </h3>
                   <p>
-                    This approach matches modern product velocity while
-                    expanding creative range and reducing development friction.
+                    Vibe Coding matches the pace of modern product cycles. It
+                    reduces friction, expands creative range, and unlocks new
+                    ways of thinking about software — from ideation to
+                    deployment.
                   </p>
                 </div>
               </div>
@@ -376,7 +394,19 @@ export default function LearnVibeCodingPageContent() {
 
             {/* Phase 2: Pair Program with Experts */}
             <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="space-y-6">
+              <div className="bg-background rounded-lg p-8 border md:order-1">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Zap className="h-8 w-8 text-primary" />
+                </div>
+                <h4 className="font-bold text-center mb-2">
+                  Core Skill: AI-Assisted Development
+                </h4>
+                <p className="text-sm text-muted-foreground text-center">
+                  Master using Cursor + Claude Code to plan, document, test, and
+                  build 10× faster—without losing control.
+                </p>
+              </div>
+              <div className="space-y-6 md:order-2">
                 <div className="flex items-center space-x-4">
                   <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                     <Keyboard className="h-6 w-6 text-primary" />
@@ -415,18 +445,6 @@ export default function LearnVibeCodingPageContent() {
                     </span>
                   </div>
                 </div>
-              </div>
-              <div className="bg-background rounded-lg p-8 border">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Zap className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="font-bold text-center mb-2">
-                  Core Skill: AI-Assisted Development
-                </h4>
-                <p className="text-sm text-muted-foreground text-center">
-                  Master using Cursor + Claude Code to plan, document, test, and
-                  build 10× faster—without losing control.
-                </p>
               </div>
             </div>
 

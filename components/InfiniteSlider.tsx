@@ -1,15 +1,15 @@
-'use client';
-import { cn } from '@/lib/utils';
-import { useMotionValue, animate, motion } from 'framer-motion';
-import { useState, useEffect, SVGProps } from 'react';
-import useMeasure from 'react-use-measure';
+"use client";
+import { cn } from "@/lib/utils";
+import { useMotionValue, animate, motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import useMeasure from "react-use-measure";
 
 type InfiniteSliderProps = {
   children: React.ReactNode;
   gap?: number;
   duration?: number;
   durationOnHover?: number;
-  direction?: 'horizontal' | 'vertical';
+  direction?: "horizontal" | "vertical";
   reverse?: boolean;
   className?: string;
 };
@@ -19,7 +19,7 @@ export function InfiniteSlider({
   gap = 16,
   duration = 25,
   durationOnHover,
-  direction = 'horizontal',
+  direction = "horizontal",
   reverse = false,
   className,
 }: InfiniteSliderProps) {
@@ -31,18 +31,18 @@ export function InfiniteSlider({
 
   useEffect(() => {
     let controls;
-    const size = direction === 'horizontal' ? width : height;
-    
+    const size = direction === "horizontal" ? width : height;
+
     // We need to ensure there are enough elements to create a seamless loop
     if (!size) return;
-    
+
     const contentSize = size;
     const from = reverse ? -contentSize : 0;
     const to = reverse ? 0 : -contentSize;
 
     if (isTransitioning) {
       controls = animate(translation, [translation.get(), to], {
-        ease: 'linear',
+        ease: "linear",
         duration:
           currentDuration * Math.abs((translation.get() - to) / contentSize),
         onComplete: () => {
@@ -52,10 +52,10 @@ export function InfiniteSlider({
       });
     } else {
       controls = animate(translation, [from, to], {
-        ease: 'linear',
+        ease: "linear",
         duration: currentDuration,
         repeat: Infinity,
-        repeatType: 'loop',
+        repeatType: "loop",
         repeatDelay: 0,
         onRepeat: () => {
           translation.set(from);
@@ -90,23 +90,24 @@ export function InfiniteSlider({
     : {};
 
   return (
-    <div className={cn('overflow-hidden', className)}>
+    <div className={cn("overflow-hidden", className)}>
       <motion.div
-        className='flex w-max'
+        className="flex w-max"
         style={{
-          ...(direction === 'horizontal'
+          ...(direction === "horizontal"
             ? { x: translation }
             : { y: translation }),
           gap: `${gap}px`,
-          flexDirection: direction === 'horizontal' ? 'row' : 'column',
+          flexDirection: direction === "horizontal" ? "row" : "column",
         }}
         ref={ref}
         {...hoverProps}
       >
         {children}
         {children}
-        {children} {/* Adding an extra copy to ensure overlap during transition */}
+        {children}{" "}
+        {/* Adding an extra copy to ensure overlap during transition */}
       </motion.div>
     </div>
   );
-} 
+}

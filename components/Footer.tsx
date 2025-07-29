@@ -80,6 +80,14 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <Link href="/newsletter/subscribe">
+                  <CenterUnderline
+                    label="Newsletter"
+                    className="text-gray-300 hover:text-white font-sans transition-colors duration-200"
+                  />
+                </Link>
+              </li>
+              <li>
                 <a
                   href="https://linkedin.com/company/agency42co"
                   target="_blank"

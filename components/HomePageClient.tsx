@@ -3,40 +3,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { CenterUnderline } from "./ui/underline-animation";
-import { ClientCarousel } from "./ClientCarousel";
-import YouTube from "react-youtube";
+
 import { TestimonialCarousel } from "./TestimonialCarousel";
 import { ClientLogoBar } from "./ClientLogoBar";
 import { HeroSection } from "./HeroSection";
-import { cn } from "@/lib/utils";
 
-// Define props interface
-interface HomePageClientProps {
-  featuredVideoId: string | null;
-  // Add other props if needed (e.g., clientLogos, testimonials)
-}
-
-export default function HomePageClient({
-  featuredVideoId,
-}: HomePageClientProps) {
-  // State for newsletter form
-  const [email, setEmail] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState("");
-  const [isError, setIsError] = useState(false);
+export default function HomePageClient() {
   const [showVideo, setShowVideo] = useState(false);
-
-  // Format number with commas
-  const formatNumber = (num: number | undefined): string => {
-    return num ? num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") : "...";
-  };
 
   // Updated client logos based on public/logos directory
   const clientLogos = [
@@ -85,43 +58,6 @@ export default function HomePageClient({
     },
   ];
 
-  // Handle newsletter subscription
-  const handleSubscribe = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setIsLoading(true);
-    setMessage("");
-    setIsError(false);
-
-    try {
-      const response = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email }),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(
-          result.error || "Subscription failed. Please try again."
-        );
-      }
-
-      // Success
-      setMessage(result.message || "Successfully subscribed!");
-      setEmail(""); // Clear input on success
-      setIsError(false);
-    } catch (error: any) {
-      console.error("Subscription error:", error);
-      setMessage(error.message || "An unexpected error occurred.");
-      setIsError(true);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="relative">
       {/* Fixed Parallax Background */}
@@ -156,14 +92,16 @@ export default function HomePageClient({
               <div className="aspect-video w-full bg-gray-900 rounded-lg shadow-lg overflow-hidden relative">
                 {!showVideo ? (
                   <>
-                    <img
+                    <Image
                       src="https://img.youtube.com/vi/jWUOS_OsOPM/maxresdefault.jpg"
                       alt="Agency42 workflow diagram video thumbnail"
                       className="w-full h-full object-cover cursor-pointer transition-transform duration-300 hover:scale-105"
                       onClick={() => setShowVideo(true)}
+                      width={1000}
+                      height={1000}
                     />
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center cursor-pointer" 
+                    <div
+                      className="absolute inset-0 flex items-center justify-center cursor-pointer"
                       onClick={() => setShowVideo(true)}
                     >
                       <button
@@ -230,7 +168,8 @@ export default function HomePageClient({
                   Map
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  We integrate with your team to learn your business, understand your market, and identify the highest-impact AI opportunities.
+                  We integrate with your team to learn your business, understand
+                  your market, and identify the highest-impact AI opportunities.
                 </p>
               </div>
 
@@ -243,7 +182,8 @@ export default function HomePageClient({
                   Design
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  Together, we map out potential AI solutions and design a clear execution plan for the most promising projects.
+                  Together, we map out potential AI solutions and design a clear
+                  execution plan for the most promising projects.
                 </p>
               </div>
 
@@ -256,7 +196,8 @@ export default function HomePageClient({
                   Build
                 </h4>
                 <p className="text-black font-sans leading-relaxed text-sm">
-                  Our team gets to work, building and shipping the custom AI systems that give you a competitive edge.
+                  Our team gets to work, building and shipping the custom AI
+                  systems that give you a competitive edge.
                 </p>
               </div>
             </div>
@@ -290,7 +231,7 @@ export default function HomePageClient({
               Work With Us
             </h2>
             <p className="mb-8 text-gray-300 font-sans leading-relaxed">
-              Don't let great ideas die on the whiteboard.
+              Great ideas don’t wait. Neither do we
             </p>
             <Link
               href="/services#contact"

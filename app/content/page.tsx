@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Tilt, Spotlight } from "@/components/ui/tilt";
-import { getContentData, type ContentItemData } from "@/lib/content";
+import { getContentData } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Stories & Resources | Agency/42",

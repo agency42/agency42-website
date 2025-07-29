@@ -1,11 +1,8 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Metadata } from "next";
 
 import QualForm from "@/components/QualForm";
-import { ConwaySim } from "@/components/ConwaySim";
-import { FlickeringGrid } from "@/components/FlickeringGrid";
 import ServicesAccordion from "@/components/ServicesAccordion";
 
 export const metadata: Metadata = {
