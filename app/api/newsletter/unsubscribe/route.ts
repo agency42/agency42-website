@@ -72,10 +72,10 @@ export async function GET(request: NextRequest) {
       }
     } catch { /* ignore */ }
 
-    // Redirect to a confirmation page
-    const redirectUrl = new URL("/newsletter/unsubscribe", request.url);
+    // Redirect to a confirmation page with a temporary success flag
+    const redirectUrl = new URL("/newsletter/unsubscribe?confirmed=1", request.url);
     return NextResponse.redirect(redirectUrl);
-  } catch (error) {
+  } catch {
     return NextResponse.json({ success: false, error: "Internal server error" }, { status: 500 });
   }
 }
@@ -123,7 +123,7 @@ export async function POST(request: NextRequest) {
                   ...(reason ? [{ name: "❓ Reason", value: getReasonLabel(reason), inline: false }] : []),
                   ...(feedback ? [{ name: "💭 Feedback", value: (feedback || '').substring(0, 1000) + ((feedback || '').length > 1000 ? '...' : ''), inline: false }] : []),
                 ],
-                footer: { text: "Agency42 Newsletter" },
+                footer: { text: "Agency/42 Newsletter " },
                 timestamp: new Date().toISOString(),
               },
             ],
@@ -136,7 +136,7 @@ export async function POST(request: NextRequest) {
       { success: true, message: "Unsubscribe request received." },
       { status: 200 }
     );
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { success: false, error: "Failed to process unsubscribe request" },
       { status: 500 }

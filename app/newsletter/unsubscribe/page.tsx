@@ -1,5 +1,6 @@
 import React from "react";
 import type { Metadata } from "next";
+import { redirect } from "next/navigation";
 
 export const metadata: Metadata = {
   title: "Newsletter Unsubscribe | Agency/42",
@@ -35,7 +36,12 @@ export const metadata: Metadata = {
 };
 
 // Newsletter unsubscribe page component
-export default function NewsletterUnsubscribePage() {
+export default function NewsletterUnsubscribePage({ searchParams }: { searchParams?: { confirmed?: string } }) {
+  // Only show confirmation if accessed via API redirect
+  if (searchParams?.confirmed !== "1") {
+    redirect("/");
+  }
+
   return (
     <div className="min-h-screen bg-white text-black pt-24">
       <main className="container mx-auto max-w-2xl px-4 py-16">
