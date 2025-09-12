@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import LearnVibeCodingPageContent from "./page-content";
 
 export const metadata: Metadata = {
-  title: "Vibe Coding: Learn to Build 10x Faster with an AI Mentor",
+  title: "Learn Vibe Coding - Build Your Dream Product With AI",
   description:
-    "Level up your coding with 1-on-1 AI-assisted pair programming. We provide custom-tailored coaching to help you master AI-native workflows and ship your MVP faster.",
+    "Join 1.5k+ developers learning AI-powered development. Our community has won hackathons and raised $125k+ for their startups. Master Cursor + Claude to ship 10x faster.",
   openGraph: {
-    title: "Vibe Coding: Learn to Build 10x Faster with an AI Mentor",
+    title: "Learn Vibe Coding - Build Your Dream Product With AI",
     description:
-      "Level up your coding with 1-on-1 AI-assisted pair programming. We provide custom-tailored coaching to help you master AI-native workflows and ship your MVP faster.",
+      "Join 1.5k+ developers learning AI-powered development. Our community has won hackathons and raised $125k+ for their startups. Master Cursor + Claude to ship 10x faster.",
     images: [
       {
         url: "/images/media/vibe-code-poster3.png",
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Vibe Coding: Learn to Build 10x Faster with an AI Mentor",
+    title: "Learn Vibe Coding - Build Your Dream Product With AI",
     description:
-      "Level up your coding with 1-on-1 AI-assisted pair programming. We provide custom-tailored coaching to help you master AI-native workflows and ship your MVP faster.",
+      "Join 1.5k+ developers learning AI-powered development. Our community has won hackathons and raised $125k+ for their startups.",
     images: ["/images/media/vibe-code-poster3.png"],
   },
 };
