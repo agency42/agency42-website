@@ -138,7 +138,7 @@ export async function POST(request: Request) {
               title: "📰 New Newsletter Signup",
               color: 0x00cd00,
               fields: [{ name: "📧 Email", value: email }],
-              footer: { text: "Agency42 | Signup" },
+              footer: { text: "Agency/42 | Signup" },
               timestamp: new Date().toISOString(),
             }]
           }),
