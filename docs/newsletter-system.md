@@ -66,19 +66,19 @@ Marks the subscriber as unsubscribed and rotates the token, then redirects to th
 
 Behavior:
 - Missing/invalid token: JSON error (frontend has a POST fallback)
-- Valid token: set `unsubscribed_at = now()`, rotate `unsubscribe_token`, Discord "📧 Newsletter Unsubscribed", redirect to `/newsletter/unsubscribe?success=1`
+- Valid token: set `unsubscribed_at = now()`, rotate `unsubscribe_token`, Discord "📧 Newsletter Unsubscribed", redirect to `/newsletter/unsubscribe`
 
 ### POST `/api/newsletter/unsubscribe`
-Fallback endpoint for manual unsubscribe by email from the public form (no token).
+Optional fallback endpoint (by email) when a user can't access the tokenized link.
 
 Request body:
 ```json
-{ "email": "user@example.com", "reason": "too-frequent", "feedback": "..." }
+{ "email": "user@example.com" }
 ```
 
 Behavior:
 - Best-effort `unsubscribed_at = now()` by email
-- Posts a detailed Discord notification (reason/feedback when present)
+- Posts a Discord notification
 
 ## Email templates
 
@@ -95,8 +95,7 @@ Rendering:
 
 - `app/newsletter/subscribe/page.tsx` → UI + `SubscribeForm`
 - `app/newsletter/verify/page.tsx` → landing after successful verify
-- `app/newsletter/unsubscribe/page.tsx` → UI + `UnsubscribeForm`
-  - `UnsubscribeForm` also detects `?success=1` to show confirmation when redirected from token-based GET
+- `app/newsletter/unsubscribe/page.tsx` → Static confirmation
 
 ## Configuration
 
@@ -134,7 +133,7 @@ Helpers:
    - `http://localhost:3000/api/newsletter/verify?t=<token>` → redirect to `/newsletter/verify`
    - DB: `verified_at` set, `verify_token` cleared
 4) Unsubscribe using the link in the email footer:
-   - `http://localhost:3000/api/newsletter/unsubscribe?t=<token>` → redirect to `/newsletter/unsubscribe?success=1`
+   - `http://localhost:3000/api/newsletter/unsubscribe?t=<token>` → redirect to `/newsletter/unsubscribe`
    - DB: `unsubscribed_at` set, token rotated
 5) Re-subscribe with same email:
    - Expect verification email; DB: `unsubscribed_at` cleared, new `verify_token`

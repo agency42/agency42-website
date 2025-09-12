@@ -1,6 +1,5 @@
 import React from "react";
 import type { Metadata } from "next";
-import UnsubscribeForm from "./UnsubscribeForm";
 
 export const metadata: Metadata = {
   title: "Newsletter Unsubscribe | Agency/42",
@@ -45,21 +44,28 @@ export default function NewsletterUnsubscribePage() {
             Unsubscribe
           </h1>
           <p className="text-lg text-gray-700 font-sans">
-            We're sorry to see you go. Please confirm your unsubscribe request
-            below.
+            You're unsubscribed. You won't receive marketing emails from Agency/42.
           </p>
         </div>
 
         <div
-          className="bg-white border-2 border-black rounded-lg p-8 shadow-lg"
+          className="bg-white border-2 border-black rounded-lg p-8 shadow-lg text-center"
           style={{ boxShadow: "8px 8px 0px 0px rgba(0,0,0,1)" }}
         >
-          <UnsubscribeForm />
+          <div>
+            <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
+              <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="font-heading text-2xl mb-2">Unsubscribe Request Received</h2>
+            <p className="text-gray-700 font-sans">Your email has been unsubscribed.</p>
+          </div>
         </div>
 
         <div className="text-center mt-8">
           <p className="text-sm text-gray-600 font-sans">
-            Having trouble? Email us directly at{" "}
+            Questions? Email{" "}
             <a
               href="mailto:hello@agency42.co"
               className="underline hover:text-black transition-colors"

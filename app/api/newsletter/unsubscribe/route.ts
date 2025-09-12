@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
     } catch { /* ignore */ }
 
     // Redirect to a confirmation page
-    const redirectUrl = new URL("/newsletter/unsubscribe?success=1", request.url);
+    const redirectUrl = new URL("/newsletter/unsubscribe", request.url);
     return NextResponse.redirect(redirectUrl);
   } catch (error) {
     return NextResponse.json({ success: false, error: "Internal server error" }, { status: 500 });
