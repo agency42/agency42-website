@@ -14,10 +14,14 @@ export default function UnsubscribeForm() {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    // Extract email from URL parameters
+    // Extract email (optional) and success flag from URL params
     const emailParam = searchParams.get("email") || searchParams.get("e");
     if (emailParam) {
       setEmail(decodeURIComponent(emailParam));
+    }
+    const success = searchParams.get("success");
+    if (success === "1") {
+      setSubmitted(true);
     }
   }, [searchParams]);
 

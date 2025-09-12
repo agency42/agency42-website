@@ -22,7 +22,7 @@ export default function SubscribeForm() {
     }
 
     try {
-      const response = await fetch("/api/subscribe", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,11 +32,13 @@ export default function SubscribeForm() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to subscribe to newsletter");
+      if (response.ok && data?.success) {
+        setSubmitted(true);
+      } else if (response.status === 409) {
+        throw new Error("You're already subscribed.");
+      } else {
+        throw new Error(data?.error || "Failed to subscribe to newsletter");
       }
-
-      setSubmitted(true);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unexpected error occurred"

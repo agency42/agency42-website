@@ -59,17 +59,26 @@ export default function QualForm({ className = "" }: QualFormProps) {
     setSubmitError("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/inquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formState, type: "services_inquiry" }),
+        body: JSON.stringify({
+          email: formState.email,
+          name: formState.name,
+          subject: "Services Inquiry",
+          message: formState.projectDescription,
+          form_type: "services_inquiry",
+          company: formState.companyName,
+          company_size: formState.companySize,
+          budget: formState.budget,
+        }),
       });
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!(response.ok && data?.success)) {
         throw new Error(data?.error || "Something went wrong");
       }
 

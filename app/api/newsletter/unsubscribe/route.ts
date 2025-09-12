@@ -1,106 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getSupabaseServerClient } from "@/lib/supabase/server";
+import { getDiscordWebhook } from "@/lib/config";
 
-const DISCORD_WEBHOOK_URL = process.env.DISCORD_WEBHOOK_URL;
+export const runtime = 'nodejs';
 
-// Validation function for unsubscribe request
-function validateUnsubscribeRequest(body: Record<string, unknown>): boolean {
-  const { email } = body;
-  return Boolean(email && typeof email === "string" && email.includes("@"));
-}
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-
-    // Validate required fields
-    if (!validateUnsubscribeRequest(body)) {
-      console.log("Validation failed for unsubscribe request:", body);
-      return NextResponse.json(
-        { success: false, error: "Valid email address is required" },
-        { status: 400 }
-      );
-    }
-
-    const { email, reason, feedback } = body;
-
-    // Prepare Discord embed for the unsubscribe request
-    const discordEmbeds = [
-      {
-        title: "📧 Newsletter Unsubscribe Request",
-        color: 0xff6b6b, // Red color for unsubscribe
-        fields: [
-          { name: "✉️ Email", value: email, inline: true },
-          {
-            name: "📅 Date",
-            value: new Date().toLocaleDateString(),
-            inline: true,
-          },
-          {
-            name: "🕒 Time",
-            value: new Date().toLocaleTimeString(),
-            inline: true,
-          },
-          ...(reason
-            ? [
-                {
-                  name: "❓ Reason",
-                  value: getReasonLabel(reason),
-                  inline: false,
-                },
-              ]
-            : []),
-          ...(feedback
-            ? [
-                {
-                  name: "💭 Feedback",
-                  value:
-                    feedback.substring(0, 1000) +
-                    (feedback.length > 1000 ? "..." : ""),
-                  inline: false,
-                },
-              ]
-            : []),
-        ],
-        footer: { text: "Agency42 Newsletter Unsubscribe" },
-        timestamp: new Date().toISOString(),
-      },
-    ];
-
-    // Send Discord notification
-    if (DISCORD_WEBHOOK_URL) {
-      try {
-        await fetch(DISCORD_WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ embeds: discordEmbeds }),
-        });
-        console.log(
-          "Discord notification sent successfully for unsubscribe request"
-        );
-      } catch (discordError) {
-        console.error("Error sending Discord notification:", discordError);
-        // Don't fail the request if Discord notification fails
-      }
-    } else {
-      console.warn("Discord webhook URL not configured");
-    }
-
-    return NextResponse.json(
-      {
-        success: true,
-        message:
-          "Unsubscribe request received successfully. You will be removed from our newsletter within 24 hours.",
-      },
-      { status: 200 }
-    );
-  } catch (error) {
-    console.error("Unsubscribe request error:", error);
-    return NextResponse.json(
-      { success: false, error: "Failed to process unsubscribe request" },
-      { status: 500 }
-    );
-  }
-}
+const DISCORD_WEBHOOK = getDiscordWebhook();
 
 // Helper function to convert reason codes to readable labels
 function getReasonLabel(reason: string): string {
@@ -112,4 +16,130 @@ function getReasonLabel(reason: string): string {
     other: "Other",
   };
   return reasonMap[reason] || reason;
+}
+
+// Primary path: GET with unsubscribe token (opaque)
+export async function GET(request: NextRequest) {
+  try {
+    const { searchParams } = new URL(request.url);
+    const token = searchParams.get("t");
+    if (!token) {
+      return NextResponse.json({ success: false, error: "Missing token" }, { status: 400 });
+    }
+
+    const supabase = getSupabaseServerClient();
+    const { data: subscriber, error: selectError } = await supabase
+      .from("agency42_newsletter_subscribers")
+      .select("id, email")
+      .eq("unsubscribe_token", token)
+      .maybeSingle();
+
+    if (selectError) {
+      return NextResponse.json({ success: false, error: "Lookup failed" }, { status: 500 });
+    }
+    if (!subscriber) {
+      return NextResponse.json({ success: false, error: "Invalid token" }, { status: 404 });
+    }
+
+    const newToken = (globalThis.crypto?.randomUUID?.() || undefined) as string | undefined;
+    const { error: updateError } = await supabase
+      .from("agency42_newsletter_subscribers")
+      .update({ unsubscribed_at: new Date().toISOString(), ...(newToken ? { unsubscribe_token: newToken } : {}) })
+      .eq("id", subscriber.id);
+
+    if (updateError) {
+      return NextResponse.json({ success: false, error: "Failed to unsubscribe" }, { status: 500 });
+    }
+
+    // Discord notification
+    try {
+      if (DISCORD_WEBHOOK) {
+        await fetch(DISCORD_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            embeds: [{
+              title: "📧 Newsletter Unsubscribed",
+              color: 0xff6b6b,
+              fields: [
+                { name: "✉️ Email", value: subscriber.email, inline: true },
+              ],
+              footer: { text: "Agency42 Newsletter" },
+              timestamp: new Date().toISOString(),
+            }]
+          })
+        });
+      }
+    } catch { /* ignore */ }
+
+    // Redirect to a confirmation page
+    const redirectUrl = new URL("/newsletter/unsubscribe?success=1", request.url);
+    return NextResponse.redirect(redirectUrl);
+  } catch (error) {
+    return NextResponse.json({ success: false, error: "Internal server error" }, { status: 500 });
+  }
+}
+
+// Fallback path: POST with email (manual processing)
+function validateUnsubscribeRequest(body: Record<string, unknown>): boolean {
+  const { email } = body;
+  return Boolean(email && typeof email === "string" && email.includes("@"));
+}
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
+    if (!validateUnsubscribeRequest(body)) {
+      return NextResponse.json(
+        { success: false, error: "Valid email address is required" },
+        { status: 400 }
+      );
+    }
+
+    const { email, reason, feedback } = body as { email: string; reason?: string; feedback?: string };
+
+    // Best-effort mark unsubscribed by email (non-token fallback)
+    try {
+      const supabase = getSupabaseServerClient();
+      await supabase
+        .from("agency42_newsletter_subscribers")
+        .update({ unsubscribed_at: new Date().toISOString() })
+        .eq("email", email);
+    } catch { /* ignore db errors here */ }
+
+    // Discord notification
+    if (DISCORD_WEBHOOK) {
+      try {
+        await fetch(DISCORD_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            embeds: [
+              {
+                title: "📧 Newsletter Unsubscribe Request",
+                color: 0xff6b6b,
+                fields: [
+                  { name: "✉️ Email", value: email, inline: true },
+                  ...(reason ? [{ name: "❓ Reason", value: getReasonLabel(reason), inline: false }] : []),
+                  ...(feedback ? [{ name: "💭 Feedback", value: (feedback || '').substring(0, 1000) + ((feedback || '').length > 1000 ? '...' : ''), inline: false }] : []),
+                ],
+                footer: { text: "Agency42 Newsletter" },
+                timestamp: new Date().toISOString(),
+              },
+            ],
+          }),
+        });
+      } catch { /* ignore */ }
+    }
+
+    return NextResponse.json(
+      { success: true, message: "Unsubscribe request received." },
+      { status: 200 }
+    );
+  } catch (error) {
+    return NextResponse.json(
+      { success: false, error: "Failed to process unsubscribe request" },
+      { status: 500 }
+    );
+  }
 }
