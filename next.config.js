@@ -10,6 +10,12 @@ const nextConfig = {
     domains: [], // Add any external image domains if needed
   },
   // Note: experimental.mdxRs is not recommended for App Router, use the standard setup above
+  experimental: {
+    outputFileTracingIncludes: {
+      '/app/api/newsletter/route': ['./templates/*.html'],
+      '/app/api/inquiries/route': ['./templates/*.html'],
+    },
+  },
 }
 
 // Merge MDX config with Next.js config

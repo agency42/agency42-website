@@ -57,17 +57,24 @@ export default function ContactForm({ interestType }: ContactFormProps) {
     });
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/inquiries", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ ...formData, type: "vibe_code_inquiry" }),
+        body: JSON.stringify({
+          email: formData.email,
+          name: formData.name,
+          subject: "Vibe Code Inquiry",
+          message: formData.message,
+          form_type: "vibe_code_inquiry",
+          company: formData.company,
+        }),
       });
 
       const data = await response.json();
 
-      if (!response.ok) {
+      if (!(response.ok && data?.success)) {
         throw new Error(data.error || "Something went wrong");
       }
 

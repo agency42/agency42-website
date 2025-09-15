@@ -22,7 +22,7 @@ export default function SubscribeForm() {
     }
 
     try {
-      const response = await fetch("/api/subscribe", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -32,11 +32,13 @@ export default function SubscribeForm() {
 
       const data = await response.json();
 
-      if (!response.ok) {
-        throw new Error(data.error || "Failed to subscribe to newsletter");
+      if (response.ok && data?.success) {
+        setSubmitted(true);
+      } else if (response.status === 409) {
+        throw new Error("You're already subscribed.");
+      } else {
+        throw new Error(data?.error || "Failed to subscribe to newsletter");
       }
-
-      setSubmitted(true);
     } catch (err) {
       setError(
         err instanceof Error ? err.message : "An unexpected error occurred"
@@ -65,10 +67,9 @@ export default function SubscribeForm() {
               />
             </svg>
           </div>
-          <h2 className="font-heading text-2xl mb-2">You're In!</h2>
+          <h2 className="font-heading text-2xl mb-2">Almost There!</h2>
           <p className="text-gray-700 font-sans">
-            Thanks for subscribing with <strong>{email}</strong>. You'll hear
-            from us when we have something worth sharing.
+            We sent a verification email to <strong>{email}</strong>. Please check your inbox to confirm your subscription.
           </p>
         </div>
         <div className="space-y-3">
