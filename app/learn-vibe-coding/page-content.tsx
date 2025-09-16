@@ -54,7 +54,7 @@ export default function LearnVibeCodingPageContent() {
               Code is for everyone now.
             </h1>
             <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              We help you augment your development flows and ship high-quality code with AI.
+              We help augment your development flows and ship high-quality code with AI.
             </p>
             
             {/* Community Stats */}
