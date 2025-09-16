@@ -1,24 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import {
   ArrowRight,
-  Check,
   Zap,
   Code,
   SlidersHorizontal,
@@ -26,127 +12,11 @@ import {
   Rocket,
   GraduationCap,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import WorkshopQuoteModal from "@/components/WorkshopQuoteModal";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 
-// FAQ data for JSON-LD
-const faqData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "How many sessions do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Most clients hit MVP in 3-6 sessions. We scope the exact roadmap together during your Discovery Call.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What does a discovery session cover?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "It's a 30-minute call to map goals, assess complexity, and design your custom coaching plan. The fee is credited toward any future coaching block.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What prerequisite skills do I need?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Basic programming knowledge in any language is helpful, but not required. We've successfully worked with complete beginners who are highly motivated. The AI co-pilot setup dramatically accelerates the learning curve.",
-      },
-    },
-  ],
-};
 
-// Course data for JSON-LD
-const courseData = {
-  "@context": "https://schema.org",
-  "@type": "ItemList",
-  itemListElement: [
-    {
-      "@type": "Course",
-      name: "Hands-On AI Co-Pilot Coaching",
-      description:
-        "Custom one-on-one program to ship production-ready features.",
-      provider: {
-        "@type": "Organization",
-        name: "Agency 42",
-      },
-    },
-    {
-      "@type": "Course",
-      name: "AI Coding Workshops",
-      description:
-        "Half-day or full-day training for engineering teams and universities.",
-      provider: {
-        "@type": "Organization",
-        name: "Agency 42",
-      },
-    },
-  ],
-};
 
 export default function LearnVibeCodingPageContent() {
-  const pricingPlans = [
-    {
-      name: "For Teams & Organizations",
-      description: "Transform your engineering team's AI capability.",
-      price: "Custom Quote",
-      features: [
-        "On-site or remote team training",
-        "Solve real business problems",
-        "Integrate AI into your development workflow",
-      ],
-      cta: "Request Quote",
-      ctaType: "modal",
-      modalType: "team",
-    },
-    {
-      name: "For Founders & Executives",
-      description: "Private mentorship to 10x your development speed.",
-      price: "$2500/mo",
-      price_prefix: "Starting at",
-      features: [
-        "Custom guidance for your goals",
-        "Direct mentor access for your projects",
-        "Weekly pair-programming sessions",
-      ],
-      cta: "Book Discovery Call",
-      ctaType: "modal",
-      modalType: "individual",
-      featured: true,
-    },
-    {
-      name: "For Universities & Research Labs",
-      description: "Future-proof students with cutting-edge AI skills.",
-      price: "Custom Quote",
-      features: [
-        "Custom curriculum design",
-        "Prepare students for AI-first industry",
-        "Accelerate research output",
-      ],
-      cta: "Request Quote",
-      ctaType: "modal",
-      modalType: "university",
-    },
-  ];
-
-  // Define a type for the plan objects to ensure type safety
-  type PricingPlan = {
-    name: string;
-    description: string;
-    price: string;
-    price_prefix?: string;
-    features: string[];
-    cta: string;
-    ctaType: "link" | "modal";
-    modalType?: "individual" | "team" | "university";
-    featured?: boolean;
-  };
 
   // Testimonials data for the carousel
   const testimonials = [
@@ -173,47 +43,43 @@ export default function LearnVibeCodingPageContent() {
     },
   ];
 
-  const [modalType, setModalType] = useState<
-    "individual" | "team" | "university" | null
-  >(null);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseData) }}
-      />
-      <WorkshopQuoteModal
-        isOpen={modalType !== null}
-        onClose={() => setModalType(null)}
-        interestType={modalType}
-      />
       <div className="bg-background text-foreground">
         {/* Hero Section */}
         <section className="py-20 md:py-32 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto text-center">
-            {/* Hero Copy (reverted) */}
             <h1 className="text-5xl font-bold text-primary mb-6 leading-tight tracking-tighter text-center">
-              Ship Faster & Smarter With AI-Assisted Development
+              Code is for everyone now.
             </h1>
-            <p className="text-lg sm:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto">
-              Elite AI coding mentorship for founders, teams, and scholars.
+            <p className="text-lg sm:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+              We help you augment your development flows and ship high-quality code with AI.
             </p>
+            
+            {/* Community Stats */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8 mb-12">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-primary">1.5k+</p>
+                <p className="text-sm text-muted-foreground">Discord Members</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-primary">$125k+</p>
+                <p className="text-sm text-muted-foreground">Raised by Alumni</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-primary">3x</p>
+                <p className="text-sm text-muted-foreground">Hackathon Winners</p>
+              </div>
+            </div>
+
             <div className="relative mx-auto mt-8 w-full max-w-3xl">
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="#pricing" passHref>
-                  <Button size="lg">
-                    Get Started
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="#how-it-works" passHref>
+                <Link href="https://discord.gg/8AWegh9H" passHref>
                   <Button size="lg" variant="outline">
-                    How It Works
+                    <GraduationCap className="mr-2 h-5 w-5" />
+                    Join Vibe Code University
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </Link>
               </div>
@@ -221,70 +87,47 @@ export default function LearnVibeCodingPageContent() {
           </div>
         </section>
 
-        {/* What is Vibe Coding? Section - Moved up */}
+        {/* What is Vibe Coding? Section */}
         <section
           id="what-is-vibe-coding"
           className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary"
         >
           <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-            {/* Left: Video and CTA */}
+            {/* Left: Video */}
             <div className="space-y-6">
               <div className="aspect-video rounded-lg overflow-hidden border">
                 <iframe
                   className="w-full h-full"
                   src="https://www.youtube.com/embed/6poldoGRsjY"
                   title="How to use Cursor Rules to write better code with AI"
-                  frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
                 ></iframe>
               </div>
-              {/* Vibe Code University invite moved here */}
-              <div className="text-center">
-                <Link href="https://discord.gg/8AWegh9H" passHref>
-                  <Button size="lg" variant="outline">
-                    <GraduationCap className="mr-2 h-5 w-5" />
-                    Vibe Code University
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-              </div>
             </div>
-            {/* Right: Narrative */}
+            {/* Right: What & Why */}
             <div className="space-y-6">
               <h2 className="text-3xl font-bold text-primary">
-                What Is Vibe Coding?
+                Learn AI-Powered Development
               </h2>
               <div className="space-y-4 text-muted-foreground">
-                <p>
-                  Vibe Coding transforms software development by using AI as a
-                  strategic partner to execute ideas as structured systems.
-                  Developers guide AI with precise language, iterate rapidly,
-                  and focus on architecture rather than syntax—turning
-                  development into a live feedback loop between human intent and
-                  machine execution.
+                <p className="text-lg">
+                  Use AI to turn your ideas into working products 10x faster.
                 </p>
-
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-primary">
-                    Core Practices
-                  </h3>
-                  <ul className="list-disc list-inside space-y-2 ml-4">
-                    <li>Structure functionality as testable prompts</li>
-                    <li>Iterate in real-time during development</li>
-                    <li>Design for modularity and scale</li>
-                  </ul>
-                </div>
-
-                <div className="space-y-3">
-                  <h3 className="text-xl font-semibold text-primary">
-                    Why It Matters
-                  </h3>
-                  <p>
-                    This approach matches modern product velocity while
-                    expanding creative range and reducing development friction.
-                  </p>
-                </div>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <Zap className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                    <span>Build MVPs in days, not months</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Code className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                    <span>Master Cursor + Claude Code for rapid development</span>
+                  </li>
+                  <li className="flex items-start">
+                    <Rocket className="h-5 w-5 text-primary mr-2 flex-shrink-0 mt-1" />
+                    <span>Join founders who've raised capital from their builds</span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -302,340 +145,62 @@ export default function LearnVibeCodingPageContent() {
           </div>
         </section>
 
-        {/* How It Works Section */}
+        {/* How We Help Section */}
         <section
-          id="how-it-works"
+          id="how-we-help"
           className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary"
         >
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold text-primary mb-4">
-                How It Works
-              </h2>
-              <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                A comprehensive approach to mastering AI-assisted development
-              </p>
-            </div>
-
-            {/* Phase 1: Build Your AI Stack */}
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <SlidersHorizontal className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-primary">
-                      Phase 1: Build Your AI Stack
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Setup, configs, cursor rules, docs
-                    </p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">
-                  We design your complete AI development environment from
-                  scratch. Custom Cursor rules, LLM-friendly documentation, and
-                  project protocols tailored to your specific goals and tech
-                  stack.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Custom Cursor rules and Claude Code config files
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      LLM-friendly documentation structure
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Project roadmap and development protocols
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-background rounded-lg p-8 border">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Code className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="font-bold text-center mb-2">
-                  Core Skill: Prompt Engineering
-                </h4>
-                <p className="text-sm text-muted-foreground text-center">
-                  Learn to translate natural language ideas into working
-                  features with confidence you're not breaking anything.
-                </p>
-              </div>
-            </div>
-
-            {/* Phase 2: Pair Program with Experts */}
-            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Keyboard className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-primary">
-                      Phase 2: Pair Program with Experts
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Live sessions, real projects, advanced prompting
-                    </p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">
-                  Real-time mentorship on your actual projects. We pair-program
-                  with you, teaching advanced prompting techniques and AI-first
-                  development patterns through hands-on practice.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Live sessions and workshops
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Advanced prompt engineering techniques
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Real-time feature development guidance
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-background rounded-lg p-8 border">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Zap className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="font-bold text-center mb-2">
-                  Core Skill: AI-Assisted Development
-                </h4>
-                <p className="text-sm text-muted-foreground text-center">
-                  Master using Cursor + Claude Code to plan, document, test, and
-                  build 10× faster—without losing control.
-                </p>
-              </div>
-            </div>
-
-            {/* Phase 3: Ship Production-Ready */}
-            <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="space-y-6">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                    <Rocket className="h-6 w-6 text-primary" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-primary">
-                      Phase 3: Ship Production-Ready
-                    </h3>
-                    <p className="text-sm text-muted-foreground">
-                      Scale, release, maintain
-                    </p>
-                  </div>
-                </div>
-                <p className="text-muted-foreground">
-                  Deploy with confidence. We implement production-grade
-                  practices that ensure your AI-built systems handle real users,
-                  real data, and real business requirements at scale.
-                </p>
-                <div className="space-y-2">
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Production deployment strategies
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Repeatable release workflows
-                    </span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <Check className="h-4 w-4 text-primary" />
-                    <span className="text-sm text-muted-foreground">
-                      Scaling and maintenance best practices
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-background rounded-lg p-8 border">
-                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
-                  <Check className="h-8 w-8 text-primary" />
-                </div>
-                <h4 className="font-bold text-center mb-2">
-                  Core Skill: Production Best Practices
-                </h4>
-                <p className="text-sm text-muted-foreground text-center">
-                  Build repeatable workflows that take your projects from
-                  prototype to production scale reliably.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Plans Section */}
-        <section id="pricing" className="py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-                Our Plans
+              <h2 className="text-3xl font-bold text-primary mb-4">
+                How We Help You Build
               </h2>
-              <p className="text-lg text-muted-foreground mt-4 max-w-2xl mx-auto">
-                We work with a select group of motivated clients each quarter.
-              </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto items-center">
-              {(pricingPlans as PricingPlan[]).map((plan, index) => (
-                <Card
-                  key={index}
-                  className={cn(
-                    "flex flex-col border",
-                    plan.featured && "md:scale-110 md:shadow-lg relative z-10"
-                  )}
-                >
-                  <CardHeader>
-                    <CardTitle className="font-sans font-bold">
-                      {plan.name}
-                    </CardTitle>
-                    <CardDescription>{plan.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow space-y-4">
-                    <div className="text-4xl font-bold flex items-center">
-                      {plan.price_prefix && (
-                        <div className="mr-2 flex flex-col">
-                          {plan.price_prefix.split(" ").map((word, i) => (
-                            <span
-                              key={i}
-                              className="text-sm font-normal text-muted-foreground leading-tight"
-                            >
-                              {word}
-                            </span>
-                          ))}
-                        </div>
-                      )}
-                      {plan.price}
-                    </div>
-                    <ul className="space-y-3 text-muted-foreground text-sm">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-start">
-                          <Check className="h-5 w-5 text-muted-foreground mr-2 flex-shrink-0" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                  <div className="p-6 pt-0 mt-auto">
-                    {plan.ctaType === "link" ? (
-                      <Link
-                        href="https://calendly.com/ken-agency42/vibe-code-strategy-call"
-                        passHref
-                      >
-                        <Button className="w-full">{plan.cta}</Button>
-                      </Link>
-                    ) : (
-                      <Button
-                        className="w-full"
-                        onClick={() => setModalType(plan.modalType || "team")}
-                      >
-                        {plan.cta}
-                      </Button>
-                    )}
-                  </div>
-                </Card>
-              ))}
+
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <SlidersHorizontal className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Custom AI Setup</h3>
+                <p className="text-sm text-muted-foreground">
+                  Get your Cursor + Claude Code / Obsidian workflows optimized for your project
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Keyboard className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Live Workshops</h3>
+                <p className="text-sm text-muted-foreground">
+                  Hands-on sessions building real features together
+                </p>
+              </div>
+              
+              <div className="text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-4 mx-auto">
+                  <Rocket className="h-8 w-8 text-primary" />
+                </div>
+                <h3 className="font-bold mb-2">Builder Community</h3>
+                <p className="text-sm text-muted-foreground">
+                  AI builders helping AI builders. Share your projects and get feedback and get feedback from the community.
+                </p>
+              </div>
+            </div>
+
+            {/* CTA */}
+            <div className="text-center mt-12">
+              <Link href="/services#contact" passHref>
+                <Button size="lg">
+                  Start Building Today
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <section className="py-20 px-4 sm:px-6 lg:px-8 bg-secondary">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold text-primary text-center mb-16">
-              Frequently Asked Questions
-            </h2>
-            <Accordion type="single" collapsible className="space-y-4">
-              <AccordionItem value="who-is-this-for">
-                <AccordionTrigger className="font-sans font-semibold">
-                  Who is this for?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  We work with founders, executives, researchers, developers,
-                  and organizations who want to integrate AI into their
-                  workflows. Whether you're an individual or part of a larger
-                  team, if you're aiming to build faster and smarter with AI,
-                  this program is designed for you.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="how-long-does-it-take">
-                <AccordionTrigger className="font-sans font-semibold">
-                  How long does it take?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Our curriculum is flexible — from focused, condensed sprints
-                  to comprehensive, hands-on programs. Depending on your needs,
-                  we offer:
-                  <br />
-                  <br />
-                  • Pair coding sessions (typically 90 minutes)
-                  <br />
-                  • Live workshops (2-4 hours)
-                  <br />• Async support to meet specific project milestones
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="company-wide-implementation">
-                <AccordionTrigger className="font-sans font-semibold">
-                  Can you help us implement AI across our whole company?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Yes. We design custom AI transformation programs for
-                  organizations. This includes training multiple teams, setting
-                  development standards, and creating internal knowledge
-                  transfer systems. Contact us for a custom enterprise proposal.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="what-results">
-                <AccordionTrigger className="font-sans font-semibold">
-                  What kind of results can we expect?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  Clients typically see accelerated development speed, improved
-                  code quality, and clearer alignment between business goals and
-                  technical delivery.
-                </AccordionContent>
-              </AccordionItem>
-
-              <AccordionItem value="discovery-session">
-                <AccordionTrigger className="font-sans font-semibold">
-                  What happens in the discovery session?
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground">
-                  The 30-minute discovery call is a strategic conversation to
-                  assess your current development process, identify bottlenecks,
-                  and co-design your custom AI roadmap. We'll determine fit, set
-                  clear expectations, and outline next steps.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </div>
-        </section>
       </div>
     </>
   );
