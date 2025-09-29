@@ -58,12 +58,22 @@ export default function ServicesPage() {
             From strategy to implementation, we partner with you to build the
             custom AI systems that define your future.
           </p>
-          <Link
-            href="#contact"
-            className="inline-block bg-black text-white font-mono text-[11px] tracking-wider uppercase px-8 py-3 hover:bg-gray-900 transition-colors duration-200"
-          >
-            Let's Build
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="#contact"
+              className="inline-block bg-black text-white border-2 border-black font-mono text-[11px] tracking-wider uppercase py-3 hover:bg-gray-900 transition-colors duration-200 w-[200px] text-center"
+            >
+              Let's Build
+            </Link>
+            <Link
+              href="https://www.figma.com/deck/zSMHYvwDky0MuNF7XvHBO0"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white text-black border-2 border-black font-mono text-[11px] tracking-wider uppercase py-3 hover:bg-gray-50 transition-colors duration-200 w-[200px] text-center"
+            >
+              View Capabilities
+            </Link>
+          </div>
         </div>
       </section>
 
