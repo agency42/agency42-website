@@ -107,17 +107,13 @@ export default function WorkWithUsForm() {
           onChange={(e) => setCompany(e.target.value)}
           className="w-full border border-gray-300 p-2 text-sm"
         />
-        <select
+        <input
+          type="text"
           value={budget}
           onChange={(e) => setBudget(e.target.value)}
+          placeholder="Budget — e.g. $10k–$100k"
           className="w-full border border-gray-300 p-2 text-sm"
-        >
-          <option value="">$25k–$150k</option>
-          <option value="$25k–$50k">$25k–$50k</option>
-          <option value="$50k–$100k">$50k–$100k</option>
-          <option value="$100k–$150k">$100k–$150k</option>
-          <option value="$150k+">$150k+</option>
-        </select>
+        />
       </div>
 
       <textarea

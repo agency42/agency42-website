@@ -83,7 +83,7 @@ export async function POST(request: Request) {
               { name: '👤 Name', value: name || 'N/A', inline: true },
               { name: '🏢 Company', value: company || 'N/A', inline: true },
               { name: '✉️ Email', value: email, inline: false },
-              { name: '👥 Company Size', value: company_size || 'N/A', inline: true },
+              { name: '🎯 Interest', value: subject || 'N/A', inline: true },
               { name: '💰 Budget', value: budget || 'N/A', inline: true },
               { name: '📝 Description', value: (message || '').substring(0, 1000) + ((message || '').length > 1000 ? '...' : ''), inline: false },
             ],
