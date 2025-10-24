@@ -10,7 +10,11 @@ export const runtime = 'nodejs';
 
 const Schema = z.object({
   email: z.string().email("A valid email is required"),
+  website: z.string().optional(), // honeypot
 });
+
+// simple in-memory soft rate limit (per instance)
+const lastSubmitAt = new Map<string, number>();
 
 export async function POST(request: Request) {
   try {
@@ -20,7 +24,21 @@ export async function POST(request: Request) {
       return NextResponse.json({ success: false, error: parsed.error.issues[0]?.message || "Invalid input" }, { status: 400 });
     }
 
-    const { email } = parsed.data;
+    const { email, website } = parsed.data as { email: string; website?: string };
+    // honeypot
+    if (website && website.trim() !== "") {
+      return NextResponse.json({ success: true }, { status: 204 });
+    }
+
+    // soft rate limit (60s per email+ip)
+    const ip = request.headers.get('x-forwarded-for') ?? request.headers.get('x-real-ip') ?? '';
+    const key = `${email}:${ip}`;
+    const now = Date.now();
+    const last = lastSubmitAt.get(key) || 0;
+    if (now - last < 60_000) {
+      return NextResponse.json({ success: false, error: "Too many requests. Try again shortly." }, { status: 429 });
+    }
+    lastSubmitAt.set(key, now);
     const supabase = getSupabaseServerClient();
 
     // 1) Check existing subscriber (including unsubscribe/verify state)

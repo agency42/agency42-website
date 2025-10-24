@@ -12,6 +12,7 @@ export interface ContentItemData {
   link: string;
   date: string;
   isFeaturedVideo: boolean;
+  weight?: number; // optional manual ordering; lower comes first
 }
 
 /**
@@ -20,28 +21,32 @@ export interface ContentItemData {
  */
 export async function getContentData(): Promise<ContentItemData[]> {
   try {
-    // Use absolute URL for server-side, relative for client-side
-    const baseUrl =
-      typeof window === "undefined"
-        ? process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-        : "";
-
-    const response = await fetch(`${baseUrl}/data/content.json`, {
-      // Cache for 1 hour in production, no cache in development
-      next: { revalidate: process.env.NODE_ENV === "production" ? 3600 : 0 },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch content data: ${response.status}`);
+    // Server: read JSON directly from filesystem to avoid base URL issues
+    if (typeof window === "undefined") {
+      const { readFile } = await import("fs/promises");
+      const { join } = await import("path");
+      const filePath = join(process.cwd(), "public", "data", "content.json");
+      const raw = await readFile(filePath, "utf8");
+      const data: ContentItemData[] = JSON.parse(raw);
+      data.sort((a, b) => {
+        const aw = typeof a.weight === 'number' ? a.weight : Number.POSITIVE_INFINITY;
+        const bw = typeof b.weight === 'number' ? b.weight : Number.POSITIVE_INFINITY;
+        if (aw !== bw) return aw - bw;
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+      });
+      return data;
     }
 
+    // Client: fetch from public path
+    const response = await fetch(`/data/content.json`, { cache: "no-store" });
+    if (!response.ok) throw new Error(`Failed to fetch content data: ${response.status}`);
     const data: ContentItemData[] = await response.json();
-
-    // Sort by date, newest first
-    data.sort(
-      (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-    );
-
+    data.sort((a, b) => {
+      const aw = typeof a.weight === 'number' ? a.weight : Number.POSITIVE_INFINITY;
+      const bw = typeof b.weight === 'number' ? b.weight : Number.POSITIVE_INFINITY;
+      if (aw !== bw) return aw - bw;
+      return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
     return data;
   } catch (error) {
     console.error("Error fetching content data:", error);

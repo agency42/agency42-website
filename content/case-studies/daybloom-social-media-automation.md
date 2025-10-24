@@ -38,7 +38,7 @@ Social media management faces a fundamental authenticity problem: scaling engage
 
 ## The Solution: Memory-Driven AI Characters
 
-Daybloom creates AI agents that remember, learn, and build genuine relationships over time, powered by Bootoshi's Cloud memory architecture combining Neo4j graph databases, Qdrant vector storage, and Mem0 framework.
+Daybloom creates AI agents that remember, learn, and build genuine relationships over time, powered by our Cloud memory architecture combining Neo4j graph databases, Qdrant vector storage, and Mem0 framework.
 
 ### Platform Architecture Highlights
 Daybloom is built for narrative coherence rather than raw message volume. Key subsystems include:
@@ -47,7 +47,7 @@ Daybloom is built for narrative coherence rather than raw message volume. Key su
 
 **Story Engine**: Content generation that maintains narrative consistency while producing varied, engaging social media content informed by past interactions and community context.
 
-**Memory System Integration**: Built on Bootoshi's Cloud architecture:
+**Memory System Integration**: Built on our Cloud architecture:
 - **Neo4j graph database**: Stores relationships between community members, topics, and brand interactions
 - **Qdrant vector storage**: Enables semantic similarity search for contextual memory retrieval
 - **Mem0 framework**: Orchestrates memory storage, consolidation, and retrieval for personality consistency

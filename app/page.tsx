@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import HomePageClient from "@/components/HomePageClient";
+import SimpleHome from "@/components/SimpleHome";
 
 // Updated metadata based on PRD v2 focus and homepage content analysis
 export const metadata: Metadata = {
-  title: "Build Tomorrow's Competitive Edge | Agency/42", // Follows hero headline
+  title: "Agency/42",
   description:
-    "We turn your AI ambitions into real world advantage by mapping opportunities, prototyping fast, and shipping systems that compound.",
+    "Agency/42",
   keywords: [
     "AI consulting",
     "AI strategy",
@@ -21,9 +21,8 @@ export const metadata: Metadata = {
     "AI automation",
   ],
   openGraph: {
-    title: "Build Tomorrow's Competitive Edge | Agency/42",
-    description:
-      "We turn your AI ambitions into real-world advantage—mapping opportunities, prototyping fast, and shipping systems that compound.",
+    title: "Agency/42",
+    description: "Agency/42",
     images: [
       {
         url: "/content/hero-crop.png",
@@ -35,15 +34,14 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Build Tomorrow's Competitive Edge | Agency/42",
-    description:
-      "We turn your AI ambitions into real-world advantage—mapping opportunities, prototyping fast, and shipping systems that compound.",
+    title: "Agency/42",
+    description: "Agency/42",
     images: ["/content/hero-crop.png"],
   },
 };
 
 // Main home page component (Server Component)
 
-export default async function Home() {
-  return <HomePageClient />;
+export default function Home() {
+  return <SimpleHome />;
 }

@@ -3,7 +3,7 @@ import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
-import Navigation from '@/components/Navigation'
+import SiteHeader from '@/components/SiteHeader'
 import { PostHogProvider } from './providers/PostHogProvider'
 import { Footer } from '@/components/Footer'
 
@@ -146,11 +146,11 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
           ></script>
         )}
       </head>
-      <body className="bg-white text-black">
+      <body className="bg-white text-black min-h-screen flex flex-col">
         <Suspense fallback={null}>
           <PostHogProvider>
-            <Navigation />
-            <main className="w-full">
+            <SiteHeader />
+            <main className="w-full flex-1">
               {children}
             </main>
             <Footer />
