@@ -30,7 +30,7 @@ export default function ConsultingPage() {
     <div>
       {/* Header + subline */}
       <section className="py-16 max-w-4xl mx-auto text-center px-4 sm:px-6">
-        <h1 className="text-4xl sm:text-6xl font-medium leading-tight">Applied intelligence for organizations that build, not wait.</h1>
+        <h1 className="text-4xl sm:text-6xl font-medium leading-tight">Applied intelligence for organizations</h1>
         <p className="text-gray-600 text-lg mt-6 max-w-2xl mx-auto">AI engineering, enablement, and innovation — wiring intelligence into how your business works.</p>
         <div className="mt-8 flex justify-center">
           <Link href="#contact" className="inline-block bg-black text-white px-6 py-3 text-sm uppercase tracking-wide hover:bg-gray-800 transition-colors">Get in touch</Link>
@@ -80,6 +80,12 @@ export default function ConsultingPage() {
           testimonials={[
             {
               quote:
+                "In a single session we integrated Notion, Obsidian, and Zotero into an AI-powered workflow—no technical hiccups at all. Game-changing.",
+              attribution:
+                "Shingai Thornton, Halcyonic Systems | Researcher @ Binghamton University",
+            },
+            {
+              quote:
                 "Singular best training on AI that I've ever attended.",
               attribution:
                 "Michael Killian, Associate Professor @ Florida State University",
@@ -93,12 +99,6 @@ export default function ConsultingPage() {
               quote:
                 "Excited to share that I've just learned how to use LinkedIn-MCP from the amazing @Kenneth. What's most incredible is that I was able to set this up with minimal coding skills!",
               attribution: "Camille, Landau Consulting",
-            },
-            {
-              quote:
-                "In a single session we integrated Notion, Obsidian, and Zotero into an AI-powered workflow—no technical hiccups at all. Game-changing.",
-              attribution:
-                "Shingai Thornton, Halcyonic Systems | Researcher @ Binghamton University",
             },
           ]}
         />
