@@ -8,7 +8,7 @@
     "link": "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
     "date": "2024-06-10",
     "isFeaturedVideo": false,
-    "weight": 3
+    "weight": 2
   },
   {
     "id": 2,
@@ -30,7 +30,7 @@
     "link": "https://www.youtube.com/live/ulVeaMW6WyY",
     "date": "2024-07-15", 
     "isFeaturedVideo": false,
-    "weight": 6
+    "weight": 9
   },
   {
     "id": 6,
@@ -52,6 +52,50 @@
     "link": "https://improbable.beehiiv.com/p/grey-zone",
     "date": "2025-04-23",
     "isFeaturedVideo": false,
+    "weight": 6
+  },
+  {
+    "id": 8,
+    "tag": "video",
+    "title": "Setting Up Notion MCP",
+    "description": "Step-by-step setup of Notion's Model Context Protocol and how to use it in practice.",
+    "imageOverride": "https://img.youtube.com/vi/k25cYCxB_ns/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=k25cYCxB_ns&t=1s",
+    "date": "2025-01-10",
+    "isFeaturedVideo": false,
     "weight": 4
+  },
+  {
+    "id": 9,
+    "tag": "video",
+    "title": "Claude Code + Obsidian for Non‑technical Work",
+    "description": "Using Claude Code and Obsidian to automate non‑technical workflows and knowledge work.",
+    "imageOverride": "https://img.youtube.com/vi/z4I4g3BbRsw/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=z4I4g3BbRsw&t=14s",
+    "date": "2025-01-11",
+    "isFeaturedVideo": false,
+    "weight": 3
+  },
+  {
+    "id": 10,
+    "tag": "video",
+    "title": "Saving Time with AI Marketing",
+    "description": "Practical tactics to cut campaign time using AI tools without sacrificing quality.",
+    "imageOverride": "https://img.youtube.com/vi/mm3OADJWitk/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=mm3OADJWitk&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=2",
+    "date": "2025-01-12",
+    "isFeaturedVideo": false,
+    "weight": 7
+  },
+  {
+    "id": 11,
+    "tag": "video",
+    "title": "MCPs and the Future of the Internet",
+    "description": "A look at how Model Context Protocols could reshape interfaces and the web.",
+    "imageOverride": "https://img.youtube.com/vi/WyysTl3l7rs/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=WyysTl3l7rs&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=6",
+    "date": "2025-01-13",
+    "isFeaturedVideo": false,
+    "weight": 5
   }
 ] 
