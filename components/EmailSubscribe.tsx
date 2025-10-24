@@ -5,7 +5,7 @@ import React from "react";
 export default function EmailSubscribe() {
   const [email, setEmail] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
-  const [done, setDone] = React.useState<null | "new" | "resend" | "already">(null);
+  const [done, setDone] = React.useState<null | "new" | "already">(null);
   const [error, setError] = React.useState("");
   // Honeypot
   const [website, setWebsite] = React.useState("");
@@ -55,9 +55,7 @@ export default function EmailSubscribe() {
       <p className="text-sm text-gray-400 mb-4">insights, essays, events and other cool stuff</p>
       {done ? (
         <div className="text-sm text-gray-300">
-          {done === "already" && "You're already subscribed."}
-          {done === "new" && "Thanks! Check your email to confirm."}
-          {done === "resend" && "Thanks! Please confirm your subscription."}
+          {done === "already" ? "You're already subscribed." : "Thanks! Check your email to confirm."}
         </div>
       ) : (
         <form onSubmit={onSubmit} className="flex items-center gap-2">

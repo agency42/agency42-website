@@ -2,11 +2,6 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  CenterUnderline,
-  ComesInGoesOutUnderline,
-  GoesOutComesInUnderline,
-} from "@/components/ui/underline-animation"; // Assuming path
 import EmailSubscribe from "./EmailSubscribe";
 
 export function Footer() {
