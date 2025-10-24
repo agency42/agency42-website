@@ -5,7 +5,7 @@ import React from "react";
 export default function EmailSubscribe() {
   const [email, setEmail] = React.useState("");
   const [submitting, setSubmitting] = React.useState(false);
-  const [done, setDone] = React.useState(false);
+  const [done, setDone] = React.useState<null | "new" | "resend" | "already">(null);
   const [error, setError] = React.useState("");
   // Honeypot
   const [website, setWebsite] = React.useState("");
@@ -20,13 +20,28 @@ export default function EmailSubscribe() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, website }),
       });
-      // Treat already subscribed as success for UX
-      if (res.ok || res.status === 207 || res.status === 409) {
-        setDone(true);
-      } else {
-        const data = await res.json().catch(() => ({}));
-        throw new Error(data?.error || "Failed to subscribe");
+      if (res.ok) {
+        // 200 new subscription
+        setDone("new");
+        return;
       }
+      if (res.status === 207) {
+        // email send failed but recorded/accepted
+        setDone("new");
+        return;
+      }
+      if (res.status === 409) {
+        // already subscribed
+        setDone("already");
+        return;
+      }
+      if (res.status === 204) {
+        // honeypot
+        setDone("new");
+        return;
+      }
+      const data = await res.json().catch(() => ({}));
+      throw new Error(data?.error || "Failed to subscribe");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Unexpected error");
     } finally {
@@ -39,7 +54,11 @@ export default function EmailSubscribe() {
       <h3 className="text-3xl font-light mb-2 text-white">follow our progress</h3>
       <p className="text-sm text-gray-400 mb-4">insights, essays, events and other cool stuff</p>
       {done ? (
-        <div className="text-sm text-gray-300">Thanks! Check your email to confirm.</div>
+        <div className="text-sm text-gray-300">
+          {done === "already" && "You're already subscribed."}
+          {done === "new" && "Thanks! Check your email to confirm."}
+          {done === "resend" && "Thanks! Please confirm your subscription."}
+        </div>
       ) : (
         <form onSubmit={onSubmit} className="flex items-center gap-2">
           {/* Honeypot field */}

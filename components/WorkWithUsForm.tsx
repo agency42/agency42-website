@@ -34,7 +34,15 @@ export default function WorkWithUsForm() {
       const res = await fetch("/api/inquiries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, company, budget, message, subject }),
+        body: JSON.stringify({
+          name,
+          email,
+          company,
+          budget,
+          message,
+          subject,
+          form_type: "services_inquiry",
+        }),
       });
       if (!res.ok) throw new Error("Failed to send inquiry");
       setDone(true);
