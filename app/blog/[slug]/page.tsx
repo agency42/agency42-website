@@ -29,6 +29,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
             <CaseStudyLayout
                 title={caseStudy.title}
                 hero={caseStudy.hero}
+                authors={caseStudy.authors}
                 stats={caseStudy.stats}
                 contentHtml={caseStudy.contentHtml}
                 headings={caseStudy.headings}

@@ -24,6 +24,7 @@ interface CaseStudyData {
   description?: string;
   summary?: string;
   hero?: string;
+  authors?: string;
   diagrams?: string[];
   client?: {
     name: string;
