@@ -120,7 +120,7 @@ export default function Home() {
                     <AccordionContent>
                       <div className="pt-2">
                         <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                          Send us a brief email about who you are and what you want to buil with us. If think it's a fit, we'll be in touch.
+                          Send us a brief email about who you are and what you want to build with us. If we feel it's a fit, we'll be in touch.
                         </p>
                         <a href="mailto:hello@agency42.co" className="text-sm underline hover:text-gray-900 transition-colors">
                           hello@agency42.co
