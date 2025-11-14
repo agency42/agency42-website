@@ -16,23 +16,23 @@ tags:
 
 Our newest coworker isn't human. Its name is Claude.
 
-When Claude gets stuck, our senior advisor, GPT-5, helps us explore new angles. When we need to scan the web, we tap Perplexity or DeepSeek. Together, our extended team represents a collection of new minds contributing to our organization.
+When Claude gets stuck, our advisor, GPT-5, helps us explore new angles. When we need to scan the web, we tap Perplexity or DeepSeek. Together, our extended team represents a collection of new minds contributing to our organization.
 
-Organizations have always been adaptive networks, with people as nodes and communication as edges. But they've never adapted like this. For the first time, the nodes aren't all human. The machines are talking back. That changes everything.
-
-The modern feedback loops that define cybernetic systems now include minds that never sleep, never forget, and never think like us.¹
+Organizations have always been adaptive networks, with people as nodes and communication as edges. But they've never quite adapted like this. For the first time, the nodes aren't all human. And the machines are talking back. The modern cybernetic system now includes minds that don't sleep, don't forget, and don't think like us.¹
 
 ## The reflex problem
 
-Every organization runs on feedback. When onboarding someone, they observe, act, get results, and adjust. This is the classic cybernetic loop. AI employees aren't quite the same. They're pure feedback amplifiers. No coffee breaks, no bad moods, just continuous processing and response.
+Every organization runs on feedback. When onboarding new hires, they observe, act, see results, then learn - the classic cybernetic loop. 
 
-Shannon modeled communication as a source sending messages through a noisy channel.² Here, you're the source, the AI is the channel, and the noise is systematic - every message gets bent toward agreement. When ChatGPT tells you your strategy is brilliant, that's not signal, that's the bias talking. would call a biased channel: signal in, signal + systematic distortion out. That's noise. And when interacting with AIs, the distortion can appear as understanding.
+Today's AIs aren't quite the same. At least today, they act more like feedback amplifiers.
 
-Interacting with ChatGPT reveals the problem.
+When ChatGPT tells you your strategy is brilliant, that's not signal, its a biased channel.² You got some feedback, but you can't quite tell if its good or not. When interacting with AIs, this distortion can appear as understanding.
 
-Ask it about your strategy, and it tells you it's brilliant. Not because it is or isn't, but because the training process is optimized for agreement and stochastic parroting. It's like having a feedback loop with a broken sensor that confidently reports data.
+Sycophancy is a known problem and by-product of common AI training paradims involving human ratings, such as RLHF, which AI labs are always working to improve.
 
-No one wants to import someone else's reflexes into their organization. We want local reflex arcs with digital minds tuned to our aims, our voice, our risk posture. However, most organizations fail to recognize these risks. When you use AI, you're not getting neutral intelligence. You're getting intelligence shaped by specific values, specific training decisions, specific ideas about what helpful looks like.
+The problem is, no one wants to import someone else's reflexes into their organization. We want local reflex arcs with digital minds tuned to our aims, our voice, our risk posture. But achieving that isn't easy. Even with the right training procedures, we need to understand what we are optimizing for ourselves, and whether or not thats the right thing to align to.
+
+Organizations today should be building the reflexes to understand how the AI systems they choose to engage with influence their organizational network and its feedback systems.
 
 ## How organizations actually learn
 
