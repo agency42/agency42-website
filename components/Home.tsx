@@ -75,7 +75,7 @@ export default function Home() {
               {/* Latest Blog Post Section */}
               <div>
                 <h2 className="text-xl font-medium mb-8">latest from <Link href="/blog" className="hover:underline">the blog</Link></h2>
-                <Link href="https://www.linkedin.com/pulse/cybernetic-organization-agency42co-4mrgc/cyb" target="_blank" rel="noopener noreferrer" className="block group">
+                <Link href="/blog/the-cybernetic-organization" className="block group">
                   <Image
                     src="/images/content/cybernet.jpeg"
                     alt="The Cybernetic Organization"

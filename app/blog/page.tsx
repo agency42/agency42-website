@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 export default async function BlogIndex() {
   const items = (await getContentData()).filter((i) => !/vibe coding/i.test(i.title));
   const hero = {
-    href: "https://www.linkedin.com/pulse/cybernetic-organization-agency42co-4mrgc/cyb",
+    href: "/blog/the-cybernetic-organization",
     title: "The Cybernetic Organization",
     description: "On feedback loops, digital minds, and the future of work.",
     image: "/images/content/cybernet.jpeg",
@@ -30,7 +30,7 @@ export default async function BlogIndex() {
             <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-8">blog</h1>
           </div>
 
-        <Link href={hero.href} target="_blank" rel="noopener noreferrer" className="block group mb-10">
+        <Link href={hero.href} className="block group mb-10">
           <Image
             src={hero.image}
             alt={hero.title}
