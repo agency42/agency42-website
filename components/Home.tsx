@@ -98,14 +98,14 @@ export default function Home() {
                     <AccordionTrigger className="text-xl font-medium">team</AccordionTrigger>
                     <AccordionContent>
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
-                        <a href={process.env.NEXT_PUBLIC_LINKEDIN_KENNETH || "https://linkedin.com/company/agency42co"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                        <a href="https://www.linkedin.com/in/k3nneth/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                           <Image src="/images/team/ken-ghibli.png" alt="Kenneth" width={56} height={56} className="rounded" />
                           <div>
                             <div className="font-medium">Kenneth</div>
                             <div className="text-sm text-gray-600">research + operations</div>
                           </div>
                         </a>
-                        <a href={process.env.NEXT_PUBLIC_LINKEDIN_ROB || "https://linkedin.com/company/agency42co"} target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
+                        <a href="https://www.linkedin.com/in/future-rob/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3">
                           <Image src="/images/team/rob-ghibli.png" alt="Rob" width={56} height={56} className="rounded" />
                           <div>
                             <div className="font-medium">Rob</div>
@@ -120,7 +120,7 @@ export default function Home() {
                     <AccordionContent>
                       <div className="pt-2">
                         <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                          Send us an email with a 3-4 sentence description of what you want to build. If we understand it and think it's a fit, we'll be in touch.
+                          Send us a brief email about who you are and what you want to buil with us. If think it's a fit, we'll be in touch.
                         </p>
                         <a href="mailto:hello@agency42.co" className="text-sm underline hover:text-gray-900 transition-colors">
                           hello@agency42.co
