@@ -81,10 +81,10 @@ export default function CaseStudyLayout({ title, hero, authors, stats, contentHt
 
       <main className="relative z-10 pb-16">
         <div className="relative mx-auto px-4 sm:px-6" style={{ maxWidth: 'calc(672px + 256px + 3rem)' }}>
-          <div className="flex justify-center gap-12">
+          <div className="flex justify-center xl:gap-12">
             <div className="w-full max-w-2xl">
               <div
-                className="blog-content prose prose-base max-w-none"
+                className="blog-content prose prose-base max-w-none break-words"
                 dangerouslySetInnerHTML={{ __html: contentHtml }}
               />
 

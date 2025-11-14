@@ -146,9 +146,9 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (
-          <script 
-            defer 
-            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN} 
+          <script
+            defer
+            data-domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
             src="https://plausible.io/js/script.js"
           ></script>
         )}
@@ -157,7 +157,7 @@ const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
         <Suspense fallback={null}>
           <PostHogProvider>
             <SiteHeader />
-            <main className="w-full flex-1">
+            <main className="w-full flex-1 max-w-full">
               {children}
             </main>
             <Footer />

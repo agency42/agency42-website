@@ -76,12 +76,12 @@ export default function EmailSubscribe() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@company.com"
-            className="w-full max-w-md p-2 border border-gray-600 bg-gray-900 text-white text-sm placeholder:text-gray-500"
+            className="flex-1 min-w-0 p-2 border border-gray-600 bg-gray-900 text-white text-sm placeholder:text-gray-500"
           />
           <button
             type="submit"
             disabled={submitting}
-            className="bg-white text-black px-3 py-2 text-xs uppercase tracking-wider hover:bg-gray-200 disabled:opacity-60"
+            className="bg-white text-black px-3 py-2 text-xs uppercase tracking-wider hover:bg-gray-200 disabled:opacity-60 flex-shrink-0"
           >
             {submitting ? "..." : "Subscribe"}
           </button>
