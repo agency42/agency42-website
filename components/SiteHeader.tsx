@@ -28,7 +28,7 @@ export default function SiteHeader() {
   }, [open]);
 
   return (
-    <header className={`flex items-center justify-between px-4 sm:px-6 py-3 ${isDark ? 'text-white' : 'text-black'}`}>
+    <header className={`flex items-center justify-between px-4 sm:px-6 py-3 ${isDark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <Link href="/" className="flex items-center gap-2">
         <Image src="/icons/android-chrome-192x192.png" alt="Agency/42" width={24} height={24} className="md:w-6 md:h-6" style={isDark ? { filter: 'invert(1)' } : {}} />
         <div className="text-sm uppercase tracking-wider">Agency/42</div>
