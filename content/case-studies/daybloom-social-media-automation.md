@@ -20,10 +20,6 @@ tags:
 published: true
 ---
 
-# Daybloom: Creating Immersive AI Social Media Experiences
-
-## Executive Summary
-
 Agency42's Daybloom platform orchestrates **thousands of multi-platform interactions**—from social posts to Discord conversations—through a unified memory architecture. Deployments with founding partners Meme X Capital and FutureType Media prove that memory-enabled AI agents can sustain authentic brand personalities at scale.
 
 ## The Challenge: Authentic Engagement at Scale
