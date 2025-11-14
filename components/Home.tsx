@@ -21,13 +21,13 @@ export default function Home() {
         backgroundSize: '32px 32px'
       }} />
       <main className="flex-1 px-4 sm:px-6 pb-16 relative z-10">
-        <div className="max-w-2xl mx-auto space-y-16">
+        <div className="max-w-2xl mx-auto space-y-12">
           <section className="pt-8 sm:pt-12 pb-4">
-            <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-8">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-6">
               applied<br />
               <span className="text-gray-500">intelligence</span> studio
             </h1>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <p className="text-sm text-gray-500">Based in Los Angeles, California</p>
               <p className="text-base leading-relaxed text-gray-900">We work with select clients to integrate AI into business and social applications.</p>
             </div>
