@@ -43,37 +43,32 @@ export const metadata: Metadata = {
 // Newsletter subscribe page component
 export default function NewsletterSubscribePage() {
   return (
-    <div className="min-h-screen bg-white text-black pt-24">
-      <main className="container mx-auto max-w-2xl px-4 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-heading font-medium mb-4">
-            Stay Connected
-          </h1>
-          <p className="text-lg text-gray-700 font-sans">
-            Get updates on our latest work, events, workshops, and AI insights.
-            Plus case studies, industry developments, and behind-the-scenes
-            content.
-          </p>
-        </div>
-
-        <div
-          className="bg-white border-2 border-black rounded-lg p-8 shadow-lg"
-          style={{ boxShadow: "8px 8px 0px 0px rgba(0,0,0,1)" }}
-        >
-          <SubscribeForm />
-        </div>
-
-        <div className="text-center mt-8">
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600 font-sans">
-              △ Signal over noise ▸ No spam ◦ Unsubscribe anytime
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      {/* Grid background */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+        backgroundSize: '32px 32px'
+      }} />
+      <main className="flex-1 px-4 sm:px-6 pb-16 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <div className="pt-8 sm:pt-12 pb-4">
+            <h1 className="text-3xl sm:text-4xl font-medium mb-2">get updates</h1>
+            <p className="text-base text-gray-700 leading-relaxed mt-4">
+              Get updates on our latest work, events, workshops, and AI insights.
+              Plus case studies, industry developments, and behind-the-scenes content.
             </p>
-            <p className="text-xs text-gray-500 font-sans">
-              By subscribing, you agree to receive marketing emails from
-              Agency/42. See our{" "}
+          </div>
+
+          <div className="mt-8">
+            <SubscribeForm />
+          </div>
+
+          <div className="mt-8 space-y-2">
+            <p className="text-xs text-gray-600">
+              Unsubscribe anytime. See our{" "}
               <a
                 href="/legal/privacy"
-                className="underline hover:text-black transition-colors"
+                className="underline hover:text-gray-900 transition-colors"
               >
                 privacy policy
               </a>

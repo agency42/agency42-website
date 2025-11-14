@@ -29,35 +29,19 @@ export const metadata: Metadata = {
 
 export default function NewsletterVerifyPage() {
   return (
-    <div className="min-h-screen bg-white text-black pt-24">
-      <main className="container mx-auto max-w-2xl px-4 py-16">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-heading font-medium mb-4">
-            You're Subscribed
-          </h1>
-        </div>
-
-        <div
-          className="bg-white border-2 border-black rounded-lg p-8 shadow-lg"
-          style={{ boxShadow: "8px 8px 0px 0px rgba(0,0,0,1)" }}
-        >
-          <div className="text-center">
-            <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-              <svg
-                className="w-8 h-8 text-green-600"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
-              </svg>
-            </div>
-            <p className="font-sans">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      {/* Grid background */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+        backgroundSize: '32px 32px'
+      }} />
+      <main className="flex-1 px-4 sm:px-6 pb-16 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <div className="pt-8 sm:pt-12 pb-4">
+            <h1 className="text-3xl sm:text-4xl font-medium mb-2">you're subscribed</h1>
+          </div>
+          <div className="mt-8">
+            <p className="text-base text-gray-700 leading-relaxed">
               Thanks for subscribing. You're all set.
             </p>
           </div>
