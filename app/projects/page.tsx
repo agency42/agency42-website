@@ -35,7 +35,7 @@ export default function ProjectsPage() {
       details: "Hands-on workshop teaching AI-assisted development workflows.",
     },
     {
-      name: "[redacted]'s digital twin",
+      name: "[REDACTED]'s digital twin",
       client: "warner records (innovation studio)",
       year: "06.25",
       details: "Experimental fan chatroom experience.",
@@ -60,7 +60,7 @@ export default function ProjectsPage() {
       link: "https://github.com/robertcedwards/linkedin-mcp-server",
     },
     {
-      name: "[redacted]'s digital twin",
+      name: "[REDACTED]'s digital twin",
       client: "roomservice ltd",
       year: "04.25",
       details: "Digital twin with voice cloning and conversational AI capabilities.",
