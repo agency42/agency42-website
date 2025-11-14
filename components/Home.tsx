@@ -24,7 +24,7 @@ export default function Home() {
         <div className="max-w-2xl mx-auto space-y-16">
           <section className="pt-8 sm:pt-12 pb-4">
             <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-8">
-              an applied<br />
+              applied<br />
               <span className="text-gray-500">intelligence</span> studio
             </h1>
             <div className="space-y-3">
@@ -36,12 +36,12 @@ export default function Home() {
           <section>
             <div className="space-y-16">
               {/* Work Section */}
-              <div className="border-t border-gray-100 pt-10">
-                <h2 className="text-xl font-medium mb-8">recent works</h2>
+              <div>
+                <h2 className="text-xl font-medium mb-8">our work</h2>
                 <ul className="space-y-5 text-sm">
                   <li className="flex items-center gap-3">
                     <div className="w-[56px] h-[56px] flex items-center justify-center flex-shrink-0">
-                      <Image src="/images/logos/bw-daybloom-icon.png" alt="Daybloom" width={56} height={56} className="max-w-[34px] max-h-[34px] object-contain" />
+                      <Image src="/images/logos/bw-daybloom-icon.png" alt="Daybloom" width={56} height={56} className="max-w-[42px] max-h-[42px] object-contain" />
                     </div>
                     <div>
                       <a className="underline" href="https://daybloom.ai" target="_blank" rel="noopener noreferrer">Daybloom</a>
@@ -50,7 +50,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-[56px] h-[56px] flex items-center justify-center flex-shrink-0">
-                      <Image src="/images/logos/bw-miniverse-icon.svg" alt="Miniverse" width={56} height={56} className="max-w-[56px] max-h-[56px] object-contain" />
+                      <Image src="/images/logos/miniverse-42.png" alt="Miniverse" width={168} height={168} className="max-w-[150px] max-h-[150px] object-contain" />
                     </div>
                     <div>
                       <a className="underline" href="https://github.com/miniverse-ai/miniverse" target="_blank" rel="noopener noreferrer">Miniverse</a>
@@ -59,7 +59,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-center gap-3">
                     <div className="w-[56px] h-[56px] flex items-center justify-center flex-shrink-0">
-                      <Image src="/images/logos/bw-mcp-icon.svg" alt="LinkedIn MCP" width={56} height={56} className="max-w-[52px] max-h-[52px] object-contain" />
+                      <Image src="/images/logos/mcp-logo-42.png" alt="LinkedIn MCP" width={168} height={168} className="max-w-[126px] max-h-[126px] object-contain" />
                     </div>
                     <div>
                       <a className="underline" href="https://www.linkedin.com/feed/update/urn:li:activity:7321201508933390337/" target="_blank" rel="noopener noreferrer">LinkedIn MCP</a>
@@ -73,8 +73,8 @@ export default function Home() {
               </div>
 
               {/* Latest Blog Post Section */}
-              <div className="border-t border-gray-100 pt-10">
-                <h2 className="text-xl font-medium mb-8">latest from the blog</h2>
+              <div>
+                <h2 className="text-xl font-medium mb-8">latest from <Link href="/blog" className="hover:underline">the blog</Link></h2>
                 <Link href="https://www.linkedin.com/pulse/cybernetic-organization-agency42co-4mrgc/cyb" target="_blank" rel="noopener noreferrer" className="block group">
                   <Image
                     src="/images/content/cybernet.jpeg"
@@ -92,7 +92,7 @@ export default function Home() {
               </div>
 
               {/* Team & Work With Us Section - Accordion */}
-              <div className="border-t border-gray-100 pt-12">
+              <div>
                 <Accordion type="single" collapsible className="w-full">
                   <AccordionItem value="team">
                     <AccordionTrigger className="text-xl font-medium">team</AccordionTrigger>
