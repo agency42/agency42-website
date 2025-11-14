@@ -31,7 +31,7 @@ export default function CaseStudyLayout({ title, hero, authors, stats, contentHt
       }} />
 
       <header className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 pt-8 sm:pt-12">
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-medium leading-tight mb-4">{title}</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-medium leading-tight mb-4 whitespace-nowrap overflow-hidden text-ellipsis">{title}</h1>
 
         {authors && (
           <div className="text-xs text-gray-600 mb-6 not-italic">
@@ -111,8 +111,8 @@ export default function CaseStudyLayout({ title, hero, authors, stats, contentHt
                 <div className="sticky top-24">
                   <h3 className="text-sm text-gray-500 mb-4">On this page</h3>
                   <ul className="space-y-2 text-sm">
-                    {headings.map((heading) => (
-                      <li key={heading.slug} className={heading.level === 3 ? 'ml-4' : ''}>
+                    {headings.filter(heading => heading.level === 2).map((heading) => (
+                      <li key={heading.slug}>
                         <a href={`#${heading.slug}`} className="text-gray-600 hover:text-gray-900 transition-colors">
                           {heading.text}
                         </a>
