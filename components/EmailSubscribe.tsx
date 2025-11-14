@@ -51,8 +51,8 @@ export default function EmailSubscribe() {
 
   return (
     <div className="max-w-lg text-left">
-      <h3 className="text-3xl font-light mb-2 text-white">follow our progress</h3>
-      <p className="text-sm text-gray-400 mb-4">insights, essays, events and other cool stuff</p>
+      <h3 className="text-3xl font-light mb-2 text-white">get updates</h3>
+      <p className="text-sm text-gray-400 mb-4">we share updates about our work a few times per year</p>
       {done ? (
         <div className="text-sm text-gray-300">
           {done === "already" ? "You're already subscribed." : "Thanks! Check your email to confirm."}
@@ -88,8 +88,7 @@ export default function EmailSubscribe() {
         </form>
       )}
       {error && <div className="mt-2 text-xs text-red-400">{error}</div>}
-      <div className="mt-2 text-[11px] text-gray-500">we only send updates every couple of months</div>
-      <div className="mt-1 text-[11px] text-gray-600">By subscribing, you agree to receive marketing emails. Unsubscribe anytime.</div>
+      <div className="mt-2 text-[11px] text-gray-600">Unsubscribe anytime.</div>
     </div>
   );
 }

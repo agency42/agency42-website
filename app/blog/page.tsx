@@ -14,32 +14,38 @@ export default async function BlogIndex() {
     href: "https://www.linkedin.com/pulse/cybernetic-organization-agency42co-4mrgc/cyb",
     title: "The Cybernetic Organization",
     description: "On feedback loops, digital minds, and the future of work.",
-    image: "/images/content/cybernetic-org-img.png",
+    image: "/images/content/cybernet.jpeg",
   };
 
   return (
-    <div className="px-4 sm:px-6 py-10">
-      <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl font-medium mb-6 text-center">Blog</h1>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      {/* Grid background */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+        backgroundSize: '32px 32px'
+      }} />
+      <main className="flex-1 px-4 sm:px-6 pb-16 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <div className="pt-8 sm:pt-12 pb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-8">blog</h1>
+          </div>
 
         <Link href={hero.href} target="_blank" rel="noopener noreferrer" className="block group mb-10">
-          <div className="border border-gray-200 overflow-hidden">
-            <Image
-              src={hero.image}
-              alt={hero.title}
-              width={1200}
-              height={675}
-              sizes="(max-width: 768px) 100vw, 900px"
-              className="w-full h-auto group-hover:opacity-90 transition"
-            />
-            <div className="p-5 text-center">
-              <h2 className="text-xl sm:text-2xl font-medium group-hover:underline">{hero.title}</h2>
-              <p className="text-sm text-gray-600 mt-1">{hero.description}</p>
-            </div>
+          <Image
+            src={hero.image}
+            alt={hero.title}
+            width={800}
+            height={450}
+            sizes="(max-width: 768px) 100vw, 800px"
+            className="w-full h-auto group-hover:opacity-90 transition object-cover max-h-[200px]"
+          />
+          <div className="pt-4">
+            <h2 className="text-lg font-medium group-hover:underline">{hero.title}</h2>
+            <p className="text-sm text-gray-600 mt-1">{hero.description}</p>
           </div>
         </Link>
 
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
           {items.map((item) => (
             item.link.startsWith('/') ? (
               <Link key={`${item.title}-${item.date}`} href={item.link} className="block group h-full">
@@ -78,7 +84,8 @@ export default async function BlogIndex() {
             )
           ))}
         </div>
-      </div>
+        </div>
+      </main>
     </div>
   );
 }

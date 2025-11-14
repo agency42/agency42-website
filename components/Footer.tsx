@@ -9,26 +9,26 @@ export function Footer() {
 
   return (
     <footer className="bg-black text-white relative">
-      <div className="container mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+      <div className="max-w-2xl mx-auto px-4 sm:px-6 py-16">
+        <div className="flex flex-col gap-12 md:flex-row md:items-start md:justify-between">
           {/* Left: Newsletter */}
-          <div className="max-w-lg">
+          <div className="flex-1 w-full">
             <EmailSubscribe />
           </div>
 
           {/* Right: Navigation */}
-          <div className="flex flex-col items-start md:items-end space-y-4 text-sm">
+          <div className="flex flex-col items-start md:items-end space-y-4 text-sm md:text-right">
             <Link href="/" className="text-gray-300 hover:text-white transition-colors">
-              Home
+              home
             </Link>
             <Link href="/blog" className="text-gray-300 hover:text-white transition-colors">
-              Blog
+              blog
             </Link>
             <Link href="/legal/privacy" className="text-gray-300 hover:text-white transition-colors">
-              Privacy
+              privacy
             </Link>
             <Link href="/legal/terms" className="text-gray-300 hover:text-white transition-colors">
-              Terms
+              terms
             </Link>
             <p className="text-gray-500 text-xs mt-8">
               &copy; {currentYear} Agency/42

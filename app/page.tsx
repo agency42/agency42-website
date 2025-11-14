@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import SimpleHome from "@/components/SimpleHome";
+import Home from "@/components/Home";
 
 // Updated metadata based on PRD v2 focus and homepage content analysis
 export const metadata: Metadata = {
@@ -42,6 +42,6 @@ export const metadata: Metadata = {
 
 // Main home page component (Server Component)
 
-export default function Home() {
-  return <SimpleHome />;
+export default function Page() {
+  return <Home />;
 }

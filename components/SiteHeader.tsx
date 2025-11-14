@@ -24,12 +24,10 @@ export default function SiteHeader() {
   }, [open]);
   return (
     <header className="flex items-center justify-between px-4 sm:px-6 py-3">
-      <div className="flex items-center gap-2">
-        <Link href="/" aria-label="Agency/42" className="inline-flex items-center">
-          <Image src="/icons/android-chrome-192x192.png" alt="Agency/42" width={24} height={24} className="md:w-6 md:h-6" />
-        </Link>
+      <Link href="/" className="flex items-center gap-2">
+        <Image src="/icons/android-chrome-192x192.png" alt="Agency/42" width={24} height={24} className="md:w-6 md:h-6" />
         <div className="text-sm uppercase tracking-wider">Agency/42</div>
-      </div>
+      </Link>
       <div className="flex items-center">
         <button aria-label="Menu" onClick={() => setOpen((v) => !v)} className="h-6 w-6 flex flex-col items-center justify-center gap-[3px]">
           <span className="block h-[2px] w-4 bg-black" />
@@ -48,7 +46,7 @@ export default function SiteHeader() {
               <Link href="/blog" onClick={() => setOpen(false)} className="underline">blog</Link>
             </div>
             <div>
-              <Link href="/consulting" onClick={() => setOpen(false)} className="underline">consulting</Link>
+              <Link href="/consulting" onClick={() => setOpen(false)} className="underline">archive</Link>
             </div>
           </nav>
         </div>

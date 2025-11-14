@@ -10,14 +10,21 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-base-light text-base-dark pt-24">
-      <main className="container mx-auto max-w-4xl px-4 py-16">
-        <div className="prose prose-neutral max-w-none">
-          <h1 className="text-4xl font-light mb-2">Privacy Policy</h1>
-          <p className="text-sm text-neutral-500 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
+      {/* Grid background */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.02]" style={{
+        backgroundImage: `linear-gradient(to right, #000 1px, transparent 1px), linear-gradient(to bottom, #000 1px, transparent 1px)`,
+        backgroundSize: '32px 32px'
+      }} />
+      <main className="flex-1 px-4 sm:px-6 pb-16 relative z-10">
+        <div className="max-w-2xl mx-auto">
+          <div className="pt-8 sm:pt-12 pb-4">
+            <h1 className="text-3xl sm:text-4xl font-medium mb-2">privacy policy</h1>
+            <p className="text-sm text-gray-500 mb-8">Last updated: {new Date().toLocaleDateString()}</p>
+          </div>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">1. Introduction</h2>
+            <h2 className="text-xl font-medium mb-4">1. Introduction</h2>
             <p className="mb-4">
               Agency/42 LLC ("we," "our," or "us") respects your privacy and is committed to protecting your personal data. 
               This privacy policy explains how we collect, use, and protect your information when you visit our website (agency42.co) 
@@ -26,7 +33,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">2. Information We Collect</h2>
+            <h2 className="text-xl font-medium mb-4">2. Information We Collect</h2>
             <p className="mb-2">We may collect the following types of information:</p>
             <ul className="list-disc pl-6 mb-4 space-y-1">
               <li><strong>Personal Information:</strong> Name, email address, company name, job title, phone number, and any other information you provide when filling out forms or contacting us.</li>
@@ -36,7 +43,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">3. How We Use Your Information</h2>
+            <h2 className="text-xl font-medium mb-4">3. How We Use Your Information</h2>
             <p className="mb-2">We use the information we collect for purposes including:</p>
             <ul className="list-disc pl-6 mb-4 space-y-1">
               <li>Providing and improving our services.</li>
@@ -48,7 +55,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">4. Data Sharing and Disclosure</h2>
+            <h2 className="text-xl font-medium mb-4">4. Data Sharing and Disclosure</h2>
             <p className="mb-2">We do not sell your personal information. We may share your information with:</p>
             <ul className="list-disc pl-6 mb-4 space-y-1">
               <li><strong>Service Providers:</strong> Third-party vendors who assist us in operating our website and services (e.g., Resend for email delivery, hosting providers).</li>
@@ -58,7 +65,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">5. Data Security</h2>
+            <h2 className="text-xl font-medium mb-4">5. Data Security</h2>
             <p className="mb-4">
               We implement reasonable security measures to protect your personal information from unauthorized access, use, or disclosure. 
               However, no internet transmission is completely secure.
@@ -66,7 +73,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">6. Your Rights</h2>
+            <h2 className="text-xl font-medium mb-4">6. Your Rights</h2>
             <p className="mb-2">Depending on your location, you may have rights regarding your personal data, including:</p>
             <ul className="list-disc pl-6 mb-4 space-y-1">
               <li>The right to access, update, or delete your information.</li>
@@ -78,7 +85,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">7. Third-Party Links</h2>
+            <h2 className="text-xl font-medium mb-4">7. Third-Party Links</h2>
             <p className="mb-4">
               Our website may contain links to other websites not operated by us. We have no control over and assume no 
               responsibility for the content, privacy policies, or practices of any third-party sites or services.
@@ -86,7 +93,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">8. Changes to This Policy</h2>
+            <h2 className="text-xl font-medium mb-4">8. Changes to This Policy</h2>
             <p className="mb-4">
               We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy 
               on this page and updating the "Last updated" date.
@@ -94,7 +101,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-light mb-4">9. Contact Us</h2>
+            <h2 className="text-xl font-medium mb-4">9. Contact Us</h2>
             <p className="mb-2">If you have any questions about this Privacy Policy, please contact us:</p>
             <p>
               Email: <Link href="mailto:hello@agency42.co" className="text-accent-start hover:underline">hello@agency42.co</Link>
