@@ -11,17 +11,17 @@ module.exports = {
     		typography: (theme) => ({
     			DEFAULT: {
     				css: {
-    					'--tw-prose-body': theme('colors.neutral[700]'),
+    					'--tw-prose-body': theme('colors.neutral[900]'),
     					'--tw-prose-headings': theme('colors.neutral[900]'),
-    					'--tw-prose-lead': theme('colors.neutral[600]'),
+    					'--tw-prose-lead': theme('colors.neutral[700]'),
     					'--tw-prose-links': theme('colors.neutral[900]'),
     					'--tw-prose-bold': theme('colors.neutral[900]'),
-    					'--tw-prose-counters': theme('colors.neutral[500]'),
-    					'--tw-prose-bullets': theme('colors.neutral[300]'),
+    					'--tw-prose-counters': theme('colors.neutral[600]'),
+    					'--tw-prose-bullets': theme('colors.neutral[400]'),
     					'--tw-prose-hr': theme('colors.neutral[200]'),
     					'--tw-prose-quotes': theme('colors.neutral[900]'),
     					'--tw-prose-quote-borders': theme('colors.neutral[200]'),
-    					'--tw-prose-captions': theme('colors.neutral[500]'),
+    					'--tw-prose-captions': theme('colors.neutral[600]'),
     					'--tw-prose-code': theme('colors.neutral[900]'),
     					'--tw-prose-pre-code': theme('colors.neutral[200]'),
     					'--tw-prose-pre-bg': theme('colors.neutral[800]'),
@@ -31,13 +31,20 @@ module.exports = {
     					// Base body text
     					p: {
     						fontFamily: theme('fontFamily.sans').join(', '),
-    						fontWeight: '400',
+    						fontWeight: '600',
+    						lineHeight: '1.75',
+    					},
+
+    					// Images
+    					img: {
+    						marginLeft: 'auto',
+    						marginRight: 'auto',
     					},
 
     					// Headings
     					'h2, h3, h4, h5, h6': {
     						fontFamily: theme('fontFamily.heading').join(', '),
-    						fontWeight: '800', // extrabold
+    						fontWeight: '600', // semibold
     					},
     					
     					// Links
@@ -53,6 +60,16 @@ module.exports = {
     					// Bold
     					strong: {
     						fontWeight: '700', // bold
+    					},
+
+    					// Footnotes/Ordered lists (Notes section)
+    					ol: {
+    						fontSize: '0.875rem', // text-sm to match index
+    						fontFamily: theme('fontFamily.mono').join(', '),
+    					},
+    					'ol li': {
+    						fontSize: '0.875rem', // text-sm
+    						fontFamily: theme('fontFamily.mono').join(', '),
     					},
     				},
     			},

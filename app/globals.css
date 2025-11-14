@@ -95,6 +95,11 @@
   .container {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Make blog content paragraphs bolder for accessibility */
+  .blog-content p {
+    font-weight: 700 !important;
+  }
 }
 
 /* Pixel dot text effect */
