@@ -1,7 +1,7 @@
 import React, { Suspense } from 'react'
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
-import { IBM_Plex_Mono } from 'next/font/google'
+import { IBM_Plex_Mono, Lato } from 'next/font/google'
 import './globals.css'
 import SiteHeader from '@/components/SiteHeader'
 import { PostHogProvider } from './providers/PostHogProvider'
@@ -25,6 +25,13 @@ const ibmPlexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-ibm-plex-mono',
+})
+
+const lato = Lato({
+  weight: ['300', '400', '700', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-lato',
 })
 
 const pixelFont = localFont({
@@ -135,7 +142,7 @@ interface RootLayoutProps {
 
 const RootLayout: React.FC<RootLayoutProps> = ({ children }) => {
   return (
-    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${pixelFont.variable} font-mono`}>
+    <html lang="en" className={`${inter.variable} ${ibmPlexMono.variable} ${lato.variable} ${pixelFont.variable} font-mono`}>
       <head>
         {/* Plausible Analytics */}
         {process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN && (

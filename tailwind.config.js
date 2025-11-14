@@ -30,8 +30,8 @@ module.exports = {
 
     					// Base body text
     					p: {
-    						fontFamily: theme('fontFamily.sans').join(', '),
-    						fontWeight: '600',
+    						fontFamily: theme('fontFamily.body').join(', '),
+    						fontWeight: '300',
     						lineHeight: '1.75',
     					},
 
@@ -44,7 +44,7 @@ module.exports = {
     					// Headings
     					'h2, h3, h4, h5, h6': {
     						fontFamily: theme('fontFamily.heading').join(', '),
-    						fontWeight: '600', // semibold
+    						fontWeight: '400', // regular
     					},
     					
     					// Links
@@ -60,6 +60,16 @@ module.exports = {
     					// Bold
     					strong: {
     						fontWeight: '700', // bold
+    					},
+
+    					// Unordered lists (bullets)
+    					ul: {
+    						fontFamily: theme('fontFamily.body').join(', '),
+    						fontWeight: '300',
+    					},
+    					'ul li': {
+    						fontFamily: theme('fontFamily.body').join(', '),
+    						fontWeight: '300',
     					},
 
     					// Footnotes/Ordered lists (Notes section)
@@ -137,7 +147,12 @@ module.exports = {
     				'sans-serif'
     			],
     			heading: [
-    				'var(--font-inter)',
+    				'var(--font-lato)',
+    				'system-ui',
+    				'sans-serif'
+    			],
+    			body: [
+    				'var(--font-lato)',
     				'system-ui',
     				'sans-serif'
     			],

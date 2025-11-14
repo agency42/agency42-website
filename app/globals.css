@@ -98,7 +98,8 @@
 
   /* Make blog content paragraphs bolder for accessibility */
   .blog-content p {
-    font-weight: 700 !important;
+    font-family: var(--font-lato), system-ui, sans-serif !important;
+    font-weight: 300 !important;
   }
 }
 
