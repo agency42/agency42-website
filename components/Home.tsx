@@ -68,7 +68,7 @@ export default function Home() {
                   </li>
                 </ul>
                 <div className="mt-8 text-right">
-                  <a href="/consulting" className="text-xs text-gray-500 hover:text-gray-900 underline">archives →</a>
+                  <a href="/projects" className="text-xs text-gray-500 hover:text-gray-900 underline">archives →</a>
                 </div>
               </div>
 

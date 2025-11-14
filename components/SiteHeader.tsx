@@ -46,7 +46,7 @@ export default function SiteHeader() {
               <Link href="/blog" onClick={() => setOpen(false)} className="underline">blog</Link>
             </div>
             <div>
-              <Link href="/consulting" onClick={() => setOpen(false)} className="underline">archive</Link>
+              <Link href="/projects" onClick={() => setOpen(false)} className="underline">archive</Link>
             </div>
           </nav>
         </div>
