@@ -22,29 +22,29 @@ Organizations have always been adaptive networks, with people as nodes and commu
 
 ## The reflex problem
 
-Every organization runs on feedback. When onboarding new hires, they observe, act, see results, then learn - the classic cybernetic loop. 
+A cybernetic system is defined by it's feedback loops.
 
-Today's AIs aren't quite the same. At least today, they act more like feedback amplifiers.
+Cybernetic organizations continuously monitor their environment and use meaningful signals to self-regulate and adapt over time. From the moment an individual joins, they engage in cycles of observation, action, analysis, and adaptation. This process persists at every level, from the individual through teams and up to the organization.
 
-When ChatGPT tells you your strategy is brilliant, that's not signal, its a biased channel.² You got some feedback, but you can't quite tell if its good or not. When interacting with AIs, this distortion can appear as understanding.
+AIs are increasingly becoming part of this feedback loop. In today's environment models can amplify our capabilites, but they can also amplify our biases. 
 
-Sycophancy is a known problem and by-product of common AI training paradims involving human ratings, such as RLHF, which AI labs are always working to improve.
+When ChatGPT tells you your strategy is brilliant, that's not signal, its noise.² You got some feedback, but you can't quite tell if its good or not. When interacting with AIs, this distortion can appear as understanding.
 
-The problem is, no one wants to import someone else's reflexes into their organization. We want local reflex arcs with digital minds tuned to our aims, our voice, our risk posture. But achieving that isn't easy. Even with the right training procedures, we need to understand what we are optimizing for ourselves, and whether or not thats the right thing to align to.
+No one wants to import poor reflexes into their organization. When we hire, we look for skills and culture fit. Humans want to work with minds they can grow alongside, who share belief systems, values, aims, traditions, and risk postures. But if every organization has its own culture, who are models aligning to?
 
-Organizations today should be building the reflexes to understand how the AI systems they choose to engage with influence their organizational network and its feedback systems.
+The organizational reflexes needed in the future won't only be about how much work AI systems will enable us to do, but how well we can align models towards our goals, while avoiding their negative influences as noisy channels.
 
 ## How organizations actually learn
 
-Gregory Bateson identified different levels of learning. Level I is a simple response - you touch something hot, you pull back. Level II is learning to learn - you figure out what patterns predict heat. Most organizations operate at Level I. They respond to immediate stimuli. Email comes in, email goes out. Customer complains, ticket gets filed.³
+Gregory Bateson's [Logical Levels](https://www.nlpu.com/Articles/LevelsSummary.htm) model is one way to think about learning in organizations.
 
-Contemporary work has gotten incredibly good at automating Level I, in both practice and product. SaaS products are basically a Level I learning system manifested through agile trackers. Trigger, action, done. This is what most companies think AI is for. Making Level I faster.
+Level I is stimulus response - you touch something hot, you learn not to touch it again. Level II is learning to learn - you figure out what patterns predict heat.³
 
-But Level II is where organizations actually evolve. It's the meta layer of strategic thinking, the pattern recognition across contexts, the "why are we doing this" questions. And here's the fundamental difference: you can't automate Level II learning with traditional programming because it requires understanding context that shifts.
+Similarly, work can be broken down into two levels. Level I is repetitive work and level II is strategic and analytical. The work at Level II is where organizations actually evolve. It's the meta layer on top of strategy, the pattern recognition across contexts, the "why are we doing this" questions.
 
 ![Cybernetic feedback loops](/images/content/cybernet-body-3.png)
 
-The Bitter Lesson from Rich Sutton and [P vs NP](https://en.wikipedia.org/wiki/P_versus_NP_problem) applies here: general methods that leverage computation ultimately beat specialized methods.⁴ Automation is the specialized method. Digital minds are the general method. One handles repeat work. The other handles the work that actually matters.
+Going into the future of work, what if it's not at Level I but at Level II where AI makes the most impact?
 
 ## Variety and survival
 
