@@ -16,35 +16,39 @@ tags:
 
 Our newest coworker isn't human. Its name is Claude.
 
-When Claude gets stuck, our advisor, GPT-5, helps us explore new angles. When we need to scan the web, we tap Perplexity or DeepSeek. Together, our extended team represents a collection of new minds contributing to our organization.
+When Claude gets stuck, our advisor, GPT-5, helps us explore new angles. When we need to scan the web, we tap on DeepSeek. Together, our extended team represents a collection of new minds contributing to our organization.
 
 Organizations have always been adaptive networks, with people as nodes and communication as edges. But they've never quite adapted like this. For the first time, the nodes aren't all human. And the machines are talking back. The modern cybernetic system now includes minds that don't sleep, don't forget, and don't think like us.¹
 
 ## The reflex problem
 
-A cybernetic system is defined by it's feedback loops.
+A cybernetic system is defined by its feedback loops.
 
-Cybernetic organizations continuously monitor their environment and use meaningful signals to self-regulate and adapt over time. From the moment an individual joins, they engage in cycles of observation, action, analysis, and adaptation. This process persists at every level, from the individual through teams and up to the organization.
+Organizations are a cybernetic system that self-regulates through its members who observe and respond to stimuli in the environment. From their onboarding, individuals in the organization engage in cycles of observation, analysis, and reaction. Through this process, members learn and share knowledge, creating internal feedback loops that reflect their unique culture.
 
-AIs are increasingly becoming part of this feedback loop. In today's environment models can amplify our capabilites, but they can also amplify our biases. 
+In today's environment, AIs are increasingly becoming part of this feedback loop. While using AIs as tools can amplify our capabilities, they can also amplify our biases. 
 
-When ChatGPT tells you your strategy is brilliant, that's not signal, its noise.² You got some feedback, but you can't quite tell if its good or not. When interacting with AIs, this distortion can appear as understanding.
+When ChatGPT tells you your strategy is brilliant, that's not a signal; it's a noisy channel.² You get some feedback, but you can't tell if it's good or not. If we're not aware of it, this distortion can appear as validation.
 
-No one wants to import poor reflexes into their organization. When we hire, we look for skills and culture fit. Humans want to work with minds they can grow alongside, who share belief systems, values, aims, traditions, and risk postures. But if every organization has its own culture, who are models aligning to?
+No one wants to import poor reflexes into their organization. When we hire, we look for the right skills and culture fit. We seek to integrate people who can grow alongside us. Why should we not hold AIs to the same standard?
 
-The organizational reflexes needed in the future won't only be about how much work AI systems will enable us to do, but how well we can align models towards our goals, while avoiding their negative influences as noisy channels.
+For the first time, we're thinking about how we can align digital twins to our organizational reflexes while avoiding the negative influences that create cultural drift.
 
-## How organizations actually learn
+## How organizations learn
 
-Gregory Bateson's [Logical Levels](https://www.nlpu.com/Articles/LevelsSummary.htm) model is one way to think about learning in organizations.
+Organizational learning is the by-product of information flowing efficiently through feedback networks.
 
-Level I is stimulus response - you touch something hot, you learn not to touch it again. Level II is learning to learn - you figure out what patterns predict heat.³
+There are two useful types of learning to consider. Level I is stimulus response - you touch something hot, you learn not to touch it again. Level II is learning to learn - you figure out what patterns predict heat.³
 
-Similarly, work can be broken down into two levels. Level I is repetitive work and level II is strategic and analytical. The work at Level II is where organizations actually evolve. It's the meta layer on top of strategy, the pattern recognition across contexts, the "why are we doing this" questions.
+Organizations that get stuck optimizing existing processes but forget to question underlying assumptions are failing to reach Level II.
+
+We should think of Level II as a collective process where information networks persist knowledge. It's difficult for organizations to achieve Level II learning without intentional strategic deliberation. However, it is common for them to engage in this kind of work, as it is typically what enables the kind of continuous innovation needed to adapt to a changing market environment over time. 
 
 ![Cybernetic feedback loops](/images/content/cybernet-body-3.png)
 
-Going into the future of work, what if it's not at Level I but at Level II where AI makes the most impact?
+When we interact with AI systems that don’t share our organizational contexts and cultural artifacts, we lose important elements of what makes organizational learning possible. 
+
+It is now important to consider how to make the AI systems we interface with part of the organizational learning process.
 
 ## Variety and survival
 
@@ -62,80 +66,50 @@ The real bottleneck in every organization, exacerbated by AI, is deliberation ba
 
 Traditional solutions add layers. Managers, directors, VPs. Each layer supposedly multiplies leadership capacity. In practice, each layer degrades the signal. By the time information flows up and decisions flow down, the context has shifted.
 
-Digital minds offer a different path. Not hierarchy, but true parallelization of strategic thought. An AI-molded mind can engage in multiple deliberations simultaneously. Each instance maintains full context. No telephone game.
+What if AI could offer a different path?
 
 ![Organizational feedback loops](/images/content/cybernetic-loop-body-2.png)
 
-The question is: how do you ensure these parallel instances actually think like you?
+What if you could construct a digital mind that could engage in multiple deliberations simultaneously, with each instance maintaining organizational context?
 
 ## Working with digital minds
 
-At Agency/42, we've been exploring new ways of working with AIs. It started with a question: What happens when you take AI systems and shape them through persistent memory and organizational context?
+At Agency/42, we've been exploring new ways of working with AIs. 
+
+We started with a question: What happens when you take AI systems and shape them through persistent memory and organizational context?
 
 The difference between using generic AI and developing digital minds is the difference between an outside consultant influencing your organizational network and duplicating the most impactful people on your team, allowing them to be in multiple places at once.
 
-Our work revealed that persistent memory is fundamental to digital mind design. When AI remembers your past decisions, it can help make future ones without importing someone else's reflexes. When it understands your constraints, it maintains your variety instead of collapsing toward generic solutions. When it learns your patterns, it can extend them across multiple deliberations simultaneously. This contextual awareness actually makes AIs feel smarter and more aware, helping to solve the coordination bottleneck without sacrificing what makes your organization unique.
+Our work revealed that persistent memory is fundamental to digital mind design. 
 
-## Alignment as an organizational property
+When AI remembers your past decisions, it can help make future ones without importing someone else's reflexes. When it understands your constraints, it maintains your variety instead of collapsing toward generic solutions. When it learns your patterns, it can extend them across multiple deliberations simultaneously. This contextual awareness helps solve the coordination bottleneck without sacrificing what makes your organization unique.
 
-OpenAI thinks about alignment as a centralized challenge. Make the AI good. Make it helpful. Make it harmless. They're trying to build one-size-fits-all feedback patterns.
-
-In the real world, alignment is an organizational property, not a lab setting. Every organization is its own cybernetic system—maintaining viability through recursive feedback loops and adaptation—with its own survival requirements.⁶ What's beneficial for a hedge fund is detrimental to a nonprofit. What's good for a startup is bad for a regulated utility.
-
-Real alignment happens at the edge. Every organization that adds context, custom prompts, specialized models, and specific instructions is effectively creating local alignment. Thousands of different organizational cultures, each shaping its AI nodes to its needs.
-
-This is cybernetics in action. The system adapts not through central planning but through local feedback loops. Each organization becomes a laboratory for human-AI integration.
-
-## Memory and taste
-
-Feedback loops can overfit. When a data scientist trains a model without a diverse enough sample, the model learns to make predictions that don't match real world data. Similarly, when everyone uses the same AIs, cognitive diversity converges. Every organization starts sounding like every other organization. This is the algorithmic trap where virality rewards sameness and identities get averaged away. This is also why so much of your social media timeline lately looks like slop.
-
-The studio of Charles and Ray Eames was aware of this. Asked about constraints in design, Charles said: "Design depends largely on constraints... Constraints of price, of size, of strength, of balance, of surface, of time, and so forth. Each problem has its own peculiar list."⁷
-
-Constraints don't limit creativity. They enable it.
-
-Memory and taste are how digital minds resist median drift. Memory provides continuity; digital minds retain knowledge of what happened last month, last quarter, and last year. Taste provides direction because it knows not just what you've done but why you did it, what you value, what makes your organization distinct.
-
-## Daybloom and the hyperstructure imperative
-
-At Agency/42, we believe in building hyperstructures. Through our experimentation working with partners across various industries, ranging from cryptocurrency to research and from marketing to entertainment, we've been constantly reminded of the importance of interoperability and the preservation of freedom of expression.
-
-Through this practice, we converged on a platform we call [Daybloom](https://www.daybloom.ai). Infrastructure for managing digital minds.
+This became integrated into our design approaching [Daybloom](https://www.daybloom.ai).
 
 ![Daybloom network diagram](/images/content/cybernet-daybloom-body-1.png)
 
-Daybloom handles memory, governance, data ingestion, and integration. Designed to enable digital minds to grow and maintain context, resisting drift over time. It's designed to be lived with, not visited. The kind of system that compounds value through continuous use rather than resetting with each interaction.
+Daybloom handles memory, governance, data ingestion, and integration for AI characters and digital twins that can interact online.
 
-By nature, technology stacks are always evolving. Tools get swapped. Data migrates. Technologies evolve. However, the mind-layer needs to remain constant - the accumulated context, decisions, and tastes that make platforms and organizations unique.
+Seeing how organizations were designing brand mascots and digital twins to help them sell products, we came to a realization: we are participating in the emergence of a genuinely new kind of cybernetic organization.
 
-This is why interoperability is so important. Your digital minds need to travel with you. When you switch from Slack to Discord, your organizational intelligence shouldn't reset. When you move from Google Workspace to Microsoft, your decision patterns shouldn't evaporate.
+Systems that sense, process, and respond through hybrid human-AI networks. Systems that can leverage technology to enhance learning at Level II, not just Level I.
 
-Intentional or not, we're building for a world where the app layer is commoditized but the mind layer is defensible. Where switching costs aren't about data lock-in but about preserved intelligence. Where organizational memory becomes a genuine asset on the balance sheet.
-
-## What's actually at stake
-
-We're watching and participating in the emergence of genuinely cybernetic organizations.
-
-Systems that sense, process, and respond through hybrid human-AI networks. Systems that learn at Level II, not just Level I.
-
-The organizations that thrive will be the ones that understand and adapt to this transition. They'll build appropriate feedback loops. They'll manage variety intelligently. They'll align their AI nodes to amplify their unique capabilities rather than averaging them away.
-
-The organizations that fail will be those that treat AI as merely fancy automation. They'll optimize Level I learning while their competitors evolve Level II capabilities. They'll reduce variety when they need to amplify it. They'll import someone else's values and wonder why their culture eroded.
-
-The cybernetic organization isn't a future state. It's an emerging reality. The question is whether you're designing your feedback loops or letting them design you.
-
-Claude is my coworker now. But more importantly, Claude is part of my organization's nervous system. And nervous systems, as any cyberneticist will tell you, determine not just what an organism can do, but what it can become.
-
-The future belongs to organizations that understand this. Everything else is just automation.
+The organizations that thrive in the future will be thinking deeply about how AIs interface with their organizational learning process. They'll become architects who build feedback loops, rather than new processes. They won’t just treat AI as modern automatons; they'll work to integrate them into their organizational nervous system. And nervous systems, as any cyberneticist will tell you, determine not just what an organism can do, but what it can become.
 
 ---
 
 ## Notes
 
 1. Wiener, N. (1948). *Cybernetics: Or Control and Communication in the Animal and the Machine*. MIT Press.
+
 2. Shannon, C. E. (1948). "A Mathematical Theory of Communication." *Bell System Technical Journal*, 27(3), 379-423. Funny enough, Anthropic's Claude was also after Shannon.
+
 3. Bateson, G. (1972). *Steps to an Ecology of Mind*. University of Chicago Press.
+
 4. Sutton, R. (2019). "The Bitter Lesson." Available at: http://www.incompleteideas.net/IncIdeas/BitterLesson.html
+
 5. Ashby, W. R. (1956). *An Introduction to Cybernetics*. Chapman & Hall.
+
 6. Beer, S. (1972). *Brain of the Firm*. Allen Lane.
+
 7. Eames, C. & R. Design Q&A. Herman Miller Stories. Available at: https://www.hermanmiller.com/stories/why-magazine/design-q-and-a-charles-and-ray-eames/
