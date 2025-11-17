@@ -24,7 +24,7 @@ Organizations have always been adaptive networks, with people as nodes and commu
 
 A cybernetic system is defined by its feedback loops.
 
-Organizations are a cybernetic system that self-regulates through its members who observe and respond to stimuli in the environment. From their onboarding, individuals in the organization engage in cycles of observation, analysis, and reaction. Through this process, members learn and share knowledge, creating internal feedback loops that reflect their unique culture.
+Organizations are cybernetic systems that self-regulate through their members who observe and respond to stimuli in the environment. From initial onboarding, individuals in the organization engage in cycles of observation, analysis, and reaction. Through this process, members learn and share knowledge, creating internal feedback loops that reflect their unique culture.
 
 In today's environment, AIs are increasingly becoming part of this feedback loop. While using AIs as tools can amplify our capabilities, they can also amplify our biases. 
 
