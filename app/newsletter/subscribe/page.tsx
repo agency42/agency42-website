@@ -24,7 +24,7 @@ export const metadata: Metadata = {
       "Stay connected with Agency/42's latest work, events, workshops, and AI insights. Get updates on new releases, case studies, and industry developments.",
     images: [
       {
-        url: "/content/hero-crop.png",
+        url: "/images/content/cybernet.jpeg",
         width: 1200,
         height: 630,
         alt: "Agency/42 Newsletter Subscribe",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "Subscribe to Newsletter | Agency/42",
     description:
       "Stay connected with Agency/42's latest work, events, workshops, and AI insights. Get updates on new releases, case studies, and industry developments.",
-    images: ["/content/hero-crop.png"],
+    images: ["/images/content/cybernet.jpeg"],
   },
 };
 

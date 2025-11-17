@@ -4,8 +4,38 @@ import Link from "next/link";
 import { getContentData } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "Blog | Agency/42",
-  description: "Essays and newsletter posts from Agency/42.",
+  title: "Blog",
+  description: "Essays and insights on AI, cybernetics, digital minds, and the future of work from Agency/42.",
+  keywords: [
+    "AI blog",
+    "cybernetics",
+    "digital minds",
+    "future of work",
+    "AI essays",
+    "organizational design",
+    "AI systems",
+    "cybernetic organizations",
+    "applied intelligence",
+  ],
+  openGraph: {
+    title: "Blog | Agency/42",
+    description: "Essays and insights on AI, cybernetics, digital minds, and the future of work from Agency/42.",
+    type: "website",
+    images: [
+      {
+        url: "/images/content/cybernet.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Agency/42 Blog",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blog | Agency/42",
+    description: "Essays and insights on AI, cybernetics, digital minds, and the future of work from Agency/42.",
+    images: ["/images/content/cybernet.jpeg"],
+  },
 };
 
 export default async function BlogIndex() {

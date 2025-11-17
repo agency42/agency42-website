@@ -2,8 +2,26 @@ import type { Metadata } from "next";
 import ProjectList from "./ProjectList";
 
 export const metadata: Metadata = {
-  title: "Our Work | Agency/42",
-  description: "Selected projects and clients",
+  title: "Our Work",
+  description: "Selected projects and client work from Agency/42. We work with select clients to integrate AI into business and social applications.",
+  openGraph: {
+    title: "Our Work | Agency/42",
+    description: "Selected projects and client work from Agency/42. We work with select clients to integrate AI into business and social applications.",
+    images: [
+      {
+        url: "/images/content/cybernet.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Agency/42 Our Work",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Our Work | Agency/42",
+    description: "Selected projects and client work from Agency/42. We work with select clients to integrate AI into business and social applications.",
+    images: ["/images/content/cybernet.jpeg"],
+  },
 };
 
 export default function OurWorkPage() {

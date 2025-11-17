@@ -11,7 +11,7 @@ export const metadata: Metadata = {
       "Thanks for subscribing to the Agency/42 newsletter. You're all set.",
     images: [
       {
-        url: "/content/hero-crop.png",
+        url: "/images/content/cybernet.jpeg",
         width: 1200,
         height: 630,
         alt: "Agency/42 Newsletter Subscription",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "You're Subscribed | Agency/42",
     description:
       "Thanks for subscribing to the Agency/42 newsletter. You're all set.",
-    images: ["/content/hero-crop.png"],
+    images: ["/images/content/cybernet.jpeg"],
   },
 };
 

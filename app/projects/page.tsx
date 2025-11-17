@@ -2,8 +2,26 @@ import type { Metadata } from "next";
 import ProjectList from "./ProjectList";
 
 export const metadata: Metadata = {
-  title: "Project Archives | Agency/42",
-  description: "Selected projects and clients",
+  title: "Project Archives",
+  description: "Selected projects and client work from Agency/42. Including Daybloom, Miniverse, LinkedIn MCP, and more.",
+  openGraph: {
+    title: "Project Archives | Agency/42",
+    description: "Selected projects and client work from Agency/42. Including Daybloom, Miniverse, LinkedIn MCP, and more.",
+    images: [
+      {
+        url: "/images/content/cybernet.jpeg",
+        width: 1200,
+        height: 630,
+        alt: "Agency/42 Project Archives",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Project Archives | Agency/42",
+    description: "Selected projects and client work from Agency/42. Including Daybloom, Miniverse, LinkedIn MCP, and more.",
+    images: ["/images/content/cybernet.jpeg"],
+  },
 };
 
 export default function ProjectsPage() {

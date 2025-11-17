@@ -45,10 +45,10 @@ const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'; //
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL), // Important for absolute URLs in OG/Twitter images
   title: {
-    default: "Agency 42 | Build Tomorrow's Competitive Edge", // Default title now matches hero copy
-    template: '%s | Agency 42', // Template for page-specific titles
+    default: "Agency/42 | Applied Intelligence Studio",
+    template: '%s | Agency/42',
   },
-  description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
+  description: "Applied intelligence studio based in Los Angeles. We work with select clients to integrate AI into business and social applications.",
   icons: {
     icon: [
       {
@@ -95,17 +95,16 @@ export const metadata: Metadata = {
   },
   // Add Open Graph and Twitter metadata defaults
   openGraph: {
-    title: "Agency 42 | Build Tomorrow's Competitive Edge",
-    description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
+    title: "Agency/42 | Applied Intelligence Studio",
+    description: "Applied intelligence studio based in Los Angeles. We work with select clients to integrate AI into business and social applications.",
     url: BASE_URL,
-    siteName: 'Agency 42',
-    // Add a default image for sharing
+    siteName: 'Agency/42',
     images: [
       {
-        url: '/content/hero-crop.png',
+        url: '/images/content/cybernet.jpeg',
         width: 1200,
         height: 630,
-        alt: 'Surreal lunar-library landscape with Agency 42 delta symbol',
+        alt: 'Agency/42 - Applied Intelligence Studio',
       },
     ],
     locale: 'en_US',
@@ -113,27 +112,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Agency 42 | Build Tomorrow's Competitive Edge",
-    description: "We turn AI ambitions into real-world advantage—strategy, rapid prototypes, and production systems that compound.",
-    // Add the same default image or a Twitter-specific one
-    images: ['/content/hero-crop.png'],
-    // Optional: Add Twitter site handle if you have one
-    // site: '@agency42co',
-    // Optional: Add Twitter creator handle if relevant
-    // creator: '@bootoshi',
+    title: "Agency/42 | Applied Intelligence Studio",
+    description: "Applied intelligence studio based in Los Angeles. We work with select clients to integrate AI into business and social applications.",
+    images: ['/images/content/cybernet.jpeg'],
   },
-  // Optional: Add robots meta tag configuration if needed
-  // robots: {
-  //   index: true,
-  //   follow: true,
-  //   googleBot: {
-  //     index: true,
-  //     follow: true,
-  //     'max-video-preview': -1,
-  //     'max-image-preview': 'large',
-  //     'max-snippet': -1,
-  //   },
-  // },
 }
 
 interface RootLayoutProps {

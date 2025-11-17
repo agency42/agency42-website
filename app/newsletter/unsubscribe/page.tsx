@@ -19,7 +19,7 @@ export const metadata: Metadata = {
       "Unsubscribe from the Agency/42 newsletter. We'll process your request quickly and respect your preferences.",
     images: [
       {
-        url: "/content/hero-crop.png",
+        url: "/images/content/cybernet.jpeg",
         width: 1200,
         height: 630,
         alt: "Agency/42 Newsletter Unsubscribe",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Newsletter Unsubscribe | Agency/42",
     description:
       "Unsubscribe from the Agency/42 newsletter. We'll process your request quickly and respect your preferences.",
-    images: ["/content/hero-crop.png"],
+    images: ["/images/content/cybernet.jpeg"],
   },
 };
 
