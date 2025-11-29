@@ -1,47 +1,53 @@
 [
   {
-    "id": 1,
-    "tag": "article",
-    "title": "Digital Mind Design: From Tool AIs to Agents",
-    "description": "Exploring the evolution of AI from simple tools to complex autonomous agents.",
-    "imageOverride": "/images/content/digital-mind-design.png", 
-    "link": "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
-    "date": "2024-06-10",
-    "isFeaturedVideo": false,
-    "weight": 2
+    "id": 11,
+    "tag": "video",
+    "title": "MCPs and the Future of the Internet",
+    "description": "A look at how Model Context Protocols could reshape interfaces and the web.",
+    "imageOverride": "https://img.youtube.com/vi/WyysTl3l7rs/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=WyysTl3l7rs&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=6",
+    "date": "07.25",
+    "isFeaturedVideo": false
+  },
+  {
+    "id": 8,
+    "tag": "video",
+    "title": "Setting Up Notion MCP",
+    "description": "Step-by-step setup of Notion's Model Context Protocol and how to use it in practice.",
+    "imageOverride": "https://img.youtube.com/vi/z4I4g3BbRsw/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=z4I4g3BbRsw&t=14s",
+    "date": "07.25",
+    "isFeaturedVideo": false
   },
   {
     "id": 2,
     "tag": "case study",
     "title": "Daybloom: Memory-Driven Social AI",
-    "description": "Daybloom delivers always-on AI characters that post, chat, and remember—giving brands a 24/7 presence that stays true to voice.",
-    "imageOverride": "/images/case-studies/daybloom.jpeg", 
+    "description": "Always-on AI characters that post, chat, and remember — giving brands a 24/7 autonomous representative.",
+    "imageOverride": "/images/case-studies/daybloom.jpeg",
     "link": "/blog/daybloom-social-media-automation",
-    "date": "2024-07-14", 
-    "isFeaturedVideo": false,
-    "weight": 1
+    "date": "07.25",
+    "isFeaturedVideo": false
   },
   {
-    "id": 3,
-    "tag": "workshop",
-    "title": "Rick & Morty Digital Twins",
-    "description": "Watch the creation process of AI digital twins based on popular characters.",
-    "imageOverride": "/images/content/rick-1.png", 
-    "link": "https://www.youtube.com/live/ulVeaMW6WyY",
-    "date": "2024-07-15", 
-    "isFeaturedVideo": false,
-    "weight": 9
+    "id": 9,
+    "tag": "video",
+    "title": "Claude Code + Obsidian for Non‑technical Work",
+    "description": "How to automate non-technical work with claude code.",
+    "imageOverride": "https://img.youtube.com/vi/k25cYCxB_ns/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=k25cYCxB_ns&t=1s",
+    "date": "06.25",
+    "isFeaturedVideo": false
   },
   {
-    "id": 6,
-    "tag": "newsletter",
-    "title": "Year of the Dragon",
-    "description": "Improbable Automata #1: Genesis, this year in AI, predictions for 2025.",
-    "imageOverride": "/images/content/alfie.png",
-    "link": "https://improbable.beehiiv.com/p/year-of-the-dragon",
-    "date": "2025-01-02",
-    "isFeaturedVideo": false,
-    "weight": 5
+    "id": 10,
+    "tag": "video",
+    "title": "Autonomous Marketing Agents",
+    "description": "How autonomous agents can create viral social feedback loops.",
+    "imageOverride": "https://img.youtube.com/vi/mm3OADJWitk/hqdefault.jpg",
+    "link": "https://www.youtube.com/watch?v=mm3OADJWitk&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=2",
+    "date": "05.25",
+    "isFeaturedVideo": false
   },
   {
     "id": 7,
@@ -50,52 +56,37 @@
     "description": "Improbable Automata #2: 100 days into the intelligence explosion.",
     "imageOverride": "/images/content/greyzone.png",
     "link": "https://improbable.beehiiv.com/p/grey-zone",
-    "date": "2025-04-23",
-    "isFeaturedVideo": false,
-    "weight": 6
+    "date": "04.25",
+    "isFeaturedVideo": false
   },
   {
-    "id": 8,
-    "tag": "video",
-    "title": "Setting Up Notion MCP",
-    "description": "Step-by-step setup of Notion's Model Context Protocol and how to use it in practice.",
-    "imageOverride": "https://img.youtube.com/vi/k25cYCxB_ns/hqdefault.jpg",
-    "link": "https://www.youtube.com/watch?v=k25cYCxB_ns&t=1s",
-    "date": "2025-01-10",
-    "isFeaturedVideo": false,
-    "weight": 4
+    "id": 6,
+    "tag": "newsletter",
+    "title": "Year of the Dragon",
+    "description": "Improbable Automata #1: Genesis, this year in AI, predictions for 2025.",
+    "imageOverride": "/images/content/alfie.png",
+    "link": "https://improbable.beehiiv.com/p/year-of-the-dragon",
+    "date": "01.25",
+    "isFeaturedVideo": false
   },
   {
-    "id": 9,
-    "tag": "video",
-    "title": "Claude Code + Obsidian for Non‑technical Work",
-    "description": "Using Claude Code and Obsidian to automate non‑technical workflows and knowledge work.",
-    "imageOverride": "https://img.youtube.com/vi/z4I4g3BbRsw/hqdefault.jpg",
-    "link": "https://www.youtube.com/watch?v=z4I4g3BbRsw&t=14s",
-    "date": "2025-01-11",
-    "isFeaturedVideo": false,
-    "weight": 3
+    "id": 1,
+    "tag": "article",
+    "title": "Digital Mind Design: From Tool AIs to Agents",
+    "description": "Exploring the evolution of AI from simple tools to complex autonomous agents.",
+    "imageOverride": "/images/content/digital-mind-design.png",
+    "link": "https://www.linkedin.com/pulse/digital-mind-design-from-tool-ais-agents-agency42co-lm2wc/",
+    "date": "12.24",
+    "isFeaturedVideo": false
   },
   {
-    "id": 10,
+    "id": 3,
     "tag": "video",
-    "title": "Saving Time with AI Marketing",
-    "description": "Practical tactics to cut campaign time using AI tools without sacrificing quality.",
-    "imageOverride": "https://img.youtube.com/vi/mm3OADJWitk/hqdefault.jpg",
-    "link": "https://www.youtube.com/watch?v=mm3OADJWitk&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=2",
-    "date": "2025-01-12",
-    "isFeaturedVideo": false,
-    "weight": 7
-  },
-  {
-    "id": 11,
-    "tag": "video",
-    "title": "MCPs and the Future of the Internet",
-    "description": "A look at how Model Context Protocols could reshape interfaces and the web.",
-    "imageOverride": "https://img.youtube.com/vi/WyysTl3l7rs/hqdefault.jpg",
-    "link": "https://www.youtube.com/watch?v=WyysTl3l7rs&list=PLIzwgd0roNpGoSE_qmoFQq3PGN261ukYO&index=6",
-    "date": "2025-01-13",
-    "isFeaturedVideo": false,
-    "weight": 5
+    "title": "Rick & Morty Digital Twins",
+    "description": "Watch the creation process of AI digital twins based on popular characters.",
+    "imageOverride": "/images/content/rick-1.png",
+    "link": "https://www.youtube.com/live/ulVeaMW6WyY",
+    "date": "02.24",
+    "isFeaturedVideo": false
   }
-] 
+]
