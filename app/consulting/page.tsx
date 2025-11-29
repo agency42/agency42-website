@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Our Work | Agency/42",
+  title: "Our Work | Agency/42",
     description: "Selected projects and client work from Agency/42. We work with select clients to integrate AI into business and social applications.",
     images: ["/images/content/cybernet.jpeg"],
   },

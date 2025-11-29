@@ -59,19 +59,19 @@ export default function CaseStudyLayout({ title, hero, authors, stats, contentHt
               {stats.hours_saved && (
                 <div>
                   <p className="text-2xl md:text-3xl font-medium">{stats.hours_saved.toLocaleString()}+</p>
-                  <p className="text-xs text-gray-600">Hours Saved</p>
+                  <p className="text-xs text-gray-600">hours saved</p>
                 </div>
               )}
               {stats.annual_value && (
                 <div>
                   <p className="text-2xl md:text-3xl font-medium">${(stats.annual_value / 1000).toFixed(0)}k+</p>
-                  <p className="text-xs text-gray-600">Annual Value</p>
+                  <p className="text-xs text-gray-600">annual value</p>
                 </div>
               )}
               {stats.roi_months && (
                 <div>
                   <p className="text-2xl md:text-3xl font-medium">{stats.roi_months}</p>
-                  <p className="text-xs text-gray-600">Months to ROI</p>
+                  <p className="text-xs text-gray-600">months to roi</p>
                 </div>
               )}
             </div>
@@ -109,7 +109,7 @@ export default function CaseStudyLayout({ title, hero, authors, stats, contentHt
             {headings.length > 0 && (
               <aside className="hidden xl:block w-64 flex-shrink-0">
                 <div className="sticky top-24">
-                  <h3 className="text-sm text-gray-500 mb-4">On this page</h3>
+                  <h3 className="text-sm text-gray-500 mb-4">on this page</h3>
                   <ul className="space-y-2 text-sm">
                     {headings.filter(heading => heading.level === 2).map((heading) => (
                       <li key={heading.slug}>

@@ -97,22 +97,22 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
             />
-            <div>
-                <CaseStudyLayout
-                    title={caseStudy.title}
-                    hero={caseStudy.hero}
-                    authors={caseStudy.authors}
-                    stats={caseStudy.stats}
-                    contentHtml={caseStudy.contentHtml}
-                    headings={caseStudy.headings}
-                    diagrams={caseStudy.diagrams}
-                />
-                <div className="text-center py-12 bg-white text-black">
-                    <Link href="/blog" className="text-foreground hover:text-neutral-600 transition-colors">
-                        ← Back to blog
-                    </Link>
-                </div>
+        <div>
+            <CaseStudyLayout
+                title={caseStudy.title}
+                hero={caseStudy.hero}
+                authors={caseStudy.authors}
+                stats={caseStudy.stats}
+                contentHtml={caseStudy.contentHtml}
+                headings={caseStudy.headings}
+                diagrams={caseStudy.diagrams}
+            />
+            <div className="text-center py-12 bg-white text-black">
+                <Link href="/blog" className="text-foreground hover:text-neutral-600 transition-colors">
+                    ← back to blog
+                </Link>
             </div>
+        </div>
         </>
     )
 }

@@ -45,7 +45,7 @@ export default function Home() {
                     </div>
                     <div>
                       <a className="underline" href="https://daybloom.ai" target="_blank" rel="noopener noreferrer">Daybloom</a>
-                      <div className="text-gray-600">Social agents that post, chat, and remember</div>
+                      <div className="text-gray-600">social agents that post, chat, and remember</div>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
@@ -54,16 +54,7 @@ export default function Home() {
                     </div>
                     <div>
                       <a className="underline" href="https://github.com/miniverse-ai/miniverse" target="_blank" rel="noopener noreferrer">Miniverse</a>
-                      <div className="text-gray-600">Python library for building generative agent simulations</div>
-                    </div>
-                  </li>
-                  <li className="flex items-center gap-3">
-                    <div className="w-[56px] h-[56px] flex items-center justify-center flex-shrink-0">
-                      <Image src="/images/logos/mcp-logo-42.png" alt="LinkedIn MCP" width={168} height={168} className="max-w-[126px] max-h-[126px] object-contain" />
-                    </div>
-                    <div>
-                      <a className="underline" href="https://www.linkedin.com/feed/update/urn:li:activity:7321201508933390337/" target="_blank" rel="noopener noreferrer">LinkedIn MCP</a>
-                      <div className="text-gray-600">Model Context Protocol for LinkedIn posting</div>
+                      <div className="text-gray-600">python library for building generative agent simulations</div>
                     </div>
                   </li>
                 </ul>

@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+---
+
+# casing rules
+
+strategic lowercase is part of agency/42's visual identity. follow these rules for consistency.
+
+## lowercase (always)
+
+- navigation/menu items: `home`, `blog`, `archives`
+- page titles: `blog`, `project archives`, `privacy policy`
+- section headers: `our work`, `team`, `work with us`
+- ui labels and ctas: `subscribe`, `watch →`, `back to blog`
+- stats labels: `hours saved`, `annual value`, `months to roi`
+- sidebar/meta labels: `on this page`
+- client names: `agency/42`, `warner records`, `cogent world`
+- product descriptions/subtext: `social agents that post, chat, and remember`
+
+## title case (exceptions)
+
+- article/blog titles: "The Cybernetic Organization"
+- project names in archives: "Daybloom", "AI Training and Enablement", "LinkedIn MCP"
+- featured product names on homepage: "Daybloom", "Miniverse"
+- external content titles (videos, newsletters)
+- legal document section headers: "1. Introduction"
+
+## all caps
+
+- redacted text: `[REDACTED]`
+
+## as-is (never change)
+
+- brand name: `Agency/42` (capital A, slash, capital number)
+- proper names (people): Kenneth, Rob
