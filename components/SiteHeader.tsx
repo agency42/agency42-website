@@ -45,13 +45,13 @@ export default function SiteHeader() {
         <div ref={panelRef} className={`absolute right-4 top-12 z-50 w-56 shadow-md p-3 ${isDark ? 'bg-black border border-gray-800 text-white' : 'bg-white border border-gray-200 text-black'}`}>
           <nav className="space-y-3 text-sm">
             <div>
-              <Link href="/" onClick={() => setOpen(false)} className="underline">home</Link>
+              <Link href="/" onClick={() => setOpen(false)} className="hover:underline">home</Link>
             </div>
             <div>
-              <Link href="/blog" onClick={() => setOpen(false)} className="underline">blog</Link>
+              <Link href="/blog" onClick={() => setOpen(false)} className="hover:underline">blog</Link>
             </div>
             <div>
-              <Link href="/projects" onClick={() => setOpen(false)} className="underline">archives</Link>
+              <Link href="/projects" onClick={() => setOpen(false)} className="hover:underline">archives</Link>
             </div>
           </nav>
         </div>
