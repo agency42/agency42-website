@@ -88,7 +88,7 @@ export default function ProjectsPage() {
       name: "Sports Terminal",
       client: "okung ventures",
       year: "03.25",
-      details: "real-time sports analyst agent.",
+      details: "real-time sports analytics agent.",
     },
     {
       name: "Prerich CEO",
