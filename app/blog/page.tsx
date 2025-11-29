@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { getContentData } from "@/lib/content";
+import BlogList from "./BlogList";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -32,20 +33,23 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blog | Agency/42",
+  title: "Blog | Agency/42",
     description: "Essays and insights on AI, cybernetics, digital minds, and the future of work from Agency/42.",
     images: ["/images/content/cybernet.jpeg"],
   },
 };
 
 export default async function BlogIndex() {
-  const items = (await getContentData()).filter((i) => !/vibe coding/i.test(i.title));
+  const allItems = (await getContentData()).filter((i) => !/vibe coding/i.test(i.title));
   const hero = {
     href: "/blog/the-cybernetic-organization",
     title: "The Cybernetic Organization",
     description: "On feedback loops, digital minds, and the future of work.",
     image: "/images/content/cybernet.jpeg",
   };
+
+  // Filter out the hero post from the list
+  const items = allItems.filter((item) => !item.link.includes('cybernetic-organization'));
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-white via-gray-50 to-white">
@@ -75,44 +79,8 @@ export default async function BlogIndex() {
           </div>
         </Link>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
-          {items.map((item) => (
-            item.link.startsWith('/') ? (
-              <Link key={`${item.title}-${item.date}`} href={item.link} className="block group h-full">
-                <div className="border border-gray-200 overflow-hidden flex flex-col h-full">
-                  <Image
-                    src={item.imageOverride || "/images/content/hero-crop.png"}
-                    alt={item.title}
-                    width={1200}
-                    height={675}
-                    sizes="(max-width: 768px) 100vw, 700px"
-                    className="w-full h-auto group-hover:opacity-90 transition"
-                  />
-                  <div className="p-4 text-center flex-1 flex flex-col justify-center">
-                    <h3 className="text-base font-medium group-hover:underline">{item.title}</h3>
-                    {item.description && <p className="text-sm text-gray-600 mt-1">{item.description}</p>}
-                  </div>
-                </div>
-              </Link>
-            ) : (
-              <a key={`${item.title}-${item.date}`} href={item.link} target="_blank" rel="noopener noreferrer" className="block group h-full">
-                <div className="border border-gray-200 overflow-hidden flex flex-col h-full">
-                  <Image
-                    src={item.imageOverride || "/images/content/hero-crop.png"}
-                    alt={item.title}
-                    width={1200}
-                    height={675}
-                    sizes="(max-width: 768px) 100vw, 700px"
-                    className="w-full h-auto group-hover:opacity-90 transition"
-                  />
-                  <div className="p-4 text-center flex-1 flex flex-col justify-center">
-                    <h3 className="text-base font-medium group-hover:underline">{item.title}</h3>
-                    {item.description && <p className="text-sm text-gray-600 mt-1">{item.description}</p>}
-                  </div>
-                </div>
-              </a>
-            )
-          ))}
+        <div className="mt-16">
+          <BlogList posts={items} />
         </div>
         </div>
       </main>
