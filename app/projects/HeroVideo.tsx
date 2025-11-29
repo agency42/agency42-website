@@ -16,6 +16,7 @@ export default function HeroVideo({ src, alt, link, name, client, year, details 
       <div className="h-[200px] overflow-hidden">
         <video
           src={src}
+          autoPlay
           loop
           muted
           playsInline
