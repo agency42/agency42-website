@@ -27,7 +27,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
             >
               <div className="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2">
                 <div className="flex-1">
-                  <h3 className="font-medium text-base text-white">
+                  <h3 className="font-medium text-sm text-white">
                     {project.link ? (
                       <a href={project.link} target="_blank" rel="noopener noreferrer" className="hover:underline" onClick={(e) => e.stopPropagation()}>
                         {project.name}
@@ -36,12 +36,12 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
                       project.name
                     )}
                   </h3>
-                  <p className="text-sm text-gray-400 mt-1">{project.client}</p>
+                  <p className="text-xs text-gray-400 mt-1">{project.client}</p>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="text-sm text-gray-500">{project.year}</div>
+                  <div className="text-xs text-gray-500">{project.year}</div>
                   <svg
-                    className={`w-4 h-4 text-gray-600 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
+                    className={`w-3 h-3 text-gray-600 transition-transform ${openIndex === index ? 'rotate-180' : ''}`}
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -52,7 +52,7 @@ export default function ProjectList({ projects }: { projects: Project[] }) {
               </div>
             </button>
             {openIndex === index && (
-              <div className="px-0 pb-6 text-sm text-gray-300 leading-relaxed">
+              <div className="px-0 pb-6 text-xs text-gray-300 leading-relaxed">
                 {project.details}
               </div>
             )}

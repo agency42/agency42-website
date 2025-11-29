@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ProjectList from "./ProjectList";
+import HeroVideo from "./HeroVideo";
 
 export const metadata: Metadata = {
   title: "Project Archives",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Project Archives | Agency/42",
+  title: "Project Archives | Agency/42",
     description: "Selected projects and client work from Agency/42. Including Daybloom, Miniverse, LinkedIn MCP, and more.",
     images: ["/images/content/cybernet.jpeg"],
   },
@@ -27,76 +28,76 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   const projects = [
     {
-      name: "miniverse",
+      name: "Miniverse",
       client: "agency/42",
       year: "10.25",
       details: "Python library for building generative agent simulations.",
       link: "https://github.com/miniverse-ai/miniverse",
     },
     {
-      name: "daybloom",
+      name: "Daybloom",
       client: "agency/42",
       year: "08.25",
       details: "Platform for building AI characters that autonomously manage social media.",
       link: "https://daybloom.ai",
     },
     {
-      name: "ai training and enablement",
+      name: "AI Training and Enablement",
       client: "herman-scheer",
       year: "07.25",
       details: "Custom AI training programs and organizational enablement workshops.",
     },
     {
-      name: "ai assisted code workshop",
+      name: "AI Assisted Code Workshop",
       client: "florida state university",
       year: "07.25",
       details: "Hands-on workshop teaching AI-assisted development workflows.",
     },
     {
-      name: "[REDACTED]'s digital twin",
+      name: "[REDACTED]'s Digital Twin",
       client: "warner records (innovation studio)",
       year: "06.25",
       details: "Experimental fan chatroom experience.",
     },
     {
-      name: "teamputer",
+      name: "Teamputer",
       client: "agency/42",
       year: "06.25",
       details: "Claude Code running autonomously in the cloud.",
     },
     {
-      name: "ai email agent",
+      name: "AI Email Agent",
       client: "cogent world",
       year: "06.25",
       details: "Intelligent email processing and response system.",
     },
     {
-      name: "linkedin mcp",
+      name: "LinkedIn MCP",
       client: "agency/42",
       year: "05.25",
       details: "Model Context Protocol for LinkedIn posting and engagement.",
       link: "https://github.com/robertcedwards/linkedin-mcp-server",
     },
     {
-      name: "[REDACTED]'s digital twin",
+      name: "[REDACTED]'s Digital Twin",
       client: "roomservice ltd",
       year: "04.25",
       details: "Digital twin with voice cloning and conversational AI capabilities.",
     },
     {
-      name: "sports terminal",
+      name: "Sports Terminal",
       client: "okung ventures",
       year: "03.25",
       details: "Real-time sports data agent with automated analysis and feed generation.",
     },
     {
-      name: "prerich ceo",
+      name: "PreRich CEO",
       client: "prerich app",
       year: "03.25",
       details: "Autonomous marketing agent on Twitter.",
     },
     {
-      name: "dashworld",
+      name: "Dashworld",
       client: "game over media",
       year: "02.25",
       details: "AI musician and agent running live in a Discord community.",
@@ -104,17 +105,41 @@ export default function ProjectsPage() {
     },
   ];
 
+  const hero = {
+    name: "Daybloom",
+    client: "agency/42",
+    year: "08.25",
+    details: "Platform for building AI characters that autonomously manage social media.",
+    link: "https://daybloom.ai",
+    image: "/images/content/default-projects-gif-raw.mp4",
+  };
+
+  // Filter out hero project from the list
+  const otherProjects = projects.filter((p) => p.name !== "Daybloom");
+
   return (
     <div className="flex flex-col min-h-screen bg-black text-white">
       <main className="flex-1 px-4 sm:px-6 pb-16">
         <div className="max-w-2xl mx-auto">
-          <section className="pt-8 sm:pt-12 pb-4">
-            <h1 className="text-3xl sm:text-4xl font-medium leading-tight mb-8">
+          <div className="pt-8 sm:pt-12 pb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-5xl font-medium leading-tight mb-8">
               project archives
             </h1>
-          </section>
+          </div>
 
-          <ProjectList projects={projects} />
+          <HeroVideo
+            src={hero.image}
+            alt={hero.name}
+            link={hero.link}
+            name={hero.name}
+            client={hero.client}
+            year={hero.year}
+            details={hero.details}
+          />
+
+          <div className="mt-16">
+            <ProjectList projects={otherProjects} />
+          </div>
         </div>
       </main>
     </div>
